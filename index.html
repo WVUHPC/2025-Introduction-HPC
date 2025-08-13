@@ -207,9 +207,10 @@
 
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
-        <ul><li><a href="#accessing-the-clusters-using-secure-shell-ssh">Accessing the clusters using Secure Shell (SSH)</a></li>
+        <ul><li><a href="#access-via-secure-shell-ssh">Access via Secure Shell (SSH)</a></li>
 <li><a href="#data-sets">Data Sets</a></li>
 <li><a href="#software-setup">Software Setup</a></li>
+<li><a href="#access-via-open-on-demand">Access via Open On-Demand</a></li>
 <li><a href="#downloading-the-materials">Downloading the materials</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
@@ -276,16 +277,54 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><h1 class="schedule-heading">Summary and Setup</h1>
       
-
-<p>This is a new lesson built with <a href="https://carpentries.github.io/sandpaper-docs" class="external-link">The Carpentries
-Workbench</a>.</p>
+<div class="section level1">
+<h1 id="this-workshop">This workshop<a class="anchor" aria-label="anchor" href="#this-workshop"></a></h1>
+<p>This workshop is an introduction to High-Performance Computing (HPC)
+and Research Computing in general for users of our clusters. You will
+learn the basic command line interface, editors, job submission, and a
+few other topics that allow you to make efficient use of a High
+Performance Computing cluster.</p>
+<p>This lesson pretends to go straight to the point. You will learn the
+most useful tools, commands, and techniques to start using the cluster
+for your research. As such, no completeness should be assumed. For each
+episode, there is a lot more to explore on the interest of more advanced
+users. Some references are left at the end of each section.</p>
+<div id="prerequisites" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="prerequisites" class="callout-inner">
+<h3 class="callout-title">Prerequisites</h3>
+<div class="callout-content">
+<p>This lesson assumes no previous knowledge of Linux and the command
+line interface (CLI). If you are only familiar with GUI applications on
+any OS (Windows, MacOS, or Linux) expect a bit of a rough start but
+please do not lose your motivation. Learning Linux and command lines is
+like exploring a new language, expect mistakes and frustrations, but
+also rewards as you move forward and start grasping the tools that will
+make your interaction with the cluster more efficient and your research
+more dynamic.</p>
+</div>
+</div>
+</div>
+<p>For more documentation see our <a href="https://docs.hpc.wvu.edu" class="external-link">WVU
+HPC Docs</a>.</p>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
+</div>
 
-
-      <section id="setup"><section><h2 class="section-heading" id="accessing-the-clusters-using-secure-shell-ssh">Accessing the clusters using Secure Shell (SSH)<a class="anchor" aria-label="anchor" href="#accessing-the-clusters-using-secure-shell-ssh"></a></h2>
+      <section id="setup"><p>There are two ways of today accessing WVU’s HPC Clusters: A secure
+remote shell (SSH) and via a Web Browser using the web application Open
+On-Demand. A secure remote shell is the traditional way of accessing a
+High-Performance Computing (HPC) cluster. A remote shell allows you to
+execute commands on another machine as you do sitting in front of it. A
+remote shell is convenient because it also allows other people to do the
+same with very little consumption of resources, so you get access to a
+resource being utilized by several users simultaneously.</p>
+<section><h2 class="section-heading" id="access-via-secure-shell-ssh">Access via Secure Shell (SSH)<a class="anchor" aria-label="anchor" href="#access-via-secure-shell-ssh"></a></h2>
 <hr class="half-width"><p>A remote shell is the most common way of accessing a High-Performance
 Computing (HPC) cluster. A remote shell allows you to execute commands
 on another machine as you do sitting in front of it. A remote shell is
@@ -325,8 +364,8 @@ full-featured SSH client plus the ability to open X11 windows from the
 remote machine. There are many alternatives to these two. As soon as the
 application supports the SSH protocol, you can use it to connect to the
 clusters.</p>
-<figure><img src="fig/PuTTY.png" alt="PuTTY" class="figure mx-auto d-block"><div class="figcaption">PuTTY</div>
-</figure><figure><img src="fig/MobaXterm.png" alt="MobaXterm" class="figure mx-auto d-block"><div class="figcaption">MobaXterm</div>
+<figure><img src="fig/PuTTY.png" alt="Window showing PuTTY" class="figure mx-auto d-block"><div class="figcaption">PuTTY</div>
+</figure><figure><img src="fig/MobaXterm.png" alt="Window showing MobaXterm" class="figure mx-auto d-block"><div class="figcaption">MobaXterm</div>
 </figure><p>More recently, there have also been options for accessing a terminal
 and SSH clients using Microsoft products. One option is to install <a href="https://code.visualstudio.com" class="external-link">Visual Studio Code</a>.
 Instructions to add an SSH client to VSC can be found <a href="https://code.visualstudio.com/docs/remote/ssh" class="external-link">here</a> and <a href="https://code.visualstudio.com/learn/develop-cloud/ssh-lab-machines" class="external-link">here</a>.
@@ -412,7 +451,7 @@ e.g. online setup) in the solutions blocks.</p>
   Windows
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <p>There is no bash terminal default on Windows. Below are the steps to
 acquire one.</p>
@@ -452,7 +491,7 @@ subspace. More on accessing those later.</p>
   MacOS
   </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
 <div class="section level4 accordion-body">
 <h4 id="to-open-a-terminal">To open a terminal:<a class="anchor" aria-label="anchor" href="#to-open-a-terminal"></a></h4>
 <ul><li>Click the Launchpad icon in the Dock.</li>
@@ -473,7 +512,7 @@ start a bash shell, type <code>bash</code> into the terminal and press
   Linux
   </h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
 <div class="accordion-body">
 <ul><li>The terminal is usually a button on your desktop.</li>
 <li>The icon is commonly depicted as a monitor with a black screen.</li>
@@ -481,7 +520,17 @@ start a bash shell, type <code>bash</code> into the terminal and press
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="downloading-the-materials">Downloading the materials<a class="anchor" aria-label="anchor" href="#downloading-the-materials"></a></h2>
+</section><section><h2 class="section-heading" id="access-via-open-on-demand">Access via Open On-Demand<a class="anchor" aria-label="anchor" href="#access-via-open-on-demand"></a></h2>
+<hr class="half-width"><p>Open On-Demand is an easy way to access our HPC clusters from a Web
+Browser. The only software that you need is a fairly modern web Browser
+on your side. Open On Demand works with Firefox, Safari, Microsoft Edge
+and many other web browsers.</p>
+<p>You can connect to Thorny Flat using <a href="https://ondemand-tf.hpc.wvu.edu" class="external-link">ood thorny</a>. To connect to
+Dolly Sods use <a href="https://ondemand-ds.hpc.wvu.edu" class="external-link">ood
+dolly</a>.</p>
+<figure><img src="fig/ood_1.png" alt="SSO page to access Open On Demand for Thorny Flat" class="figure mx-auto d-block"><div class="figcaption">OOD SSO</div>
+</figure><figure><img src="fig/ood_2.png" alt="Open On Demand Dashboard for Thorny Flat" class="figure mx-auto d-block"><div class="figcaption">OOD Thorny</div>
+</figure></section><section><h2 class="section-heading" id="downloading-the-materials">Downloading the materials<a class="anchor" aria-label="anchor" href="#downloading-the-materials"></a></h2>
 <hr class="half-width"><p>The materials of examples and exercises can be downloaded by
 executing this command on the terminal.</p>
 <pre><code>~$ git clone https://github.com/WVUHPC/workshops_hands-on.git</code></pre>
@@ -493,6 +542,7 @@ particular folder for this workshop using the command.</p>
 the right class and will learn all these commands and how to use them.
 These and many other commands will be the topic of the material that
 follows.</p>
+<!-- Collect your link references at the bottom of your document -->
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
