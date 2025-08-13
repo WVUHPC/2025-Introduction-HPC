@@ -244,7 +244,7 @@
 <div class="accordion accordion-flush" id="accordionFlush2">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading2">
-        <a href="102-cli.html">1. Command Line Interface: The Shell</a>
+        <a href="101-supercomputing.html">1. Supercomputing: Concepts</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -256,7 +256,7 @@
 <div class="accordion accordion-flush" id="accordionFlush3">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading3">
-        <a href="201-editors.html">2. Terminal-based Text Editors: nano, emacs and vim</a>
+        <a href="102-cli.html">2. Command Line Interface: The Shell</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -268,7 +268,7 @@
 <div class="accordion accordion-flush" id="accordionFlush4">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading4">
-        <a href="202-software.html">3. Software on HPC Clusters: modules, conda and containers</a>
+        <a href="201-editors.html">3. Terminal-based Text Editors: nano, emacs and vim</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -280,7 +280,7 @@
 <div class="accordion accordion-flush" id="accordionFlush5">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading5">
-        <a href="301-slurm.html">4. Workload Manager: Slurm</a>
+        <a href="202-software.html">4. Software on HPC Clusters: modules, conda and containers</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -292,7 +292,19 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="302-tmux.html">5. Terminal Multiplexing: tmux</a>
+        <a href="301-slurm.html">5. Workload Manager: Slurm</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush7">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading7">
+        <a href="302-tmux.html">6. Terminal Multiplexing: tmux</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -356,7 +368,84 @@
     <main id="main-content" class="main-content"><div class="container lesson-content">
         
         
-<section id="aio-102-cli"><p>Content from <a href="102-cli.html">Command Line Interface: The Shell</a></p>
+<section id="aio-101-supercomputing"><p>Content from <a href="101-supercomputing.html">Supercomputing: Concepts</a></p>
+<hr>
+<p>Last updated on 2025-08-13 |
+
+        <a href="https://github.com/carpentries/workbench-template-md/edit/main/episodes/101-supercomputing.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 60 minutes</p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>“What is supercomputing?”</li>
+<li>“Why I could need a supercomputer?”</li>
+<li>“How a supercomputer compares with my desktop or laptop
+computer?”</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>“Learn the main concepts of supercomputers”</li>
+<li>“Learn some use cases that justify using supercomputers.”</li>
+<li>“Learn about HPC cluster a major category of supercomputers.”</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+</h2>
+<hr class="half-width">
+<p>The concept of “supercomputing” refers to the use of powerful
+computational machines for the purpose of processing massively and
+complex data or conduct large numerical or symbolic problems using the
+concentrated computational resources. In many cases supercomputers are
+build from multiple computer systems that are meant to work togheter in
+parallel. Supercomputing involves a system working at the maximum
+potential and whose performance is larger of a normal computer.</p>
+<p>Sample use cases include weather, energy, life sciences, and
+manufacturing.</p>
+</section><section><h2 class="section-heading" id="concepts">Concepts<a class="anchor" aria-label="anchor" href="#concepts"></a>
+</h2>
+<hr class="half-width">
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<span class="callout-header">Key Points</span>
+<div class="callout-inner">
+<div class="callout-content">
+<ul>
+<li><p>“Supercomputers are far more powerful than desktop
+computers”</p></li>
+<li><p>“Most supercomputers today are HPC clusters”</p></li>
+<li><p>“Supercomputers are intended to run large calculations or
+simulations that takes days or weeks to complete”</p></li>
+<li><p>“HPC clusters are aggregates of machines that operate as a single
+entity to provide computational power to many users”</p></li>
+</ul>
+</div>
+</div>
+</div>
+<!--
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use.
+ -->
+</section></section><section id="aio-102-cli"><p>Content from <a href="102-cli.html">Command Line Interface: The Shell</a></p>
 <hr>
 <p>Last updated on 2025-08-13 |
 
@@ -2253,11 +2342,8 @@ Software Carpentry (<a href="https://software-carpentry.org/" class="external-li
 <li><p>Get sufficient familiarity with basic comands such as
 <code>ls</code>, <code>cp</code>, <code>cd</code>, <code>pwd</code> and
 <code>rm</code></p></li>
-<li>
-<p>If you want to know extra arguments for command that you know use
-the command <code>man</code></p>
-<pre><code>~$ man ls</code></pre>
-</li>
+<li><p>If you want to know extra arguments for command that you know use
+the command <code>man</code></p></li>
 <li><p>Most Linux/UNIX commands are just programs that have existed for
 decades and whose use has been for most part standarized overtime. The
 commands that you learn will serve you in the future so it is a fruitful
@@ -2773,10 +2859,10 @@ when the screen was painting slower than he could think.</p>
 <div class="callout-inner">
 <div class="callout-content">
 <ul>
-<li>“There are three major editor in Linux/Unix: nano, emacs and
-vim”</li>
-<li>“Once decided for on text editor it is important to the basic key
-combinations and operation of your editor of choice”</li>
+<li><p>“There are three major editor in Linux/Unix: nano, emacs and
+vim”</p></li>
+<li><p>“Once decided for on text editor it is important to the basic key
+combinations and operation of your editor of choice”</p></li>
 </ul>
 </div>
 </div>
@@ -2826,16 +2912,15 @@ clusters.”</li>
 <li>“Activate and change conda environments”</li>
 <li>“Get a shell and execute commands inside singularity
 containers.”</li>
-<li>Explain how to use markdown with The Carpentries Workbench</li>
 </ul>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="section level1">
-<h1 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
-</h1>
+<section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+</h2>
+<hr class="half-width">
 <p>Many software packages are being executed on an HPC cluster daily.
 Each area of science uses its own set of software packages. Sometimes,
 the same software package is used in multiple versions, and those
@@ -2844,9 +2929,9 @@ challenges, several options have been implemented on HPC clusters. The
 different options offer various levels of isolation from the host
 system, and some of these options are better suited for particular kinds
 of software.</p>
-<div class="section level2">
-<h2 id="environment-modules">Environment Modules<a class="anchor" aria-label="anchor" href="#environment-modules"></a>
+</section><section><h2 class="section-heading" id="environment-modules">Environment Modules<a class="anchor" aria-label="anchor" href="#environment-modules"></a>
 </h2>
+<hr class="half-width">
 <p><em>Environment modules</em> are a mechanism that easily enables
 software by allowing administrators to install non-regular locations and
 the user to adapt his/her environment to access those locations and use
@@ -2867,8 +2952,8 @@ storing values. Those placeholders are called variables and the shell
 commands and shell scripts can be made use of them. Shell variables can
 be created on the shell using the operator <code>=</code>. For
 example:</p>
-<pre><code>$ A=10
-$ B=20</code></pre>
+<pre><code>~$ A=10
+~$ B=20</code></pre>
 <p>Environment variables are shell variables that are exported, i.e.,
 converted into global variables. The shell and many other command line
 programs use a set of variables to control their behavior. Those
@@ -2878,21 +2963,21 @@ passes data to programs launched in the shell.</p>
 <p>To create an environment variable, you can first to create a variable
 and make it and environment variable using the command
 <code>export</code> followed by the name of the variable.</p>
-<pre><code>$ A=10
-$ B=20
-$ export A
-$ export B</code></pre>
+<pre><code>~$ A=10
+~$ B=20
+~$ export A
+~$ export B</code></pre>
 <p>This procedure can be simplified with a single line that defines and
 export the variable. Example:</p>
-<pre><code>$ export A=10
-$ export B=20</code></pre>
+<pre><code>~$ export A=10
+~$ export B=20</code></pre>
 <p><strong>Environment Variables</strong> control CLI functionality.
 They declare where to search for executable commands, where to search
 for libraries, which language display messages to you, how you prompt
 looks. Beyond the shell itself, <em>environment variables</em> are use
 by many codes to control their own operation.</p>
 <p>You can see all the variables currently defined by executing:</p>
-<pre><code>$ env</code></pre>
+<pre><code>~$ env</code></pre>
 <p>Environment variables are similar to the shell variables that you can
 create of the shell. Shell variables can be used to store data and
 manipulated during the life of the shell session. However, only
@@ -2904,7 +2989,6 @@ echo A= $A
 echo B= $B
 C=$(( $A + $B ))
 echo C= $C</code></pre>
-<p>{: .source}</p>
 <p>Now create two shell variables and execute the script, do the same
 with environment variables and notice that now the script is able to see
 the variables.</p>
@@ -3029,8 +3113,14 @@ module.</td>
 </tr>
 </tbody>
 </table>
-<blockquote>
-<h3 id="exercise-using-modulefiles">Exercise: Using modulefiles</h3>
+<div id="exercise-using-modulefiles" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="exercise-using-modulefiles" class="callout-inner">
+<h3 class="callout-title">Exercise: Using modulefiles</h3>
+<div class="callout-content">
 <ol style="list-style-type: decimal">
 <li><p>Check the modules that you currently have and clean (purge) your
 environment from them. Check again and confirm that no module is
@@ -3040,39 +3130,34 @@ itself. Try to get and idea of how old those three components are. For
 python and R, all that you have to do is enter the corresponding command
 (<code>R</code> or <code>python</code>). For GCC you need to use
 <code>gcc --version</code> and see the date of those programs.</p></li>
-<li>
-<p>Now let’s get a newer version of those three components by
+<li><p>Now let’s get a newer version of those three components by
 loading the corresponding modules. Search for the module for Python
 3.10.11, R 4.4.1, and GCC 9.3.0 and load the corresponding modules. To
 make things easier, you can use check the availability of modules just
-in the languages section.</p>
+in the languages section.</p></li>
+</ol>
 <pre><code>module avail lang</code></pre>
-<p>{: .source}</p>
 <pre><code>module load lang/python/cpython_3.11.3_gcc122 lang/r/4.4.1_gcc122 lang/gcc/12.2.0 </code></pre>
-<p>{: .source}</p>
-</li>
-<li>
-<p>Check again which version of those three components you have now.
+<ol start="4" style="list-style-type: decimal">
+<li>Check again which version of those three components you have now.
 Notice that in the case of Python 3, the command python still goes
 towards the old Python 2.6.6, as the Python 3.x interpreter is not
 backward compatible with Python 2.x the new command is called
-<code>python3</code>. Check its version by entering the command.</p>
+<code>python3</code>. Check its version by entering the command.</li>
+</ol>
 <pre><code>~$ python3 --version</code></pre>
-<p>{: .source}</p>
-</li>
-<li>
-<p>Clean all of the environment</p>
+<ol start="5" style="list-style-type: decimal">
+<li>Clean all of the environment</li>
+</ol>
 <pre><code>~$ module purge</code></pre>
-<p>{: .source}</p>
-</li>
-<li>
-<p>Go back and purge all the modules from your environment. We will
-now explore why it is essential to use a recent compiler. Try to compile
-the code at
+<ol start="6" style="list-style-type: decimal">
+<li>Go back and purge all the modules from your environment. We will now
+explore why it is essential to use a recent compiler. Try to compile the
+code at
 <code>workshops_hands-on/Introduction_HPC/5._Environment_Modules/lambda_c++14.cpp</code>.
-Go to the folder and execute:</p>
+Go to the folder and execute:</li>
+</ol>
 <pre><code>~$ g++ lambda_c++14.cpp</code></pre>
-<p>{: .source}</p>
 <p>At this point, you should have received a list of errors, that is
 because even if the code is C++ it uses elements of the language that
 were not present at that time on C++ Specification. The code actually
@@ -3080,32 +3165,39 @@ uses C++14, and only recent versions of GCC allow for these
 declarations. Let’s check how many GCC compilers we have available on
 Thorny Flat.</p>
 <pre><code>~$ module avail lang/gcc</code></pre>
-<p>{: .source}</p>
 <p>Now, from that list, start loading and trying to compile the code as
 indicated above. Which versions of GCC allow you to compile the code?
 Also try the Intel compilers. In the case of the Intel compiler, the
 command to compile the code is:</p>
 <pre><code>~$ icpc lambda_c++14.cpp</code></pre>
-<p>{: .source}</p>
 <p>Try with all the Intel compilers. It will fail with some of them.
 That is because the default standard for the Intel C++ compiler is not
 C++14. You do not need to declare it explicitly, and for Intel Compiler
 Suite 2021, but for older versions, the correct command line is:</p>
 <pre><code>~$ icpc lambda_c++14.cpp -std=c++14</code></pre>
-<p>{: .source}</p>
-</li>
-</ol>
 <p>It should be clearer why modules are an important feature of any HPC
 infrastructure, as it allows you to use several compilers, libraries,
 and packages in different versions. On a normal computer, you usually
 have just one.</p>
-<p>{: .source} {: .challenge}</p>
-</blockquote>
 </div>
 </div>
-<div class="section level2">
-<h2 id="conda">Conda<a class="anchor" aria-label="anchor" href="#conda"></a>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div class="accordion-body">
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="conda">Conda<a class="anchor" aria-label="anchor" href="#conda"></a>
 </h2>
+<hr class="half-width">
 <p>Conda is an open-source package management system and environment
 management system. Conda quickly installs, runs, and updates packages
 and their dependencies. Conda easily creates, saves, loads, and switches
@@ -3359,7 +3451,6 @@ The following NEW packages will be INSTALLED:
 
 Proceed ([y]/n)?
 </code></pre>
-<p>{: .}</p>
 <p>Conda asks if you want to proceed with the plan::</p>
 <pre><code>Proceed ([y]/n)? y
 Type "y" and press Enter to proceed.</code></pre>
@@ -3387,7 +3478,7 @@ adding a prefix in parenthesis to indicate which conda environment you
 are using at that moment. To check the environments available,
 execute::</p>
 <pre><code>conda env list</code></pre>
-<p>or::</p>
+<p>or</p>
 <pre><code>conda info --envs</code></pre>
 </div>
 <div class="section level3">
@@ -3401,7 +3492,7 @@ environment and specify the version of Python that you want::</p>
 <p>You activate the environment::</p>
 <pre><code>conda activate python27</code></pre>
 <p>And verify the Python version::</p>
-<pre><code>$ python --version
+<pre><code>~$ python --version
 Python 2.7.16 :: Anaconda, Inc.</code></pre>
 <p>Conda has packages for versions of python for 2.7, 3.5, 3.6 and
 3.7</p>
@@ -3411,18 +3502,18 @@ Python 2.7.16 :: Anaconda, Inc.</code></pre>
 </h3>
 <p>New packages can be installed to existing conda environments. First
 search for packages with::</p>
-<pre><code>conda search mkl</code></pre>
+<pre><code>~$ conda search mkl</code></pre>
 <p>Packages are stored in repositories called <strong>channels</strong>.
 By default, conda search on the <code>pkgs/main</code> channel only.
 However, there are many other packages on several other channels.</p>
 <p>The most prominent channels to search for packages are
 <strong>intel</strong>, <strong>conda-forge</strong> and
 <strong>bioconda</strong> To search for packages there execute::</p>
-<pre><code>conda search -c intel mkl
+<pre><code>~$ conda search -c intel mkl
 
-conda search -c conda-forge nitime
+~$ conda search -c conda-forge nitime
 
-conda search -c bioconda blast</code></pre>
+~$ conda search -c bioconda blast</code></pre>
 <p>Packages can be installed on the current environment with::</p>
 <pre><code>conda install -c conda-forge nitime</code></pre>
 <p>In this case conda will pick the most recent version of the package
@@ -3453,485 +3544,577 @@ that you want::</p>
   mkl                           2019.3       intel_199  intel
   mkl                           2019.4             243  pkgs/main
   mkl                           2019.4       intel_243  intel
-  mkl                           2019.5       intel_281  intel
-  ~~~
+  mkl                           2019.5       intel_281  intel</code></pre>
+<p>Now, install the package declaring the version and build::</p>
+<pre><code>~$ conda install -c intel mkl=2019.4=intel_243
+Collecting package metadata (current_repodata.json): done
+Solving environment: done
+
+## Package Plan ##
+
+  environment location: /users/gufranco/.conda/envs/test
+
+  added / updated specs:
+    - mkl==2019.4=intel_243
 
 
+The following packages will be downloaded:
 
-Now, install the package declaring the version and build::
-</code></pre>
-<p>$ conda install -c intel mkl=2019.4=intel_243 Collecting package
-metadata (current_repodata.json): done Solving environment: done</p>
+    package                    |            build
+    ---------------------------|-----------------
+    intel-openmp-2019.5        |        intel_281         888 KB  intel
+    mkl-2019.4                 |        intel_243       204.1 MB  intel
+    tbb-2019.8                 |        intel_281         874 KB  intel
+    ------------------------------------------------------------
+                                           Total:       205.8 MB
+
+The following NEW packages will be INSTALLED:
+
+  intel-openmp       intel/linux-64::intel-openmp-2019.5-intel_281
+  mkl                intel/linux-64::mkl-2019.4-intel_243
+  tbb                intel/linux-64::tbb-2019.8-intel_281
+
+
+Proceed ([y]/n)?
+
+
+Downloading and Extracting Packages
+tbb-2019.8           | 874 KB    | #################################################################################################################################### | 100%
+mkl-2019.4           | 204.1 MB  | #################################################################################################################################### | 100%
+intel-openmp-2019.5  | 888 KB    | #################################################################################################################################### | 100%
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done</code></pre>
 </div>
-</div>
-<div class="section level2">
-<h2 id="package-plan">Package Plan<a class="anchor" aria-label="anchor" href="#package-plan"></a>
-</h2>
-<p>environment location: /users/gufranco/.conda/envs/test</p>
-<p>added / updated specs: - mkl==2019.4=intel_243</p>
-<p>The following packages will be downloaded:</p>
-<div class="codewrapper sourceCode" id="cb35">
-<h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+<div class="section level3">
+<h3 id="creating-a-new-environment-from-a-yml-file">Creating a new environment from a YML file<a class="anchor" aria-label="anchor" href="#creating-a-new-environment-from-a-yml-file"></a>
 </h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" tabindex="-1"></a><span class="ex">package</span>                    <span class="kw">|</span>            <span class="ex">build</span></span>
-<span id="cb35-2"><a href="#cb35-2" tabindex="-1"></a><span class="ex">---------------------------</span><span class="kw">|</span><span class="ex">-----------------</span></span>
-<span id="cb35-3"><a href="#cb35-3" tabindex="-1"></a><span class="ex">intel-openmp-2019.5</span>        <span class="kw">|</span>        <span class="ex">intel_281</span>         888 KB  intel</span>
-<span id="cb35-4"><a href="#cb35-4" tabindex="-1"></a><span class="ex">mkl-2019.4</span>                 <span class="kw">|</span>        <span class="ex">intel_243</span>       204.1 MB  intel</span>
-<span id="cb35-5"><a href="#cb35-5" tabindex="-1"></a><span class="ex">tbb-2019.8</span>                 <span class="kw">|</span>        <span class="ex">intel_281</span>         874 KB  intel</span>
-<span id="cb35-6"><a href="#cb35-6" tabindex="-1"></a><span class="ex">------------------------------------------------------------</span></span>
-<span id="cb35-7"><a href="#cb35-7" tabindex="-1"></a>                                       <span class="ex">Total:</span>       205.8 MB</span></code></pre>
+<p>You can create your own environment, one easy way of doing that is
+via a YML file that describes the channels and packages that you want on
+your environment. The YML file will look like this, for a simple case
+when you want one env for bowtie2 (bowtie2.yml)</p>
+<pre><code><span>    <span class="va">name</span><span class="op">:</span> <span class="va">thorny</span><span class="op">-</span><span class="va">bowtie2</span></span>
+<span>    <span class="va">channels</span><span class="op">:</span></span>
+<span>      <span class="op">-</span> <span class="va">bioconda</span></span>
+<span>      <span class="op">-</span> <span class="va">conda</span><span class="op">-</span><span class="va">forge</span></span>
+<span>      <span class="op">-</span> <span class="va">defaults</span></span>
+<span>    <span class="va">dependencies</span><span class="op">:</span></span>
+<span>      <span class="op">-</span> <span class="va">bowtie2</span></span></code></pre>
+<p>Another example is this YML file for installing a curated set of
+basic genomics codes that requires just a few dependencies.
+(biocore.yml)</p>
+<pre><code><span><span class="va">name</span><span class="op">:</span> <span class="va">biocode</span></span>
+<span><span class="va">channels</span><span class="op">:</span></span>
+<span>  <span class="op">-</span> <span class="va">bioconda</span></span>
+<span>  <span class="op">-</span> <span class="va">conda</span><span class="op">-</span><span class="va">forge</span></span>
+<span>  <span class="op">-</span> <span class="va">defaults</span></span>
+<span><span class="va">dependencies</span><span class="op">:</span></span>
+<span>  <span class="op">-</span> <span class="va">bamtools</span></span>
+<span>  <span class="op">-</span> <span class="va">bcftools</span></span>
+<span>  <span class="op">-</span> <span class="va">bedtools</span></span>
+<span>  <span class="op">-</span> <span class="va">hmmer</span></span>
+<span>  <span class="op">-</span> <span class="va">muscle</span></span>
+<span>  <span class="op">-</span> <span class="va">raxml</span></span>
+<span>  <span class="op">-</span> <span class="va">samtools</span></span>
+<span>  <span class="op">-</span> <span class="va">sga</span></span>
+<span>  <span class="op">-</span> <span class="va">soapdenovo</span><span class="op">-</span><span class="va">trans</span></span>
+<span>  <span class="op">-</span> <span class="va">soapdenovo2</span></span>
+<span>  <span class="op">-</span> <span class="va">sra</span><span class="op">-</span><span class="va">tools</span></span>
+<span>  <span class="op">-</span> <span class="va">vcftools</span></span>
+<span>  <span class="op">-</span> <span class="va">velvet</span></span></code></pre>
+<p>To create an environment from those YML files you can select one
+location on your scratch folder</p>
+<pre><code>conda env create -p $SCRATCH/bowtie2 -f bowtie2.yml</code></pre>
+<p>or for the biocore.yml</p>
+<pre><code>conda env create -p $SCRATCH/biocore -f biocore.yml</code></pre>
+<p>By default, new environments are created inside your
+<code>$HOME</code> folder on <code>$HOME/.conda</code></p>
 </div>
-<p>The following NEW packages will be INSTALLED:</p>
-<p>intel-openmp intel/linux-64::intel-openmp-2019.5-intel_281 mkl
-intel/linux-64::mkl-2019.4-intel_243 tbb
-intel/linux-64::tbb-2019.8-intel_281</p>
-<p>Proceed ([y]/n)?</p>
-<p>Downloading and Extracting Packages tbb-2019.8 | 874 KB |
-####################################################################################################################################
-| 100% mkl-2019.4 | 204.1 MB |
-####################################################################################################################################
-| 100% intel-openmp-2019.5 | 888 KB |
-####################################################################################################################################
-| 100% Preparing transaction: done Verifying transaction: done Executing
-transaction: done</p>
-<pre><code>
-
-### Creating a new environment from a YML file
-
-You can create your own environment, one easy way of doing that is via a
-YML file that describes the channels and packages that you want on your
-environment. The YML file will look like this, for a simple case when
-you want one env for bowtie2 (bowtie2.yml)
-</code></pre>
-<div class="codewrapper sourceCode" id="cb37">
-<h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+<div class="section level3">
+<h3 id="listing-the-packages-inside-one-environment">Listing the packages inside one environment<a class="anchor" aria-label="anchor" href="#listing-the-packages-inside-one-environment"></a>
 </h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" tabindex="-1"></a><span class="ex">name:</span> thorny-bowtie2</span>
-<span id="cb37-2"><a href="#cb37-2" tabindex="-1"></a><span class="ex">channels:</span></span>
-<span id="cb37-3"><a href="#cb37-3" tabindex="-1"></a>  <span class="ex">-</span> bioconda</span>
-<span id="cb37-4"><a href="#cb37-4" tabindex="-1"></a>  <span class="ex">-</span> conda-forge</span>
-<span id="cb37-5"><a href="#cb37-5" tabindex="-1"></a>  <span class="ex">-</span> defaults</span>
-<span id="cb37-6"><a href="#cb37-6" tabindex="-1"></a><span class="ex">dependencies:</span></span>
-<span id="cb37-7"><a href="#cb37-7" tabindex="-1"></a>  <span class="ex">-</span> bowtie2</span></code></pre>
-</div>
-<pre><code>
-
-Another example is this YML file for installing a curated set of basic
-genomics codes that requires just a few dependencies. (biocore.yml)
-</code></pre>
-<p>name: biocode channels: - bioconda - conda-forge - defaults
-dependencies: - bamtools - bcftools - bedtools - hmmer - muscle - raxml
-- samtools - sga - soapdenovo-trans - soapdenovo2 - sra-tools - vcftools
-- velvet</p>
-<pre><code>
-
-To create an environment from those YML files you can select one
-location on your scratch folder
-</code></pre>
-<p>conda env create -p $SCRATCH/bowtie2 -f bowtie2.yml</p>
-<pre><code>
-
-or for the biocore.yml
-</code></pre>
-<p>conda env create -p $SCRATCH/biocore -f biocore.yml</p>
-<pre><code>
-
-By default, new environments are created inside your `$HOME` folder on
-`$HOME/.conda`
-
-### Listing the packages inside one environment
-
-Bowtie2 has a number of dependencies (19 dependencies for 1 package)
+<p>Bowtie2 has a number of dependencies (19 dependencies for 1 package)
 Notice that only bowtie2 comes from bioconda channel. All other packages
-are part of conda-forge, a lower level channel.
-</code></pre>
-<p>$ conda activate <span class="math inline">\(SCRATCH/bowtie2\)</span>
-conda list # packages in environment at /scratch/gufranco/bowtie2: # #
-Name Version Build Channel bowtie2 2.3.4.2 py36h2d50403_0 bioconda bzip2
-1.0.6 h470a237_2 conda-forge ca-certificates 2018.8.24 ha4d7672_0
-conda-forge certifi 2018.8.24 py36_1 conda-forge libffi 3.2.1 hfc679d8_5
-conda-forge libgcc-ng 7.2.0 hdf63c60_3 conda-forge libstdcxx-ng 7.2.0
-hdf63c60_3 conda-forge ncurses 6.1 hfc679d8_1 conda-forge openssl 1.0.2p
-h470a237_0 conda-forge perl 5.26.2 h470a237_0 conda-forge pip 18.0
-py36_1 conda-forge python 3.6.6 h5001a0f_0 conda-forge readline 7.0
-haf1bffa_1 conda-forge setuptools 40.2.0 py36_0 conda-forge sqlite
-3.24.0 h2f33b56_1 conda-forge tk 8.6.8 0 conda-forge wheel 0.31.1 py36_1
-conda-forge xz 5.2.4 h470a237_1 conda-forge zlib 1.2.11 h470a237_3
-conda-forge</p>
-<pre><code>
+are part of conda-forge, a lower level channel.</p>
+<pre><code>~$ conda activate $SCRATCH/bowtie2
+~$ conda list
+# packages in environment at /scratch/gufranco/bowtie2:
+#
+# Name                    Version                   Build  Channel
+bowtie2                   2.3.4.2          py36h2d50403_0    bioconda
+bzip2                     1.0.6                h470a237_2    conda-forge
+ca-certificates           2018.8.24            ha4d7672_0    conda-forge
+certifi                   2018.8.24                py36_1    conda-forge
+libffi                    3.2.1                hfc679d8_5    conda-forge
+libgcc-ng                 7.2.0                hdf63c60_3    conda-forge
+libstdcxx-ng              7.2.0                hdf63c60_3    conda-forge
+ncurses                   6.1                  hfc679d8_1    conda-forge
+openssl                   1.0.2p               h470a237_0    conda-forge
+perl                      5.26.2               h470a237_0    conda-forge
+pip                       18.0                     py36_1    conda-forge
+python                    3.6.6                h5001a0f_0    conda-forge
+readline                  7.0                  haf1bffa_1    conda-forge
+setuptools                40.2.0                   py36_0    conda-forge
+sqlite                    3.24.0               h2f33b56_1    conda-forge
+tk                        8.6.8                         0    conda-forge
+wheel                     0.31.1                   py36_1    conda-forge
+xz                        5.2.4                h470a237_1    conda-forge
+zlib                      1.2.11               h470a237_3    conda-forge</code></pre>
+</div>
+<div class="section level3">
+<h3 id="using-a-conda-environment-in-a-submission-script">Using a conda environment in a submission script<a class="anchor" aria-label="anchor" href="#using-a-conda-environment-in-a-submission-script"></a>
+</h3>
+<p>To execute software in a non-interactive job you need to source the
+main script, activate the environment that contains the software you
+need, execute the the scientific code and deactivate the environment.
+This is a simple example showing that for bowtie2</p>
+<pre><code>#!/bin/bash
 
-### Using a conda environment in a submission script
+#SBATCH -J CONDA_JOB
+#SBATCH -N 1
+#SBATCH -c 4
+#SBATCH -p standby
+#SBATCH -t 4:00:00
 
-To execute software in a non-interactive job you need to source the main
-script, activate the environment that contains the software you need,
-execute the the scientific code and deactivate the environment. This is
-a simple example showing that for bowtie2
-</code></pre>
-<p>#!/bin/bash</p>
-<p>#SBATCH -J CONDA_JOB #SBATCH -N 1 #SBATCH -c 4 #SBATCH -p standby
-#SBATCH -t 4:00:00</p>
-<p>source /shared/software/conda/conda_init.sh conda activate
-$SCRATCH/bowtie2</p>
-<p>bowtie2 …..</p>
-<p>conda deactivate</p>
-<pre><code>
+source /shared/software/conda/conda_init.sh
+conda activate $SCRATCH/bowtie2
 
+bowtie2 .....
 
-### Deleting an environment
+conda deactivate</code></pre>
+</div>
+<div class="section level3">
+<h3 id="deleting-an-environment">Deleting an environment<a class="anchor" aria-label="anchor" href="#deleting-an-environment"></a>
+</h3>
+<p>You can execute this command to remove an environment you own.</p>
+<pre><code>conda remove --all -p $SCRATCH/bowtie2</code></pre>
+<p>or</p>
+<pre><code>conda env remove -n bowtie2</code></pre>
+<p>If the environment is named.</p>
+</div>
+<div class="section level3">
+<h3 id="more-documentation">More documentation<a class="anchor" aria-label="anchor" href="#more-documentation"></a>
+</h3>
+<p><code>Conda Documentation &lt;https://conda.io/docs/index.html&gt;</code>__</p>
+<p>[<a href="https://conda.io/docs/user-guide/tasks/manage-environments.html%5C" class="external-link uri">https://conda.io/docs/user-guide/tasks/manage-environments.html\</a>
+# Managing environments]</p>
+<p><code>Using Bioconda — Bioconda documentation &lt;https://bioconda.github.io/&gt;</code>__</p>
+<p><code>Available packages — Bioconda documentation &lt;https://bioconda.github.io/conda-recipe_index.html&gt;</code>__</p>
+</div>
+<div class="section level3">
+<h3 id="downloading-miniconda">Downloading Miniconda<a class="anchor" aria-label="anchor" href="#downloading-miniconda"></a>
+</h3>
+<p>You do not need to install Miniconda on Thorny Flat or Dolly Sods.
+However, nothing prevents you from having your version of it if you
+want. Miniconda can be downloaded from::</p>
+<pre><code>wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+sh Miniconda3-latest-Linux-x86_64.sh</code></pre>
+</div>
+<div class="section level3">
+<h3 id="no-installing-anything">No installing anything<a class="anchor" aria-label="anchor" href="#no-installing-anything"></a>
+</h3>
+<p>Just load the module::</p>
+<pre><code>module purge
+module load genomics/qiime</code></pre>
+<p>This module will load Python 2.7.3 and qiime on top of that. Conda is
+a particularly good option to install older packages that could still be
+available on channels like conda-forge and bioconda.</p>
+</div>
+</section><section><h2 class="section-heading" id="singularity-containers">Singularity Containers<a class="anchor" aria-label="anchor" href="#singularity-containers"></a>
+</h2>
+<hr class="half-width">
+<p>Containers are a software technology that allows us to keep control
+of the environment where a given code runs. Consider for example that
+you want to run a code in such a way the same code runs on several
+machines or clusters, ensuring that the same libraries are loaded and
+the same general environment is present. Different clusters could come
+installed with different compilers, different Linux distributions and
+different libraries in general. Containers can be used to package entire
+scientific workflows, software and libraries, and even data and move
+them to several compute infrastructures with complete
+reproducibility.</p>
+<p>Containers are similar to Virtual Machines, however, the differences
+are enough to consider them different technologies and those differences
+are very important for HPC. Virtual Machines take up a lot of system
+resources. Each Virtual Machine (VM) runs not just a full copy of an
+operating system, but a virtual copy of all the hardware that the
+operating system needs to run. This quickly adds up to a lot of precious
+RAM and CPU cycles, valuable resources for HPC.</p>
+<p>In contrast, all that a container requires is enough of an operating
+system, supporting programs and libraries, and system resources to run a
+specific program. From the user perspective, a container is in most
+cases a single file that contains the file system, ie a rather complete
+Unix filesystem tree with all libraries, executables, and data that are
+needed for a given workflow or scientific computation.</p>
+<p>There are several container solutions, the most popular probably is
+Docker, however, the main issue with using docker on HPC is security,
+despite the name, containers do not actually contain the powers of the
+user who executes code on them. That is why you do not see Docker
+installed on an HPC cluster. Using dockers requires superuser access
+something that on shared resources like an HPC cluster is not typically
+possible.</p>
+<p>Singularity offers an alternative solution to Docker, users can run
+the prepared images that we are offering on our clusters or bring their
+own.</p>
+<p>For more information about Singularity and complete documentation
+see: <a href="https://singularity.lbl.gov/quickstart" class="external-link uri">https://singularity.lbl.gov/quickstart</a></p>
+<div class="section level3">
+<h3 id="how-to-use-a-singularity-image">How to use a singularity Image<a class="anchor" aria-label="anchor" href="#how-to-use-a-singularity-image"></a>
+</h3>
+<p>There are basically two scenarios, interactive execution and job
+submission.</p>
+<div class="section level4">
+<h4 id="interactive-job">Interactive Job<a class="anchor" aria-label="anchor" href="#interactive-job"></a>
+</h4>
+<p>If you are using Visit or RStudio, programs that uses the X11
+forwarding, ensure to connect first to the cluster with X11 forwarding,
+before asking for an interactive job. In order to connect into Thorny
+with X11 forwarding use:</p>
+<pre><code>ssh -X &lt;username&gt;@ssh.wvu.edu</code></pre>
+<pre><code>ssh -X &lt;username&gt;@tf.hpc.wvu.edu</code></pre>
+<p>Once you have login into the cluster, create an interactive job with
+the following command line, in this case we are using standby as queue
+but any other queue is valid.</p>
+<pre><code>salloc -c 4 -p standby</code></pre>
+<p>Once you get inside a compute node, load the module:</p>
+<pre><code>module load singularity</code></pre>
+<p>After loading the module the command singularity is available for
+usage, and you can get a shell inside the image with:</p>
+<pre><code>singularity shell /shared/containers/&lt;Image Name&gt;</code></pre>
+</div>
+<div class="section level4">
+<h4 id="job-submission">Job Submission<a class="anchor" aria-label="anchor" href="#job-submission"></a>
+</h4>
+<p>In this case you do not need to export X11, just login into Thorny
+Flat</p>
+<pre><code>ssh &lt;username&gt;@ssh.wvu.edu
 
-You can execute this command to remove an environment you own.
-</code></pre>
-<p>conda remove –all -p $SCRATCH/bowtie2</p>
-<pre><code><span></span>
-<span></span>
-<span><span class="va">or</span></span></code></pre>
-<p>conda env remove -n bowtie2</p>
-<pre><code>
+ssh &lt;username&gt;@tf.hpc.wvu.edu</code></pre>
+<p>{: .source}</p>
+<p>Once you have login into the cluster, create a submission script
+(“runjob.pbs” for this example), in this case we are using standby as
+queue but any other queue is valid.</p>
+<pre><code>#!/bin/sh
 
-If the environment is named.
+#SBATCH -J SINGULARITY_JOB
+#SBATCH -N 1
+#SBATCH -c 4
+#SBATCH -p standby
+#SBATCH -t 4:00:00
 
-### More documentation
+module load singularity
 
-`Conda Documentation &lt;https://conda.io/docs/index.html&gt;`__
-
-[https://conda.io/docs/user-guide/tasks/manage-environments.html\ #
-Managing environments]
-
-`Using Bioconda — Bioconda
-documentation &lt;https://bioconda.github.io/&gt;`__
-
-`Available packages — Bioconda
-documentation &lt;https://bioconda.github.io/conda-recipe_index.html&gt;`__
-
-### Downloading Miniconda
-
-You do not need to install Miniconda on Thorny Flat or Dolly Sods.
-However, nothing prevents you from having your version of it if you want.
-Miniconda can be downloaded from::
-</code></pre>
-<p>wget <a href="https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh" class="external-link uri">https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh</a>
-sh Miniconda3-latest-Linux-x86_64.sh</p>
-<pre><code>
-
-### No installing anything
-
-Just load the module::
-</code></pre>
-<p>module purge module load genomics/qiime</p>
-<pre><code>
-
-This module will load Python 2.7.3 and qiime on top of that.
-Conda is a particularly good option to install older packages that could still be available on channels like conda-forge and bioconda.
-
-
-## Singularity Containers
-
-Containers are a software technology that allows us to keep control of the environment where a given code runs. Consider for example that you want to run a code in such a way the same code runs on several machines or clusters, ensuring that the same libraries are loaded and the same general environment is present. Different clusters could come installed with different compilers, different Linux distributions and different libraries in general. Containers can be used to package entire scientific workflows, software and libraries, and even data and move them to several compute infrastructures with complete reproducibility.
-
-Containers are similar to Virtual Machines, however, the differences are enough to consider them different technologies and those differences are very important for HPC. Virtual Machines take up a lot of system resources. Each Virtual Machine (VM) runs not just a full copy of an operating system, but a virtual copy of all the hardware that the operating system needs to run. This quickly adds up to a lot of precious RAM and CPU cycles, valuable resources for HPC.
-
-In contrast, all that a container requires is enough of an operating system, supporting programs and libraries, and system resources to run a specific program. From the user perspective, a container is in most cases a single file that contains the file system, ie a rather complete Unix filesystem tree with all libraries, executables, and data that are needed for a given workflow or scientific computation.
-
-There are several container solutions, the most popular probably is Docker, however, the main issue with using docker on HPC is security, despite the name, containers do not actually contain the powers of the user who executes code on them. That is why you do not see Docker installed on an HPC cluster. Using dockers requires superuser access something that on shared resources like an HPC cluster is not typically possible.
-
-Singularity offers an alternative solution to Docker, users can run the prepared images that we are offering on our clusters or bring their own.
-
-For more information about Singularity and complete documentation see: https://singularity.lbl.gov/quickstart
-
-### How to use a singularity Image
-
-There are basically two scenarios, interactive execution and job submission.
-
-#### Interactive Job
-
-If you are using Visit or RStudio, programs that uses the X11 forwarding, ensure to connect first to the cluster with X11 forwarding, before asking for an interactive job.
-In order to connect into Thorny with X11 forwarding use:
-</code></pre>
-<p>ssh -X <username><span class="citation">@ssh.wvu.edu</span></username></p>
-<pre><code>{: .source}
-</code></pre>
-<p>ssh -X <username><span class="citation">@tf.hpc.wvu.edu</span></username></p>
-<pre><code>{: .source}
-
-Once you have login into the cluster, create an interactive job with the following command line, in this case we are using standby as queue but any other queue is valid.
-</code></pre>
-<p>salloc -c 4 -p standby</p>
-<pre><code>{: .source}
-
-
-Once you get inside a compute node, load the module:
-</code></pre>
-<p>module load singularity</p>
-<pre><code>{: .source}
-
-
-After loading the module the command singularity is available for usage, and you can get a shell inside the image with:
-</code></pre>
-<p>singularity shell /shared/containers/<image name></image></p>
-<pre><code>{: .source}
-
-
-#### Job Submission
-
-In this case you do not need to export X11, just login into Thorny Flat
-</code></pre>
-<p>ssh <username><span class="citation">@ssh.wvu.edu</span></username></p>
-<p>ssh <username><span class="citation">@tf.hpc.wvu.edu</span></username></p>
-<pre><code>{: .source}
-
-
-Once you have login into the cluster, create a submission script ("runjob.pbs" for this example), in this case we are using standby as queue but any other queue is valid.
-</code></pre>
-<p>#!/bin/sh</p>
-<p>#SBATCH -J SINGULARITY_JOB #SBATCH -N 1 #SBATCH -c 4 #SBATCH -p
-standby #SBATCH -t 4:00:00</p>
-<p>module load singularity</p>
-<p>singularity exec /shared/containers/<image name><command_or_script_to_run></command_or_script_to_run></image></p>
-<pre><code>{: .source}
-
-
-Submit your job with
-</code></pre>
-<p>sbatch runjob.pbs</p>
-<pre><code>{: .source}
-
-&gt; ### Exercise 1: Using singularity on the cluster (Interactive)
-&gt;
-&gt; This exercise propose the use of singularity to access RStudio-server version 2023.12.1-402 and R 4.4.1
-&gt;
-&gt; Follow the instructions for accessing an interactive session
-&gt;
-&gt; The image is located at:
-&gt;
-&gt; ~~~
-&gt; /shared/containers/RStudio-server-2023.12.1-402_R-4.4.1_jammy.sif
-&gt; ~~~
-&gt; {: .source}
-&gt; Be sure that you can execute basic R commands. You can get an error message like:
-&gt;
-&gt;&gt;   WARNING: You are configured to use the CRAN mirror at https://cran.rstudio.com/. This mirror supports secure (HTTPS) downloads however your system is unable to communicate securely with the server (possibly due to out of date certificate files on your system). Falling back to using insecure URL for this mirror.
-&gt;
-&gt; That is normal and due to the fact that compute nodes have no Internet access.
-&gt;
-{: .challenge}
-
-&gt; ### Exercise 2: Using singularity on the cluster (Non-interactive)
-&gt;
-&gt; Create a script that reads a CSV with official statistics of population for US. The file can be downloaded from:
-&gt;~~~
-&gt;$ wget https://www2.census.gov/programs-surveys/popest/datasets/2010-2018/state/detail/SCPRC-EST2018-18+POP-RES.csv
-&gt;~~~
-&gt;{: .source}
-&gt;
-&gt; However, the file is also present in the repository for hands-ons
-&gt;~~~
-&gt;$ git clone https://github.com/WVUHPC/workshops_hands-on.git
-&gt;~~~
-&gt;
-&gt;
-&gt;The folder is `workshops_hands-on/Introduction_HPC/11._Software_Containers_Singularity`. If you are not familiar with R programming, the script is there too. Notice that you cannot write your script to download the CSV file directly from the Census Bureau as the compute  nodes have no Internet access.
-&gt; Write a submission script and submit.
-&gt;
-{: .challenge}
-
-## Advanced topics
-
-### **Modules:** Creating a private repository
-
-The basic procedure is to locate modules on a folder accessible by relevant users and add the variable `MODULEPATH` to your `.bashrc`
-
-`MODULEPATH` controls the path that the module command searches when looking for
-modulefiles.
-Typically, it is set  to a  default  value by the bootstrap procedure.
-`MODULEPATH` can be set using ’module use’ or by the module initialization
-script to search group or personal modulefile directories before  or  after
-the master modulefile directory.
-
-### **Singularity:** Creating your own images
-
-You can create your own Singularity images and use them on our clusters.
-The only constrain is that images can only be created on your own machine as you need root access to create them.
-
-The procedure that we will show will be executed on a remote machine provided by JetStream, it should the same if you have your own Linux machine and you have superuser access to it.
-
-The creation of images is an interactive procedure. You learn how to put pieces together and little by little you build your own recipe for your image.
-
-Lets start with a very clean image with centos.
-
-The minimal recipe will bring an image from Docker with the latest version of CentOS. Lets call the file `centos.bst`
-</code></pre>
+singularity exec /shared/containers/&lt;Image Name&gt; &lt;command_or_script_to_run&gt;</code></pre>
+<p>Submit your job with</p>
+<pre><code>sbatch runjob.pbs</code></pre>
+<div id="exercise-1-using-singularity-on-the-cluster-interactive" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="exercise-1-using-singularity-on-the-cluster-interactive" class="callout-inner">
+<h3 class="callout-title">Exercise 1: Using singularity on the cluster
+(Interactive)</h3>
+<div class="callout-content">
+<p>This exercise propose the use of singularity to access RStudio-server
+version 2023.12.1-402 and R 4.4.1</p>
+<p>Follow the instructions for accessing an interactive session</p>
+<p>The image is located at:</p>
+<pre><code>/shared/containers/RStudio-server-2023.12.1-402_R-4.4.1_jammy.sif </code></pre>
+<p>Be sure that you can execute basic R commands. You can get an error
+message like:</p>
+<pre><code>WARNING: You are configured to use the CRAN mirror at https://cran.rstudio.com/. This mirror supports secure (HTTPS) downloads however your system is unable to communicate securely with the server (possibly due to out of date certificate files on your system). Falling back to using insecure URL for this mirror.</code></pre>
+<p>That is normal and due to the fact that compute nodes have no
+Internet access.</p>
 </div>
 </div>
-<div class="section level1">
-<h1 id="singularity-container-with-centos">Singularity container with centos<a class="anchor" aria-label="anchor" href="#singularity-container-with-centos"></a>
-</h1>
 </div>
-<div class="section level1">
-<h1 id="section"></h1>
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
+</button>
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div class="accordion-body">
+
 </div>
-<div class="section level1">
-<h1 id="this-is-the-bootstrap-file-to-recreate-the-image-">This is the Bootstrap file to recreate the image.<a class="anchor" aria-label="anchor" href="#this-is-the-bootstrap-file-to-recreate-the-image-"></a>
-</h1>
 </div>
-<div class="section level1">
-<h1 id="section-1"></h1>
-<p>Bootstrap: docker From: centos:latest</p>
-<p>%runscript exec echo “The runscript is the containers default runtime
-command!”</p>
-<p>%files</p>
-<p>%environment</p>
-<p>%labels AUTHOR <a href="mailto:username@mail.wvu.edu" class="email">username@mail.wvu.edu</a></p>
-<p>%post echo “The post section is where you can install, and configure
-your container.” mkdir -p /data/bin mkdir -p /gpfs mkdir -p /users mkdir
--p /group mkdir -p /scratch touch /usr/bin/nvidia-smi</p>
-<pre><code>{: .source}
-
-A few folders are created that help us to link special folders like `/users`, `/scratch` to the host file system. Other than that the image contains a very small but usable Linux CentOS machine.
-
-We start with a writable sandboxed version, the exact command varies from machine to machine, but assuming that you can do sudo and the command singularity is available for root execute this:
-</code></pre>
-<p>sudo singularity build –sandbox centos centos.bst</p>
-<pre><code></code></pre>
-<p>Using container recipe deffile: centos.bst Sanitizing environment
-Adding base Singularity environment to container Docker image path:
-index.docker.io/library/centos:latest Cache folder set to
-/root/.singularity/docker Exploding layer:
-sha256:8ba884070f611d31cb2c42eddb691319dc9facf5e0ec67672fcfa135181ab3df.tar.gz
-Exploding layer:
-sha256:306a59f4aef08d54a38e1747ff77fc446103a3ee3aea83676db59d6d625b02a1.tar.gz
-User defined %runscript found! Taking priority. Adding files to
-container Adding environment to container Running post scriptlet + echo
-‘The post section is where you can install, and configure your
-container.’ The post section is where you can install, and configure
-your container. + mkdir -p /data/bin + mkdir -p /gpfs + mkdir -p /users
-+ mkdir -p /group + mkdir -p /scratch + touch /usr/bin/nvidia-smi Adding
-deffile section labels to container Adding runscript Finalizing
-Singularity container Calculating final size for metadata… Skipping
-checks Singularity container built: centos Cleaning up…</p>
-<pre><code>{: .output}
-
-The result will be a folder called `centos`. We can enter into that folder to learn what we need to install the packages for our image.
-</code></pre>
-<p>sudo singularity shell –writable centos</p>
-<pre><code>
-
-For our exercise lets imagine that we want to use a package that opens a window.
-In particular, we now that we need a package that is called libgraph to get access to the graphics capabilities. The software is not provided by CentOS itself, so we need to compile it. We need to download, compile and install this package. We learn first how to do it and add that learning to the Bootstrap recipe file.
-
-We need:
-
-1. Download &lt;https://www.mirrorservice.org/sites/download.savannah.gnu.org/releases/libgraph/libgraph-1.0.2.tar.gz&gt;, so we need `wget` for that. This is one package that we need to install from yum.
-
-2. We need compilers, and make. So we have to install `gcc`, `gcc-c++` and `make`
-
-3. The next time to try, you notice that you will also need some extra packages provided by EPEL, devel packages from CentOS and EPEL repositories.
-The packages are `SDL-devel` `epel-release` `SDL_image-devel` `compat-guile18-devel` and `guile-devel`.
-
-Trial and error move you from the original recipe to this one (`centos-libgraph.bst`):
-</code></pre>
 </div>
-<div class="section level1">
-<h1 id="singularity-container-with-centos-1">Singularity container with centos<a class="anchor" aria-label="anchor" href="#singularity-container-with-centos-1"></a>
-</h1>
 </div>
-<div class="section level1">
-<h1 id="section-2"></h1>
+<div id="exercise-2-using-singularity-on-the-cluster-non-interactive" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
 </div>
-<div class="section level1">
-<h1 id="this-is-the-bootstrap-file-to-recreate-the-image--1">This is the Bootstrap file to recreate the image.<a class="anchor" aria-label="anchor" href="#this-is-the-bootstrap-file-to-recreate-the-image--1"></a>
-</h1>
+<span class="callout-header">Challenge</span>
+<div id="exercise-2-using-singularity-on-the-cluster-non-interactive" class="callout-inner">
+<h3 class="callout-title">Exercise 2: Using singularity on the cluster
+(Non-interactive)</h3>
+<div class="callout-content">
+<p>Create a script that reads a CSV with official statistics of
+population for US. The file can be downloaded from:</p>
+<pre><code>~$ wget https://www2.census.gov/programs-surveys/popest/datasets/2010-2018/state/detail/SCPRC-EST2018-18+POP-RES.csv</code></pre>
+<p>However, the file is also present in the repository for hands-ons</p>
+<pre><code>~$ git clone https://github.com/WVUHPC/workshops_hands-on.git</code></pre>
+<p>The folder is
+<code>workshops_hands-on/Introduction_HPC/11._Software_Containers_Singularity</code>.
+If you are not familiar with R programming, the script is there too.
+Notice that you cannot write your script to download the CSV file
+directly from the Census Bureau as the compute nodes have no Internet
+access. Write a submission script and submit.</p>
 </div>
-<div class="section level1">
-<h1 id="section-3"></h1>
-<p>Bootstrap: docker From: centos:latest</p>
-<p>%runscript exec echo “The runscript is the containers default runtime
-command!”</p>
-<p>%files</p>
-<p>%environment</p>
-<p>%labels AUTHOR <a href="mailto:username@mail.wvu.edu" class="email">username@mail.wvu.edu</a></p>
-<p>%post echo “The post section is where you can install, and configure
-your container.”</p>
-<p>yum -y install wget make gcc gcc-c++ SDL-devel epel-release yum -y
-update &amp;&amp; yum -y install SDL_image-devel compat-guile18-devel
-guile-devel</p>
-<p>mkdir -p /data/bin mkdir -p /gpfs mkdir -p /users mkdir -p /group
-mkdir -p /scratch touch /usr/bin/nvidia-smi</p>
-<p>cd /data wget <a href="http://www.mirrorservice.org/sites/download.savannah.gnu.org/releases/libgraph/libgraph-1.0.2.tar.gz" class="external-link uri">http://www.mirrorservice.org/sites/download.savannah.gnu.org/releases/libgraph/libgraph-1.0.2.tar.gz</a>
-tar -zxvf libgraph-1.0.2.tar.gz cd libgraph-1.0.2 &amp;&amp; ./configure
-–prefix=/data &amp;&amp; make &amp;&amp; make install</p>
-<pre><code>{: .source}
-
-Notice that we have added a few lines using `yum` to install some packages, we add EPEL on the first line and we use it to install some extra packages on the second line.
-</code></pre>
-<p>yum -y install wget make gcc gcc-c++ SDL-devel epel-release yum -y
-update &amp;&amp; yum -y install SDL_image-devel compat-guile18-devel
-guile-devel</p>
-<pre><code>{: .source}
-
-Finally, we use `wget` to get the sources and build `libgraph`.
-In order to save space on the VM, lets delete the old folder and create a new one with the new recipe.
-</code></pre>
-<p>sudo rm -rf centos sudo singularity build –sandbox centos
-centos-libgraph.bst</p>
-<pre><code>
-
-The command takes longer and at the end you get libgraph installed at `/data`
-The final step will be use that to test that we are able to use libgraph with our application. The application is a couple of very small codes that use libgraph as dependency.
-
-To achieve this we need.
-
-1. Modify the environment variables `PATH` and `LD_LIBRARY_PATH` to point to the locations where libgraph and our binaries will be located.
-
-2. Copy the sources `circles.c` and `julia.c` to the image and compile it.
-
-The final version of the Bootstrap recipe looks like this `centos-final.bst`
-</code></pre>
 </div>
-<div class="section level1">
-<h1 id="singularity-container-with-centos-2">Singularity container with centos<a class="anchor" aria-label="anchor" href="#singularity-container-with-centos-2"></a>
-</h1>
 </div>
-<div class="section level1">
-<h1 id="section-4"></h1>
+<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
+  <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
+</button>
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div class="accordion-body">
+
 </div>
-<div class="section level1">
-<h1 id="this-is-the-bootstrap-file-to-recreate-the-image--2">This is the Bootstrap file to recreate the image.<a class="anchor" aria-label="anchor" href="#this-is-the-bootstrap-file-to-recreate-the-image--2"></a>
-</h1>
 </div>
-<div class="section level1">
-<h1 id="section-5"></h1>
-<p>Bootstrap: docker From: centos:latest</p>
-<p>%runscript exec echo “The runscript is the containers default runtime
-command!”</p>
-<p>%files julia.c circles.c sample.c</p>
-<p>%environment SHELL=/bin/bash export SHELL PATH=/data/bin:<span class="math inline">\(PATH
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="advanced-topics">Advanced topics<a class="anchor" aria-label="anchor" href="#advanced-topics"></a>
+</h2>
+<hr class="half-width">
+<div class="section level3">
+<h3 id="modules-creating-a-private-repository">
+<strong>Modules:</strong> Creating a private repository<a class="anchor" aria-label="anchor" href="#modules-creating-a-private-repository"></a>
+</h3>
+<p>The basic procedure is to locate modules on a folder accessible by
+relevant users and add the variable <code>MODULEPATH</code> to your
+<code>.bashrc</code></p>
+<p><code>MODULEPATH</code> controls the path that the module command
+searches when looking for modulefiles. Typically, it is set to a default
+value by the bootstrap procedure. <code>MODULEPATH</code> can be set
+using ’module use’ or by the module initialization script to search
+group or personal modulefile directories before or after the master
+modulefile directory.</p>
+</div>
+<div class="section level3">
+<h3 id="singularity-creating-your-own-images">
+<strong>Singularity:</strong> Creating your own images<a class="anchor" aria-label="anchor" href="#singularity-creating-your-own-images"></a>
+</h3>
+<p>You can create your own Singularity images and use them on our
+clusters. The only constrain is that images can only be created on your
+own machine as you need root access to create them.</p>
+<p>The procedure that we will show will be executed on a remote machine
+provided by JetStream, it should the same if you have your own Linux
+machine and you have superuser access to it.</p>
+<p>The creation of images is an interactive procedure. You learn how to
+put pieces together and little by little you build your own recipe for
+your image.</p>
+<p>Lets start with a very clean image with centos.</p>
+<p>The minimal recipe will bring an image from Docker with the latest
+version of CentOS. Lets call the file <code>centos.bst</code></p>
+<pre><code># Singularity container with centos
+#
+# This is the Bootstrap file to recreate the image.
+#
+
+Bootstrap: docker
+From: centos:latest
+
+%runscript
+exec echo "The runscript is the containers default runtime command!"
+
+%files
+
+%environment
+
+%labels
+AUTHOR username@mail.wvu.edu
+
+%post
+echo "The post section is where you can install, and configure your container."
+mkdir -p /data/bin
+mkdir -p /gpfs
+mkdir -p /users
+mkdir -p /group
+mkdir -p /scratch
+touch /usr/bin/nvidia-smi</code></pre>
+<p>A few folders are created that help us to link special folders like
+<code>/users</code>, <code>/scratch</code> to the host file system.
+Other than that the image contains a very small but usable Linux CentOS
+machine.</p>
+<p>We start with a writable sandboxed version, the exact command varies
+from machine to machine, but assuming that you can do sudo and the
+command singularity is available for root execute this:</p>
+<pre><code>sudo singularity build --sandbox centos centos.bst</code></pre>
+<pre><code>Using container recipe deffile: centos.bst
+Sanitizing environment
+Adding base Singularity environment to container
+Docker image path: index.docker.io/library/centos:latest
+Cache folder set to /root/.singularity/docker
+Exploding layer: sha256:8ba884070f611d31cb2c42eddb691319dc9facf5e0ec67672fcfa135181ab3df.tar.gz
+Exploding layer: sha256:306a59f4aef08d54a38e1747ff77fc446103a3ee3aea83676db59d6d625b02a1.tar.gz
+User defined %runscript found! Taking priority.
+Adding files to container
+Adding environment to container
+Running post scriptlet
++ echo 'The post section is where you can install, and configure your container.'
+The post section is where you can install, and configure your container.
++ mkdir -p /data/bin
++ mkdir -p /gpfs
++ mkdir -p /users
++ mkdir -p /group
++ mkdir -p /scratch
++ touch /usr/bin/nvidia-smi
+Adding deffile section labels to container
+Adding runscript
+Finalizing Singularity container
+Calculating final size for metadata...
+Skipping checks
+Singularity container built: centos
+Cleaning up...</code></pre>
+<p>The result will be a folder called <code>centos</code>. We can enter
+into that folder to learn what we need to install the packages for our
+image.</p>
+<pre><code>sudo singularity shell --writable centos</code></pre>
+<p>For our exercise lets imagine that we want to use a package that
+opens a window. In particular, we now that we need a package that is
+called libgraph to get access to the graphics capabilities. The software
+is not provided by CentOS itself, so we need to compile it. We need to
+download, compile and install this package. We learn first how to do it
+and add that learning to the Bootstrap recipe file.</p>
+<p>We need:</p>
+<ol style="list-style-type: decimal">
+<li><p>Download <a href="https://www.mirrorservice.org/sites/download.savannah.gnu.org/releases/libgraph/libgraph-1.0.2.tar.gz" class="external-link uri">https://www.mirrorservice.org/sites/download.savannah.gnu.org/releases/libgraph/libgraph-1.0.2.tar.gz</a>,
+so we need <code>wget</code> for that. This is one package that we need
+to install from yum.</p></li>
+<li><p>We need compilers, and make. So we have to install
+<code>gcc</code>, <code>gcc-c++</code> and <code>make</code></p></li>
+<li><p>The next time to try, you notice that you will also need some
+extra packages provided by EPEL, devel packages from CentOS and EPEL
+repositories. The packages are <code>SDL-devel</code>
+<code>epel-release</code> <code>SDL_image-devel</code>
+<code>compat-guile18-devel</code> and <code>guile-devel</code>.</p></li>
+</ol>
+<p>Trial and error move you from the original recipe to this one
+(<code>centos-libgraph.bst</code>):</p>
+<pre><code># Singularity container with centos
+#
+# This is the Bootstrap file to recreate the image.
+#
+
+Bootstrap: docker
+From: centos:latest
+
+%runscript
+exec echo "The runscript is the containers default runtime command!"
+
+%files
+
+%environment
+
+%labels
+AUTHOR username@mail.wvu.edu
+
+%post
+echo "The post section is where you can install, and configure your container."
+
+yum -y install wget make gcc gcc-c++ SDL-devel epel-release
+yum -y update &amp;&amp; yum -y install SDL_image-devel compat-guile18-devel guile-devel
+
+mkdir -p /data/bin
+mkdir -p /gpfs
+mkdir -p /users
+mkdir -p /group
+mkdir -p /scratch
+touch /usr/bin/nvidia-smi
+
+cd /data
+wget https://www.mirrorservice.org/sites/download.savannah.gnu.org/releases/libgraph/libgraph-1.0.2.tar.gz
+tar -zxvf libgraph-1.0.2.tar.gz
+cd libgraph-1.0.2 &amp;&amp; ./configure --prefix=/data &amp;&amp; make &amp;&amp; make install</code></pre>
+<p>Notice that we have added a few lines using <code>yum</code> to
+install some packages, we add EPEL on the first line and we use it to
+install some extra packages on the second line.</p>
+<pre><code>yum -y install wget make gcc gcc-c++ SDL-devel epel-release
+yum -y update &amp;&amp; yum -y install SDL_image-devel compat-guile18-devel guile-devel</code></pre>
+<p>Finally, we use <code>wget</code> to get the sources and build
+<code>libgraph</code>. In order to save space on the VM, lets delete the
+old folder and create a new one with the new recipe.</p>
+<pre><code>sudo rm -rf centos
+sudo singularity build --sandbox centos centos-libgraph.bst</code></pre>
+<p>The command takes longer and at the end you get libgraph installed at
+<code>/data</code> The final step will be use that to test that we are
+able to use libgraph with our application. The application is a couple
+of very small codes that use libgraph as dependency.</p>
+<p>To achieve this we need.</p>
+<ol style="list-style-type: decimal">
+<li><p>Modify the environment variables <code>PATH</code> and
+<code>LD_LIBRARY_PATH</code> to point to the locations where libgraph
+and our binaries will be located.</p></li>
+<li><p>Copy the sources <code>circles.c</code> and <code>julia.c</code>
+to the image and compile it.</p></li>
+</ol>
+<p>The final version of the Bootstrap recipe looks like this
+<code>centos-final.bst</code></p>
+<pre><code># Singularity container with centos
+#
+# This is the Bootstrap file to recreate the image.
+#
+
+Bootstrap: docker
+From: centos:latest
+
+%runscript
+exec echo "The runscript is the containers default runtime command!"
+
+%files
+julia.c
+circles.c
+sample.c
+
+%environment
+SHELL=/bin/bash
+export SHELL
+PATH=/data/bin:$PATH
 export PATH
-LD_LIBRARY_PATH=\)</span>LD_LIBRARY_PATH:/data/lib export
-LD_LIBRARY_PATH</p>
-<p>%labels AUTHOR <a href="mailto:username@mail.wvu.edu" class="email">username@mail.wvu.edu</a></p>
-<p>%post echo “The post section is where you can install, and configure
-your container.” yum -y install wget make gcc gcc-c++ SDL-devel
-epel-release yum -y update &amp;&amp; yum -y install SDL_image-devel
-compat-guile18-devel guile-devel mkdir -p /data/bin mkdir -p /gpfs mkdir
--p /users mkdir -p /group mkdir -p /scratch touch
-/usr/bin/nvidia-smi</p>
-<p>mv /circles.c /julia.c /sample.c /data</p>
-<p>cd /data wget <a href="http://www.mirrorservice.org/sites/download.savannah.gnu.org/releases/libgraph/libgraph-1.0.2.tar.gz" class="external-link uri">http://www.mirrorservice.org/sites/download.savannah.gnu.org/releases/libgraph/libgraph-1.0.2.tar.gz</a>
-tar -zxvf libgraph-1.0.2.tar.gz cd libgraph-1.0.2 &amp;&amp; ./configure
-–prefix=/data &amp;&amp; make &amp;&amp; make install</p>
-<p>cd /data gcc julia.c -o bin/julia -I/data/include -L/data/lib -lgraph
--lm gcc circles.c -o bin/circles -I/data/include -L/data/lib -lgraph -lm
-gcc sample.c -o bin/sample -I/data/include -L/data/lib -lgraph -lm</p>
-<pre><code>{: .source}
+LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/data/lib
+export LD_LIBRARY_PATH
 
-We add a few sample files `sample.c`, `circles.c` and `julia.c` that uses the old `graphics.h` provided by `libgraph`.
+%labels
+AUTHOR username@mail.wvu.edu
 
-The binaries are `sample`, `cicles` and `julia` and they are accessible on the command line.
+%post
+echo "The post section is where you can install, and configure your container."
+yum -y install wget make gcc gcc-c++ SDL-devel epel-release
+yum -y update &amp;&amp; yum -y install SDL_image-devel compat-guile18-devel guile-devel
+mkdir -p /data/bin
+mkdir -p /gpfs
+mkdir -p /users
+mkdir -p /group
+mkdir -p /scratch
+touch /usr/bin/nvidia-smi
 
-When you have crafted a good recipe with the codes and data that you need. The last step is to create a final image. The command for that is below, remembering of deleting the `centos` folder to save space.
-</code></pre>
-<p>sudo rm -rf centos sudo singularity build centos-final.simg
-centos-final.bst ```</p>
+mv /circles.c /julia.c /sample.c /data
+
+cd /data
+wget https://www.mirrorservice.org/sites/download.savannah.gnu.org/releases/libgraph/libgraph-1.0.2.tar.gz
+tar -zxvf libgraph-1.0.2.tar.gz
+cd libgraph-1.0.2 &amp;&amp; ./configure --prefix=/data &amp;&amp; make &amp;&amp; make install
+
+cd /data
+gcc julia.c -o bin/julia -I/data/include -L/data/lib -lgraph -lm
+gcc circles.c -o bin/circles -I/data/include -L/data/lib -lgraph -lm
+gcc sample.c -o bin/sample -I/data/include -L/data/lib -lgraph -lm</code></pre>
+<p>We add a few sample files <code>sample.c</code>,
+<code>circles.c</code> and <code>julia.c</code> that uses the old
+<code>graphics.h</code> provided by <code>libgraph</code>.</p>
+<p>The binaries are <code>sample</code>, <code>cicles</code> and
+<code>julia</code> and they are accessible on the command line.</p>
+<p>When you have crafted a good recipe with the codes and data that you
+need. The last step is to create a final image. The command for that is
+below, remembering of deleting the <code>centos</code> folder to save
+space.</p>
+<pre><code>~$ sudo rm -rf centos
+~$ sudo singularity build centos-final.simg centos-final.bst</code></pre>
 <p>This is the final image. It is not too big, it contains the packages
 that we installed from yum, the sources and binaries for libgraph and
 the sources for the couple of example sources that uses libgraph. The
@@ -3947,19 +4130,19 @@ on your machine and X11 forwarding on your ssh client.</p>
 <div class="callout-inner">
 <div class="callout-content">
 <ul>
-<li>Modules. Use <code>module avail</code> to know all the modules on
-the cluster.</li>
-<li>Modules. Use <code>module load &lt;module_name&gt;</code> to load a
-module.</li>
-<li>Conda. Use <code>conda env list</code> to list the available
-environments.</li>
-<li>Conda. Use <code>conda activate</code> to activate a conda
-environment.</li>
-<li>Singularity. Use <code>singularity shell &lt;container&gt;</code> to
-get a shell inside the container.</li>
-<li>Singularity. Use
+<li><p>Modules. Use <code>module avail</code> to know all the modules on
+the cluster.</p></li>
+<li><p>Modules. Use <code>module load &lt;module_name&gt;</code> to load
+a module.</p></li>
+<li><p>Conda. Use <code>conda env list</code> to list the available
+environments.</p></li>
+<li><p>Conda. Use <code>conda activate</code> to activate a conda
+environment.</p></li>
+<li><p>Singularity. Use <code>singularity shell &lt;container&gt;</code>
+to get a shell inside the container.</p></li>
+<li><p>Singularity. Use
 <code>singularity exec &lt;container&gt; &lt;command&gt;</code> to
-execute a command or script inside the container.</li>
+execute a command or script inside the container.</p></li>
 </ul>
 </div>
 </div>
@@ -3968,7 +4151,8 @@ execute a command or script inside the container.</li>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
-</div></section><section id="aio-301-slurm"><p>Content from <a href="301-slurm.html">Workload Manager: Slurm</a></p>
+</div>
+</section></section><section id="aio-301-slurm"><p>Content from <a href="301-slurm.html">Workload Manager: Slurm</a></p>
 <hr>
 <p>Last updated on 2025-08-13 |
 
@@ -4007,6 +4191,9 @@ manager?”</li>
 </div>
 </div>
 </div>
+<section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+</h2>
+<hr class="half-width">
 <p>Imagine for a moment that you need to execute a large simulation and
 all that you have is the computer that is in front of you. You will
 initiate the simulation by launching the program that will compute it.
@@ -4055,16 +4242,24 @@ resources available. As SLURM is taking the dual role of Resource
 Manager and Scheduler, SLURM calls itself a Workload Manager, a term
 that better embraces the multiple roles taken by this software
 package.</p>
-<blockquote>
-<h2 id="workload-manager-on-wvu-clusters">Workload Manager on WVU
-Clusters</h2>
-<p>All of our clusters use SLURM today. On Thorny Flat, we have a
-compatibility layer so that most Torque/Moab batch scripts will still
-work. If you are new to WVU’s HPC clusters, it makes the most sense to
-learn the SLURM batch commands. See <a href="https://slurm.schedmd.com/quickstart.html" class="external-link">Slurm Quick Start
-Guide</a> for more SLURM information. {: .callout}</p>
-</blockquote>
-<section><h2 class="section-heading" id="what-is-a-batch-script">What is a Batch Script?<a class="anchor" aria-label="anchor" href="#what-is-a-batch-script"></a>
+<div id="workload-manager-on-wvu-clusters" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="workload-manager-on-wvu-clusters" class="callout-inner">
+<h3 class="callout-title">Workload Manager on WVU Clusters</h3>
+<div class="callout-content">
+<p>All of our clusters use Slurm as Workload Manager. On Thorny Flat, we
+have a compatibility layer so that most Torque/Moab batch scripts will
+still work. If you are new to WVU’s HPC clusters, it makes the most
+sense to learn the SLURM batch commands.<br>
+See <a href="https://slurm.schedmd.com/quickstart.html" class="external-link">Slurm Quick
+Start Guide</a> for more SLURM information.</p>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="what-is-a-batch-script">What is a Batch Script?<a class="anchor" aria-label="anchor" href="#what-is-a-batch-script"></a>
 </h2>
 <hr class="half-width">
 <p>The most basic use of the scheduler is to run a command
@@ -4078,14 +4273,10 @@ loaded.</p>
 </h3>
 <p>Let’s discuss the example SLURM script, <code>sleep.sh</code>. Go to
 File Explorer and edit <code>sleep.sh</code></p>
-<div class="codewrapper sourceCode" id="cb1">
-<h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">$</span><span class="op">&gt;</span> cd <span class="va">$HOME</span></span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="ex">$</span><span class="op">&gt;</span> mkdir <span class="ex">SLEEP</span></span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="ex">$</span><span class="op">&gt;</span> cd <span class="ex">SLEEP</span></span>
-<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="ex">$</span><span class="op">&gt;</span> nano <span class="ex">sleep.sh</span></span></code></pre>
-</div>
+<pre><code>~$ cd $HOME
+~$ mkdir SLEEP
+~$ cd SLEEP
+~$ nano sleep.sh</code></pre>
 <p>Write the following in the file with your text editor:</p>
 <pre><code>#!/bin/bash
 
@@ -4175,8 +4366,14 @@ wall time, the scheduler can perform job scheduling more efficiently and
 also reduces occasions where errors can leave the job stalled but still
 taking up resources for the default much longer wall time limit (for
 queue wall time defaults, run <code>squeue</code> command)</p>
-<blockquote>
-<h2 id="walltime-test-exercise">Walltime test exercise</h2>
+<div id="walltime-test-exercise" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="walltime-test-exercise" class="callout-inner">
+<h3 class="callout-title">Walltime test exercise</h3>
+<div class="callout-content">
 <p>Resource requests are typically binding. If you exceed them, your job
 will be killed. Let’s use wall time as an example. We will request 30
 seconds of wall time, and attempt to run a job for two minutes.</p>
@@ -4191,8 +4388,7 @@ echo 'This script is running on:'
 hostname
 echo 'The date is :'
 date
-sleep 120
-</code></pre>
+sleep 120</code></pre>
 <p>Submit the job and wait for it to finish. Once it has finished, check
 the error log file. In the error file, there will be</p>
 <pre><code>This script is running on:
@@ -4200,10 +4396,10 @@ This script is running on:
 taicm002.hpc.wvu.edu
 The date is :
 Thu Jul 20 19:25:21 EDT 2023
-slurmstepd: error: *** JOB 453582 ON taicm002 CANCELLED AT 2023-07-20T19:26:33 DUE TO TIME LIMIT ***
-</code></pre>
-<blockquote>
-<h2 id="what-happened">What happened?</h2>
+slurmstepd: error: *** JOB 453582 ON taicm002 CANCELLED AT 2023-07-20T19:26:33 DUE TO TIME LIMIT ***</code></pre>
+<div class="section level2">
+<h2 id="what-happened">What happened?<a class="anchor" aria-label="anchor" href="#what-happened"></a>
+</h2>
 <p>Our job was killed for exceeding the amount of resources it
 requested. Although this appears harsh, this is a feature. Strict
 adherence to resource requests allows the scheduler to find the best
@@ -4215,9 +4411,10 @@ requested resources or kill the job outright. Other jobs on the node
 will be unaffected. This means that one user cannot mess up the
 experience of others, the only jobs affected by a mistake in scheduling
 will be their own.</p>
-</blockquote>
-<p>{: .solution} {: .challenge }</p>
-</blockquote>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="section level4">
 <h4 id="compute-resources-and-parameters">Compute Resources and Parameters<a class="anchor" aria-label="anchor" href="#compute-resources-and-parameters"></a>
@@ -4262,25 +4459,32 @@ expect.</p>
 manual page for the <code>sbatch</code> function. This will also show
 you what the default settings are.</p>
 <pre><code>$&gt; man sbatch</code></pre>
-<blockquote>
-<h2 id="setting-up-email-notifications">Setting up email
-notifications</h2>
+<div id="setting-up-email-notifications" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="setting-up-email-notifications" class="callout-inner">
+<h3 class="callout-title">Setting up email notifications</h3>
+<div class="callout-content">
 <p>Jobs on an HPC system might run for days or even weeks. We probably
 have better things to do than constantly check on the status of our job
 with <code>squeue</code>. Looking at the <a href="https://slurm.schedmd.com/sbatch.html" class="external-link">online documentation for
 <code>sbatch</code></a> (you can also google “sbatch slurm”), can you
 set up our test job to send you an email when it finishes?</p>
 <p>Hint: you will need to use the <code>--mail-user</code> and
-<code>--mail-type</code> options. {: .challenge}</p>
-</blockquote>
+<code>--mail-type</code> options.</p>
 </div>
 </div>
-</section><div class="section level1">
-<h1 id="running-a-batch-job-two-methods">Running a batch job (two methods)<a class="anchor" aria-label="anchor" href="#running-a-batch-job-two-methods"></a>
-</h1>
-<div class="section level2">
-<h2 id="submit-jobs-with-job-composer-on-ondemand">Submit Jobs with job composer on OnDemand<a class="anchor" aria-label="anchor" href="#submit-jobs-with-job-composer-on-ondemand"></a>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="running-a-batch-job-two-methods">Running a batch job (two methods)<a class="anchor" aria-label="anchor" href="#running-a-batch-job-two-methods"></a>
 </h2>
+<hr class="half-width">
+<div class="section level3">
+<h3 id="submit-jobs-with-job-composer-on-ondemand">Submit Jobs with job composer on OnDemand<a class="anchor" aria-label="anchor" href="#submit-jobs-with-job-composer-on-ondemand"></a>
+</h3>
 <p>OnDemand also has a tool for job creation and submission to the batch
 system. The same information as above applies since it still uses the
 same underlying queue system. In the Job Composer, you can create a new
@@ -4301,25 +4505,24 @@ top of the page.</p>
 the one you are on in the shell) under Jobs, select Active Jobs. You can
 filter by your jobs, your group’s jobs, and all jobs.</p>
 </div>
-<div class="section level2">
-<h2 id="submitting-jobs-via-the-command-line">Submitting Jobs via the command line<a class="anchor" aria-label="anchor" href="#submitting-jobs-via-the-command-line"></a>
-</h2>
+<div class="section level3">
+<h3 id="submitting-jobs-via-the-command-line">Submitting Jobs via the command line<a class="anchor" aria-label="anchor" href="#submitting-jobs-via-the-command-line"></a>
+</h3>
 <p>To submit this job to the scheduler, we use the <code>sbatch</code>
 command.</p>
-<pre><code>$&gt; sbatch sleep.sh
+<pre><code>~$ sbatch sleep.sh
 Submitted batch job 453594
-$&gt;</code></pre>
+~$</code></pre>
 <p>The number that first appears is your Job ID. When the job is
 completed, you will get two files: an Output and an Error file (even if
 there is no errors). They will be named {JobName}.o{JobID} and
 {JobName}.e{JobID} respectively.</p>
 <p>And that’s all we need to do to submit a job. To check on our job’s
 status, we use the command <code>squeue</code>.</p>
-<pre><code>$&gt; squeue -u $USER
+<pre><code>~$ squeue -u $USER
              JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
             453594   standby test_job gufranco  R       0:34      1 taicm009
 </code></pre>
-<p>{: .output}</p>
 <p>We can see all the details of our job, most importantly if it is in
 the “R” or “RUNNING” state. Sometimes our jobs might need to wait in a
 queue (“PD”) or have an error. The best way to check our job’s status is
@@ -4327,9 +4530,9 @@ with <code>squeue</code>. It is easiest to view just your own jobs in
 the queue with the <code>squeue -u $USER</code>. Otherwise, you get the
 entire queue.</p>
 </div>
-<div class="section level2">
-<h2 id="partitions-also-known-as-queues">Partitions (Also known as queues)<a class="anchor" aria-label="anchor" href="#partitions-also-known-as-queues"></a>
+</section><section><h2 class="section-heading" id="partitions-also-known-as-queues">Partitions (Also known as queues)<a class="anchor" aria-label="anchor" href="#partitions-also-known-as-queues"></a>
 </h2>
+<hr class="half-width">
 <p>There are usually a number of available partitions (Other resource
 managers call them queues) to use on the HPC clusters. Each cluster has
 separate partitions. The same compute node can be associated with
@@ -4337,52 +4540,67 @@ multiple partitions Your job will be routed to the appropriate compute
 node based on the list of nodes associated with the partition, the wall
 time, and the computational resources requested. To get the list of
 partitions on the cluster, execute:</p>
-<div class="codewrapper sourceCode" id="cb8">
-<h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="ex">$</span><span class="op">&gt;</span> sinfo <span class="ex">-s</span></span>
-<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="ex">PARTITION</span>       AVAIL  TIMELIMIT   NODES<span class="er">(</span><span class="ex">A/I/O/T</span><span class="kw">)</span> <span class="ex">NODELIST</span></span>
-<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="ex">standby*</span>           up    4:00:00      94/71/2/167 taicm<span class="pp">[</span><span class="ss">001</span><span class="pp">-</span><span class="ss">009</span><span class="pp">]</span>,tarcl100,tarcs<span class="pp">[</span><span class="ss">100,200</span><span class="pp">-</span><span class="ss">206,300</span><span class="pp">-</span><span class="ss">304</span><span class="pp">]</span>,tbdcx001,tbmcs<span class="pp">[</span><span class="ss">001</span><span class="pp">-</span><span class="ss">011,100</span><span class="pp">-</span><span class="ss">103</span><span class="pp">]</span>,tbpcm200,tbpcs001,tcbcx100,tcdcx100,tcgcx300,tcocm<span class="pp">[</span><span class="ss">100</span><span class="pp">-</span><span class="ss">104</span><span class="pp">]</span>,tcocs<span class="pp">[</span><span class="ss">001</span><span class="pp">-</span><span class="ss">064,100</span><span class="pp">]</span>,tcocx<span class="pp">[</span><span class="ss">001</span><span class="pp">-</span><span class="ss">003</span><span class="pp">]</span>,tcscm300,tjscl100,tjscm001,tmmcm<span class="pp">[</span><span class="ss">100</span><span class="pp">-</span><span class="ss">108</span><span class="pp">]</span>,tngcm200,tpmcm<span class="pp">[</span><span class="ss">001</span><span class="pp">-</span><span class="ss">006</span><span class="pp">]</span>,tsacs001,tsdcl<span class="pp">[</span><span class="ss">001</span><span class="pp">-</span><span class="ss">002</span><span class="pp">]</span>,tsscl<span class="pp">[</span><span class="ss">001</span><span class="pp">-</span><span class="ss">002</span><span class="pp">]</span>,ttmcm<span class="pp">[</span><span class="ss">100</span><span class="pp">-</span><span class="ss">101</span><span class="pp">]</span>,tzecl<span class="pp">[</span><span class="ss">100</span><span class="pp">-</span><span class="ss">107</span><span class="pp">]</span>,tzecs<span class="pp">[</span><span class="ss">100</span><span class="pp">-</span><span class="ss">115</span><span class="pp">]</span></span>
-<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a><span class="ex">comm_small_day</span>     up 1-00:00:00        59/5/1/65 tcocs<span class="pp">[</span><span class="ss">001</span><span class="pp">-</span><span class="ss">064,100</span><span class="pp">]</span></span>
-<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a><span class="ex">comm_small_week</span>    up 7-00:00:00        59/5/1/65 tcocs<span class="pp">[</span><span class="ss">001</span><span class="pp">-</span><span class="ss">064,100</span><span class="pp">]</span></span>
-<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a><span class="ex">comm_med_day</span>       up 1-00:00:00          5/0/0/5 tcocm<span class="pp">[</span><span class="ss">100</span><span class="pp">-</span><span class="ss">104</span><span class="pp">]</span></span>
-<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a><span class="ex">comm_med_week</span>      up 7-00:00:00          5/0/0/5 tcocm<span class="pp">[</span><span class="ss">100</span><span class="pp">-</span><span class="ss">104</span><span class="pp">]</span></span>
-<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a><span class="ex">comm_xl_week</span>       up 7-00:00:00          3/0/0/3 tcocx<span class="pp">[</span><span class="ss">001</span><span class="pp">-</span><span class="ss">003</span><span class="pp">]</span></span>
-<span id="cb8-9"><a href="#cb8-9" tabindex="-1"></a><span class="ex">comm_gpu_inter</span>     up    4:00:00         8/1/2/11 tbegq<span class="pp">[</span><span class="ss">200</span><span class="pp">-</span><span class="ss">202</span><span class="pp">]</span>,tbmgq<span class="pp">[</span><span class="ss">001,100</span><span class="pp">]</span>,tcogq<span class="pp">[</span><span class="ss">001</span><span class="pp">-</span><span class="ss">006</span><span class="pp">]</span></span>
-<span id="cb8-10"><a href="#cb8-10" tabindex="-1"></a><span class="ex">comm_gpu_week</span>      up 7-00:00:00          5/0/1/6 tcogq<span class="pp">[</span><span class="ss">001</span><span class="pp">-</span><span class="ss">006</span><span class="pp">]</span></span>
-<span id="cb8-11"><a href="#cb8-11" tabindex="-1"></a><span class="ex">aei0001</span>            up   infinite          3/5/1/9 taicm<span class="pp">[</span><span class="ss">001</span><span class="pp">-</span><span class="ss">009</span><span class="pp">]</span></span>
-<span id="cb8-12"><a href="#cb8-12" tabindex="-1"></a><span class="ex">alromero</span>           up   infinite        12/2/0/14 tarcl100,tarcs<span class="pp">[</span><span class="ss">100,200</span><span class="pp">-</span><span class="ss">206,300</span><span class="pp">-</span><span class="ss">304</span><span class="pp">]</span></span>
-<span id="cb8-13"><a href="#cb8-13" tabindex="-1"></a><span class="ex">be_gpu</span>             up   infinite          1/1/1/3 tbegq<span class="pp">[</span><span class="ss">200</span><span class="pp">-</span><span class="ss">202</span><span class="pp">]</span></span>
-<span id="cb8-14"><a href="#cb8-14" tabindex="-1"></a><span class="ex">bvpopp</span>             up   infinite          0/1/0/1 tbpcs001</span>
-<span id="cb8-15"><a href="#cb8-15" tabindex="-1"></a><span class="ex">cedumitrescu</span>       up   infinite          1/0/0/1 tcdcx100</span>
-<span id="cb8-16"><a href="#cb8-16" tabindex="-1"></a><span class="ex">cfb0001</span>            up   infinite          0/1/0/1 tcbcx100</span>
-<span id="cb8-17"><a href="#cb8-17" tabindex="-1"></a><span class="ex">cgriffin</span>           up   infinite          1/0/0/1 tcgcx300</span>
-<span id="cb8-18"><a href="#cb8-18" tabindex="-1"></a><span class="ex">chemdept</span>           up   infinite          0/4/0/4 tbmcs<span class="pp">[</span><span class="ss">100</span><span class="pp">-</span><span class="ss">103</span><span class="pp">]</span></span>
-<span id="cb8-19"><a href="#cb8-19" tabindex="-1"></a><span class="ex">chemdept-gpu</span>       up   infinite          1/0/0/1 tbmgq100</span>
-<span id="cb8-20"><a href="#cb8-20" tabindex="-1"></a><span class="ex">cs00048</span>            up   infinite          0/1/0/1 tcscm300</span>
-<span id="cb8-21"><a href="#cb8-21" tabindex="-1"></a><span class="ex">jaspeir</span>            up   infinite          0/2/0/2 tjscl100,tjscm001</span>
-<span id="cb8-22"><a href="#cb8-22" tabindex="-1"></a><span class="ex">jbmertz</span>            up   infinite        3/14/0/17 tbmcs<span class="pp">[</span><span class="ss">001</span><span class="pp">-</span><span class="ss">011,100</span><span class="pp">-</span><span class="ss">103</span><span class="pp">]</span>,tbmgq<span class="pp">[</span><span class="ss">001,100</span><span class="pp">]</span></span>
-<span id="cb8-23"><a href="#cb8-23" tabindex="-1"></a><span class="ex">mamclaughlin</span>       up   infinite          1/8/0/9 tmmcm<span class="pp">[</span><span class="ss">100</span><span class="pp">-</span><span class="ss">108</span><span class="pp">]</span></span>
-<span id="cb8-24"><a href="#cb8-24" tabindex="-1"></a><span class="ex">ngarapat</span>           up   infinite          0/1/0/1 tngcm200</span>
-<span id="cb8-25"><a href="#cb8-25" tabindex="-1"></a><span class="ex">pmm0026</span>            up   infinite          0/6/0/6 tpmcm<span class="pp">[</span><span class="ss">001</span><span class="pp">-</span><span class="ss">006</span><span class="pp">]</span></span>
-<span id="cb8-26"><a href="#cb8-26" tabindex="-1"></a><span class="ex">sbs0016</span>            up   infinite          0/2/0/2 tsscl<span class="pp">[</span><span class="ss">001</span><span class="pp">-</span><span class="ss">002</span><span class="pp">]</span></span>
-<span id="cb8-27"><a href="#cb8-27" tabindex="-1"></a><span class="ex">spdifazio</span>          up   infinite          0/2/0/2 tsdcl<span class="pp">[</span><span class="ss">001</span><span class="pp">-</span><span class="ss">002</span><span class="pp">]</span></span>
-<span id="cb8-28"><a href="#cb8-28" tabindex="-1"></a><span class="ex">tdmusho</span>            up   infinite          1/5/0/6 taicm<span class="pp">[</span><span class="ss">001</span><span class="pp">-</span><span class="ss">004</span><span class="pp">]</span>,ttmcm<span class="pp">[</span><span class="ss">100</span><span class="pp">-</span><span class="ss">101</span><span class="pp">]</span></span>
-<span id="cb8-29"><a href="#cb8-29" tabindex="-1"></a><span class="ex">vyakkerman</span>         up   infinite          1/0/0/1 tsacs001</span>
-<span id="cb8-30"><a href="#cb8-30" tabindex="-1"></a><span class="ex">zbetienne</span>          up   infinite        6/18/0/24 tzecl<span class="pp">[</span><span class="ss">100</span><span class="pp">-</span><span class="ss">107</span><span class="pp">]</span>,tzecs<span class="pp">[</span><span class="ss">100</span><span class="pp">-</span><span class="ss">115</span><span class="pp">]</span></span>
-<span id="cb8-31"><a href="#cb8-31" tabindex="-1"></a><span class="ex">zbetienne_large</span>    up   infinite          6/2/0/8 tzecl<span class="pp">[</span><span class="ss">100</span><span class="pp">-</span><span class="ss">107</span><span class="pp">]</span></span>
-<span id="cb8-32"><a href="#cb8-32" tabindex="-1"></a><span class="ex">zbetienne_small</span>    up   infinite        0/16/0/16 tzecs<span class="pp">[</span><span class="ss">100</span><span class="pp">-</span><span class="ss">115</span><span class="pp">]</span></span></code></pre>
+<pre><code>	$&gt; sinfo -s
+	PARTITION       AVAIL  TIMELIMIT   NODES(A/I/O/T) NODELIST
+	standby*           up    4:00:00      94/71/2/167 taicm[001-009],tarcl100,tarcs[100,200-206,300-304],tbdcx001,tbmcs[001-011,100-103],tbpcm200,tbpcs001,tcbcx100,tcdcx100,tcgcx300,tcocm[100-104],tcocs[001-064,100],tcocx[001-003],tcscm300,tjscl100,tjscm001,tmmcm[100-108],tngcm200,tpmcm[001-006],tsacs001,tsdcl[001-002],tsscl[001-002],ttmcm[100-101],tzecl[100-107],tzecs[100-115]
+	comm_small_day     up 1-00:00:00        59/5/1/65 tcocs[001-064,100]
+	comm_small_week    up 7-00:00:00        59/5/1/65 tcocs[001-064,100]
+	comm_med_day       up 1-00:00:00          5/0/0/5 tcocm[100-104]
+	comm_med_week      up 7-00:00:00          5/0/0/5 tcocm[100-104]
+	comm_xl_week       up 7-00:00:00          3/0/0/3 tcocx[001-003]
+	comm_gpu_inter     up    4:00:00         8/1/2/11 tbegq[200-202],tbmgq[001,100],tcogq[001-006]
+	comm_gpu_week      up 7-00:00:00          5/0/1/6 tcogq[001-006]
+	aei0001            up   infinite          3/5/1/9 taicm[001-009]
+	alromero           up   infinite        12/2/0/14 tarcl100,tarcs[100,200-206,300-304]
+	be_gpu             up   infinite          1/1/1/3 tbegq[200-202]
+	bvpopp             up   infinite          0/1/0/1 tbpcs001
+	cedumitrescu       up   infinite          1/0/0/1 tcdcx100
+	cfb0001            up   infinite          0/1/0/1 tcbcx100
+	cgriffin           up   infinite          1/0/0/1 tcgcx300
+	chemdept           up   infinite          0/4/0/4 tbmcs[100-103]
+	chemdept-gpu       up   infinite          1/0/0/1 tbmgq100
+	cs00048            up   infinite          0/1/0/1 tcscm300
+	jaspeir            up   infinite          0/2/0/2 tjscl100,tjscm001
+	jbmertz            up   infinite        3/14/0/17 tbmcs[001-011,100-103],tbmgq[001,100]
+	mamclaughlin       up   infinite          1/8/0/9 tmmcm[100-108]
+	ngarapat           up   infinite          0/1/0/1 tngcm200
+	pmm0026            up   infinite          0/6/0/6 tpmcm[001-006]
+	sbs0016            up   infinite          0/2/0/2 tsscl[001-002]
+	spdifazio          up   infinite          0/2/0/2 tsdcl[001-002]
+	tdmusho            up   infinite          1/5/0/6 taicm[001-004],ttmcm[100-101]
+	vyakkerman         up   infinite          1/0/0/1 tsacs001
+	zbetienne          up   infinite        6/18/0/24 tzecl[100-107],tzecs[100-115]
+	zbetienne_large    up   infinite          6/2/0/8 tzecl[100-107]
+	zbetienne_small    up   infinite        0/16/0/16 tzecs[100-115]</code></pre>
+<div id="exercise-submitting-resource-requests" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
 </div>
-<blockquote>
-<h2 id="submitting-resource-requests">Submitting resource requests</h2>
+<span class="callout-header">Challenge</span>
+<div id="exercise-submitting-resource-requests" class="callout-inner">
+<h3 class="callout-title">Exercise: Submitting resource requests</h3>
+<div class="callout-content">
 <p>Submit a job that will use 1 node, 4 processors, and 5 minutes of
-walltime. {: .challenge}</p>
-</blockquote>
+walltime.</p>
 </div>
-<div class="section level2">
-<h2 id="job-environment-variables">Job environment variables<a class="anchor" aria-label="anchor" href="#job-environment-variables"></a>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div class="accordion-body">
+
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="job-environment-variables">Job environment variables<a class="anchor" aria-label="anchor" href="#job-environment-variables"></a>
 </h2>
-<p>SLURM sets multiple environment variables at submission time. The
+<hr class="half-width">
+<p>Slurm sets multiple environment variables at submission time. The
 following variables are commonly used in command files:</p>
 <table class="table">
 <colgroup>
@@ -4406,15 +4624,13 @@ requested|
 |
 `\)</span>SLURM_SUBMIT_DIR<code>|  The directory from which the batch job was submitted. | |</code>$SLURM_ARRAY_TASK_ID`</td>
 </tr></tbody>
-</table>
-</div>
-<div class="section level2">
-<h2 id="canceling-a-job">Canceling a job<a class="anchor" aria-label="anchor" href="#canceling-a-job"></a>
+</table></section><section><h2 class="section-heading" id="canceling-a-job">Canceling a job<a class="anchor" aria-label="anchor" href="#canceling-a-job"></a>
 </h2>
+<hr class="half-width">
 <p>Sometimes we’ll make a mistake and need to cancel a job. This can be
 done with the <code>qdel</code> command. Let’s submit a job and then
 cancel it using its job number.</p>
-<pre><code>$&gt; sbatch sleep.sh
+<pre><code>~$ sbatch sleep.sh
 Submitted batch job 453599
 
 $&gt; $ squeue -u $USER
@@ -4422,56 +4638,50 @@ $&gt; $ squeue -u $USER
             453599   standby test_job gufranco  R       0:47      1 tcocs015</code></pre>
 <p>Now cancel the job with it’s job number. Absence of any job info
 indicates that the job has been successfully canceled.</p>
-<pre><code>$&gt; scancel 453599
-$&gt; squeue -u $USER
+<pre><code>~$ scancel 453599
+~$ squeue -u $USER
              JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)</code></pre>
-</div>
-<div class="section level2">
-<h2 id="detailed-information-about-jobs">Detailed information about jobs<a class="anchor" aria-label="anchor" href="#detailed-information-about-jobs"></a>
+</section><section><h2 class="section-heading" id="detailed-information-about-jobs">Detailed information about jobs<a class="anchor" aria-label="anchor" href="#detailed-information-about-jobs"></a>
 </h2>
+<hr class="half-width">
 <p>The information provided by the command <code>squeue</code> is
 sometimes not enough, and you would like to gather a complete picture of
 the state of a particular job. The command <code>scontrol</code>
 provides a wealth of information about jobs but also partitions and
 nodes. Information about a job:</p>
-<div class="codewrapper sourceCode" id="cb11">
-<h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="ex">$</span> sbatch sleep.sh</span>
-<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="ex">Submitted</span> batch job 453604</span>
-<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a><span class="ex">$</span> scontrol show job 453604</span>
-<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a><span class="va">JobId</span><span class="op">=</span>453604 <span class="va">JobName</span><span class="op">=</span>test_job</span>
-<span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a>   <span class="va">UserId</span><span class="op">=</span>gufranco<span class="kw">(</span><span class="ex">318130</span><span class="kw">)</span> <span class="va">GroupId</span><span class="op">=</span>its-rc-thorny<span class="kw">(</span><span class="ex">1079001</span><span class="kw">)</span> <span class="va">MCS_label</span><span class="op">=</span>N/A</span>
-<span id="cb11-6"><a href="#cb11-6" tabindex="-1"></a>   <span class="va">Priority</span><span class="op">=</span>11588 <span class="va">Nice</span><span class="op">=</span>0 <span class="va">Account</span><span class="op">=</span>its-rc-admin <span class="va">QOS</span><span class="op">=</span>normal</span>
-<span id="cb11-7"><a href="#cb11-7" tabindex="-1"></a>   <span class="va">JobState</span><span class="op">=</span>RUNNING <span class="va">Reason</span><span class="op">=</span>None <span class="va">Dependency</span><span class="op">=</span><span class="va">(</span>null<span class="va">)</span></span>
-<span id="cb11-8"><a href="#cb11-8" tabindex="-1"></a>   <span class="va">Requeue</span><span class="op">=</span>0 <span class="va">Restarts</span><span class="op">=</span>0 <span class="va">BatchFlag</span><span class="op">=</span>1 <span class="va">Reboot</span><span class="op">=</span>0 <span class="va">ExitCode</span><span class="op">=</span>0:0</span>
-<span id="cb11-9"><a href="#cb11-9" tabindex="-1"></a>   <span class="va">RunTime</span><span class="op">=</span>00:00:19 <span class="va">TimeLimit</span><span class="op">=</span>00:04:00 <span class="va">TimeMin</span><span class="op">=</span>N/A</span>
-<span id="cb11-10"><a href="#cb11-10" tabindex="-1"></a>   <span class="va">SubmitTime</span><span class="op">=</span>2023-07-20T20:39:15 <span class="va">EligibleTime</span><span class="op">=</span>2023-07-20T20:39:15</span>
-<span id="cb11-11"><a href="#cb11-11" tabindex="-1"></a>   <span class="va">AccrueTime</span><span class="op">=</span>2023-07-20T20:39:15</span>
-<span id="cb11-12"><a href="#cb11-12" tabindex="-1"></a>   <span class="va">StartTime</span><span class="op">=</span>2023-07-20T20:39:15 <span class="va">EndTime</span><span class="op">=</span>2023-07-20T20:43:15 <span class="va">Deadline</span><span class="op">=</span>N/A</span>
-<span id="cb11-13"><a href="#cb11-13" tabindex="-1"></a>   <span class="va">PreemptEligibleTime</span><span class="op">=</span>2023-07-20T20:39:15 <span class="va">PreemptTime</span><span class="op">=</span>None</span>
-<span id="cb11-14"><a href="#cb11-14" tabindex="-1"></a>   <span class="va">SuspendTime</span><span class="op">=</span>None <span class="va">SecsPreSuspend</span><span class="op">=</span>0 <span class="va">LastSchedEval</span><span class="op">=</span>2023-07-20T20:39:15 <span class="va">Scheduler</span><span class="op">=</span>Main</span>
-<span id="cb11-15"><a href="#cb11-15" tabindex="-1"></a>   <span class="va">Partition</span><span class="op">=</span>standby <span class="ex">AllocNode:Sid=trcis001:31864</span></span>
-<span id="cb11-16"><a href="#cb11-16" tabindex="-1"></a>   <span class="va">ReqNodeList</span><span class="op">=</span><span class="va">(</span>null<span class="va">)</span> <span class="va">ExcNodeList</span><span class="op">=</span><span class="va">(</span>null<span class="va">)</span></span>
-<span id="cb11-17"><a href="#cb11-17" tabindex="-1"></a>   <span class="va">NodeList</span><span class="op">=</span>taicm007</span>
-<span id="cb11-18"><a href="#cb11-18" tabindex="-1"></a>   <span class="va">BatchHost</span><span class="op">=</span>taicm007</span>
-<span id="cb11-19"><a href="#cb11-19" tabindex="-1"></a>   <span class="va">NumNodes</span><span class="op">=</span>1 <span class="va">NumCPUs</span><span class="op">=</span>2 <span class="va">NumTasks</span><span class="op">=</span>2 <span class="ex">CPUs/Task=1</span> ReqB:S:C:T=0:0:<span class="pp">*</span>:<span class="pp">*</span></span>
-<span id="cb11-20"><a href="#cb11-20" tabindex="-1"></a>   <span class="va">TRES</span><span class="op">=</span>cpu=2,node=1,billing=2</span>
-<span id="cb11-21"><a href="#cb11-21" tabindex="-1"></a>   <span class="ex">Socks/Node=*</span> NtasksPerN:B:S:C=2:0:<span class="pp">*</span>:<span class="pp">*</span> CoreSpec=<span class="pp">*</span></span>
-<span id="cb11-22"><a href="#cb11-22" tabindex="-1"></a>   <span class="va">MinCPUsNode</span><span class="op">=</span>2 <span class="va">MinMemoryNode</span><span class="op">=</span>0 <span class="va">MinTmpDiskNode</span><span class="op">=</span>0</span>
-<span id="cb11-23"><a href="#cb11-23" tabindex="-1"></a>   <span class="va">Features</span><span class="op">=</span><span class="va">(</span>null<span class="va">)</span> <span class="va">DelayBoot</span><span class="op">=</span>00:00:00</span>
-<span id="cb11-24"><a href="#cb11-24" tabindex="-1"></a>   <span class="va">OverSubscribe</span><span class="op">=</span>OK <span class="va">Contiguous</span><span class="op">=</span>0 <span class="va">Licenses</span><span class="op">=</span><span class="va">(</span>null<span class="va">)</span> <span class="va">Network</span><span class="op">=</span><span class="va">(</span>null<span class="va">)</span></span>
-<span id="cb11-25"><a href="#cb11-25" tabindex="-1"></a>   <span class="va">Command</span><span class="op">=</span>/gpfs20/users/gufranco/SLEEP/sleep.sh</span>
-<span id="cb11-26"><a href="#cb11-26" tabindex="-1"></a>   <span class="va">WorkDir</span><span class="op">=</span>/gpfs20/users/gufranco/SLEEP</span>
-<span id="cb11-27"><a href="#cb11-27" tabindex="-1"></a>   <span class="va">StdErr</span><span class="op">=</span>/gpfs20/users/gufranco/SLEEP/slurm-453604.out</span>
-<span id="cb11-28"><a href="#cb11-28" tabindex="-1"></a>   <span class="va">StdIn</span><span class="op">=</span>/dev/null</span>
-<span id="cb11-29"><a href="#cb11-29" tabindex="-1"></a>   <span class="va">StdOut</span><span class="op">=</span>/gpfs20/users/gufranco/SLEEP/slurm-453604.out</span>
-<span id="cb11-30"><a href="#cb11-30" tabindex="-1"></a>   <span class="va">Power</span><span class="op">=</span></span></code></pre>
-</div>
-</div>
-<div class="section level2">
-<h2 id="interactive-jobs">Interactive jobs<a class="anchor" aria-label="anchor" href="#interactive-jobs"></a>
+<pre><code>	$ sbatch sleep.sh
+	Submitted batch job 453604
+	$ scontrol show job 453604
+	JobId=453604 JobName=test_job
+	   UserId=gufranco(318130) GroupId=its-rc-thorny(1079001) MCS_label=N/A
+	   Priority=11588 Nice=0 Account=its-rc-admin QOS=normal
+	   JobState=RUNNING Reason=None Dependency=(null)
+	   Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+	   RunTime=00:00:19 TimeLimit=00:04:00 TimeMin=N/A
+	   SubmitTime=2023-07-20T20:39:15 EligibleTime=2023-07-20T20:39:15
+	   AccrueTime=2023-07-20T20:39:15
+	   StartTime=2023-07-20T20:39:15 EndTime=2023-07-20T20:43:15 Deadline=N/A
+	   PreemptEligibleTime=2023-07-20T20:39:15 PreemptTime=None
+	   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2023-07-20T20:39:15 Scheduler=Main
+	   Partition=standby AllocNode:Sid=trcis001:31864
+	   ReqNodeList=(null) ExcNodeList=(null)
+	   NodeList=taicm007
+	   BatchHost=taicm007
+	   NumNodes=1 NumCPUs=2 NumTasks=2 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
+	   TRES=cpu=2,node=1,billing=2
+	   Socks/Node=* NtasksPerN:B:S:C=2:0:*:* CoreSpec=*
+	   MinCPUsNode=2 MinMemoryNode=0 MinTmpDiskNode=0
+	   Features=(null) DelayBoot=00:00:00
+	   OverSubscribe=OK Contiguous=0 Licenses=(null) Network=(null)
+	   Command=/gpfs20/users/gufranco/SLEEP/sleep.sh
+	   WorkDir=/gpfs20/users/gufranco/SLEEP
+	   StdErr=/gpfs20/users/gufranco/SLEEP/slurm-453604.out
+	   StdIn=/dev/null
+	   StdOut=/gpfs20/users/gufranco/SLEEP/slurm-453604.out
+	   Power=</code></pre>
+</section><section><h2 class="section-heading" id="interactive-jobs">Interactive jobs<a class="anchor" aria-label="anchor" href="#interactive-jobs"></a>
 </h2>
+<hr class="half-width">
 <p>Sometimes, you will need a lot of resources for interactive use.
 Perhaps it’s the first time running an analysis, or we are attempting to
 debug something that went wrong with a previous job.</p>
@@ -4479,22 +4689,11 @@ debug something that went wrong with a previous job.</p>
 Interactive Apps menu.</p>
 <p>To submit an interactive job requesting 4 cores on the partition
 standby and with a wall time of 40 minutes, execute:</p>
-<div class="codewrapper sourceCode" id="cb12">
-<h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="ex">$</span><span class="op">&gt;</span> srun <span class="ex">-p</span> standby <span class="at">-t</span> 40:00 <span class="at">-c</span> 4 <span class="at">--pty</span> bash</span></code></pre>
-</div>
+<pre><code>~$ srun -p standby -t 40:00 -c 4 --pty bash</code></pre>
 <p>Another example includes requesting a GPU compute compute,
 execute:</p>
-<div class="codewrapper sourceCode" id="cb13">
-<h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="ex">$</span><span class="op">&gt;</span> srun <span class="ex">-p</span> comm_gpu_inter <span class="at">-G</span> 1 <span class="at">-t</span> 2:00:00 <span class="at">-c</span> 8 <span class="at">--pty</span> bash</span></code></pre>
-</div>
-</div>
-<div class="section level2">
-<h2 id="job-arrays">Job arrays<a class="anchor" aria-label="anchor" href="#job-arrays"></a>
-</h2>
+<pre><code>~$ srun -p comm_gpu_inter -G 1 -t 2:00:00 -c 8 --pty bash</code></pre>
+<p>` ## Job arrays</p>
 <p>Job arrays offer a mechanism for submitting and managing collections
 of similar jobs quickly and easily; job arrays with many tasks can be
 submitted from a single submission script. Job arrays are very useful
@@ -4502,52 +4701,44 @@ for testing jobs when one parameter is changed or to execute the same
 workflow on a set of samples.</p>
 <p>For our example, we will create a folder FIBONACCI and a submission
 script called <code>fibo.sh</code></p>
-<div class="codewrapper sourceCode" id="cb14">
-<h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="ex">$</span><span class="op">&gt;</span> mkdir <span class="ex">FIBONACCI</span></span>
-<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a><span class="ex">$</span><span class="op">&gt;</span> cd <span class="ex">FIBONACCI/</span></span>
-<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a><span class="ex">$</span><span class="op">&gt;</span> nano <span class="ex">fibo.sh</span></span></code></pre>
-</div>
+<pre><code>~$ mkdir FIBONACCI
+~$ cd FIBONACCI/
+~$ nano fibo.sh</code></pre>
 <p>Write the content of the submission script as follows:</p>
-<div class="codewrapper sourceCode" id="cb15">
-<h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
-<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a></span>
-<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a><span class="co">#SBATCH --partition=standby</span></span>
-<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a><span class="co">#SBATCH --job-name=test_job</span></span>
-<span id="cb15-5"><a href="#cb15-5" tabindex="-1"></a><span class="co">#SBATCH --time=00:03:30</span></span>
-<span id="cb15-6"><a href="#cb15-6" tabindex="-1"></a><span class="co">#SBATCH --nodes=1 --ntasks-per-node=2</span></span>
-<span id="cb15-7"><a href="#cb15-7" tabindex="-1"></a><span class="co">#SBATCH --array 1-10</span></span>
-<span id="cb15-8"><a href="#cb15-8" tabindex="-1"></a></span>
-<span id="cb15-9"><a href="#cb15-9" tabindex="-1"></a><span class="co"># Static input for N</span></span>
-<span id="cb15-10"><a href="#cb15-10" tabindex="-1"></a><span class="va">N</span><span class="op">=</span>10</span>
-<span id="cb15-11"><a href="#cb15-11" tabindex="-1"></a></span>
-<span id="cb15-12"><a href="#cb15-12" tabindex="-1"></a><span class="co"># First Number of the</span></span>
-<span id="cb15-13"><a href="#cb15-13" tabindex="-1"></a><span class="co"># Fibonacci Series</span></span>
-<span id="cb15-14"><a href="#cb15-14" tabindex="-1"></a><span class="va">a</span><span class="op">=</span><span class="va">$SLURM_ARRAY_TASK_ID</span></span>
-<span id="cb15-15"><a href="#cb15-15" tabindex="-1"></a></span>
-<span id="cb15-16"><a href="#cb15-16" tabindex="-1"></a><span class="co"># Second Number of the</span></span>
-<span id="cb15-17"><a href="#cb15-17" tabindex="-1"></a><span class="co"># Fibonacci Series</span></span>
-<span id="cb15-18"><a href="#cb15-18" tabindex="-1"></a><span class="va">b</span><span class="op">=</span><span class="kw">`</span><span class="fu">expr</span> <span class="va">$SLURM_ARRAY_TASK_ID</span> + 1<span class="kw">`</span></span>
-<span id="cb15-19"><a href="#cb15-19" tabindex="-1"></a></span>
-<span id="cb15-20"><a href="#cb15-20" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"10 first elements in the Fibonacci Sequence."</span></span>
-<span id="cb15-21"><a href="#cb15-21" tabindex="-1"></a><span class="bu">echo</span> <span class="st">""</span></span>
-<span id="cb15-22"><a href="#cb15-22" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"Starting with </span><span class="va">$a</span><span class="st"> and </span><span class="va">$b</span><span class="st">"</span></span>
-<span id="cb15-23"><a href="#cb15-23" tabindex="-1"></a><span class="bu">echo</span> <span class="st">""</span></span>
-<span id="cb15-24"><a href="#cb15-24" tabindex="-1"></a></span>
-<span id="cb15-25"><a href="#cb15-25" tabindex="-1"></a><span class="cf">for</span> <span class="kw">((</span> <span class="va">i</span><span class="op">=</span><span class="dv">0</span><span class="kw">;</span> <span class="va">i</span><span class="op">&lt;</span><span class="va">N</span><span class="kw">;</span> <span class="va">i</span><span class="op">++</span> <span class="kw">))</span></span>
-<span id="cb15-26"><a href="#cb15-26" tabindex="-1"></a><span class="cf">do</span></span>
-<span id="cb15-27"><a href="#cb15-27" tabindex="-1"></a>    <span class="bu">echo</span> <span class="at">-n</span> <span class="st">"</span><span class="va">$a</span><span class="st"> "</span></span>
-<span id="cb15-28"><a href="#cb15-28" tabindex="-1"></a>    <span class="va">fn</span><span class="op">=</span><span class="va">$((a</span> <span class="op">+</span> <span class="va">b))</span></span>
-<span id="cb15-29"><a href="#cb15-29" tabindex="-1"></a>    <span class="va">a</span><span class="op">=</span><span class="va">$b</span></span>
-<span id="cb15-30"><a href="#cb15-30" tabindex="-1"></a>    <span class="va">b</span><span class="op">=</span><span class="va">$fn</span></span>
-<span id="cb15-31"><a href="#cb15-31" tabindex="-1"></a><span class="cf">done</span></span>
-<span id="cb15-32"><a href="#cb15-32" tabindex="-1"></a><span class="co"># End of for loop</span></span>
-<span id="cb15-33"><a href="#cb15-33" tabindex="-1"></a><span class="bu">echo</span> <span class="st">""</span></span>
-<span id="cb15-34"><a href="#cb15-34" tabindex="-1"></a><span class="fu">sleep</span> 60</span></code></pre>
-</div>
+<pre><code>	#!/bin/bash
+
+	#SBATCH --partition=standby
+	#SBATCH --job-name=test_job
+	#SBATCH --time=00:03:30
+	#SBATCH --nodes=1 --ntasks-per-node=2
+	#SBATCH --array 1-10
+
+	# Static input for N
+	N=10
+
+	# First Number of the
+	# Fibonacci Series
+	a=$SLURM_ARRAY_TASK_ID
+
+	# Second Number of the
+	# Fibonacci Series
+	b=`expr $SLURM_ARRAY_TASK_ID + 1`
+
+	echo "10 first elements in the Fibonacci Sequence."
+	echo ""
+	echo "Starting with $a and $b"
+	echo ""
+
+	for (( i=0; i&lt;N; i++ ))
+	do
+	    echo -n "$a "
+	    fn=$((a + b))
+	    a=$b
+	    b=$fn
+	done
+	# End of for loop
+	echo ""
+	sleep 60</code></pre>
 <p>The array index values on job arrays are specified using the
 <code>--array</code> or <code>-a</code> option of the
 <code>sbatch</code> command. All the jobs in the job array will have the
@@ -4556,36 +4747,26 @@ same variables except for the environment variable
 value. This variable can redirect the workflow to a different folder or
 execute the simulation with different parameters.</p>
 <p>Submit the job array:</p>
-<div class="codewrapper sourceCode" id="cb16">
-<h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="ex">$</span><span class="op">&gt;</span> sbatch <span class="ex">fibo.sh</span></span>
-<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a><span class="ex">Submitted</span> batch job 453632</span>
-<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a><span class="ex">$</span><span class="op">&gt;</span> squeue <span class="ex">-u</span> <span class="va">$USER</span></span>
-<span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a>         <span class="ex">JOBID</span> PARTITION     NAME     USER ST       TIME  NODES NODELIST<span class="er">(</span><span class="ex">REASON</span><span class="kw">)</span></span>
-<span id="cb16-5"><a href="#cb16-5" tabindex="-1"></a>      <span class="ex">453632_1</span>   standby test_job gufranco  R       0:03      1 taicm007</span>
-<span id="cb16-6"><a href="#cb16-6" tabindex="-1"></a>      <span class="ex">453632_2</span>   standby test_job gufranco  R       0:03      1 taicm007</span>
-<span id="cb16-7"><a href="#cb16-7" tabindex="-1"></a>      <span class="ex">453632_3</span>   standby test_job gufranco  R       0:03      1 taicm007</span>
-<span id="cb16-8"><a href="#cb16-8" tabindex="-1"></a>      <span class="ex">453632_4</span>   standby test_job gufranco  R       0:03      1 taicm007</span>
-<span id="cb16-9"><a href="#cb16-9" tabindex="-1"></a>      <span class="ex">453632_5</span>   standby test_job gufranco  R       0:03      1 taicm007</span>
-<span id="cb16-10"><a href="#cb16-10" tabindex="-1"></a>      <span class="ex">453632_6</span>   standby test_job gufranco  R       0:03      1 taicm007</span>
-<span id="cb16-11"><a href="#cb16-11" tabindex="-1"></a>      <span class="ex">453632_7</span>   standby test_job gufranco  R       0:03      1 taicm007</span>
-<span id="cb16-12"><a href="#cb16-12" tabindex="-1"></a>      <span class="ex">453632_8</span>   standby test_job gufranco  R       0:03      1 taicm007</span>
-<span id="cb16-13"><a href="#cb16-13" tabindex="-1"></a>      <span class="ex">453632_9</span>   standby test_job gufranco  R       0:03      1 taicm007</span>
-<span id="cb16-14"><a href="#cb16-14" tabindex="-1"></a>     <span class="ex">453632_10</span>   standby test_job gufranco  R       0:03      1 taicm007</span></code></pre>
-</div>
+<pre><code>~$ sbatch fibo.sh
+Submitted batch job 453632
+~$ squeue -u $USER
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+          453632_1   standby test_job gufranco  R       0:03      1 taicm007
+          453632_2   standby test_job gufranco  R       0:03      1 taicm007
+          453632_3   standby test_job gufranco  R       0:03      1 taicm007
+          453632_4   standby test_job gufranco  R       0:03      1 taicm007
+          453632_5   standby test_job gufranco  R       0:03      1 taicm007
+          453632_6   standby test_job gufranco  R       0:03      1 taicm007
+          453632_7   standby test_job gufranco  R       0:03      1 taicm007
+          453632_8   standby test_job gufranco  R       0:03      1 taicm007
+          453632_9   standby test_job gufranco  R       0:03      1 taicm007
+         453632_10   standby test_job gufranco  R       0:03      1 taicm007</code></pre>
 <p>The job submission will create ten jobs When the jobs finish, their
 output will be in files <code>slurm-XXX</code>. For example:</p>
-<div class="codewrapper sourceCode" id="cb17">
-<h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="ex">$</span><span class="op">&gt;</span> cat <span class="ex">slurm-453632_7.out</span></span>
-<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a><span class="ex">10</span> first elements in the Fibonacci Sequence</span>
-<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a></span>
-<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a><span class="ex">Starting</span> with 7 and 8</span>
-<span id="cb17-5"><a href="#cb17-5" tabindex="-1"></a></span>
-<span id="cb17-6"><a href="#cb17-6" tabindex="-1"></a><span class="ex">7</span> 8 15 23 38 61 99 160 259 419</span></code></pre>
-</div>
+<p>``` ~$ cat slurm-453632_7.out 10 first elements in the Fibonacci
+Sequence</p>
+<p>Starting with 7 and 8</p>
+<p>7 8 15 23 38 61 99 160 259 419 ~~~</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -4594,15 +4775,15 @@ output will be in files <code>slurm-XXX</code>. For example:</p>
 <div class="callout-inner">
 <div class="callout-content">
 <ul>
-<li>“The scheduler handles how compute resources are shared between
-users.”</li>
-<li>“Everything you do should be run through the scheduler.”</li>
-<li>“A non-interactive job is expressed as a shell script that is
-submitted to the cluster.”</li>
-<li>“Try to adjust the wall time to around 10-20% more than the expected
-time the job should need.”</li>
-<li>“It is a good idea to keep aliases to common torque commands for
-easy execution.”</li>
+<li><p>“The scheduler handles how compute resources are shared between
+users.”</p></li>
+<li><p>“Everything you do should be run through the scheduler.”</p></li>
+<li><p>“A non-interactive job is expressed as a shell script that is
+submitted to the cluster.”</p></li>
+<li><p>“Try to adjust the wall time to around 10-20% more than the
+expected time the job should need.”</p></li>
+<li><p>“It is a good idea to keep aliases to common torque commands for
+easy execution.”</p></li>
 </ul>
 </div>
 </div>
@@ -4611,8 +4792,7 @@ easy execution.”</li>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
-</div>
-</div></section><section id="aio-302-tmux"><p>Content from <a href="302-tmux.html">Terminal Multiplexing: tmux</a></p>
+</section></section><section id="aio-302-tmux"><p>Content from <a href="302-tmux.html">Terminal Multiplexing: tmux</a></p>
 <hr>
 <p>Last updated on 2025-08-13 |
 
@@ -4857,11 +5037,9 @@ procedure to use copy mode is as follows:</p>
 <ol style="list-style-type: decimal">
 <li><p>Press <strong>C-b [</strong> to enter in copy mode.</p></li>
 <li><p>Move the start/end of text to highlight.</p></li>
-<li><p>Press <strong>C-SPACEBAR</strong> to start selection</p></li>
-</ol>
-<p>Start highlighting text. Selected text changes the color and
-background, so you’ll know if the command worked.</p>
-<ol start="4" style="list-style-type: decimal">
+<li><p>Press <strong>C-SPACEBAR</strong> to start selection. Start
+highlighting text. Selected text changes the color and background, so
+you’ll know if the command worked.</p></li>
 <li><p>Move to the opposite end of the text to copy.</p></li>
 <li><p>Press <strong>ALT-w</strong> to copy selected text into
 <em>tmux</em> clipboard.</p></li>
@@ -4939,10 +5117,9 @@ other repositories that customize <code>tmux</code> in several ways.</p>
 </div>
 <span class="callout-header">Challenge</span>
 <div id="exercise-tmux-sessions-windows-and-panes" class="callout-inner">
-<h3 class="callout-title">Exercise: TMUX Sessions, Windows and
+<h3 class="callout-title">Exercise: tmux Sessions, Windows and
 Panes</h3>
 <div class="callout-content">
-<blockquote>
 <p>This exercise will help you familiarize yourself with the three
 concepts in TMUX.</p>
 <ol style="list-style-type: decimal">
@@ -4958,7 +5135,6 @@ different layouts using <strong>C-b SPACE</strong></p></li>
 sessions, and verify that your windows and panes remain the
 same.</p></li>
 </ol>
-</blockquote>
 </div>
 </div>
 </div>
@@ -4967,7 +5143,7 @@ same.</p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 
 </div>
@@ -5006,7 +5182,7 @@ and check the list of sessions.</p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 
 </div>

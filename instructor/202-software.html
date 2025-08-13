@@ -118,11 +118,11 @@
   Introduction to HPC
 </div>
 
-<aside class="col-md-12 lesson-progress"><div style="width: 40%" class="percentage">
-    40%
+<aside class="col-md-12 lesson-progress"><div style="width: 50%" class="percentage">
+    50%
   </div>
   <div class="progress incubator">
-    <div class="progress-bar incubator" role="progressbar" style="width: 40%" aria-valuenow="40" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar incubator" role="progressbar" style="width: 50%" aria-valuenow="50" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
 </aside><div class="container">
@@ -206,7 +206,7 @@
 <div class="accordion accordion-flush" id="accordionFlush2">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading2">
-        <a href="102-cli.html">1. Command Line Interface: The Shell</a>
+        <a href="101-supercomputing.html">1. Supercomputing: Concepts</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -215,7 +215,16 @@
 <div class="accordion accordion-flush" id="accordionFlush3">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading3">
-        <a href="201-editors.html">2. Terminal-based Text Editors: nano, emacs and vim</a>
+        <a href="102-cli.html">2. Command Line Interface: The Shell</a>
+    </div><!--/div.accordion-header-->
+
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush4">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading4">
+        <a href="201-editors.html">3. Terminal-based Text Editors: nano, emacs and vim</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -224,21 +233,23 @@
 <div class="accordion accordion-flush" id="accordionFlushcurrent">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-headingcurrent">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsecurrent" aria-expanded="true" aria-controls="flush-collapsecurrent">
         <span class="visually-hidden">Current Chapter</span>
         <span class="current-chapter">
-        3. Software on HPC Clusters: modules, conda and containers
+        4. Software on HPC Clusters: modules, conda and containers
         </span>
-      
+      </button>
     </div><!--/div.accordion-header-->
 
-  </div><!--/div.accordion-item-->
-</div><!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush5">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading5">
-        <a href="301-slurm.html">4. Workload Manager: Slurm</a>
-    </div><!--/div.accordion-header-->
+    <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
+      <div class="accordion-body">
+        <ul><li><a href="#introduction">Introduction</a></li>
+<li><a href="#environment-modules">Environment Modules</a></li>
+<li><a href="#conda">Conda</a></li>
+<li><a href="#singularity-containers">Singularity Containers</a></li>
+<li><a href="#advanced-topics">Advanced topics</a></li>
+        </ul></div><!--/div.accordion-body-->
+    </div><!--/div.accordion-collapse-->
 
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
@@ -246,7 +257,16 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="302-tmux.html">5. Terminal Multiplexing: tmux</a>
+        <a href="301-slurm.html">5. Workload Manager: Slurm</a>
+    </div><!--/div.accordion-header-->
+
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush7">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading7">
+        <a href="302-tmux.html">6. Terminal Multiplexing: tmux</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -352,15 +372,13 @@ clusters.”</li>
 <li>“Activate and change conda environments”</li>
 <li>“Get a shell and execute commands inside singularity
 containers.”</li>
-<li>Explain how to use markdown with The Carpentries Workbench</li>
 </ul></div>
 </div>
 </div>
 </div>
 </div>
-<div class="section level1">
-<h1 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a></h1>
-<p>Many software packages are being executed on an HPC cluster daily.
+<section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a></h2>
+<hr class="half-width"><p>Many software packages are being executed on an HPC cluster daily.
 Each area of science uses its own set of software packages. Sometimes,
 the same software package is used in multiple versions, and those
 versions must be available on the same HPC cluster. To solve all these
@@ -368,9 +386,8 @@ challenges, several options have been implemented on HPC clusters. The
 different options offer various levels of isolation from the host
 system, and some of these options are better suited for particular kinds
 of software.</p>
-<div class="section level2">
-<h2 id="environment-modules">Environment Modules<a class="anchor" aria-label="anchor" href="#environment-modules"></a></h2>
-<p><em>Environment modules</em> are a mechanism that easily enables
+</section><section><h2 class="section-heading" id="environment-modules">Environment Modules<a class="anchor" aria-label="anchor" href="#environment-modules"></a></h2>
+<hr class="half-width"><p><em>Environment modules</em> are a mechanism that easily enables
 software by allowing administrators to install non-regular locations and
 the user to adapt his/her environment to access those locations and use
 the software installed there. By changing specific variables on the
@@ -389,8 +406,8 @@ storing values. Those placeholders are called variables and the shell
 commands and shell scripts can be made use of them. Shell variables can
 be created on the shell using the operator <code>=</code>. For
 example:</p>
-<pre><code>$ A=10
-$ B=20</code></pre>
+<pre><code>~$ A=10
+~$ B=20</code></pre>
 <p>Environment variables are shell variables that are exported, i.e.,
 converted into global variables. The shell and many other command line
 programs use a set of variables to control their behavior. Those
@@ -400,21 +417,21 @@ passes data to programs launched in the shell.</p>
 <p>To create an environment variable, you can first to create a variable
 and make it and environment variable using the command
 <code>export</code> followed by the name of the variable.</p>
-<pre><code>$ A=10
-$ B=20
-$ export A
-$ export B</code></pre>
+<pre><code>~$ A=10
+~$ B=20
+~$ export A
+~$ export B</code></pre>
 <p>This procedure can be simplified with a single line that defines and
 export the variable. Example:</p>
-<pre><code>$ export A=10
-$ export B=20</code></pre>
+<pre><code>~$ export A=10
+~$ export B=20</code></pre>
 <p><strong>Environment Variables</strong> control CLI functionality.
 They declare where to search for executable commands, where to search
 for libraries, which language display messages to you, how you prompt
 looks. Beyond the shell itself, <em>environment variables</em> are use
 by many codes to control their own operation.</p>
 <p>You can see all the variables currently defined by executing:</p>
-<pre><code>$ env</code></pre>
+<pre><code>~$ env</code></pre>
 <p>Environment variables are similar to the shell variables that you can
 create of the shell. Shell variables can be used to store data and
 manipulated during the life of the shell session. However, only
@@ -426,7 +443,6 @@ echo A= $A
 echo B= $B
 C=$(( $A + $B ))
 echo C= $C</code></pre>
-<p>{: .source}</p>
 <p>Now create two shell variables and execute the script, do the same
 with environment variables and notice that now the script is able to see
 the variables.</p>
@@ -501,8 +517,14 @@ a given module.</td>
 </tr><tr class="odd"><td align="left">module swap</td>
 <td align="left">Swaps a currently loaded module for an unloaded
 module.</td>
-</tr></tbody></table><blockquote>
-<h3 id="exercise-using-modulefiles">Exercise: Using modulefiles</h3>
+</tr></tbody></table><div id="exercise-using-modulefiles" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="exercise-using-modulefiles" class="callout-inner">
+<h3 class="callout-title">Exercise: Using modulefiles</h3>
+<div class="callout-content">
 <ol style="list-style-type: decimal"><li><p>Check the modules that you currently have and clean (purge) your
 environment from them. Check again and confirm that no module is
 loaded.</p></li>
@@ -511,39 +533,27 @@ itself. Try to get and idea of how old those three components are. For
 python and R, all that you have to do is enter the corresponding command
 (<code>R</code> or <code>python</code>). For GCC you need to use
 <code>gcc --version</code> and see the date of those programs.</p></li>
-<li>
-<p>Now let’s get a newer version of those three components by
+<li><p>Now let’s get a newer version of those three components by
 loading the corresponding modules. Search for the module for Python
 3.10.11, R 4.4.1, and GCC 9.3.0 and load the corresponding modules. To
 make things easier, you can use check the availability of modules just
-in the languages section.</p>
-<pre><code>module avail lang</code></pre>
-<p>{: .source}</p>
+in the languages section.</p></li>
+</ol><pre><code>module avail lang</code></pre>
 <pre><code>module load lang/python/cpython_3.11.3_gcc122 lang/r/4.4.1_gcc122 lang/gcc/12.2.0 </code></pre>
-<p>{: .source}</p>
-</li>
-<li>
-<p>Check again which version of those three components you have now.
+<ol start="4" style="list-style-type: decimal"><li>Check again which version of those three components you have now.
 Notice that in the case of Python 3, the command python still goes
 towards the old Python 2.6.6, as the Python 3.x interpreter is not
 backward compatible with Python 2.x the new command is called
-<code>python3</code>. Check its version by entering the command.</p>
-<pre><code>~$ python3 --version</code></pre>
-<p>{: .source}</p>
-</li>
-<li>
-<p>Clean all of the environment</p>
-<pre><code>~$ module purge</code></pre>
-<p>{: .source}</p>
-</li>
-<li>
-<p>Go back and purge all the modules from your environment. We will
-now explore why it is essential to use a recent compiler. Try to compile
-the code at
+<code>python3</code>. Check its version by entering the command.</li>
+</ol><pre><code>~$ python3 --version</code></pre>
+<ol start="5" style="list-style-type: decimal"><li>Clean all of the environment</li>
+</ol><pre><code>~$ module purge</code></pre>
+<ol start="6" style="list-style-type: decimal"><li>Go back and purge all the modules from your environment. We will now
+explore why it is essential to use a recent compiler. Try to compile the
+code at
 <code>workshops_hands-on/Introduction_HPC/5._Environment_Modules/lambda_c++14.cpp</code>.
-Go to the folder and execute:</p>
-<pre><code>~$ g++ lambda_c++14.cpp</code></pre>
-<p>{: .source}</p>
+Go to the folder and execute:</li>
+</ol><pre><code>~$ g++ lambda_c++14.cpp</code></pre>
 <p>At this point, you should have received a list of errors, that is
 because even if the code is C++ it uses elements of the language that
 were not present at that time on C++ Specification. The code actually
@@ -551,31 +561,38 @@ uses C++14, and only recent versions of GCC allow for these
 declarations. Let’s check how many GCC compilers we have available on
 Thorny Flat.</p>
 <pre><code>~$ module avail lang/gcc</code></pre>
-<p>{: .source}</p>
 <p>Now, from that list, start loading and trying to compile the code as
 indicated above. Which versions of GCC allow you to compile the code?
 Also try the Intel compilers. In the case of the Intel compiler, the
 command to compile the code is:</p>
 <pre><code>~$ icpc lambda_c++14.cpp</code></pre>
-<p>{: .source}</p>
 <p>Try with all the Intel compilers. It will fail with some of them.
 That is because the default standard for the Intel C++ compiler is not
 C++14. You do not need to declare it explicitly, and for Intel Compiler
 Suite 2021, but for older versions, the correct command line is:</p>
 <pre><code>~$ icpc lambda_c++14.cpp -std=c++14</code></pre>
-<p>{: .source}</p>
-</li>
-</ol><p>It should be clearer why modules are an important feature of any HPC
+<p>It should be clearer why modules are an important feature of any HPC
 infrastructure, as it allows you to use several compilers, libraries,
 and packages in different versions. On a normal computer, you usually
 have just one.</p>
-<p>{: .source} {: .challenge}</p>
-</blockquote>
 </div>
 </div>
-<div class="section level2">
-<h2 id="conda">Conda<a class="anchor" aria-label="anchor" href="#conda"></a></h2>
-<p>Conda is an open-source package management system and environment
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div class="accordion-body">
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="conda">Conda<a class="anchor" aria-label="anchor" href="#conda"></a></h2>
+<hr class="half-width"><p>Conda is an open-source package management system and environment
 management system. Conda quickly installs, runs, and updates packages
 and their dependencies. Conda easily creates, saves, loads, and switches
 between environments. It was created for Python programs, but it can
@@ -821,7 +838,6 @@ The following NEW packages will be INSTALLED:
 
 Proceed ([y]/n)?
 </code></pre>
-<p>{: .}</p>
 <p>Conda asks if you want to proceed with the plan::</p>
 <pre><code>Proceed ([y]/n)? y
 Type "y" and press Enter to proceed.</code></pre>
@@ -849,7 +865,7 @@ adding a prefix in parenthesis to indicate which conda environment you
 are using at that moment. To check the environments available,
 execute::</p>
 <pre><code>conda env list</code></pre>
-<p>or::</p>
+<p>or</p>
 <pre><code>conda info --envs</code></pre>
 </div>
 <div class="section level3">
@@ -862,7 +878,7 @@ environment and specify the version of Python that you want::</p>
 <p>You activate the environment::</p>
 <pre><code>conda activate python27</code></pre>
 <p>And verify the Python version::</p>
-<pre><code>$ python --version
+<pre><code>~$ python --version
 Python 2.7.16 :: Anaconda, Inc.</code></pre>
 <p>Conda has packages for versions of python for 2.7, 3.5, 3.6 and
 3.7</p>
@@ -871,18 +887,18 @@ Python 2.7.16 :: Anaconda, Inc.</code></pre>
 <h3 id="managing-packages-and-channels">Managing packages and channels<a class="anchor" aria-label="anchor" href="#managing-packages-and-channels"></a></h3>
 <p>New packages can be installed to existing conda environments. First
 search for packages with::</p>
-<pre><code>conda search mkl</code></pre>
+<pre><code>~$ conda search mkl</code></pre>
 <p>Packages are stored in repositories called <strong>channels</strong>.
 By default, conda search on the <code>pkgs/main</code> channel only.
 However, there are many other packages on several other channels.</p>
 <p>The most prominent channels to search for packages are
 <strong>intel</strong>, <strong>conda-forge</strong> and
 <strong>bioconda</strong> To search for packages there execute::</p>
-<pre><code>conda search -c intel mkl
+<pre><code>~$ conda search -c intel mkl
 
-conda search -c conda-forge nitime
+~$ conda search -c conda-forge nitime
 
-conda search -c bioconda blast</code></pre>
+~$ conda search -c bioconda blast</code></pre>
 <p>Packages can be installed on the current environment with::</p>
 <pre><code>conda install -c conda-forge nitime</code></pre>
 <p>In this case conda will pick the most recent version of the package
@@ -913,478 +929,557 @@ that you want::</p>
   mkl                           2019.3       intel_199  intel
   mkl                           2019.4             243  pkgs/main
   mkl                           2019.4       intel_243  intel
-  mkl                           2019.5       intel_281  intel
-  ~~~
+  mkl                           2019.5       intel_281  intel</code></pre>
+<p>Now, install the package declaring the version and build::</p>
+<pre><code>~$ conda install -c intel mkl=2019.4=intel_243
+Collecting package metadata (current_repodata.json): done
+Solving environment: done
+
+## Package Plan ##
+
+  environment location: /users/gufranco/.conda/envs/test
+
+  added / updated specs:
+    - mkl==2019.4=intel_243
 
 
+The following packages will be downloaded:
 
-Now, install the package declaring the version and build::
-</code></pre>
-<p>$ conda install -c intel mkl=2019.4=intel_243 Collecting package
-metadata (current_repodata.json): done Solving environment: done</p>
+    package                    |            build
+    ---------------------------|-----------------
+    intel-openmp-2019.5        |        intel_281         888 KB  intel
+    mkl-2019.4                 |        intel_243       204.1 MB  intel
+    tbb-2019.8                 |        intel_281         874 KB  intel
+    ------------------------------------------------------------
+                                           Total:       205.8 MB
+
+The following NEW packages will be INSTALLED:
+
+  intel-openmp       intel/linux-64::intel-openmp-2019.5-intel_281
+  mkl                intel/linux-64::mkl-2019.4-intel_243
+  tbb                intel/linux-64::tbb-2019.8-intel_281
+
+
+Proceed ([y]/n)?
+
+
+Downloading and Extracting Packages
+tbb-2019.8           | 874 KB    | #################################################################################################################################### | 100%
+mkl-2019.4           | 204.1 MB  | #################################################################################################################################### | 100%
+intel-openmp-2019.5  | 888 KB    | #################################################################################################################################### | 100%
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done</code></pre>
 </div>
+<div class="section level3">
+<h3 id="creating-a-new-environment-from-a-yml-file">Creating a new environment from a YML file<a class="anchor" aria-label="anchor" href="#creating-a-new-environment-from-a-yml-file"></a></h3>
+<p>You can create your own environment, one easy way of doing that is
+via a YML file that describes the channels and packages that you want on
+your environment. The YML file will look like this, for a simple case
+when you want one env for bowtie2 (bowtie2.yml)</p>
+<pre><code><span>    <span class="va">name</span><span class="op">:</span> <span class="va">thorny</span><span class="op">-</span><span class="va">bowtie2</span></span>
+<span>    <span class="va">channels</span><span class="op">:</span></span>
+<span>      <span class="op">-</span> <span class="va">bioconda</span></span>
+<span>      <span class="op">-</span> <span class="va">conda</span><span class="op">-</span><span class="va">forge</span></span>
+<span>      <span class="op">-</span> <span class="va">defaults</span></span>
+<span>    <span class="va">dependencies</span><span class="op">:</span></span>
+<span>      <span class="op">-</span> <span class="va">bowtie2</span></span></code></pre>
+<p>Another example is this YML file for installing a curated set of
+basic genomics codes that requires just a few dependencies.
+(biocore.yml)</p>
+<pre><code><span><span class="va">name</span><span class="op">:</span> <span class="va">biocode</span></span>
+<span><span class="va">channels</span><span class="op">:</span></span>
+<span>  <span class="op">-</span> <span class="va">bioconda</span></span>
+<span>  <span class="op">-</span> <span class="va">conda</span><span class="op">-</span><span class="va">forge</span></span>
+<span>  <span class="op">-</span> <span class="va">defaults</span></span>
+<span><span class="va">dependencies</span><span class="op">:</span></span>
+<span>  <span class="op">-</span> <span class="va">bamtools</span></span>
+<span>  <span class="op">-</span> <span class="va">bcftools</span></span>
+<span>  <span class="op">-</span> <span class="va">bedtools</span></span>
+<span>  <span class="op">-</span> <span class="va">hmmer</span></span>
+<span>  <span class="op">-</span> <span class="va">muscle</span></span>
+<span>  <span class="op">-</span> <span class="va">raxml</span></span>
+<span>  <span class="op">-</span> <span class="va">samtools</span></span>
+<span>  <span class="op">-</span> <span class="va">sga</span></span>
+<span>  <span class="op">-</span> <span class="va">soapdenovo</span><span class="op">-</span><span class="va">trans</span></span>
+<span>  <span class="op">-</span> <span class="va">soapdenovo2</span></span>
+<span>  <span class="op">-</span> <span class="va">sra</span><span class="op">-</span><span class="va">tools</span></span>
+<span>  <span class="op">-</span> <span class="va">vcftools</span></span>
+<span>  <span class="op">-</span> <span class="va">velvet</span></span></code></pre>
+<p>To create an environment from those YML files you can select one
+location on your scratch folder</p>
+<pre><code>conda env create -p $SCRATCH/bowtie2 -f bowtie2.yml</code></pre>
+<p>or for the biocore.yml</p>
+<pre><code>conda env create -p $SCRATCH/biocore -f biocore.yml</code></pre>
+<p>By default, new environments are created inside your
+<code>$HOME</code> folder on <code>$HOME/.conda</code></p>
 </div>
-<div class="section level2">
-<h2 id="package-plan">Package Plan<a class="anchor" aria-label="anchor" href="#package-plan"></a></h2>
-<p>environment location: /users/gufranco/.conda/envs/test</p>
-<p>added / updated specs: - mkl==2019.4=intel_243</p>
-<p>The following packages will be downloaded:</p>
-<div class="codewrapper sourceCode" id="cb35">
-<h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" tabindex="-1"></a><span class="ex">package</span>                    <span class="kw">|</span>            <span class="ex">build</span></span>
-<span id="cb35-2"><a href="#cb35-2" tabindex="-1"></a><span class="ex">---------------------------</span><span class="kw">|</span><span class="ex">-----------------</span></span>
-<span id="cb35-3"><a href="#cb35-3" tabindex="-1"></a><span class="ex">intel-openmp-2019.5</span>        <span class="kw">|</span>        <span class="ex">intel_281</span>         888 KB  intel</span>
-<span id="cb35-4"><a href="#cb35-4" tabindex="-1"></a><span class="ex">mkl-2019.4</span>                 <span class="kw">|</span>        <span class="ex">intel_243</span>       204.1 MB  intel</span>
-<span id="cb35-5"><a href="#cb35-5" tabindex="-1"></a><span class="ex">tbb-2019.8</span>                 <span class="kw">|</span>        <span class="ex">intel_281</span>         874 KB  intel</span>
-<span id="cb35-6"><a href="#cb35-6" tabindex="-1"></a><span class="ex">------------------------------------------------------------</span></span>
-<span id="cb35-7"><a href="#cb35-7" tabindex="-1"></a>                                       <span class="ex">Total:</span>       205.8 MB</span></code></pre>
-</div>
-<p>The following NEW packages will be INSTALLED:</p>
-<p>intel-openmp intel/linux-64::intel-openmp-2019.5-intel_281 mkl
-intel/linux-64::mkl-2019.4-intel_243 tbb
-intel/linux-64::tbb-2019.8-intel_281</p>
-<p>Proceed ([y]/n)?</p>
-<p>Downloading and Extracting Packages tbb-2019.8 | 874 KB |
-####################################################################################################################################
-| 100% mkl-2019.4 | 204.1 MB |
-####################################################################################################################################
-| 100% intel-openmp-2019.5 | 888 KB |
-####################################################################################################################################
-| 100% Preparing transaction: done Verifying transaction: done Executing
-transaction: done</p>
-<pre><code>
-
-### Creating a new environment from a YML file
-
-You can create your own environment, one easy way of doing that is via a
-YML file that describes the channels and packages that you want on your
-environment. The YML file will look like this, for a simple case when
-you want one env for bowtie2 (bowtie2.yml)
-</code></pre>
-<div class="codewrapper sourceCode" id="cb37">
-<h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" tabindex="-1"></a><span class="ex">name:</span> thorny-bowtie2</span>
-<span id="cb37-2"><a href="#cb37-2" tabindex="-1"></a><span class="ex">channels:</span></span>
-<span id="cb37-3"><a href="#cb37-3" tabindex="-1"></a>  <span class="ex">-</span> bioconda</span>
-<span id="cb37-4"><a href="#cb37-4" tabindex="-1"></a>  <span class="ex">-</span> conda-forge</span>
-<span id="cb37-5"><a href="#cb37-5" tabindex="-1"></a>  <span class="ex">-</span> defaults</span>
-<span id="cb37-6"><a href="#cb37-6" tabindex="-1"></a><span class="ex">dependencies:</span></span>
-<span id="cb37-7"><a href="#cb37-7" tabindex="-1"></a>  <span class="ex">-</span> bowtie2</span></code></pre>
-</div>
-<pre><code>
-
-Another example is this YML file for installing a curated set of basic
-genomics codes that requires just a few dependencies. (biocore.yml)
-</code></pre>
-<p>name: biocode channels: - bioconda - conda-forge - defaults
-dependencies: - bamtools - bcftools - bedtools - hmmer - muscle - raxml
-- samtools - sga - soapdenovo-trans - soapdenovo2 - sra-tools - vcftools
-- velvet</p>
-<pre><code>
-
-To create an environment from those YML files you can select one
-location on your scratch folder
-</code></pre>
-<p>conda env create -p $SCRATCH/bowtie2 -f bowtie2.yml</p>
-<pre><code>
-
-or for the biocore.yml
-</code></pre>
-<p>conda env create -p $SCRATCH/biocore -f biocore.yml</p>
-<pre><code>
-
-By default, new environments are created inside your `$HOME` folder on
-`$HOME/.conda`
-
-### Listing the packages inside one environment
-
-Bowtie2 has a number of dependencies (19 dependencies for 1 package)
+<div class="section level3">
+<h3 id="listing-the-packages-inside-one-environment">Listing the packages inside one environment<a class="anchor" aria-label="anchor" href="#listing-the-packages-inside-one-environment"></a></h3>
+<p>Bowtie2 has a number of dependencies (19 dependencies for 1 package)
 Notice that only bowtie2 comes from bioconda channel. All other packages
-are part of conda-forge, a lower level channel.
-</code></pre>
-<p>$ conda activate <span class="math inline">\(SCRATCH/bowtie2\)</span>
-conda list # packages in environment at /scratch/gufranco/bowtie2: # #
-Name Version Build Channel bowtie2 2.3.4.2 py36h2d50403_0 bioconda bzip2
-1.0.6 h470a237_2 conda-forge ca-certificates 2018.8.24 ha4d7672_0
-conda-forge certifi 2018.8.24 py36_1 conda-forge libffi 3.2.1 hfc679d8_5
-conda-forge libgcc-ng 7.2.0 hdf63c60_3 conda-forge libstdcxx-ng 7.2.0
-hdf63c60_3 conda-forge ncurses 6.1 hfc679d8_1 conda-forge openssl 1.0.2p
-h470a237_0 conda-forge perl 5.26.2 h470a237_0 conda-forge pip 18.0
-py36_1 conda-forge python 3.6.6 h5001a0f_0 conda-forge readline 7.0
-haf1bffa_1 conda-forge setuptools 40.2.0 py36_0 conda-forge sqlite
-3.24.0 h2f33b56_1 conda-forge tk 8.6.8 0 conda-forge wheel 0.31.1 py36_1
-conda-forge xz 5.2.4 h470a237_1 conda-forge zlib 1.2.11 h470a237_3
-conda-forge</p>
-<pre><code>
+are part of conda-forge, a lower level channel.</p>
+<pre><code>~$ conda activate $SCRATCH/bowtie2
+~$ conda list
+# packages in environment at /scratch/gufranco/bowtie2:
+#
+# Name                    Version                   Build  Channel
+bowtie2                   2.3.4.2          py36h2d50403_0    bioconda
+bzip2                     1.0.6                h470a237_2    conda-forge
+ca-certificates           2018.8.24            ha4d7672_0    conda-forge
+certifi                   2018.8.24                py36_1    conda-forge
+libffi                    3.2.1                hfc679d8_5    conda-forge
+libgcc-ng                 7.2.0                hdf63c60_3    conda-forge
+libstdcxx-ng              7.2.0                hdf63c60_3    conda-forge
+ncurses                   6.1                  hfc679d8_1    conda-forge
+openssl                   1.0.2p               h470a237_0    conda-forge
+perl                      5.26.2               h470a237_0    conda-forge
+pip                       18.0                     py36_1    conda-forge
+python                    3.6.6                h5001a0f_0    conda-forge
+readline                  7.0                  haf1bffa_1    conda-forge
+setuptools                40.2.0                   py36_0    conda-forge
+sqlite                    3.24.0               h2f33b56_1    conda-forge
+tk                        8.6.8                         0    conda-forge
+wheel                     0.31.1                   py36_1    conda-forge
+xz                        5.2.4                h470a237_1    conda-forge
+zlib                      1.2.11               h470a237_3    conda-forge</code></pre>
+</div>
+<div class="section level3">
+<h3 id="using-a-conda-environment-in-a-submission-script">Using a conda environment in a submission script<a class="anchor" aria-label="anchor" href="#using-a-conda-environment-in-a-submission-script"></a></h3>
+<p>To execute software in a non-interactive job you need to source the
+main script, activate the environment that contains the software you
+need, execute the the scientific code and deactivate the environment.
+This is a simple example showing that for bowtie2</p>
+<pre><code>#!/bin/bash
 
-### Using a conda environment in a submission script
+#SBATCH -J CONDA_JOB
+#SBATCH -N 1
+#SBATCH -c 4
+#SBATCH -p standby
+#SBATCH -t 4:00:00
 
-To execute software in a non-interactive job you need to source the main
-script, activate the environment that contains the software you need,
-execute the the scientific code and deactivate the environment. This is
-a simple example showing that for bowtie2
-</code></pre>
-<p>#!/bin/bash</p>
-<p>#SBATCH -J CONDA_JOB #SBATCH -N 1 #SBATCH -c 4 #SBATCH -p standby
-#SBATCH -t 4:00:00</p>
-<p>source /shared/software/conda/conda_init.sh conda activate
-$SCRATCH/bowtie2</p>
-<p>bowtie2 …..</p>
-<p>conda deactivate</p>
-<pre><code>
+source /shared/software/conda/conda_init.sh
+conda activate $SCRATCH/bowtie2
 
+bowtie2 .....
 
-### Deleting an environment
+conda deactivate</code></pre>
+</div>
+<div class="section level3">
+<h3 id="deleting-an-environment">Deleting an environment<a class="anchor" aria-label="anchor" href="#deleting-an-environment"></a></h3>
+<p>You can execute this command to remove an environment you own.</p>
+<pre><code>conda remove --all -p $SCRATCH/bowtie2</code></pre>
+<p>or</p>
+<pre><code>conda env remove -n bowtie2</code></pre>
+<p>If the environment is named.</p>
+</div>
+<div class="section level3">
+<h3 id="more-documentation">More documentation<a class="anchor" aria-label="anchor" href="#more-documentation"></a></h3>
+<p><code>Conda Documentation &lt;https://conda.io/docs/index.html&gt;</code>__</p>
+<p>[<a href="https://conda.io/docs/user-guide/tasks/manage-environments.html%5C" class="external-link uri">https://conda.io/docs/user-guide/tasks/manage-environments.html\</a>
+# Managing environments]</p>
+<p><code>Using Bioconda — Bioconda documentation &lt;https://bioconda.github.io/&gt;</code>__</p>
+<p><code>Available packages — Bioconda documentation &lt;https://bioconda.github.io/conda-recipe_index.html&gt;</code>__</p>
+</div>
+<div class="section level3">
+<h3 id="downloading-miniconda">Downloading Miniconda<a class="anchor" aria-label="anchor" href="#downloading-miniconda"></a></h3>
+<p>You do not need to install Miniconda on Thorny Flat or Dolly Sods.
+However, nothing prevents you from having your version of it if you
+want. Miniconda can be downloaded from::</p>
+<pre><code>wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+sh Miniconda3-latest-Linux-x86_64.sh</code></pre>
+</div>
+<div class="section level3">
+<h3 id="no-installing-anything">No installing anything<a class="anchor" aria-label="anchor" href="#no-installing-anything"></a></h3>
+<p>Just load the module::</p>
+<pre><code>module purge
+module load genomics/qiime</code></pre>
+<p>This module will load Python 2.7.3 and qiime on top of that. Conda is
+a particularly good option to install older packages that could still be
+available on channels like conda-forge and bioconda.</p>
+</div>
+</section><section><h2 class="section-heading" id="singularity-containers">Singularity Containers<a class="anchor" aria-label="anchor" href="#singularity-containers"></a></h2>
+<hr class="half-width"><p>Containers are a software technology that allows us to keep control
+of the environment where a given code runs. Consider for example that
+you want to run a code in such a way the same code runs on several
+machines or clusters, ensuring that the same libraries are loaded and
+the same general environment is present. Different clusters could come
+installed with different compilers, different Linux distributions and
+different libraries in general. Containers can be used to package entire
+scientific workflows, software and libraries, and even data and move
+them to several compute infrastructures with complete
+reproducibility.</p>
+<p>Containers are similar to Virtual Machines, however, the differences
+are enough to consider them different technologies and those differences
+are very important for HPC. Virtual Machines take up a lot of system
+resources. Each Virtual Machine (VM) runs not just a full copy of an
+operating system, but a virtual copy of all the hardware that the
+operating system needs to run. This quickly adds up to a lot of precious
+RAM and CPU cycles, valuable resources for HPC.</p>
+<p>In contrast, all that a container requires is enough of an operating
+system, supporting programs and libraries, and system resources to run a
+specific program. From the user perspective, a container is in most
+cases a single file that contains the file system, ie a rather complete
+Unix filesystem tree with all libraries, executables, and data that are
+needed for a given workflow or scientific computation.</p>
+<p>There are several container solutions, the most popular probably is
+Docker, however, the main issue with using docker on HPC is security,
+despite the name, containers do not actually contain the powers of the
+user who executes code on them. That is why you do not see Docker
+installed on an HPC cluster. Using dockers requires superuser access
+something that on shared resources like an HPC cluster is not typically
+possible.</p>
+<p>Singularity offers an alternative solution to Docker, users can run
+the prepared images that we are offering on our clusters or bring their
+own.</p>
+<p>For more information about Singularity and complete documentation
+see: <a href="https://singularity.lbl.gov/quickstart" class="external-link uri">https://singularity.lbl.gov/quickstart</a></p>
+<div class="section level3">
+<h3 id="how-to-use-a-singularity-image">How to use a singularity Image<a class="anchor" aria-label="anchor" href="#how-to-use-a-singularity-image"></a></h3>
+<p>There are basically two scenarios, interactive execution and job
+submission.</p>
+<div class="section level4">
+<h4 id="interactive-job">Interactive Job<a class="anchor" aria-label="anchor" href="#interactive-job"></a></h4>
+<p>If you are using Visit or RStudio, programs that uses the X11
+forwarding, ensure to connect first to the cluster with X11 forwarding,
+before asking for an interactive job. In order to connect into Thorny
+with X11 forwarding use:</p>
+<pre><code>ssh -X &lt;username&gt;@ssh.wvu.edu</code></pre>
+<pre><code>ssh -X &lt;username&gt;@tf.hpc.wvu.edu</code></pre>
+<p>Once you have login into the cluster, create an interactive job with
+the following command line, in this case we are using standby as queue
+but any other queue is valid.</p>
+<pre><code>salloc -c 4 -p standby</code></pre>
+<p>Once you get inside a compute node, load the module:</p>
+<pre><code>module load singularity</code></pre>
+<p>After loading the module the command singularity is available for
+usage, and you can get a shell inside the image with:</p>
+<pre><code>singularity shell /shared/containers/&lt;Image Name&gt;</code></pre>
+</div>
+<div class="section level4">
+<h4 id="job-submission">Job Submission<a class="anchor" aria-label="anchor" href="#job-submission"></a></h4>
+<p>In this case you do not need to export X11, just login into Thorny
+Flat</p>
+<pre><code>ssh &lt;username&gt;@ssh.wvu.edu
 
-You can execute this command to remove an environment you own.
-</code></pre>
-<p>conda remove –all -p $SCRATCH/bowtie2</p>
-<pre><code><span></span>
-<span></span>
-<span><span class="va">or</span></span></code></pre>
-<p>conda env remove -n bowtie2</p>
-<pre><code>
+ssh &lt;username&gt;@tf.hpc.wvu.edu</code></pre>
+<p>{: .source}</p>
+<p>Once you have login into the cluster, create a submission script
+(“runjob.pbs” for this example), in this case we are using standby as
+queue but any other queue is valid.</p>
+<pre><code>#!/bin/sh
 
-If the environment is named.
+#SBATCH -J SINGULARITY_JOB
+#SBATCH -N 1
+#SBATCH -c 4
+#SBATCH -p standby
+#SBATCH -t 4:00:00
 
-### More documentation
+module load singularity
 
-`Conda Documentation &lt;https://conda.io/docs/index.html&gt;`__
-
-[https://conda.io/docs/user-guide/tasks/manage-environments.html\ #
-Managing environments]
-
-`Using Bioconda — Bioconda
-documentation &lt;https://bioconda.github.io/&gt;`__
-
-`Available packages — Bioconda
-documentation &lt;https://bioconda.github.io/conda-recipe_index.html&gt;`__
-
-### Downloading Miniconda
-
-You do not need to install Miniconda on Thorny Flat or Dolly Sods.
-However, nothing prevents you from having your version of it if you want.
-Miniconda can be downloaded from::
-</code></pre>
-<p>wget <a href="https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh" class="external-link uri">https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh</a>
-sh Miniconda3-latest-Linux-x86_64.sh</p>
-<pre><code>
-
-### No installing anything
-
-Just load the module::
-</code></pre>
-<p>module purge module load genomics/qiime</p>
-<pre><code>
-
-This module will load Python 2.7.3 and qiime on top of that.
-Conda is a particularly good option to install older packages that could still be available on channels like conda-forge and bioconda.
-
-
-## Singularity Containers
-
-Containers are a software technology that allows us to keep control of the environment where a given code runs. Consider for example that you want to run a code in such a way the same code runs on several machines or clusters, ensuring that the same libraries are loaded and the same general environment is present. Different clusters could come installed with different compilers, different Linux distributions and different libraries in general. Containers can be used to package entire scientific workflows, software and libraries, and even data and move them to several compute infrastructures with complete reproducibility.
-
-Containers are similar to Virtual Machines, however, the differences are enough to consider them different technologies and those differences are very important for HPC. Virtual Machines take up a lot of system resources. Each Virtual Machine (VM) runs not just a full copy of an operating system, but a virtual copy of all the hardware that the operating system needs to run. This quickly adds up to a lot of precious RAM and CPU cycles, valuable resources for HPC.
-
-In contrast, all that a container requires is enough of an operating system, supporting programs and libraries, and system resources to run a specific program. From the user perspective, a container is in most cases a single file that contains the file system, ie a rather complete Unix filesystem tree with all libraries, executables, and data that are needed for a given workflow or scientific computation.
-
-There are several container solutions, the most popular probably is Docker, however, the main issue with using docker on HPC is security, despite the name, containers do not actually contain the powers of the user who executes code on them. That is why you do not see Docker installed on an HPC cluster. Using dockers requires superuser access something that on shared resources like an HPC cluster is not typically possible.
-
-Singularity offers an alternative solution to Docker, users can run the prepared images that we are offering on our clusters or bring their own.
-
-For more information about Singularity and complete documentation see: https://singularity.lbl.gov/quickstart
-
-### How to use a singularity Image
-
-There are basically two scenarios, interactive execution and job submission.
-
-#### Interactive Job
-
-If you are using Visit or RStudio, programs that uses the X11 forwarding, ensure to connect first to the cluster with X11 forwarding, before asking for an interactive job.
-In order to connect into Thorny with X11 forwarding use:
-</code></pre>
-<p>ssh -X <username><span class="citation">@ssh.wvu.edu</span></username></p>
-<pre><code>{: .source}
-</code></pre>
-<p>ssh -X <username><span class="citation">@tf.hpc.wvu.edu</span></username></p>
-<pre><code>{: .source}
-
-Once you have login into the cluster, create an interactive job with the following command line, in this case we are using standby as queue but any other queue is valid.
-</code></pre>
-<p>salloc -c 4 -p standby</p>
-<pre><code>{: .source}
-
-
-Once you get inside a compute node, load the module:
-</code></pre>
-<p>module load singularity</p>
-<pre><code>{: .source}
-
-
-After loading the module the command singularity is available for usage, and you can get a shell inside the image with:
-</code></pre>
-<p>singularity shell /shared/containers/<image name></image></p>
-<pre><code>{: .source}
-
-
-#### Job Submission
-
-In this case you do not need to export X11, just login into Thorny Flat
-</code></pre>
-<p>ssh <username><span class="citation">@ssh.wvu.edu</span></username></p>
-<p>ssh <username><span class="citation">@tf.hpc.wvu.edu</span></username></p>
-<pre><code>{: .source}
-
-
-Once you have login into the cluster, create a submission script ("runjob.pbs" for this example), in this case we are using standby as queue but any other queue is valid.
-</code></pre>
-<p>#!/bin/sh</p>
-<p>#SBATCH -J SINGULARITY_JOB #SBATCH -N 1 #SBATCH -c 4 #SBATCH -p
-standby #SBATCH -t 4:00:00</p>
-<p>module load singularity</p>
-<p>singularity exec /shared/containers/<image name><command_or_script_to_run></command_or_script_to_run></image></p>
-<pre><code>{: .source}
-
-
-Submit your job with
-</code></pre>
-<p>sbatch runjob.pbs</p>
-<pre><code>{: .source}
-
-&gt; ### Exercise 1: Using singularity on the cluster (Interactive)
-&gt;
-&gt; This exercise propose the use of singularity to access RStudio-server version 2023.12.1-402 and R 4.4.1
-&gt;
-&gt; Follow the instructions for accessing an interactive session
-&gt;
-&gt; The image is located at:
-&gt;
-&gt; ~~~
-&gt; /shared/containers/RStudio-server-2023.12.1-402_R-4.4.1_jammy.sif
-&gt; ~~~
-&gt; {: .source}
-&gt; Be sure that you can execute basic R commands. You can get an error message like:
-&gt;
-&gt;&gt;   WARNING: You are configured to use the CRAN mirror at https://cran.rstudio.com/. This mirror supports secure (HTTPS) downloads however your system is unable to communicate securely with the server (possibly due to out of date certificate files on your system). Falling back to using insecure URL for this mirror.
-&gt;
-&gt; That is normal and due to the fact that compute nodes have no Internet access.
-&gt;
-{: .challenge}
-
-&gt; ### Exercise 2: Using singularity on the cluster (Non-interactive)
-&gt;
-&gt; Create a script that reads a CSV with official statistics of population for US. The file can be downloaded from:
-&gt;~~~
-&gt;$ wget https://www2.census.gov/programs-surveys/popest/datasets/2010-2018/state/detail/SCPRC-EST2018-18+POP-RES.csv
-&gt;~~~
-&gt;{: .source}
-&gt;
-&gt; However, the file is also present in the repository for hands-ons
-&gt;~~~
-&gt;$ git clone https://github.com/WVUHPC/workshops_hands-on.git
-&gt;~~~
-&gt;
-&gt;
-&gt;The folder is `workshops_hands-on/Introduction_HPC/11._Software_Containers_Singularity`. If you are not familiar with R programming, the script is there too. Notice that you cannot write your script to download the CSV file directly from the Census Bureau as the compute  nodes have no Internet access.
-&gt; Write a submission script and submit.
-&gt;
-{: .challenge}
-
-## Advanced topics
-
-### **Modules:** Creating a private repository
-
-The basic procedure is to locate modules on a folder accessible by relevant users and add the variable `MODULEPATH` to your `.bashrc`
-
-`MODULEPATH` controls the path that the module command searches when looking for
-modulefiles.
-Typically, it is set  to a  default  value by the bootstrap procedure.
-`MODULEPATH` can be set using ’module use’ or by the module initialization
-script to search group or personal modulefile directories before  or  after
-the master modulefile directory.
-
-### **Singularity:** Creating your own images
-
-You can create your own Singularity images and use them on our clusters.
-The only constrain is that images can only be created on your own machine as you need root access to create them.
-
-The procedure that we will show will be executed on a remote machine provided by JetStream, it should the same if you have your own Linux machine and you have superuser access to it.
-
-The creation of images is an interactive procedure. You learn how to put pieces together and little by little you build your own recipe for your image.
-
-Lets start with a very clean image with centos.
-
-The minimal recipe will bring an image from Docker with the latest version of CentOS. Lets call the file `centos.bst`
-</code></pre>
+singularity exec /shared/containers/&lt;Image Name&gt; &lt;command_or_script_to_run&gt;</code></pre>
+<p>Submit your job with</p>
+<pre><code>sbatch runjob.pbs</code></pre>
+<div id="exercise-1-using-singularity-on-the-cluster-interactive" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="exercise-1-using-singularity-on-the-cluster-interactive" class="callout-inner">
+<h3 class="callout-title">Exercise 1: Using singularity on the cluster
+(Interactive)</h3>
+<div class="callout-content">
+<p>This exercise propose the use of singularity to access RStudio-server
+version 2023.12.1-402 and R 4.4.1</p>
+<p>Follow the instructions for accessing an interactive session</p>
+<p>The image is located at:</p>
+<pre><code>/shared/containers/RStudio-server-2023.12.1-402_R-4.4.1_jammy.sif </code></pre>
+<p>Be sure that you can execute basic R commands. You can get an error
+message like:</p>
+<pre><code>WARNING: You are configured to use the CRAN mirror at https://cran.rstudio.com/. This mirror supports secure (HTTPS) downloads however your system is unable to communicate securely with the server (possibly due to out of date certificate files on your system). Falling back to using insecure URL for this mirror.</code></pre>
+<p>That is normal and due to the fact that compute nodes have no
+Internet access.</p>
 </div>
 </div>
-<div class="section level1">
-<h1 id="singularity-container-with-centos">Singularity container with centos<a class="anchor" aria-label="anchor" href="#singularity-container-with-centos"></a></h1>
 </div>
-<div class="section level1">
-<h1 id="section"></h1>
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
+</button>
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div class="accordion-body">
+
 </div>
-<div class="section level1">
-<h1 id="this-is-the-bootstrap-file-to-recreate-the-image-">This is the Bootstrap file to recreate the image.<a class="anchor" aria-label="anchor" href="#this-is-the-bootstrap-file-to-recreate-the-image-"></a></h1>
 </div>
-<div class="section level1">
-<h1 id="section-1"></h1>
-<p>Bootstrap: docker From: centos:latest</p>
-<p>%runscript exec echo “The runscript is the containers default runtime
-command!”</p>
-<p>%files</p>
-<p>%environment</p>
-<p>%labels AUTHOR <a href="mailto:username@mail.wvu.edu" class="email">username@mail.wvu.edu</a></p>
-<p>%post echo “The post section is where you can install, and configure
-your container.” mkdir -p /data/bin mkdir -p /gpfs mkdir -p /users mkdir
--p /group mkdir -p /scratch touch /usr/bin/nvidia-smi</p>
-<pre><code>{: .source}
-
-A few folders are created that help us to link special folders like `/users`, `/scratch` to the host file system. Other than that the image contains a very small but usable Linux CentOS machine.
-
-We start with a writable sandboxed version, the exact command varies from machine to machine, but assuming that you can do sudo and the command singularity is available for root execute this:
-</code></pre>
-<p>sudo singularity build –sandbox centos centos.bst</p>
-<pre><code></code></pre>
-<p>Using container recipe deffile: centos.bst Sanitizing environment
-Adding base Singularity environment to container Docker image path:
-index.docker.io/library/centos:latest Cache folder set to
-/root/.singularity/docker Exploding layer:
-sha256:8ba884070f611d31cb2c42eddb691319dc9facf5e0ec67672fcfa135181ab3df.tar.gz
-Exploding layer:
-sha256:306a59f4aef08d54a38e1747ff77fc446103a3ee3aea83676db59d6d625b02a1.tar.gz
-User defined %runscript found! Taking priority. Adding files to
-container Adding environment to container Running post scriptlet + echo
-‘The post section is where you can install, and configure your
-container.’ The post section is where you can install, and configure
-your container. + mkdir -p /data/bin + mkdir -p /gpfs + mkdir -p /users
-+ mkdir -p /group + mkdir -p /scratch + touch /usr/bin/nvidia-smi Adding
-deffile section labels to container Adding runscript Finalizing
-Singularity container Calculating final size for metadata… Skipping
-checks Singularity container built: centos Cleaning up…</p>
-<pre><code>{: .output}
-
-The result will be a folder called `centos`. We can enter into that folder to learn what we need to install the packages for our image.
-</code></pre>
-<p>sudo singularity shell –writable centos</p>
-<pre><code>
-
-For our exercise lets imagine that we want to use a package that opens a window.
-In particular, we now that we need a package that is called libgraph to get access to the graphics capabilities. The software is not provided by CentOS itself, so we need to compile it. We need to download, compile and install this package. We learn first how to do it and add that learning to the Bootstrap recipe file.
-
-We need:
-
-1. Download &lt;https://www.mirrorservice.org/sites/download.savannah.gnu.org/releases/libgraph/libgraph-1.0.2.tar.gz&gt;, so we need `wget` for that. This is one package that we need to install from yum.
-
-2. We need compilers, and make. So we have to install `gcc`, `gcc-c++` and `make`
-
-3. The next time to try, you notice that you will also need some extra packages provided by EPEL, devel packages from CentOS and EPEL repositories.
-The packages are `SDL-devel` `epel-release` `SDL_image-devel` `compat-guile18-devel` and `guile-devel`.
-
-Trial and error move you from the original recipe to this one (`centos-libgraph.bst`):
-</code></pre>
 </div>
-<div class="section level1">
-<h1 id="singularity-container-with-centos-1">Singularity container with centos<a class="anchor" aria-label="anchor" href="#singularity-container-with-centos-1"></a></h1>
 </div>
-<div class="section level1">
-<h1 id="section-2"></h1>
+<div id="exercise-2-using-singularity-on-the-cluster-non-interactive" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
 </div>
-<div class="section level1">
-<h1 id="this-is-the-bootstrap-file-to-recreate-the-image--1">This is the Bootstrap file to recreate the image.<a class="anchor" aria-label="anchor" href="#this-is-the-bootstrap-file-to-recreate-the-image--1"></a></h1>
+<span class="callout-header">Challenge</span>
+<div id="exercise-2-using-singularity-on-the-cluster-non-interactive" class="callout-inner">
+<h3 class="callout-title">Exercise 2: Using singularity on the cluster
+(Non-interactive)</h3>
+<div class="callout-content">
+<p>Create a script that reads a CSV with official statistics of
+population for US. The file can be downloaded from:</p>
+<pre><code>~$ wget https://www2.census.gov/programs-surveys/popest/datasets/2010-2018/state/detail/SCPRC-EST2018-18+POP-RES.csv</code></pre>
+<p>However, the file is also present in the repository for hands-ons</p>
+<pre><code>~$ git clone https://github.com/WVUHPC/workshops_hands-on.git</code></pre>
+<p>The folder is
+<code>workshops_hands-on/Introduction_HPC/11._Software_Containers_Singularity</code>.
+If you are not familiar with R programming, the script is there too.
+Notice that you cannot write your script to download the CSV file
+directly from the Census Bureau as the compute nodes have no Internet
+access. Write a submission script and submit.</p>
 </div>
-<div class="section level1">
-<h1 id="section-3"></h1>
-<p>Bootstrap: docker From: centos:latest</p>
-<p>%runscript exec echo “The runscript is the containers default runtime
-command!”</p>
-<p>%files</p>
-<p>%environment</p>
-<p>%labels AUTHOR <a href="mailto:username@mail.wvu.edu" class="email">username@mail.wvu.edu</a></p>
-<p>%post echo “The post section is where you can install, and configure
-your container.”</p>
-<p>yum -y install wget make gcc gcc-c++ SDL-devel epel-release yum -y
-update &amp;&amp; yum -y install SDL_image-devel compat-guile18-devel
-guile-devel</p>
-<p>mkdir -p /data/bin mkdir -p /gpfs mkdir -p /users mkdir -p /group
-mkdir -p /scratch touch /usr/bin/nvidia-smi</p>
-<p>cd /data wget <a href="http://www.mirrorservice.org/sites/download.savannah.gnu.org/releases/libgraph/libgraph-1.0.2.tar.gz" class="external-link uri">http://www.mirrorservice.org/sites/download.savannah.gnu.org/releases/libgraph/libgraph-1.0.2.tar.gz</a>
-tar -zxvf libgraph-1.0.2.tar.gz cd libgraph-1.0.2 &amp;&amp; ./configure
-–prefix=/data &amp;&amp; make &amp;&amp; make install</p>
-<pre><code>{: .source}
-
-Notice that we have added a few lines using `yum` to install some packages, we add EPEL on the first line and we use it to install some extra packages on the second line.
-</code></pre>
-<p>yum -y install wget make gcc gcc-c++ SDL-devel epel-release yum -y
-update &amp;&amp; yum -y install SDL_image-devel compat-guile18-devel
-guile-devel</p>
-<pre><code>{: .source}
-
-Finally, we use `wget` to get the sources and build `libgraph`.
-In order to save space on the VM, lets delete the old folder and create a new one with the new recipe.
-</code></pre>
-<p>sudo rm -rf centos sudo singularity build –sandbox centos
-centos-libgraph.bst</p>
-<pre><code>
-
-The command takes longer and at the end you get libgraph installed at `/data`
-The final step will be use that to test that we are able to use libgraph with our application. The application is a couple of very small codes that use libgraph as dependency.
-
-To achieve this we need.
-
-1. Modify the environment variables `PATH` and `LD_LIBRARY_PATH` to point to the locations where libgraph and our binaries will be located.
-
-2. Copy the sources `circles.c` and `julia.c` to the image and compile it.
-
-The final version of the Bootstrap recipe looks like this `centos-final.bst`
-</code></pre>
 </div>
-<div class="section level1">
-<h1 id="singularity-container-with-centos-2">Singularity container with centos<a class="anchor" aria-label="anchor" href="#singularity-container-with-centos-2"></a></h1>
 </div>
-<div class="section level1">
-<h1 id="section-4"></h1>
+<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
+  <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
+</button>
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div class="accordion-body">
+
 </div>
-<div class="section level1">
-<h1 id="this-is-the-bootstrap-file-to-recreate-the-image--2">This is the Bootstrap file to recreate the image.<a class="anchor" aria-label="anchor" href="#this-is-the-bootstrap-file-to-recreate-the-image--2"></a></h1>
 </div>
-<div class="section level1">
-<h1 id="section-5"></h1>
-<p>Bootstrap: docker From: centos:latest</p>
-<p>%runscript exec echo “The runscript is the containers default runtime
-command!”</p>
-<p>%files julia.c circles.c sample.c</p>
-<p>%environment SHELL=/bin/bash export SHELL PATH=/data/bin:<span class="math inline">\(PATH
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="advanced-topics">Advanced topics<a class="anchor" aria-label="anchor" href="#advanced-topics"></a></h2>
+<hr class="half-width"><div class="section level3">
+<h3 id="modules-creating-a-private-repository">
+<strong>Modules:</strong> Creating a private repository<a class="anchor" aria-label="anchor" href="#modules-creating-a-private-repository"></a></h3>
+<p>The basic procedure is to locate modules on a folder accessible by
+relevant users and add the variable <code>MODULEPATH</code> to your
+<code>.bashrc</code></p>
+<p><code>MODULEPATH</code> controls the path that the module command
+searches when looking for modulefiles. Typically, it is set to a default
+value by the bootstrap procedure. <code>MODULEPATH</code> can be set
+using ’module use’ or by the module initialization script to search
+group or personal modulefile directories before or after the master
+modulefile directory.</p>
+</div>
+<div class="section level3">
+<h3 id="singularity-creating-your-own-images">
+<strong>Singularity:</strong> Creating your own images<a class="anchor" aria-label="anchor" href="#singularity-creating-your-own-images"></a></h3>
+<p>You can create your own Singularity images and use them on our
+clusters. The only constrain is that images can only be created on your
+own machine as you need root access to create them.</p>
+<p>The procedure that we will show will be executed on a remote machine
+provided by JetStream, it should the same if you have your own Linux
+machine and you have superuser access to it.</p>
+<p>The creation of images is an interactive procedure. You learn how to
+put pieces together and little by little you build your own recipe for
+your image.</p>
+<p>Lets start with a very clean image with centos.</p>
+<p>The minimal recipe will bring an image from Docker with the latest
+version of CentOS. Lets call the file <code>centos.bst</code></p>
+<pre><code># Singularity container with centos
+#
+# This is the Bootstrap file to recreate the image.
+#
+
+Bootstrap: docker
+From: centos:latest
+
+%runscript
+exec echo "The runscript is the containers default runtime command!"
+
+%files
+
+%environment
+
+%labels
+AUTHOR username@mail.wvu.edu
+
+%post
+echo "The post section is where you can install, and configure your container."
+mkdir -p /data/bin
+mkdir -p /gpfs
+mkdir -p /users
+mkdir -p /group
+mkdir -p /scratch
+touch /usr/bin/nvidia-smi</code></pre>
+<p>A few folders are created that help us to link special folders like
+<code>/users</code>, <code>/scratch</code> to the host file system.
+Other than that the image contains a very small but usable Linux CentOS
+machine.</p>
+<p>We start with a writable sandboxed version, the exact command varies
+from machine to machine, but assuming that you can do sudo and the
+command singularity is available for root execute this:</p>
+<pre><code>sudo singularity build --sandbox centos centos.bst</code></pre>
+<pre><code>Using container recipe deffile: centos.bst
+Sanitizing environment
+Adding base Singularity environment to container
+Docker image path: index.docker.io/library/centos:latest
+Cache folder set to /root/.singularity/docker
+Exploding layer: sha256:8ba884070f611d31cb2c42eddb691319dc9facf5e0ec67672fcfa135181ab3df.tar.gz
+Exploding layer: sha256:306a59f4aef08d54a38e1747ff77fc446103a3ee3aea83676db59d6d625b02a1.tar.gz
+User defined %runscript found! Taking priority.
+Adding files to container
+Adding environment to container
+Running post scriptlet
++ echo 'The post section is where you can install, and configure your container.'
+The post section is where you can install, and configure your container.
++ mkdir -p /data/bin
++ mkdir -p /gpfs
++ mkdir -p /users
++ mkdir -p /group
++ mkdir -p /scratch
++ touch /usr/bin/nvidia-smi
+Adding deffile section labels to container
+Adding runscript
+Finalizing Singularity container
+Calculating final size for metadata...
+Skipping checks
+Singularity container built: centos
+Cleaning up...</code></pre>
+<p>The result will be a folder called <code>centos</code>. We can enter
+into that folder to learn what we need to install the packages for our
+image.</p>
+<pre><code>sudo singularity shell --writable centos</code></pre>
+<p>For our exercise lets imagine that we want to use a package that
+opens a window. In particular, we now that we need a package that is
+called libgraph to get access to the graphics capabilities. The software
+is not provided by CentOS itself, so we need to compile it. We need to
+download, compile and install this package. We learn first how to do it
+and add that learning to the Bootstrap recipe file.</p>
+<p>We need:</p>
+<ol style="list-style-type: decimal"><li><p>Download <a href="https://www.mirrorservice.org/sites/download.savannah.gnu.org/releases/libgraph/libgraph-1.0.2.tar.gz" class="external-link uri">https://www.mirrorservice.org/sites/download.savannah.gnu.org/releases/libgraph/libgraph-1.0.2.tar.gz</a>,
+so we need <code>wget</code> for that. This is one package that we need
+to install from yum.</p></li>
+<li><p>We need compilers, and make. So we have to install
+<code>gcc</code>, <code>gcc-c++</code> and <code>make</code></p></li>
+<li><p>The next time to try, you notice that you will also need some
+extra packages provided by EPEL, devel packages from CentOS and EPEL
+repositories. The packages are <code>SDL-devel</code>
+<code>epel-release</code> <code>SDL_image-devel</code>
+<code>compat-guile18-devel</code> and <code>guile-devel</code>.</p></li>
+</ol><p>Trial and error move you from the original recipe to this one
+(<code>centos-libgraph.bst</code>):</p>
+<pre><code># Singularity container with centos
+#
+# This is the Bootstrap file to recreate the image.
+#
+
+Bootstrap: docker
+From: centos:latest
+
+%runscript
+exec echo "The runscript is the containers default runtime command!"
+
+%files
+
+%environment
+
+%labels
+AUTHOR username@mail.wvu.edu
+
+%post
+echo "The post section is where you can install, and configure your container."
+
+yum -y install wget make gcc gcc-c++ SDL-devel epel-release
+yum -y update &amp;&amp; yum -y install SDL_image-devel compat-guile18-devel guile-devel
+
+mkdir -p /data/bin
+mkdir -p /gpfs
+mkdir -p /users
+mkdir -p /group
+mkdir -p /scratch
+touch /usr/bin/nvidia-smi
+
+cd /data
+wget https://www.mirrorservice.org/sites/download.savannah.gnu.org/releases/libgraph/libgraph-1.0.2.tar.gz
+tar -zxvf libgraph-1.0.2.tar.gz
+cd libgraph-1.0.2 &amp;&amp; ./configure --prefix=/data &amp;&amp; make &amp;&amp; make install</code></pre>
+<p>Notice that we have added a few lines using <code>yum</code> to
+install some packages, we add EPEL on the first line and we use it to
+install some extra packages on the second line.</p>
+<pre><code>yum -y install wget make gcc gcc-c++ SDL-devel epel-release
+yum -y update &amp;&amp; yum -y install SDL_image-devel compat-guile18-devel guile-devel</code></pre>
+<p>Finally, we use <code>wget</code> to get the sources and build
+<code>libgraph</code>. In order to save space on the VM, lets delete the
+old folder and create a new one with the new recipe.</p>
+<pre><code>sudo rm -rf centos
+sudo singularity build --sandbox centos centos-libgraph.bst</code></pre>
+<p>The command takes longer and at the end you get libgraph installed at
+<code>/data</code> The final step will be use that to test that we are
+able to use libgraph with our application. The application is a couple
+of very small codes that use libgraph as dependency.</p>
+<p>To achieve this we need.</p>
+<ol style="list-style-type: decimal"><li><p>Modify the environment variables <code>PATH</code> and
+<code>LD_LIBRARY_PATH</code> to point to the locations where libgraph
+and our binaries will be located.</p></li>
+<li><p>Copy the sources <code>circles.c</code> and <code>julia.c</code>
+to the image and compile it.</p></li>
+</ol><p>The final version of the Bootstrap recipe looks like this
+<code>centos-final.bst</code></p>
+<pre><code># Singularity container with centos
+#
+# This is the Bootstrap file to recreate the image.
+#
+
+Bootstrap: docker
+From: centos:latest
+
+%runscript
+exec echo "The runscript is the containers default runtime command!"
+
+%files
+julia.c
+circles.c
+sample.c
+
+%environment
+SHELL=/bin/bash
+export SHELL
+PATH=/data/bin:$PATH
 export PATH
-LD_LIBRARY_PATH=\)</span>LD_LIBRARY_PATH:/data/lib export
-LD_LIBRARY_PATH</p>
-<p>%labels AUTHOR <a href="mailto:username@mail.wvu.edu" class="email">username@mail.wvu.edu</a></p>
-<p>%post echo “The post section is where you can install, and configure
-your container.” yum -y install wget make gcc gcc-c++ SDL-devel
-epel-release yum -y update &amp;&amp; yum -y install SDL_image-devel
-compat-guile18-devel guile-devel mkdir -p /data/bin mkdir -p /gpfs mkdir
--p /users mkdir -p /group mkdir -p /scratch touch
-/usr/bin/nvidia-smi</p>
-<p>mv /circles.c /julia.c /sample.c /data</p>
-<p>cd /data wget <a href="http://www.mirrorservice.org/sites/download.savannah.gnu.org/releases/libgraph/libgraph-1.0.2.tar.gz" class="external-link uri">http://www.mirrorservice.org/sites/download.savannah.gnu.org/releases/libgraph/libgraph-1.0.2.tar.gz</a>
-tar -zxvf libgraph-1.0.2.tar.gz cd libgraph-1.0.2 &amp;&amp; ./configure
-–prefix=/data &amp;&amp; make &amp;&amp; make install</p>
-<p>cd /data gcc julia.c -o bin/julia -I/data/include -L/data/lib -lgraph
--lm gcc circles.c -o bin/circles -I/data/include -L/data/lib -lgraph -lm
-gcc sample.c -o bin/sample -I/data/include -L/data/lib -lgraph -lm</p>
-<pre><code>{: .source}
+LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/data/lib
+export LD_LIBRARY_PATH
 
-We add a few sample files `sample.c`, `circles.c` and `julia.c` that uses the old `graphics.h` provided by `libgraph`.
+%labels
+AUTHOR username@mail.wvu.edu
 
-The binaries are `sample`, `cicles` and `julia` and they are accessible on the command line.
+%post
+echo "The post section is where you can install, and configure your container."
+yum -y install wget make gcc gcc-c++ SDL-devel epel-release
+yum -y update &amp;&amp; yum -y install SDL_image-devel compat-guile18-devel guile-devel
+mkdir -p /data/bin
+mkdir -p /gpfs
+mkdir -p /users
+mkdir -p /group
+mkdir -p /scratch
+touch /usr/bin/nvidia-smi
 
-When you have crafted a good recipe with the codes and data that you need. The last step is to create a final image. The command for that is below, remembering of deleting the `centos` folder to save space.
-</code></pre>
-<p>sudo rm -rf centos sudo singularity build centos-final.simg
-centos-final.bst ```</p>
+mv /circles.c /julia.c /sample.c /data
+
+cd /data
+wget https://www.mirrorservice.org/sites/download.savannah.gnu.org/releases/libgraph/libgraph-1.0.2.tar.gz
+tar -zxvf libgraph-1.0.2.tar.gz
+cd libgraph-1.0.2 &amp;&amp; ./configure --prefix=/data &amp;&amp; make &amp;&amp; make install
+
+cd /data
+gcc julia.c -o bin/julia -I/data/include -L/data/lib -lgraph -lm
+gcc circles.c -o bin/circles -I/data/include -L/data/lib -lgraph -lm
+gcc sample.c -o bin/sample -I/data/include -L/data/lib -lgraph -lm</code></pre>
+<p>We add a few sample files <code>sample.c</code>,
+<code>circles.c</code> and <code>julia.c</code> that uses the old
+<code>graphics.h</code> provided by <code>libgraph</code>.</p>
+<p>The binaries are <code>sample</code>, <code>cicles</code> and
+<code>julia</code> and they are accessible on the command line.</p>
+<p>When you have crafted a good recipe with the codes and data that you
+need. The last step is to create a final image. The command for that is
+below, remembering of deleting the <code>centos</code> folder to save
+space.</p>
+<pre><code>~$ sudo rm -rf centos
+~$ sudo singularity build centos-final.simg centos-final.bst</code></pre>
 <p>This is the final image. It is not too big, it contains the packages
 that we installed from yum, the sources and binaries for libgraph and
 the sources for the couple of example sources that uses libgraph. The
@@ -1399,19 +1494,19 @@ on your machine and X11 forwarding on your ssh client.</p>
 <span class="callout-header">Key Points</span>
 <div class="callout-inner">
 <div class="callout-content">
-<ul><li>Modules. Use <code>module avail</code> to know all the modules on
-the cluster.</li>
-<li>Modules. Use <code>module load &lt;module_name&gt;</code> to load a
-module.</li>
-<li>Conda. Use <code>conda env list</code> to list the available
-environments.</li>
-<li>Conda. Use <code>conda activate</code> to activate a conda
-environment.</li>
-<li>Singularity. Use <code>singularity shell &lt;container&gt;</code> to
-get a shell inside the container.</li>
-<li>Singularity. Use
+<ul><li><p>Modules. Use <code>module avail</code> to know all the modules on
+the cluster.</p></li>
+<li><p>Modules. Use <code>module load &lt;module_name&gt;</code> to load
+a module.</p></li>
+<li><p>Conda. Use <code>conda env list</code> to list the available
+environments.</p></li>
+<li><p>Conda. Use <code>conda activate</code> to activate a conda
+environment.</p></li>
+<li><p>Singularity. Use <code>singularity shell &lt;container&gt;</code>
+to get a shell inside the container.</p></li>
+<li><p>Singularity. Use
 <code>singularity exec &lt;container&gt; &lt;command&gt;</code> to
-execute a command or script inside the container.</li>
+execute a command or script inside the container.</p></li>
 </ul></div>
 </div>
 </div>
@@ -1420,10 +1515,7 @@ Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
 </div>
-
-
-
-      </div> <!-- / div.lesson-content -->
+</section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="../instructor/201-editors.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
         <a class="chapter-link float-end" href="../instructor/301-slurm.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>

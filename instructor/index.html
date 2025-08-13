@@ -210,7 +210,7 @@
 <div class="accordion accordion-flush" id="accordionFlush2">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading2">
-        <a href="102-cli.html">1. Command Line Interface: The Shell</a>
+        <a href="101-supercomputing.html">1. Supercomputing: Concepts</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -219,7 +219,7 @@
 <div class="accordion accordion-flush" id="accordionFlush3">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading3">
-        <a href="201-editors.html">2. Terminal-based Text Editors: nano, emacs and vim</a>
+        <a href="102-cli.html">2. Command Line Interface: The Shell</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -228,7 +228,7 @@
 <div class="accordion accordion-flush" id="accordionFlush4">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading4">
-        <a href="202-software.html">3. Software on HPC Clusters: modules, conda and containers</a>
+        <a href="201-editors.html">3. Terminal-based Text Editors: nano, emacs and vim</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -237,7 +237,7 @@
 <div class="accordion accordion-flush" id="accordionFlush5">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading5">
-        <a href="301-slurm.html">4. Workload Manager: Slurm</a>
+        <a href="202-software.html">4. Software on HPC Clusters: modules, conda and containers</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -246,7 +246,16 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="302-tmux.html">5. Terminal Multiplexing: tmux</a>
+        <a href="301-slurm.html">5. Workload Manager: Slurm</a>
+    </div><!--/div.accordion-header-->
+
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush7">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading7">
+        <a href="302-tmux.html">6. Terminal Multiplexing: tmux</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -294,11 +303,11 @@
         <!-- START: inst/pkgdown/templates/content-syllabus.html -->
   <div class="col-xl-8 col-lg-12 primary-content">
     <nav class="lesson-content mx-md-4" aria-label="Next Chapter"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
-        <a class="chapter-link float-end" href="../instructor/102-cli.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="../instructor/101-supercomputing.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
-        <a class="chapter-link float-end" href="../instructor/102-cli.html" rel="next">Next: Command Line... <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="../instructor/101-supercomputing.html" rel="next">Next: Supercomputing:... <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <hr></nav><main id="main-content" class="main-content"><h1 class="schedule-heading">Summary and Schedule</h1>
       
@@ -316,11 +325,11 @@ for your research. As on any introductory course, no completeness should
 be assumed. For each episode, there is a lot more to explore that could
 be interesting for more advanced users. Some references are left at the
 end of each section.</p>
-<div id="prerequisites" class="callout">
+<div id="prerequisites" class="callout prereq">
 <div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
+<i class="callout-icon" data-feather="check"></i>
 </div>
-<span class="callout-header">Callout</span>
+<span class="callout-header">Prerequisite</span>
 <div id="prerequisites" class="callout-inner">
 <h3 class="callout-title">Prerequisites</h3>
 <div class="callout-content">
@@ -347,26 +356,37 @@ any links that you are not going to use.
 <span class="visually-hidden">Duration: </span>00h 00m
 </td>
 <td>
- 1. <a href="102-cli.html">Command Line Interface: The Shell</a>
+ 1. <a href="101-supercomputing.html">Supercomputing: Concepts</a>
 </td>
 <td>
-“How do I use the Linux terminal?”
+“What is supercomputing?”<br>“Why I could need a
+supercomputer?”<br>“How a supercomputer compares with my desktop or
+laptop computer?”
 </td>
 </tr><tr><td>
 <span class="visually-hidden">Duration: </span>01h 00m
 </td>
 <td>
- 2. <a href="201-editors.html">Terminal-based Text Editors: nano, emacs
+ 2. <a href="102-cli.html">Command Line Interface: The Shell</a>
+</td>
+<td>
+“How do I use the Linux terminal?”
+</td>
+</tr><tr><td>
+<span class="visually-hidden">Duration: </span>02h 00m
+</td>
+<td>
+ 3. <a href="201-editors.html">Terminal-based Text Editors: nano, emacs
 and vim</a>
 </td>
 <td>
 “How do I edit text files from the terminal?”
 </td>
 </tr><tr><td>
-<span class="visually-hidden">Duration: </span>02h 00m
+<span class="visually-hidden">Duration: </span>03h 00m
 </td>
 <td>
- 3. <a href="202-software.html">Software on HPC Clusters: modules, conda
+ 4. <a href="202-software.html">Software on HPC Clusters: modules, conda
 and containers</a>
 </td>
 <td>
@@ -378,27 +398,27 @@ open a shell and execute commands on an Apptainer/Singularity
 container?”
 </td>
 </tr><tr><td>
-<span class="visually-hidden">Duration: </span>03h 00m
+<span class="visually-hidden">Duration: </span>04h 00m
 </td>
 <td>
- 4. <a href="301-slurm.html">Workload Manager: Slurm</a>
+ 5. <a href="301-slurm.html">Workload Manager: Slurm</a>
 </td>
 <td>
 “What is a resource manager, a scheduler, and a workload
 manager?”<br>“How do we submit a job on an HPC cluster?”
 </td>
 </tr><tr><td>
-<span class="visually-hidden">Duration: </span>04h 00m
+<span class="visually-hidden">Duration: </span>05h 00m
 </td>
 <td>
- 5. <a href="302-tmux.html">Terminal Multiplexing: tmux</a>
+ 6. <a href="302-tmux.html">Terminal Multiplexing: tmux</a>
 </td>
 <td>
 “What is a Terminal Multiplexer?”<br>“How I can become more productive
 with a terminal multiplexer?”<br>“How can I use tmux?”
 </td>
 </tr><tr><td>
-<span class="visually-hidden">Duration: </span>05h 00m
+<span class="visually-hidden">Duration: </span>06h 00m
 </td>
 <td>
 Finish
@@ -462,10 +482,11 @@ clusters.</p>
 <figure><img src="../fig/PuTTY.png" alt="Window showing PuTTY" class="figure mx-auto d-block"><div class="figcaption">PuTTY</div>
 </figure><figure><img src="../fig/MobaXterm.png" alt="Window showing MobaXterm" class="figure mx-auto d-block"><div class="figcaption">MobaXterm</div>
 </figure><p>More recently, there have also been options for accessing a terminal
-and SSH clients using Microsoft products. One option is to install <a href="https://code.visualstudio.com" class="external-link">Visual Studio Code</a>.
-Instructions to add an SSH client to VSC can be found <a href="https://code.visualstudio.com/docs/remote/ssh" class="external-link">here</a> and <a href="https://code.visualstudio.com/learn/develop-cloud/ssh-lab-machines" class="external-link">here</a>.
-Visual Studio Code will give you remote access and a file manager that
-you can use to move files between the cluster and your computer.</p>
+and SSH clients using Microsoft products. One option is to install <a href="https://code.visualstudio.com/" class="external-link">Visual Studio Code</a>. There are
+instructions on <a href="https://code.visualstudio.com/docs/remote/ssh" class="external-link">Remote Development
+using SSH</a>. Visual Studio Code will give you remote access and a file
+manager that you can use to move files between the cluster and your
+computer.</p>
 <p>Another alternative is using the Windows Subsystem for Linux (WSL).
 WSL will allow you to run a full Linux OS inside Windows with all the
 commands that you will encounter on a typical Linux machine. With the
@@ -474,8 +495,8 @@ applications from inside Windows alongside other Windows applications.
 You can see the files on your Windows machine. Running and completing
 Linux OS inside Windows will give you access not only to SSH client and
 terminal but also to the commands that you will learn during this
-lesson, as you will do from a Native Linux machine. Instructions about
-installing and configuring WSL can be found <a href="https://docs.microsoft.com/en-us/windows/wsl/" class="external-link">here</a></p>
+lesson, as you will do from a Native Linux machine. Read also <a href="https://learn.microsoft.com/en-us/windows/wsl/" class="external-link">Windows Subsystem
+for Linux Documentation</a></p>
 <div class="section level3">
 <h3 id="connecting-to-thorny-flat-and-dolly-sods">Connecting to Thorny Flat and Dolly Sods<a class="anchor" aria-label="anchor" href="#connecting-to-thorny-flat-and-dolly-sods"></a></h3>
 <p>Most likely, you will connect to Thorny Flat, our flagship HPC
@@ -643,11 +664,11 @@ Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
 </section></section></main><nav class="bottom-pagination mx-md-4" aria-label="Next Chapter"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
-        <a class="chapter-link float-end" href="../instructor/102-cli.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="../instructor/101-supercomputing.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
-        <a class="chapter-link float-end" href="../instructor/102-cli.html" rel="next">Next: Command Line... <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="../instructor/101-supercomputing.html" rel="next">Next: Supercomputing:... <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
     </nav></div>
 <!-- END  : inst/pkgdown/templates/content-syllabus.html -->

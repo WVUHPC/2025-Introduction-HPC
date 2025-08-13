@@ -118,11 +118,11 @@
   Introduction to HPC
 </div>
 
-<aside class="col-md-12 lesson-progress"><div style="width: 80%" class="percentage">
-    80%
+<aside class="col-md-12 lesson-progress"><div style="width: 83%" class="percentage">
+    83%
   </div>
   <div class="progress incubator">
-    <div class="progress-bar incubator" role="progressbar" style="width: 80%" aria-valuenow="80" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar incubator" role="progressbar" style="width: 83%" aria-valuenow="83" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
 </aside><div class="container">
@@ -206,7 +206,7 @@
 <div class="accordion accordion-flush" id="accordionFlush2">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading2">
-        <a href="102-cli.html">1. Command Line Interface: The Shell</a>
+        <a href="101-supercomputing.html">1. Supercomputing: Concepts</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -215,7 +215,7 @@
 <div class="accordion accordion-flush" id="accordionFlush3">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading3">
-        <a href="201-editors.html">2. Terminal-based Text Editors: nano, emacs and vim</a>
+        <a href="102-cli.html">2. Command Line Interface: The Shell</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -224,7 +224,7 @@
 <div class="accordion accordion-flush" id="accordionFlush4">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading4">
-        <a href="202-software.html">3. Software on HPC Clusters: modules, conda and containers</a>
+        <a href="201-editors.html">3. Terminal-based Text Editors: nano, emacs and vim</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -233,7 +233,16 @@
 <div class="accordion accordion-flush" id="accordionFlush5">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading5">
-        <a href="301-slurm.html">4. Workload Manager: Slurm</a>
+        <a href="202-software.html">4. Software on HPC Clusters: modules, conda and containers</a>
+    </div><!--/div.accordion-header-->
+
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush6">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading6">
+        <a href="301-slurm.html">5. Workload Manager: Slurm</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -245,7 +254,7 @@
       <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsecurrent" aria-expanded="true" aria-controls="flush-collapsecurrent">
         <span class="visually-hidden">Current Chapter</span>
         <span class="current-chapter">
-        5. Terminal Multiplexing: tmux
+        6. Terminal Multiplexing: tmux
         </span>
       </button>
     </div><!--/div.accordion-header-->
@@ -557,10 +566,10 @@ you want to scroll the lines on the pane or copy and paste lines. The
 procedure to use copy mode is as follows:</p>
 <ol style="list-style-type: decimal"><li><p>Press <strong>C-b [</strong> to enter in copy mode.</p></li>
 <li><p>Move the start/end of text to highlight.</p></li>
-<li><p>Press <strong>C-SPACEBAR</strong> to start selection</p></li>
-</ol><p>Start highlighting text. Selected text changes the color and
-background, so you’ll know if the command worked.</p>
-<ol start="4" style="list-style-type: decimal"><li><p>Move to the opposite end of the text to copy.</p></li>
+<li><p>Press <strong>C-SPACEBAR</strong> to start selection. Start
+highlighting text. Selected text changes the color and background, so
+you’ll know if the command worked.</p></li>
+<li><p>Move to the opposite end of the text to copy.</p></li>
 <li><p>Press <strong>ALT-w</strong> to copy selected text into
 <em>tmux</em> clipboard.</p></li>
 <li><p>Move cursor to opposite <em>tmux</em> pane, or completely
@@ -633,10 +642,9 @@ other repositories that customize <code>tmux</code> in several ways.</p>
 </div>
 <span class="callout-header">Challenge</span>
 <div id="exercise-tmux-sessions-windows-and-panes" class="callout-inner">
-<h3 class="callout-title">Exercise: TMUX Sessions, Windows and
+<h3 class="callout-title">Exercise: tmux Sessions, Windows and
 Panes</h3>
 <div class="callout-content">
-<blockquote>
 <p>This exercise will help you familiarize yourself with the three
 concepts in TMUX.</p>
 <ol style="list-style-type: decimal"><li><p>Create three sessions on TMUX, and give each of them different
@@ -650,8 +658,7 @@ different layouts using <strong>C-b SPACE</strong></p></li>
 <li><p>Detach or close your terminal and reconnect, attach your
 sessions, and verify that your windows and panes remain the
 same.</p></li>
-</ol></blockquote>
-</div>
+</ol></div>
 </div>
 </div>
 <div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
@@ -659,7 +666,7 @@ same.</p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 
 </div>
@@ -696,7 +703,7 @@ and check the list of sessions.</p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 
 </div>
