@@ -395,6 +395,7 @@ A very beautiful Reference Card for vim can be found here: [Vim CheatSheet](http
 ::::::::::::::::::::::::::::::::::::: keypoints
 
 - "There are three major editor in Linux/Unix: nano, emacs and vim"
+
 - "Once decided for on text editor it is important to the basic key combinations and operation of your editor of choice"
 
 ::::::::::::::::::::::::::::::::::::::::::::::::

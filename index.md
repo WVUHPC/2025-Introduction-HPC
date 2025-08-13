@@ -8,7 +8,7 @@ This workshop is an introduction to High-Performance Computing (HPC) and Researc
 
 This lesson pretends to go straight to the point. You will learn some useful commands, tools and techniques to start using WVU's HPC clusters for your research. As on any introductory course, no completeness should be assumed. For each episode, there is a lot more to explore that could be interesting for more advanced users. Some references are left at the end of each section.
 
-::: callout
+::: prereq
 
 ## Prerequisites
 

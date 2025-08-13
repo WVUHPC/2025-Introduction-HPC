@@ -20,12 +20,10 @@ exercises: 20
 - "Load and unload environment modules"
 - "Activate and change conda environments"
 - "Get a shell and execute commands inside singularity containers."
-- Explain how to use markdown with The Carpentries Workbench
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-
-# Introduction
+## Introduction
 
 Many software packages are being executed on an HPC cluster daily.
 Each area of science uses its own set of software packages.
@@ -46,8 +44,8 @@ The shell is a programming language in itself. As with any programming language,
 Shell variables can be created on the shell using the operator `=`. For example:
 
 ```
-$ A=10
-$ B=20
+~$ A=10
+~$ B=20
 ```
 
 
@@ -58,18 +56,18 @@ Think about them as placeholders for information stored within the system that p
 To create an environment variable, you can first to create a variable and make it and environment variable using the command `export` followed by the name of the variable.
 
 ```
-$ A=10
-$ B=20
-$ export A
-$ export B
+~$ A=10
+~$ B=20
+~$ export A
+~$ export B
 ```
 
 
 This procedure can be simplified with a single line that defines and export the variable. Example:
 
 ```
-$ export A=10
-$ export B=20
+~$ export A=10
+~$ export B=20
 ```
 
 
@@ -78,7 +76,7 @@ $ export B=20
 You can see all the variables currently defined by executing:
 
 ```
-$ env
+~$ env
 ```
 
 
@@ -93,7 +91,6 @@ echo B= $B
 C=$(( $A + $B ))
 echo C= $C
 ```
-{: .source}
 
 Now create two shell variables and execute the script, do the same with environment variables and notice that now the script is able to see the variables.
 
@@ -135,81 +132,66 @@ The following table lists the most common module command options.
 | module help	  | Shows help for a module. |
 | module swap	  | Swaps a currently loaded module for an unloaded module. |
 
+::::::::::::::::::::::::::::::::::::: challenge
 
-> ### Exercise: Using modulefiles
->
-> 1. Check the modules that you currently have and clean (purge) your environment from them. Check again and confirm that no module is loaded.
->
-> 2. Check which versions of Python, R, and GCC you have from the RHEL itself. Try to get and idea of how old those three components are. For python and R, all that you have to do is enter the corresponding command (`R` or `python`). For GCC you need to use `gcc --version` and see the date of those programs.
->
-> 3. Now let's get a newer version of those three components by loading the corresponding modules. Search for the module for Python 3.10.11, R 4.4.1, and GCC 9.3.0 and load the corresponding modules. To make things easier, you can use check the availability of modules just in the languages section. 
->
->    ~~~
->    module avail lang
->    ~~~
->    {: .source}
->
->
->    ~~~
->    module load lang/python/cpython_3.11.3_gcc122 lang/r/4.4.1_gcc122 lang/gcc/12.2.0 
->    ~~~
->    {: .source}
->
->
->
-> 4. Check again which version of those three components you have now. Notice that in the case of Python 3, the command python still goes towards the old Python 2.6.6, as the Python 3.x interpreter is not backward compatible with Python 2.x the new command is called `python3`. Check its version by entering the command.
->
->    ~~~
->    ~$ python3 --version
->    ~~~
->    {: .source}
->
->
->
-> 5. Clean all of the environment
->
->    ~~~
->    ~$ module purge
->    ~~~
->    {: .source}
->
-> 6. Go back and purge all the modules from your environment. We will now explore why it is essential to use a recent compiler. Try to compile the code at `workshops_hands-on/Introduction_HPC/5._Environment_Modules/lambda_c++14.cpp`. Go to the folder and execute:
->
->    ~~~
->    ~$ g++ lambda_c++14.cpp
->    ~~~
->    {: .source}
->
->
->    At this point, you should have received a list of errors, that is because even if the code is C++ it uses elements of the language that were not present at that time on C++ Specification. The code actually uses C++14, and only recent versions of GCC allow for these declarations. Let's check how many GCC compilers we have available on Thorny Flat.
->
->    ~~~
->    ~$ module avail lang/gcc
->    ~~~
->    {: .source}
->
->
->    Now, from that list, start loading and trying to compile the code as indicated above. Which versions of GCC allow you to compile the code? Also try the Intel compilers. In the case of the Intel compiler, the command to compile the code is:
->
->    ~~~
->    ~$ icpc lambda_c++14.cpp
->    ~~~
->    {: .source}
->
->
->    Try with all the Intel compilers. It will fail with some of them. That is because the default standard for the Intel C++ compiler is not C++14. You do not need to declare it explicitly, and for Intel Compiler Suite 2021, but for older versions, the correct command line is:
->
->    ~~~
->    ~$ icpc lambda_c++14.cpp -std=c++14
->    ~~~
->    {: .source}
->
->
-> It should be clearer why modules are an important feature of any HPC infrastructure, as it allows you to use several compilers, libraries, and packages in different versions. On a normal computer, you usually have just one.
->
->{: .source}
-{: .challenge}
+### Exercise: Using modulefiles
 
+ 1. Check the modules that you currently have and clean (purge) your environment from them. Check again and confirm that no module is loaded.
+
+ 2. Check which versions of Python, R, and GCC you have from the RHEL itself. Try to get and idea of how old those three components are. For python and R, all that you have to do is enter the corresponding command (`R` or `python`). For GCC you need to use `gcc --version` and see the date of those programs.
+
+ 3. Now let's get a newer version of those three components by loading the corresponding modules. Search for the module for Python 3.10.11, R 4.4.1, and GCC 9.3.0 and load the corresponding modules. To make things easier, you can use check the availability of modules just in the languages section. 
+
+ ```
+ module avail lang
+ ```
+
+ ```
+ module load lang/python/cpython_3.11.3_gcc122 lang/r/4.4.1_gcc122 lang/gcc/12.2.0 
+ ```
+
+ 4. Check again which version of those three components you have now. Notice that in the case of Python 3, the command python still goes towards the old Python 2.6.6, as the Python 3.x interpreter is not backward compatible with Python 2.x the new command is called `python3`. Check its version by entering the command.
+
+ ```
+ ~$ python3 --version
+ ```
+
+ 5. Clean all of the environment
+
+ ```
+ ~$ module purge
+ ```
+ 
+ 6. Go back and purge all the modules from your environment. We will now explore why it is essential to use a recent compiler. Try to compile the code at `workshops_hands-on/Introduction_HPC/5._Environment_Modules/lambda_c++14.cpp`. Go to the folder and execute:
+
+ ```
+ ~$ g++ lambda_c++14.cpp
+ ```
+
+At this point, you should have received a list of errors, that is because even if the code is C++ it uses elements of the language that were not present at that time on C++ Specification. The code actually uses C++14, and only recent versions of GCC allow for these declarations. Let's check how many GCC compilers we have available on Thorny Flat.
+
+ ```
+ ~$ module avail lang/gcc
+ ```
+
+ Now, from that list, start loading and trying to compile the code as indicated above. Which versions of GCC allow you to compile the code? Also try the Intel compilers. In the case of the Intel compiler, the command to compile the code is:
+
+ ```
+ ~$ icpc lambda_c++14.cpp
+ ```
+
+Try with all the Intel compilers. It will fail with some of them. That is because the default standard for the Intel C++ compiler is not C++14. You do not need to declare it explicitly, and for Intel Compiler Suite 2021, but for older versions, the correct command line is:
+
+ ```
+ ~$ icpc lambda_c++14.cpp -std=c++14
+ ```
+
+ It should be clearer why modules are an important feature of any HPC infrastructure, as it allows you to use several compilers, libraries, and packages in different versions. On a normal computer, you usually have just one.
+
+:::::::::::::::: solution
+
+:::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Conda
 
@@ -242,13 +224,11 @@ On Thorny Flat, the command to activate conda is:
 ~$ source /shared/software/conda/conda_init.sh
 ```
 
-
 Or you can see the command line trying to load the module for conda
 
 ```
 ~$ module load conda
 ```
-
 
 After activation, you are positioned in the ``base`` environment.
 
@@ -307,7 +287,6 @@ st2_py37                  /shared/software/conda/envs/st2_py37
 tensorflow18-py36         /shared/software/conda/envs/tensorflow18-py36
 ```
 
-
 ### Activating an existing environment
 
 Suppose that you want to use the environment called "tpd0001".
@@ -317,7 +296,6 @@ To activate this environment, execute::
 conda activate tpd0001
 ```
 
-
 ### Deactivating the current environment
 
 The current environment can be deactivated with::
@@ -325,7 +303,6 @@ The current environment can be deactivated with::
 ```
 conda deactivate
 ```
-
 
 If you are in the ``base`` environment, the deactivation will not have any effect.
 You are always at least in the ``base`` environment.
@@ -367,7 +344,6 @@ Executing transaction: done
 
 ```
 
-
 From here you can activate your environment and install the packages of your willing.
 
 ```
@@ -375,14 +351,11 @@ From here you can activate your environment and install the packages of your wil
 (snowflakes) trcis001:~$
 ```
 
-
-
 or if you want also to install a package you can execute::
 
 ```
 conda create --name snowflakes -c bioconda biopython
 ```
-
 
 Conda collects metadata about the package and its dependencies and produces an installation plan::
 
@@ -478,7 +451,6 @@ The following NEW packages will be INSTALLED:
 Proceed ([y]/n)? 
 
 ```
-{: .}
 
 Conda asks if you want to proceed with the plan::
 
@@ -486,7 +458,6 @@ Conda asks if you want to proceed with the plan::
 Proceed ([y]/n)? y
 Type "y" and press Enter to proceed.
 ```
-
 
 After that, conda, download, and install the packages, creating a new environment for you.
 The final message shows how to activate and deactivate the environment::
@@ -505,7 +476,6 @@ Executing transaction: done
 #     $ conda deactivate
 ```
 
-
 Each environment is isolated from other conda environments, and that allows you to keep several environments with different packages on them or different versions of the same packages.
 As the message shows, you activate the environment with::
 
@@ -521,13 +491,11 @@ To check the environments available, execute::
 conda env list
 ```
 
-
-or::
+or
 
 ```
 conda info --envs
 ```
-
 
 ### Conda and Python
 
@@ -538,21 +506,18 @@ If you want to use a different version of Python, for example, Python 2.7, creat
 conda create --name python27 python=2.7
 ```
 
-
 You activate the environment::
 
 ```
 conda activate python27
 ```
 
-
 And verify the Python version::
 
 ```
-$ python --version
+~$ python --version
 Python 2.7.16 :: Anaconda, Inc.
 ```
-
 
 Conda has packages for versions of python for 2.7, 3.5, 3.6 and 3.7
 
@@ -561,9 +526,8 @@ Conda has packages for versions of python for 2.7, 3.5, 3.6 and 3.7
 New packages can be installed to existing conda environments. First search for packages with::
 
 ```
-conda search mkl
+~$ conda search mkl
 ```
-
 
 Packages are stored in repositories called **channels**.
 By default, conda search on the ``pkgs/main`` channel only.
@@ -573,11 +537,11 @@ The most prominent channels to search for packages are **intel**, **conda-forge*
 To search for packages there execute::
 
 ```
-conda search -c intel mkl
+~$ conda search -c intel mkl
 
-conda search -c conda-forge nitime
+~$ conda search -c conda-forge nitime
 
-conda search -c bioconda blast
+~$ conda search -c bioconda blast
 ```
 
 
@@ -617,14 +581,12 @@ First get the list of versions and builds for the package that you want::
   mkl                           2019.4             243  pkgs/main
   mkl                           2019.4       intel_243  intel
   mkl                           2019.5       intel_281  intel
-  ~~~
-  
-
+```
 
 Now, install the package declaring the version and build::
 
 ```
-$ conda install -c intel mkl=2019.4=intel_243
+~$ conda install -c intel mkl=2019.4=intel_243
 Collecting package metadata (current_repodata.json): done
 Solving environment: done
 
@@ -665,7 +627,6 @@ Verifying transaction: done
 Executing transaction: done
 ```
 
-
 ### Creating a new environment from a YML file
 
 You can create your own environment, one easy way of doing that is via a
@@ -682,7 +643,6 @@ you want one env for bowtie2 (bowtie2.yml)
     dependencies:
       - bowtie2
 ```
-
 
 Another example is this YML file for installing a curated set of basic
 genomics codes that requires just a few dependencies. (biocore.yml)
@@ -709,7 +669,6 @@ dependencies:
   - velvet
 ```
 
-
 To create an environment from those YML files you can select one
 location on your scratch folder
 
@@ -717,13 +676,11 @@ location on your scratch folder
 conda env create -p $SCRATCH/bowtie2 -f bowtie2.yml
 ```
 
-
 or for the biocore.yml
 
 ```
 conda env create -p $SCRATCH/biocore -f biocore.yml
 ```
-
 
 By default, new environments are created inside your `$HOME` folder on
 `$HOME/.conda`
@@ -735,8 +692,8 @@ Notice that only bowtie2 comes from bioconda channel. All other packages
 are part of conda-forge, a lower level channel.
 
 ```
-$ conda activate $SCRATCH/bowtie2
-$ conda list
+~$ conda activate $SCRATCH/bowtie2
+~$ conda list
 # packages in environment at /scratch/gufranco/bowtie2:
 #
 # Name                    Version                   Build  Channel
@@ -786,8 +743,6 @@ bowtie2 .....
 conda deactivate
 ```
 
-
-
 ### Deleting an environment
 
 You can execute this command to remove an environment you own.
@@ -796,13 +751,11 @@ You can execute this command to remove an environment you own.
 conda remove --all -p $SCRATCH/bowtie2
 ```
 
-
-or 
+or
 
 ```
 conda env remove -n bowtie2
 ```
-
 
 If the environment is named.
 
@@ -840,10 +793,8 @@ module purge
 module load genomics/qiime
 ```
 
-
 This module will load Python 2.7.3 and qiime on top of that.
 Conda is a particularly good option to install older packages that could still be available on channels like conda-forge and bioconda.
-
 
 ## Singularity Containers
 
@@ -871,19 +822,16 @@ In order to connect into Thorny with X11 forwarding use:
 ```
 ssh -X <username>@ssh.wvu.edu
 ```
-{: .source}
 
 ```
 ssh -X <username>@tf.hpc.wvu.edu
 ```
-{: .source}
 
 Once you have login into the cluster, create an interactive job with the following command line, in this case we are using standby as queue but any other queue is valid.
 
 ```
 salloc -c 4 -p standby
 ```
-{: .source}
 
 
 Once you get inside a compute node, load the module:
@@ -891,7 +839,6 @@ Once you get inside a compute node, load the module:
 ```
 module load singularity
 ```
-{: .source}
 
 
 After loading the module the command singularity is available for usage, and you can get a shell inside the image with:
@@ -899,8 +846,6 @@ After loading the module the command singularity is available for usage, and you
 ```
 singularity shell /shared/containers/<Image Name>
 ```
-{: .source}
-
 
 #### Job Submission
 
@@ -929,7 +874,6 @@ module load singularity
 
 singularity exec /shared/containers/<Image Name> <command_or_script_to_run>
 ```
-{: .source}
 
 
 Submit your job with
@@ -937,46 +881,57 @@ Submit your job with
 ```
 sbatch runjob.pbs
 ```
-{: .source}
 
-> ### Exercise 1: Using singularity on the cluster (Interactive)
->
-> This exercise propose the use of singularity to access RStudio-server version 2023.12.1-402 and R 4.4.1
->
-> Follow the instructions for accessing an interactive session
->
-> The image is located at:
->
-> ~~~
-> /shared/containers/RStudio-server-2023.12.1-402_R-4.4.1_jammy.sif 
-> ~~~
-> {: .source}
-> Be sure that you can execute basic R commands. You can get an error message like:
->
->>   WARNING: You are configured to use the CRAN mirror at https://cran.rstudio.com/. This mirror supports secure (HTTPS) downloads however your system is unable to communicate securely with the server (possibly due to out of date certificate files on your system). Falling back to using insecure URL for this mirror.
->
-> That is normal and due to the fact that compute nodes have no Internet access.
->
-{: .challenge}
 
-> ### Exercise 2: Using singularity on the cluster (Non-interactive)
->
-> Create a script that reads a CSV with official statistics of population for US. The file can be downloaded from:
->~~~
->$ wget https://www2.census.gov/programs-surveys/popest/datasets/2010-2018/state/detail/SCPRC-EST2018-18+POP-RES.csv
->~~~
->{: .source}
->
-> However, the file is also present in the repository for hands-ons
->~~~
->$ git clone https://github.com/WVUHPC/workshops_hands-on.git
->~~~
->
->
->The folder is `workshops_hands-on/Introduction_HPC/11._Software_Containers_Singularity`. If you are not familiar with R programming, the script is there too. Notice that you cannot write your script to download the CSV file directly from the Census Bureau as the compute  nodes have no Internet access.
-> Write a submission script and submit.
->
-{: .challenge}
+::::::::::::::::::::::::::::::::::::: challenge
+
+### Exercise 1: Using singularity on the cluster (Interactive)
+
+This exercise propose the use of singularity to access RStudio-server version 2023.12.1-402 and R 4.4.1
+
+Follow the instructions for accessing an interactive session
+
+The image is located at:
+
+```
+/shared/containers/RStudio-server-2023.12.1-402_R-4.4.1_jammy.sif 
+```
+
+Be sure that you can execute basic R commands. You can get an error message like:
+
+```
+WARNING: You are configured to use the CRAN mirror at https://cran.rstudio.com/. This mirror supports secure (HTTPS) downloads however your system is unable to communicate securely with the server (possibly due to out of date certificate files on your system). Falling back to using insecure URL for this mirror.
+```
+
+That is normal and due to the fact that compute nodes have no Internet access.
+
+:::::::::::::::: solution
+
+:::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+### Exercise 2: Using singularity on the cluster (Non-interactive)
+
+Create a script that reads a CSV with official statistics of population for US. The file can be downloaded from:
+
+```
+~$ wget https://www2.census.gov/programs-surveys/popest/datasets/2010-2018/state/detail/SCPRC-EST2018-18+POP-RES.csv
+```
+
+However, the file is also present in the repository for hands-ons
+```
+~$ git clone https://github.com/WVUHPC/workshops_hands-on.git
+```
+
+The folder is `workshops_hands-on/Introduction_HPC/11._Software_Containers_Singularity`. If you are not familiar with R programming, the script is there too. Notice that you cannot write your script to download the CSV file directly from the Census Bureau as the compute  nodes have no Internet access.
+Write a submission script and submit.
+
+:::::::::::::::: solution
+
+:::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Advanced topics
 
@@ -1032,7 +987,6 @@ mkdir -p /group
 mkdir -p /scratch
 touch /usr/bin/nvidia-smi
 ```
-{: .source}
 
 A few folders are created that help us to link special folders like `/users`, `/scratch` to the host file system. Other than that the image contains a very small but usable Linux CentOS machine.
 
@@ -1070,7 +1024,6 @@ Skipping checks
 Singularity container built: centos
 Cleaning up...
 ```
-{: .output}
 
 The result will be a folder called `centos`. We can enter into that folder to learn what we need to install the packages for our image.
 
@@ -1126,11 +1079,10 @@ mkdir -p /scratch
 touch /usr/bin/nvidia-smi
 
 cd /data
-wget http://www.mirrorservice.org/sites/download.savannah.gnu.org/releases/libgraph/libgraph-1.0.2.tar.gz
+wget https://www.mirrorservice.org/sites/download.savannah.gnu.org/releases/libgraph/libgraph-1.0.2.tar.gz
 tar -zxvf libgraph-1.0.2.tar.gz
 cd libgraph-1.0.2 && ./configure --prefix=/data && make && make install
 ```
-{: .source}
 
 Notice that we have added a few lines using `yum` to install some packages, we add EPEL on the first line and we use it to install some extra packages on the second line.
 
@@ -1138,7 +1090,6 @@ Notice that we have added a few lines using `yum` to install some packages, we a
 yum -y install wget make gcc gcc-c++ SDL-devel epel-release
 yum -y update && yum -y install SDL_image-devel compat-guile18-devel guile-devel
 ```
-{: .source}
 
 Finally, we use `wget` to get the sources and build `libgraph`.
 In order to save space on the VM, lets delete the old folder and create a new one with the new recipe.
@@ -1147,7 +1098,6 @@ In order to save space on the VM, lets delete the old folder and create a new on
 sudo rm -rf centos
 sudo singularity build --sandbox centos centos-libgraph.bst
 ```
-
 
 The command takes longer and at the end you get libgraph installed at `/data`
 The final step will be use that to test that we are able to use libgraph with our application. The application is a couple of very small codes that use libgraph as dependency.
@@ -1161,7 +1111,6 @@ To achieve this we need.
 The final version of the Bootstrap recipe looks like this `centos-final.bst`
 
 ```
-
 # Singularity container with centos
 #
 # This is the Bootstrap file to recreate the image.
@@ -1203,7 +1152,7 @@ touch /usr/bin/nvidia-smi
 mv /circles.c /julia.c /sample.c /data
 
 cd /data
-wget http://www.mirrorservice.org/sites/download.savannah.gnu.org/releases/libgraph/libgraph-1.0.2.tar.gz
+wget https://www.mirrorservice.org/sites/download.savannah.gnu.org/releases/libgraph/libgraph-1.0.2.tar.gz
 tar -zxvf libgraph-1.0.2.tar.gz
 cd libgraph-1.0.2 && ./configure --prefix=/data && make && make install
 
@@ -1212,7 +1161,6 @@ gcc julia.c -o bin/julia -I/data/include -L/data/lib -lgraph -lm
 gcc circles.c -o bin/circles -I/data/include -L/data/lib -lgraph -lm
 gcc sample.c -o bin/sample -I/data/include -L/data/lib -lgraph -lm
 ```
-{: .source}
 
 We add a few sample files `sample.c`, `circles.c` and `julia.c` that uses the old `graphics.h` provided by `libgraph`.
 
@@ -1221,22 +1169,26 @@ The binaries are `sample`, `cicles` and `julia` and they are accessible on the c
 When you have crafted a good recipe with the codes and data that you need. The last step is to create a final image. The command for that is below, remembering of deleting the `centos` folder to save space.
 
 ```
-sudo rm -rf centos
-sudo singularity build centos-final.simg centos-final.bst
+~$ sudo rm -rf centos
+~$ sudo singularity build centos-final.simg centos-final.bst
 ```
-
 
 This is the final image. It is not too big, it contains the packages that we installed from yum, the sources and binaries for libgraph and the sources for the couple of example sources that uses libgraph. The image can be move to any machine with singularity and should be able to run the codes.
 
 Remember that to see the windows you should have and Xserver running on your machine and X11 forwarding on your ssh client.
 
+:::::::::::::::::::::::::::::::::::::: keypoints
 
-:::::::::::::::::::::::::::::::::::::: keypoints 
 - Modules. Use `module avail` to know all the modules on the cluster.
-- Modules. Use `module load <module_name>` to load a module.
-- Conda. Use `conda env list` to list the available environments.
-- Conda. Use `conda activate` to activate a conda environment.
-- Singularity. Use `singularity shell <container>` to get a shell inside the container.
-- Singularity. Use `singularity exec <container> <command>` to execute a command or script inside the container. 
-::::::::::::::::::::::::::::::::::::::::::::::::
 
+- Modules. Use `module load <module_name>` to load a module.
+
+- Conda. Use `conda env list` to list the available environments.
+
+- Conda. Use `conda activate` to activate a conda environment.
+
+- Singularity. Use `singularity shell <container>` to get a shell inside the container.
+
+- Singularity. Use `singularity exec <container> <command>` to execute a command or script inside the container. 
+
+::::::::::::::::::::::::::::::::::::::::::::::::

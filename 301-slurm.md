@@ -20,6 +20,8 @@ exercises: 20
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+## Introduction
+
 Imagine for a moment that you need to execute a large simulation and all that you have is the computer that is in front of you. You will initiate the simulation by launching the program that will compute it. You ajust the parameters to avoid overloading the machine with more concurrent operations than the machine can process efficiently. It is possible that you cannot do anything else with the computer until the simulation is finished.
 
 Changing the situation a bit, now you have several computers at your disposal and you have many simulations to do, maybe the same simulation but under different physical conditions.
@@ -30,14 +32,11 @@ Coordinating all the work and all the executions could be a daunting task that c
 
 All what we have described is the work of two programs, a resource manager in charge of monitoring the state of a pool of computers and a scheduler that will assign jobs to the different machines as fairly as possible for all the users in the cluster. In the case of our cluster those two roles are managed by a single software called Slurm and the integration of the resource manager, scheduler with the addition and accounting and other roles makes Slurm to be called a Workload Manager.
 
-
 An HPC system such as Thorny Flat or Dolly Sods has tenths nodes and more than 100 users.
 How do we decide who gets what and when?
 How do we ensure that a task is run with the resources it needs?
 This job is handled by a special piece of software called the scheduler.
 The scheduler manages which jobs run where and when on an HPC system.
-
-
 
 ![Why do supercomputers use queueing?](fig/queueing_infog.png){alt="blue
 hexagon with The Carpentries logo in white and text: 'The Carpentries'"}
@@ -51,11 +50,14 @@ A Resource Manager takes care of receiving job submissions and executes those jo
 On the other hand, a job scheduler is in charge of associating jobs with the appropriate resources and trying to maximize an objective function, such as total utilization constrained by priorities and the best balance between the resources requested and resources available.
 As SLURM is taking the dual role of Resource Manager and Scheduler, SLURM calls itself a Workload Manager, a term that better embraces the multiple roles taken by this software package.
 
->## Workload Manager on WVU Clusters 
->
->All of our clusters use SLURM today. On Thorny Flat, we have a compatibility layer so that most Torque/Moab batch scripts will still work. If you are new to WVU's HPC clusters, it makes the most sense to learn the SLURM
->batch commands.  See [Slurm Quick Start Guide](https://slurm.schedmd.com/quickstart.html) for more SLURM information.
-{: .callout}
+::: callout
+
+## Workload Manager on WVU Clusters 
+
+All of our clusters use Slurm as Workload Manager. On Thorny Flat, we have a compatibility layer so that most Torque/Moab batch scripts will still work. If you are new to WVU's HPC clusters, it makes the most sense to learn the SLURM
+batch commands.  
+See [Slurm Quick Start Guide](https://slurm.schedmd.com/quickstart.html) for more SLURM information.
+:::
 
 ## What is a Batch Script?
 
@@ -65,15 +67,16 @@ In this case, we need to make a script that incorporates some arguments for SLUR
 
 We will use the ``sleep.sh`` job script as an example.
 
-
 ### Parameters
 
 Let's discuss the example SLURM script, ``sleep.sh``. Go to File Explorer and edit `sleep.sh`
 
-    $> cd $HOME
-    $> mkdir SLEEP
-    $> cd SLEEP
-    $> nano sleep.sh
+```
+~$ cd $HOME
+~$ mkdir SLEEP
+~$ cd SLEEP
+~$ nano sleep.sh
+```
 
 Write the following in the file with your text editor:
 
@@ -118,63 +121,59 @@ A resource list will contain a number of settings that inform the scheduler what
 #### Walltime
 Walltime is represented by `--time=00:03:00` in the format HH:MM:SS. This will be how long the job will run before timing out.  If your job exceeds this time, the scheduler will terminate the job. You should find a usual runtime for the job and add some more (say 20%) to it. For example, if a job took approximately 10 hours, the wall time limit could be set to 12 hours, e.g. "--time=12:00:00". By setting the wall time, the scheduler can perform job scheduling more efficiently and also reduces occasions where errors can leave the job stalled but still taking up resources for the default much longer wall time limit (for queue wall time defaults, run `squeue` command)
 
->## Walltime test exercise
->
->Resource requests are typically binding.
->If you exceed them, your job will be killed.
->Let's use wall time as an example.
->We will request 30 seconds of wall time,
->and attempt to run a job for two minutes.
->
->```
->#!/bin/bash
->
->#SBATCH --partition=standby
->#SBATCH --job-name=test_job
->#SBATCH --time=00:00:30
->#SBATCH --nodes=1 --ntasks-per-node=2
->
->echo 'This script is running on:'
->hostname
->echo 'The date is :'
->date
->sleep 120
->
->```
->
->Submit the job and wait for it to finish.
->Once it has finished, check the error log file. In the error file, there will be
->```
->This script is running on:
->This script is running on:
->taicm002.hpc.wvu.edu
->The date is :
->Thu Jul 20 19:25:21 EDT 2023
->slurmstepd: error: *** JOB 453582 ON taicm002 CANCELLED AT 2023-07-20T19:26:33 DUE TO TIME LIMIT ***
->
->```
->
-> > ## What happened?
-> >
-> >Our job was killed for exceeding the amount of resources it requested.
-> > Although this appears harsh, this is a feature.
-> >Strict adherence to resource requests allows the scheduler to find the best possible place
-> >for your jobs.
-> >Even more importantly,
-> >it ensures that another user cannot use more resources than they've been given.
-> >If another user messes up and accidentally attempts to use all of the CPUs or memory on a node,
-> >SLURM will either restrain their job to the requested resources or kill the job outright.
-> >Other jobs on the node will be unaffected.
-> >This means that one user cannot mess up the experience of others,
-> >the only jobs affected by a mistake in scheduling will be their own.
->
-> {: .solution}
-{: .challenge }
+::: callout
+## Walltime test exercise
 
+Resource requests are typically binding.
+If you exceed them, your job will be killed.
+Let's use wall time as an example.
+We will request 30 seconds of wall time,
+and attempt to run a job for two minutes.
+
+```
+#!/bin/bash
+
+#SBATCH --partition=standby
+#SBATCH --job-name=test_job
+#SBATCH --time=00:00:30
+#SBATCH --nodes=1 --ntasks-per-node=2
+
+echo 'This script is running on:'
+hostname
+echo 'The date is :'
+date
+sleep 120
+```
+
+Submit the job and wait for it to finish.
+Once it has finished, check the error log file. In the error file, there will be
+
+```
+This script is running on:
+This script is running on:
+taicm002.hpc.wvu.edu
+The date is :
+Thu Jul 20 19:25:21 EDT 2023
+slurmstepd: error: *** JOB 453582 ON taicm002 CANCELLED AT 2023-07-20T19:26:33 DUE TO TIME LIMIT ***
+```
+
+## What happened?
+
+Our job was killed for exceeding the amount of resources it requested.
+Although this appears harsh, this is a feature.
+Strict adherence to resource requests allows the scheduler to find the best possible place
+for your jobs.
+Even more importantly, it ensures that another user cannot use more resources than they've been given.
+If another user messes up and accidentally attempts to use all of the CPUs or memory on a node,
+SLURM will either restrain their job to the requested resources or kill the job outright.
+Other jobs on the node will be unaffected.
+This means that one user cannot mess up the experience of others, the only jobs affected by a mistake in scheduling will be their own.
+
+:::
 
 #### Compute Resources and Parameters
-Compute parameters  The argument `--nodes` specifies the number of nodes (or chunks of resource) required; `--ntasks-per-node` indicates the number of CPUs per chunk required.
 
+Compute parameters  The argument `--nodes` specifies the number of nodes (or chunks of resource) required; `--ntasks-per-node` indicates the number of CPUs per chunk required.
 
 | nodes |  tasks |  Description|
 |---|---|---|
@@ -182,8 +181,6 @@ Compute parameters  The argument `--nodes` specifies the number of nodes (or chu
 | 4|  8|  32 Processor job, using 4 nodes and 8 processors per node|
 | 8|  28|  244 Processor job, using 8 nodes and 28 processor per node|
 | 1 | 40 | 40 Processor job, using 1 nodes and 40 processors per node|
-
-
 
 Each of these parameters has a default setting they will revert to if not set; however, this means your script may act differently to what you expect.
 
@@ -193,21 +190,22 @@ You can find more information about these parameters by viewing the manual page 
 $> man sbatch
 ```
 
-> ## Setting up email notifications
->
-> Jobs on an HPC system might run for days or even weeks.
-> We probably have better things to do than constantly check on the status of our job
-> with `squeue`.
-> Looking at the [online documentation for `sbatch`](https://slurm.schedmd.com/sbatch.html)
-> (you can also google "sbatch slurm"),
-> can you set up our test job to send you an email when it finishes?
->
-> Hint: you will need to use the `--mail-user` and `--mail-type` options.
-{: .challenge}
+::: callout
 
-# Running a batch job (two methods)
+## Setting up email notifications
 
-## Submit Jobs with job composer on OnDemand
+Jobs on an HPC system might run for days or even weeks.
+We probably have better things to do than constantly check on the status of our job with `squeue`.
+Looking at the [online documentation for `sbatch`](https://slurm.schedmd.com/sbatch.html)
+(you can also google "sbatch slurm"),
+can you set up our test job to send you an email when it finishes?
+
+Hint: you will need to use the `--mail-user` and `--mail-type` options.
+:::
+
+## Running a batch job (two methods)
+
+### Submit Jobs with job composer on OnDemand
 
 OnDemand also has a tool for job creation and submission to the batch system. The same information as above applies since
 it still uses the same underlying queue system. In the Job Composer, you can create a new location in your home directory
@@ -225,7 +223,6 @@ hexagon with The Carpentries logo in white and text: 'The Carpentries'"}
 
 Fill it in as shown. Path is `~/SLEEP` and then select Save.
 
-
 To run the job, select green 'play' button.
 
 If the job is successfully submitted, a green bar will appear on the top of the page.
@@ -233,14 +230,14 @@ If the job is successfully submitted, a green bar will appear on the top of the 
 Also, OnDemand allows you to view the queue for all systems (not just the one you are on in the shell) under Jobs, select
 Active Jobs. You can filter by your jobs, your group's jobs, and all jobs.
 
-## Submitting Jobs via the command line
+### Submitting Jobs via the command line
 
 To submit this job to the scheduler, we use the `sbatch` command.
 
 ```
-$> sbatch sleep.sh
+~$ sbatch sleep.sh
 Submitted batch job 453594
-$>
+~$
 ```
 The number that first appears is your Job ID. When the job is completed, you will get two files: an Output and an Error file (even if there is no errors). They will be named {JobName}.o{JobID} and {JobName}.e{JobID} respectively.
 
@@ -248,13 +245,11 @@ And that's all we need to do to submit a job.
 To check on our job's status, we use the command `squeue`.
 
 ```
-$> squeue -u $USER
+~$ squeue -u $USER
              JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
             453594   standby test_job gufranco  R       0:34      1 taicm009
 
 ```
-
-{: .output}
 
 We can see all the details of our job, most importantly if it is in the "R" or "RUNNING" state.
 Sometimes our jobs might need to wait in a queue ("PD") or have an error.
@@ -269,6 +264,7 @@ The same compute node can be associated with multiple partitions
 Your job will be routed to the appropriate compute node based on the list of nodes associated with the partition, the wall time, and the computational resources requested.
 To get the list of partitions on the cluster, execute:
 
+```
 	$> sinfo -s
 	PARTITION       AVAIL  TIMELIMIT   NODES(A/I/O/T) NODELIST
 	standby*           up    4:00:00      94/71/2/167 taicm[001-009],tarcl100,tarcs[100,200-206,300-304],tbdcx001,tbmcs[001-011,100-103],tbpcm200,tbpcs001,tcbcx100,tcdcx100,tcgcx300,tcocm[100-104],tcocs[001-064,100],tcocx[001-003],tcscm300,tjscl100,tjscm001,tmmcm[100-108],tngcm200,tpmcm[001-006],tsacs001,tsdcl[001-002],tsscl[001-002],ttmcm[100-101],tzecl[100-107],tzecs[100-115]
@@ -301,18 +297,22 @@ To get the list of partitions on the cluster, execute:
 	zbetienne          up   infinite        6/18/0/24 tzecl[100-107],tzecs[100-115]
 	zbetienne_large    up   infinite          6/2/0/8 tzecl[100-107]
 	zbetienne_small    up   infinite        0/16/0/16 tzecs[100-115]
+```
 
+::::::::::::::::::::::::::::::::::::: challenge
 
+## Exercise: Submitting resource requests
 
-> ## Submitting resource requests
->
-> Submit a job that will use 1 node, 4 processors, and 5 minutes of walltime.
-{: .challenge}
+Submit a job that will use 1 node, 4 processors, and 5 minutes of walltime.
 
+:::::::::::::::: solution
+
+:::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Job environment variables
 
-SLURM sets multiple environment variables at submission time. The following variables are commonly used in command files:
+Slurm sets multiple environment variables at submission time. The following variables are commonly used in command files:
 
 
 | Variable Name |  Description |
@@ -325,16 +325,14 @@ SLURM sets multiple environment variables at submission time. The following vari
 | `$SLURM_SUBMIT_DIR`|  The directory from which the batch job was submitted. |
 | `$SLURM_ARRAY_TASK_ID` |  Array ID numbers for jobs submitted with the -a flag. |
 
-
 ## Canceling a job
-
 
 Sometimes we'll make a mistake and need to cancel a job.
 This can be done with the `qdel` command.
 Let's submit a job and then cancel it using its job number.
 
 ```
-$> sbatch sleep.sh
+~$ sbatch sleep.sh
 Submitted batch job 453599
 
 $> $ squeue -u $USER
@@ -346,8 +344,8 @@ Now cancel the job with it's job number.
 Absence of any job info indicates that the job has been successfully canceled.
 
 ```
-$> scancel 453599
-$> squeue -u $USER
+~$ scancel 453599
+~$ squeue -u $USER
              JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
 ```
 
@@ -355,6 +353,7 @@ $> squeue -u $USER
 
 The information provided by the command `squeue` is sometimes not enough, and you would like to gather a complete picture of the state of a particular job. The command `scontrol` provides a wealth of information about jobs but also partitions and nodes. Information about a job:
 
+```
 	$ sbatch sleep.sh
 	Submitted batch job 453604
 	$ scontrol show job 453604
@@ -385,6 +384,7 @@ The information provided by the command `squeue` is sometimes not enough, and yo
 	   StdIn=/dev/null
 	   StdOut=/gpfs20/users/gufranco/SLEEP/slurm-453604.out
 	   Power=
+```
 
 ## Interactive jobs
 
@@ -395,12 +395,16 @@ You can also request interactive jobs on OnDemand using the Interactive Apps men
 
 To submit an interactive job requesting 4 cores on the partition standby and with a wall time of 40 minutes, execute:
 
-	$> srun -p standby -t 40:00 -c 4 --pty bash
+```
+~$ srun -p standby -t 40:00 -c 4 --pty bash
+```
 
 Another example includes requesting a GPU compute compute, execute:
 
-	$> srun -p comm_gpu_inter -G 1 -t 2:00:00 -c 8 --pty bash
-
+```
+~$ srun -p comm_gpu_inter -G 1 -t 2:00:00 -c 8 --pty bash
+```
+`
 ## Job arrays
 
 Job arrays offer a mechanism for submitting and managing collections of similar jobs quickly and easily; job arrays with many tasks can be submitted from a single submission script.
@@ -408,12 +412,15 @@ Job arrays are very useful for testing jobs when one parameter is changed or to 
 
 For our example, we will create a folder FIBONACCI and a submission script called `fibo.sh`
 
-	$> mkdir FIBONACCI
-	$> cd FIBONACCI/
-	$> nano fibo.sh
+```
+~$ mkdir FIBONACCI
+~$ cd FIBONACCI/
+~$ nano fibo.sh
+```
 
 Write the content of the submission script as follows:
 
+```
 	#!/bin/bash
 
 	#SBATCH --partition=standby
@@ -448,6 +455,7 @@ Write the content of the submission script as follows:
 	# End of for loop
 	echo ""
 	sleep 60
+```
 
 The array index values on job arrays are specified using the ``--array`` or ``-a`` option of the `sbatch` command.
 All the jobs in the job array will have the same variables except for the environment variable `SLURM_ARRAY_TASK_ID`
@@ -456,9 +464,10 @@ This variable can redirect the workflow to a different folder or execute the sim
 
 Submit the job array:
 
-	$> sbatch fibo.sh
-	Submitted batch job 453632
-	$> squeue -u $USER
+```
+~$ sbatch fibo.sh
+Submitted batch job 453632
+~$ squeue -u $USER
              JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
           453632_1   standby test_job gufranco  R       0:03      1 taicm007
           453632_2   standby test_job gufranco  R       0:03      1 taicm007
@@ -470,22 +479,31 @@ Submit the job array:
           453632_8   standby test_job gufranco  R       0:03      1 taicm007
           453632_9   standby test_job gufranco  R       0:03      1 taicm007
          453632_10   standby test_job gufranco  R       0:03      1 taicm007
+```
 
 The job submission will create ten jobs
 When the jobs finish, their output will be in files `slurm-XXX`. For example:
 
-	$> cat slurm-453632_7.out
-	10 first elements in the Fibonacci Sequence
+```
+~$ cat slurm-453632_7.out
+10 first elements in the Fibonacci Sequence
 
-	Starting with 7 and 8
+Starting with 7 and 8
 
-	7 8 15 23 38 61 99 160 259 419
+7 8 15 23 38 61 99 160 259 419
+~~~
 
 
-:::::::::::::::::::::::::::::::::::::: keypoints 
+:::::::::::::::::::::::::::::::::::::: keypoints
+
 - "The scheduler handles how compute resources are shared between users."
+
 - "Everything you do should be run through the scheduler."
+
 - "A non-interactive job is expressed as a shell script that is submitted to the cluster."
+
 - "Try to adjust the wall time to around 10-20% more than the expected time the job should need."
+
 - "It is a good idea to keep aliases to common torque commands for easy execution."
+
 ::::::::::::::::::::::::::::::::::::::::::::::::

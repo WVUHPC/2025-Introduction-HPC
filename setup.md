@@ -21,10 +21,12 @@ On Windows machines, you have several options. You can install an external appli
 
 ![MobaXterm](fig/MobaXterm.png){alt="Window showing MobaXterm"}
 
-More recently, there have also been options for accessing a terminal and SSH clients using Microsoft products. One option is to install [Visual Studio Code](https://code.visualstudio.com).
-Instructions to add an SSH client to VSC can be found [here](https://code.visualstudio.com/docs/remote/ssh) and [here](https://code.visualstudio.com/learn/develop-cloud/ssh-lab-machines). Visual Studio Code will give you remote access and a file manager that you can use to move files between the cluster and your computer.
+More recently, there have also been options for accessing a terminal and SSH clients using Microsoft products. 
+One option is to install [Visual Studio Code](https://code.visualstudio.com/).
+There are instructions on [Remote Development using SSH](https://code.visualstudio.com/docs/remote/ssh).
+Visual Studio Code will give you remote access and a file manager that you can use to move files between the cluster and your computer.
 
-Another alternative is using the Windows Subsystem for Linux (WSL). WSL will allow you to run a full Linux OS inside Windows with all the commands that you will encounter on a typical Linux machine. With the latest version of WSL 2 and Windows 10 or 11, you can even run GUI applications from inside Windows alongside other Windows applications. You can see the files on your Windows machine. Running and completing Linux OS inside Windows will give you access not only to SSH client and terminal but also to the commands that you will learn during this lesson, as you will do from a Native Linux machine. Instructions about installing and configuring WSL can be found [here](https://docs.microsoft.com/en-us/windows/wsl/)
+Another alternative is using the Windows Subsystem for Linux (WSL). WSL will allow you to run a full Linux OS inside Windows with all the commands that you will encounter on a typical Linux machine. With the latest version of WSL 2 and Windows 10 or 11, you can even run GUI applications from inside Windows alongside other Windows applications. You can see the files on your Windows machine. Running and completing Linux OS inside Windows will give you access not only to SSH client and terminal but also to the commands that you will learn during this lesson, as you will do from a Native Linux machine. Read also [Windows Subsystem for Linux Documentation](https://learn.microsoft.com/en-us/windows/wsl/)
 
 ### Connecting to Thorny Flat and Dolly Sods
 

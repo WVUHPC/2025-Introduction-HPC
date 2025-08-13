@@ -65,7 +65,8 @@ contact: 'gufranco@mail.wvu.edu' # FIXME
 # - another-learner.md
 
 # Order of episodes in your lesson
-episodes: 
+episodes:
+- 101-supercomputing.md
 - 102-cli.md
 - 201-editors.md
 - 202-software.md
