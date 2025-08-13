@@ -67,6 +67,8 @@ contact: 'gufranco@mail.wvu.edu' # FIXME
 # Order of episodes in your lesson
 episodes: 
 - introduction.md
+- 102-cli.md
+- 201-editors.md
 
 # Information for Learners
 learners: 
