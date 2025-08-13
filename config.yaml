@@ -66,9 +66,11 @@ contact: 'gufranco@mail.wvu.edu' # FIXME
 
 # Order of episodes in your lesson
 episodes: 
-- introduction.md
 - 102-cli.md
 - 201-editors.md
+- 202-software.md
+- 301-slurm.md
+- 302-tmux.md
 
 # Information for Learners
 learners: 
