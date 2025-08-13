@@ -30,8 +30,8 @@ Most likely, you will connect to Thorny Flat, our flagship HPC cluster. The inst
 
 To access Thorny Flat from your computer, execute this command from your terminal (Linux, macOS):
 
-```r
-ssh <username>@ssh.wvu.edu
+```
+~$ ssh <username>@ssh.wvu.edu
 ```
 
 
@@ -40,14 +40,14 @@ This command will allow you access to WVU's SSH gateway. An intermediate machine
 The commands that will allow you to enter into the HPC clusters are:
 For Thorny Flat:
 
-```r
-ssh ts.hpc.wvu.edu
+```
+~$ ssh ts.hpc.wvu.edu
 ```
 
 For Dolly Sods:
 
-```r
-ssh ds.hpc.wvu.edu
+```
+~$ ssh ds.hpc.wvu.edu
 ```
 
 
@@ -61,8 +61,8 @@ After entering your credentials with DUO, you get a prompt on the SSH gateway, a
 
 Logging out of a cluster can be done with the exit command:
 
-```r
-$ exit
+```
+~$ exit
 ```
 
 Executing this command once will return you to the SSH gateway. Execute `exit` again, and you will leave the SSH gateway and return to a prompt on your machine.
@@ -97,7 +97,26 @@ systems (and potentially add more, e.g. online setup) in the solutions blocks.
 
 ### Windows
 
-Use PuTTY
+    <h5>There is no bash terminal default on Windows. Below are the steps to acquire one.</h5>
+    <h4>Enable WSL</h4>
+    <ol>
+    <li>Press the Windows key and type "Windows Powershell".</li>
+    <li>Right-click and "Run as administrator".</li>
+    <li>Paste the following into the shell and press <code>enter</code>.</li>
+    <code>
+    dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+    </code>
+    <li>Close the Powershell and restart the computer.</li>
+    </ol>
+    <h4>Download the Ubuntu Subspace</h4>
+    <ol>
+    <li>Press the Windows key.</li>
+    <li>Type "Microsoft Store" and press enter.</li>
+    <li>Search for "Ubuntu" (the search bar is in the top right of the store) and click the top-most result.</li>
+    <li>Install Ubuntu.</li>
+    </ol>
+    This installation gives your Windows a little bit of Linux inside of it. Launching the Ubuntu app will give you a terminal and environment quite similar to those of a Linux machine like our HPCs. Your normal "C drive", "D drive", and so on are found under <code>/mnt</code> in the subspace. More on accessing those later.
+    </p>
 
 ::::::::::::::::::::::::
 
@@ -105,7 +124,7 @@ Use PuTTY
 
 ### MacOS
 
- <h5>To open a terminal:</h5>
+    <h5>To open a terminal:</h5>
     <ol>
     <li>Click the Launchpad icon in the Dock.</li>
     <li>Type Terminal in the search field.</li>
@@ -121,8 +140,8 @@ Use PuTTY
 
 ### Linux
 
-The terminal is usually a button on your desktop.
-The icon is commonly depicted as a monitor with a black screen.
+    The terminal is usually a button on your desktop.
+    The icon is commonly depicted as a monitor with a black screen.
 
 ::::::::::::::::::::::::
 
@@ -130,14 +149,14 @@ The icon is commonly depicted as a monitor with a black screen.
 
 The materials of examples and exercises can be downloaded by executing this command on the terminal.
 
-```r
+```
 git clone https://github.com/WVUHPC/workshops_hands-on.git
 ```
 
 This command will download all the files used in our workshops into a folder called
 `workshops_hands-on`. You can move into the particular folder for this workshop using the command.
 
-```r
+```
 cd workshops_hands-on/Introduction_HPC
 ```
 
