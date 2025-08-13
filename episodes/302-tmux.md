@@ -344,12 +344,10 @@ After this use the command to paste
 
 :::::::::::::::::::::::::::::::::::::: keypoints
 
-- "The main reasons to uses a terminal multiplexer are:"
+- "A terminal multiplexer protects programs such as text editors that are running on the login node from connection drops"
 
-  - Protect programs such as text editors running on a remote server from connection drops by running them inside tmux.
+- "Allow programs running on a remote server to be accessed from multiple different local computers."
 
-  - Allow programs running on a remote server to be accessed from multiple different local computers.
+- "Work with multiple programs and shells together in one terminal, a bit like a window manager."
 
-  - Work with multiple programs and shells together in one terminal, a bit like a window manager.
-"
 ::::::::::::::::::::::::::::::::::::::::::::::::
