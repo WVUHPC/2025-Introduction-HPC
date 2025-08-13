@@ -97,26 +97,27 @@ systems (and potentially add more, e.g. online setup) in the solutions blocks.
 
 ### Windows
 
-    <h5>There is no bash terminal default on Windows. Below are the steps to acquire one.</h5>
-    <h4>Enable WSL</h4>
-    <ol>
-    <li>Press the Windows key and type "Windows Powershell".</li>
-    <li>Right-click and "Run as administrator".</li>
-    <li>Paste the following into the shell and press <code>enter</code>.</li>
-    <code>
-    dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
-    </code>
-    <li>Close the Powershell and restart the computer.</li>
-    </ol>
-    <h4>Download the Ubuntu Subspace</h4>
-    <ol>
-    <li>Press the Windows key.</li>
-    <li>Type "Microsoft Store" and press enter.</li>
-    <li>Search for "Ubuntu" (the search bar is in the top right of the store) and click the top-most result.</li>
-    <li>Install Ubuntu.</li>
-    </ol>
-    This installation gives your Windows a little bit of Linux inside of it. Launching the Ubuntu app will give you a terminal and environment quite similar to those of a Linux machine like our HPCs. Your normal "C drive", "D drive", and so on are found under <code>/mnt</code> in the subspace. More on accessing those later.
-    </p>
+There is no bash terminal default on Windows. Below are the steps to acquire one.
+
+#### Enable WSL
+
+- Press the Windows key and type "Windows Powershell".
+- Right-click and "Run as administrator".
+- Paste the following into the shell and press <code>enter</code>.
+  ```
+  dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+  ```
+
+- Close the Powershell and restart the computer.
+
+#### Download the Ubuntu Subspace
+
+- Press the Windows key.
+- Type "Microsoft Store" and press enter.
+- Search for "Ubuntu" (the search bar is in the top right of the store) and click the top-most result.
+- Install Ubuntu.
+
+This installation gives your Windows a little bit of Linux inside of it. Launching the Ubuntu app will give you a terminal and environment quite similar to those of a Linux machine like our HPCs. Your normal "C drive", "D drive", and so on are found under <code>/mnt</code> in the subspace. More on accessing those later.
 
 ::::::::::::::::::::::::
 
@@ -124,14 +125,13 @@ systems (and potentially add more, e.g. online setup) in the solutions blocks.
 
 ### MacOS
 
-    <h5>To open a terminal:</h5>
-    <ol>
-    <li>Click the Launchpad icon in the Dock.</li>
-    <li>Type Terminal in the search field.</li>
-    <li>Click Terminal.</li>
-    </ol>
-    The default terminal for MacOS, starting with Catalina is zsh. To start a bash shell, type <code>bash</code> into the terminal and press <code>enter</code>.
-    </p>
+#### To open a terminal:
+    
+- Click the Launchpad icon in the Dock.
+- Type Terminal in the search field.
+- Click Terminal.
+
+The default terminal for MacOS, starting with Catalina is zsh. To start a bash shell, type <code>bash</code> into the terminal and press <code>enter</code>.
 
 ::::::::::::::::::::::::
 
@@ -140,8 +140,8 @@ systems (and potentially add more, e.g. online setup) in the solutions blocks.
 
 ### Linux
 
-    The terminal is usually a button on your desktop.
-    The icon is commonly depicted as a monitor with a black screen.
+- The terminal is usually a button on your desktop.
+- The icon is commonly depicted as a monitor with a black screen.
 
 ::::::::::::::::::::::::
 
@@ -150,14 +150,14 @@ systems (and potentially add more, e.g. online setup) in the solutions blocks.
 The materials of examples and exercises can be downloaded by executing this command on the terminal.
 
 ```
-git clone https://github.com/WVUHPC/workshops_hands-on.git
+~$ git clone https://github.com/WVUHPC/workshops_hands-on.git
 ```
 
 This command will download all the files used in our workshops into a folder called
 `workshops_hands-on`. You can move into the particular folder for this workshop using the command.
 
 ```
-cd workshops_hands-on/Introduction_HPC
+~$ cd workshops_hands-on/Introduction_HPC
 ```
 
 If you are unfamiliar with these commands, do not worry; you are in the right class and will learn all these commands and how to use them.
