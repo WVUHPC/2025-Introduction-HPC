@@ -72,26 +72,14 @@ Executing this command once will return you to the SSH gateway. Execute `exit` a
 FIXME: Setup instructions live in this document. Please specify the tools and
 the data sets the Learner needs to have installed.
 
-## Data Sets
-
-<!--
-FIXME: place any data you want learners to use in `episodes/data` and then use
-       a relative link ( [data zip file](data/lesson-data.zip) ) to provide a
-       link to it, replacing the example.com link.
--->
-Download the [data zip file](https://example.com/FIXME) and unzip it to your Desktop
-
-## Software Setup
+## Alternative SSH clients
 
 ::::::::::::::::::::::::::::::::::::::: discussion
 
 ### Details
 
-Setup for different systems can be presented in dropdown menus via a `spoiler`
-tag. They will join to this discussion block, so you can give a general overview
-of the software used in this lesson here and fill out the individual operating
-systems (and potentially add more, e.g. online setup) in the solutions blocks.
-
+There are more ways of accessing terminals and SSH clients in particular in Microsoft Windows that usually obscure the terminal access to casual users.
+The blocks below present a more detailed explanation of how to access a terminal in various OS from which you can execute the commands above to access our HPC clusters.
 :::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::: spoiler
@@ -146,7 +134,6 @@ The default terminal for MacOS, starting with Catalina is zsh. To start a bash s
 
 ::::::::::::::::::::::::
 
-
 ## Access via Open On-Demand
 
 Open On-Demand is an easy way to access our HPC clusters from a Web Browser. The only software that you need is a fairly modern web Browser on your side. Open On Demand works with Firefox, Safari, Microsoft Edge and many other web browsers.
@@ -157,6 +144,16 @@ To connect to Dolly Sods use [ood dolly].
 ![OOD SSO](fig/ood_1.png){alt="SSO page to access Open On Demand for Thorny Flat"}
 
 ![OOD Thorny](fig/ood_2.png){alt="Open On Demand Dashboard for Thorny Flat"}
+
+## Data Sets
+
+<!--
+FIXME: place any data you want learners to use in `episodes/data` and then use
+       a relative link ( [data zip file](data/lesson-data.zip) ) to provide a
+       link to it, replacing the example.com link.
+-->
+Download the [data zip file](https://example.com/FIXME) and unzip it to your Desktop
+
 
 ## Downloading the materials
 
