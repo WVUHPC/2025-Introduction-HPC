@@ -252,7 +252,7 @@
 
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
-        <ul><li><a href="#terminal-emulation">Terminal Emulation</a></li>
+        <ul><li><a href="#from-terminal-emulation-to-terminal-multiplexing">From terminal emulation to terminal multiplexing</a></li>
 <li><a href="#opening-a-tmux-session-and-client">Opening a <em>tmux</em> Session and Client</a></li>
 <li><a href="#windows-and-panes">Windows and Panes</a></li>
 <li><a href="#copy-mode">Copy mode</a></li>
@@ -342,6 +342,7 @@
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul><li>“What is a Terminal Multiplexer?”</li>
+<li>“How I can become more productive with a terminal multiplexer?”</li>
 <li>“How can I use tmux?”</li>
 </ul></div>
 </div>
@@ -350,54 +351,73 @@
 <div class="card-body">
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
-<ul><li>“Learn about Sessions, Windows and Panes”</li>
+<ul><li>“Learn to use a terminal multiplexer like tmux”</li>
+<li>“Learn the basic tmux concepts: sessions, windows and panes”</li>
+<li>“Learn how to create new sessions and attach to existing ones”</li>
+<li>“Learn to span new windows and panes and navegate between them”</li>
 </ul></div>
 </div>
 </div>
 </div>
 </div>
-<section><h2 class="section-heading" id="terminal-emulation">Terminal Emulation<a class="anchor" aria-label="anchor" href="#terminal-emulation"></a></h2>
-<hr class="half-width"><iframe width="560" height="315" src="https://www.youtube.com/embed/f4TosumXhms" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-</iframe>
-<p>During your interaction with an HPC cluster, you spend most of your
-time in front of a terminal. We have been working on a terminal during
-the previous two episodes. Let’s understand what a terminal is before
-digging into terminal multiplexing and <em>tmux</em> in particular.</p>
-<p>What you have on your computer is called a terminal emulator. In the
-old days of mainframes (70s and 80s), people using computers worked on
-what were called dumb terminals, monitors with keyboards but no
-processing power, all the processing was happening on a remote machine,
-the mainframe.</p>
-<p>Today, what you have on your side is a perfectly capable computer,
-but you are using a terminal emulator and an SSH client to connect to a
-remote machine that is the head node of the cluster. On Windows, you
-have applications like PuTTy <a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/" class="external-link uri">https://www.chiark.greenend.org.uk/~sgtatham/putty/</a> that
-will offer an <code>xterm</code> terminal emulator and the SSH client on
-the same package. You should realize that the terminal emulator and SSH
-client are two different applications. In other Operating Systems like
-Linux and MacOS the difference between the terminal emulator and the SSH
-client is more clear.</p>
+<figure><img src="fig/tmux-logo.png" alt="tmux logo" class="figure mx-auto d-block"><div class="figcaption">tmux logo</div>
+</figure><section><h2 class="section-heading" id="from-terminal-emulation-to-terminal-multiplexing">From terminal emulation to terminal multiplexing<a class="anchor" aria-label="anchor" href="#from-terminal-emulation-to-terminal-multiplexing"></a></h2>
+<hr class="half-width"><figure><img src="fig/Tmux.png" alt="Example of a tmux window" class="figure mx-auto d-block"><div class="figcaption">Example of a tmux window</div>
+</figure><p>During your interaction with an HPC cluster, you spend most of your
+time in front of a terminal. You have been working on a terminal during
+the previous episodes. Let’s now understand more in detail what a
+terminal is before exploring the concept of terminal multiplexing and
+<em>tmux</em> in particular.</p>
+<p>What you have being using so far to interact with the HPC cluster is
+called a terminal emulator. In the old days of mainframes (late 70s and
+80s), people using computers worked on what were called “dumb
+terminals”, monitors with a keyboard attached. All real processing
+happened on a remote machine, the mainframe. Computers at that time were
+very expensive so at most you were given a keyboard to enter commands
+and a CRT monitor to see the result of those commands. Many other people
+could also be using other terminals connected to the same mainframe.</p>
+<p>Today, what you have on your hands is a perfectly capable computer,
+thousands of times more powerful that the mainframes from the 80s.
+However, there are situations where you need more computational power
+and for that reason you use a supercomputer such as an HPC cluster. To
+access these HPC cluster you are using a terminal emulator and an SSH
+client to connect to a remote machine; the HPC cluster login node.</p>
+<p>If you are using a Windows machine, you maybe are using an
+application such as PuTTy <a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/" class="external-link uri">https://www.chiark.greenend.org.uk/~sgtatham/putty/</a> that
+will offer a terminal emulator and SSH client on the same package.
+Despide of ther line being difussed with PuTTY the terminal emulator and
+SSH client are two different applications. In other Operating Systems
+like Linux and MacOS the difference between the terminal emulator and
+the SSH client is more clear.</p>
 <p>Now, on your computer, connect to one of our HPC clusters using SSH.
 You notice that your prompt, the string that indicates that it is ready
-to receive commands, shows the name of the head node on our clusters.
-Imagine that you are editing a text file using any of the three editors
-from our previous episode. If, for some reason, the internet connection
-fails, the program that you were using will be closed. Some editors give
-you some recovery protection, but in any case, you need to connect
-again, change the working directory and other operations before opening
-the file, and continue your work.</p>
+to receive commands, shows the name of the head node on our clusters. In
+previous episodes we have learn to execute commands from the terminal,
+edit text files and submitting jobs.</p>
+<p>Imagine that you are editing a text file using any of the three
+editors from our previous episode. If, for some reason, the internet
+connection fails, your local computer gets out of power, your SSH
+session will be closed and the program that you were using to edit the
+file will closed too. If the editor does not have any recurrent saving
+mechanism you lost all that you edited and you need to start all over
+again.</p>
+<p>Even if your text editor has some recurring saving mechanism, some
+work could have been lost, you need to connect to the cluster again,
+change to the correct working directory before you can continue your
+work were you were left.</p>
 <p>Another limitation of traditional terminals is that you have just one
 place to enter commands. Working with HPC clusters usually involves
-working with several jobs and projects, and you would like to write and
-submit new jobs, check the status of those jobs that you have already
-submitted, and read the output from the jobs that have been finished.
-You could open more SSH sessions, but the chances of those sessions
-failing due to network issues and managing those extra windows limit
-your ability to work effectively on the cluster.</p>
-<p>The solution for the two problems above is using a Terminal
-Multiplexer, a program that runs on the head node and is detached from
-your local terminal session. <em>tmux</em> is such a terminal
-multiplexer that it can create multiple emulated terminals.</p>
+working with several jobs and projects, and you would like to edit some
+text files here, submit new jobs there, check the status of those jobs
+that you have already submitted, and read the output from the jobs that
+have been finished. You could open more SSH sessions, but the chances of
+those sessions failing due to network issues and managing those extra
+windows limit your ability to work effectively on the cluster.</p>
+<p>The solution for the two problems above is using a terminal
+multiplexer, a program that runs on the login node of the cluster and
+can continue to work if by change you lost connectivity and gets
+detached from your local terminal session. <em>tmux</em> is such a
+terminal multiplexer that it can create multiple emulated terminals.</p>
 <p>In this episode we will show you how to create <em>tmux</em> sessions
 on the cluster and see the effect of detaching and reattaching to the
 session. Next, we will see the four basic concepts in <em>tmux</em>:
@@ -420,11 +440,11 @@ right now, lets see how to work with <em>tmux</em> sessions.</p>
 <p>First, connect to the cluster using your terminal emulator and SSH
 client. Once you are connected to the head node of the cluster,
 execute:</p>
-<pre><code><span><span class="va">tmux</span></span></code></pre>
+<pre><code>~$ tmux</code></pre>
 <p>If, for some reason, you lost the connection to the server or you
 detached from the multiplexer, all that you have to do to reconnect is
 to execute the command:</p>
-<pre><code>tmux a</code></pre>
+<pre><code>~$ tmux a</code></pre>
 <p>You will see something new here: a green bar on the bottom of your
 screen. That is the indication that you are inside a <em>tmux</em>
 session. The <em>tmux</em> status line at the bottom of the screen shows
@@ -453,7 +473,7 @@ terminal. You can go even further and close your terminal on your
 computer to simulate a loss in internet connection. Reconnect again to
 the cluster using SSH to return to the head node.</p>
 <p>From the head node, we will reattach the session using:</p>
-<pre><code>$ tmux a</code></pre>
+<pre><code>~$ tmux a</code></pre>
 <p>You will see your session recovering exactly the same as you left
 when you detached, and nano should be there with the line that you
 wrote. You have created your first <em>tmux</em> session and that
@@ -463,7 +483,7 @@ year. For the most part, you can keep your <em>tmux</em> session
 open</p>
 <p>You can create several <em>tmux</em> sessions, each one with a given
 name, using:</p>
-<pre><code>$ tmux new -s &lt;session_name&gt;</code></pre>
+<pre><code>~$ tmux new -s &lt;session_name&gt;</code></pre>
 <p>Having several sessions is useful if you want a distinctive
 collection of windows for different projects, as they are more isolated
 than windows on the same session. Changing between sessions is done with
@@ -492,7 +512,7 @@ a window manager in the world of terminals, with the ability to attach
 and detach at will and running commands concurrently.</p>
 <p>In case you are not already attached to the <em>tmux</em> session,
 enter into the <em>tmux</em> session with:</p>
-<pre><code>$ tmux a</code></pre>
+<pre><code>~$ tmux a</code></pre>
 <p>You have one window with one pane inside that fills the entire space.
 You can create new <em>tmux</em> windows with <strong>C-b c</strong>.
 Start creating a few of them. Each new window will appear in the bottom
@@ -538,11 +558,8 @@ procedure to use copy mode is as follows:</p>
 <ol style="list-style-type: decimal"><li><p>Press <strong>C-b [</strong> to enter in copy mode.</p></li>
 <li><p>Move the start/end of text to highlight.</p></li>
 <li><p>Press <strong>C-SPACEBAR</strong> to start selection</p></li>
-</ol><div class="codewrapper sourceCode" id="cb6">
-<h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="ex">Start</span> highlighting text. Selected text changes the color and background, so you<span class="st">'ll know if the command worked.</span></span></code></pre>
-</div>
+</ol><p>Start highlighting text. Selected text changes the color and
+background, so you’ll know if the command worked.</p>
 <ol start="4" style="list-style-type: decimal"><li><p>Move to the opposite end of the text to copy.</p></li>
 <li><p>Press <strong>ALT-w</strong> to copy selected text into
 <em>tmux</em> clipboard.</p></li>
@@ -610,9 +627,16 @@ set -g message-style 'fg=colour232 bg=colour16 bold'</code></pre>
 <p>There are a lot of things that can be changed to everyone’s taste.
 There are several <strong>.tmux.conf</strong> files shared on GitHub and
 other repositories that customize <code>tmux</code> in several ways.</p>
+<div id="exercise-tmux-sessions-windows-and-panes" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="exercise-tmux-sessions-windows-and-panes" class="callout-inner">
+<h3 class="callout-title">Exercise: TMUX Sessions, Windows and
+Panes</h3>
+<div class="callout-content">
 <blockquote>
-<h2 id="exercise-tmux-sessions-windows-and-panes">Exercise: TMUX
-Sessions, Windows and Panes</h2>
 <p>This exercise will help you familiarize yourself with the three
 concepts in TMUX.</p>
 <ol style="list-style-type: decimal"><li><p>Create three sessions on TMUX, and give each of them different
@@ -626,10 +650,30 @@ different layouts using <strong>C-b SPACE</strong></p></li>
 <li><p>Detach or close your terminal and reconnect, attach your
 sessions, and verify that your windows and panes remain the
 same.</p></li>
-</ol><p>{: .source} {: .challenge}</p>
-</blockquote>
-<blockquote>
-<h2 id="exercise-using-tmux">Exercise: Using tmux</h2>
+</ol></blockquote>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div class="accordion-body">
+
+</div>
+</div>
+</div>
+</div>
+<div id="exercise-using-tmux" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="exercise-using-tmux" class="callout-inner">
+<h3 class="callout-title">Exercise: Using tmux</h3>
+<div class="callout-content">
 <p>Using the tables above, follow this simple challenge with tmux</p>
 <ol style="list-style-type: decimal"><li><p>Log in to Thorny Flat and create a <code>tmux</code>
 session</p></li>
@@ -644,17 +688,30 @@ session.</p></li>
 session. You will be automatically redirected there. Leave your session
 and check the list of sessions.</p></li>
 <li><p>Kill the second session (session ID is 1)</p></li>
-</ol><p>{: .source} {: .challenge}</p>
-</blockquote>
+</ol></div>
+</div>
+</div>
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
+</button>
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div class="accordion-body">
+
+</div>
+</div>
+</div>
+</div>
 </section><section><h2 class="section-heading" id="reference-of-tmux-commands">Reference of <em>tmux</em> commands<a class="anchor" aria-label="anchor" href="#reference-of-tmux-commands"></a></h2>
-<hr class="half-width"><p>In tmux, by default, the prefix is <kbd>Ctrl</kbd>+<kbd>b</kbd>. Use
+<hr class="half-width"><figure><img src="fig/tmux_cheat_sheet.png" alt="tmux cheat sheet" class="figure mx-auto d-block"><div class="figcaption">tmux cheat sheet</div>
+</figure><p>In tmux, by default, the prefix is <kbd>Ctrl</kbd>+<kbd>b</kbd>. Use
 the prefix followed by one of the options below:</p>
 <div class="section level3">
 <h3 id="sessions">Sessions<a class="anchor" aria-label="anchor" href="#sessions"></a></h3>
 <pre><code>    :new&lt;CR&gt;  new session
     s  list sessions
     $  name session</code></pre>
-<p>{: .source}</p>
 </div>
 <div class="section level3">
 <h3 id="windows-tabs">Windows (tabs)<a class="anchor" aria-label="anchor" href="#windows-tabs"></a></h3>
@@ -665,7 +722,6 @@ the prefix followed by one of the options below:</p>
     f  find window
     ,  name window
     &amp;  kill window</code></pre>
-<p>{: .source}</p>
 </div>
 <div class="section level3">
 <h3 id="panes-splits">Panes (splits)<a class="anchor" aria-label="anchor" href="#panes-splits"></a></h3>
@@ -681,20 +737,16 @@ the prefix followed by one of the options below:</p>
     { (Move the current pane left)
     } (Move the current pane right)
     z toggle pane zoom</code></pre>
-<p>{: .source}</p>
 </div>
 <div class="section level3">
 <h3 id="copy-model">Copy model<a class="anchor" aria-label="anchor" href="#copy-model"></a></h3>
 <pre><code>    [  Copy mode</code></pre>
-<p>{: .source}</p>
 <p>In copy mode, use these commands to copy a region to the
 <em>tmux</em> clipboard.</p>
 <pre><code>    Ctrl SPACE  Start Selection
     Alt w       Copy the selection to the clipboard</code></pre>
-<p>{: .source}</p>
 <p>After this use the command to paste</p>
 <pre><code>    ]  Paste from clipboard</code></pre>
-<p>{: .source}</p>
 </div>
 <div class="section level3">
 <h3 id="others">Others<a class="anchor" aria-label="anchor" href="#others"></a></h3>
@@ -702,7 +754,6 @@ the prefix followed by one of the options below:</p>
     t  big clock
     ?  list shortcuts
     :  prompt</code></pre>
-<p>{: .source}</p>
 </div>
 <div class="section level3">
 <h3 id="command-line-arguments-for-tmux">Command line arguments for tmux<a class="anchor" aria-label="anchor" href="#command-line-arguments-for-tmux"></a></h3>
@@ -710,27 +761,20 @@ the prefix followed by one of the options below:</p>
     tmux new                      new session
     tmux rename -t &lt;ID&gt; new_name  rename a session
     tmux kill-session -t &lt;ID&gt;     kill session by target</code></pre>
-<p>{: .source}</p>
-<div class="overview card">
-<h2 class="card-header">Overview</h2>
-<div class="row g-0">
-<div class="col-md-4">
-<div class="card-body">
-<div class="inner">
-<h3 class="card-title">Questions</h3>
-<ul><li>“tmux allows you to keep terminal sessions on the cluster that
-persist in case of network disconnection.”</li>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<span class="callout-header">Key Points</span>
+<div class="callout-inner">
+<div class="callout-content">
+<ul><li><p>“A terminal multiplexer protects programs such as text editors
+that are running on the login node from connection drops”</p></li>
+<li><p>“Allow programs running on a remote server to be accessed from
+multiple different local computers.”</p></li>
+<li><p>“Work with multiple programs and shells together in one terminal,
+a bit like a window manager.”</p></li>
 </ul></div>
-</div>
-</div>
-<div class="col-md-8">
-<div class="card-body">
-<div class="inner bordered">
-<h3 class="card-title">Objectives</h3>
-<ul><li>“Learn about Sessions, Windows and Panes”</li>
-</ul></div>
-</div>
-</div>
 </div>
 </div>
 <!--
