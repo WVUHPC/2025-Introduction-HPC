@@ -61,14 +61,11 @@ Once you are connected to the head node of the cluster, execute:
 ~$ tmux
 ```
 
-
 If, for some reason, you lost the connection to the server or you detached from the multiplexer, all that you have to do to reconnect is to execute the command:
 
 ```
 ~$ tmux a
 ```
-
-
 
 You will see something new here: a green bar on the bottom of your screen. That is the indication that you are inside a *tmux* session. The *tmux* status line at the bottom of the screen shows information on the current session. At this point, you have created one *tmux* client that is attached to the session that was also created. Clients and Sessions are separate entities, allowing you to detach your client from the session and reattach it later. You can also have several clients attached to the same session, and whatever you do on one will be visible on the others. At first sessions and client could be confused, but this exercise will help you understand the concepts.
 
@@ -81,7 +78,6 @@ From the head node, we will reattach the session using:
 ~$ tmux a
 ```
 
-
 You will see your session recovering exactly the same as you left when you detached, and nano should be there with the line that you wrote.
 You have created your first *tmux* session and that session will persist until you kill the session or the head node is rebooted, something that happens
 rarely, usually one or two times per year. For the most part, you can keep your *tmux* session open
@@ -91,7 +87,6 @@ You can create several *tmux* sessions, each one with a given name, using:
 ```
 ~$ tmux new -s <session_name>
 ```
-
 
 Having several sessions is useful if you want a distinctive collection of windows for different projects, as they are more isolated than windows on the same session. Changing between sessions is done with **C-b (** and **C-b )** to move between the previous and next session. Another way of moving between sessions is using **C-b w** as we will see next, showing all the windows across all sessions and allowing you to jump into windows from different sessions.
 
@@ -138,15 +133,16 @@ The procedure to use copy mode is as follows:
 
   2. Move the start/end of text to highlight.
 
-  3. Press **C-SPACEBAR** to start selection
-
-Start highlighting text. Selected text changes the color and background, so you'll know if the command worked.
+  3. Press **C-SPACEBAR** to start selection.
+     Start highlighting text. 
+     Selected text changes the color and background, so you'll know if the command worked.
 
   4. Move to the opposite end of the text to copy.
 
   5. Press **ALT-w** to copy selected text into *tmux* clipboard.
 
-  6. Move cursor to opposite *tmux* pane, or completely different *tmux* window. Put the cursor where you want to paste the text you just copied.
+  6. Move cursor to opposite *tmux* pane, or completely different *tmux* window. 
+     Put the cursor where you want to paste the text you just copied.
 
   7. Press **C-b ]** to paste copied text from *tmux* clipboard.
 
@@ -218,17 +214,17 @@ There are a lot of things that can be changed to everyone's taste. There are sev
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
-## Exercise: TMUX Sessions, Windows and Panes
+## Exercise: tmux Sessions, Windows and Panes
 
-> This exercise will help you familiarize yourself with the three concepts in TMUX.
->
->   1. Create three sessions on TMUX, and give each of them different names, either creating the session with the name or using **C-b $** to rename session names.
->
->   2. In one of those sessions, create two windows, and in the other, create three windows. Move between sessions to accomplish this.
->
->   3. In one of those windows, split the window vertically, on another horizontally, and on the third one create 3 panes and cycle between the different layouts using **C-b SPACE**
->
->   4. Detach or close your terminal and reconnect, attach your sessions, and verify that your windows and panes remain the same.
+This exercise will help you familiarize yourself with the three concepts in TMUX.
+
+1. Create three sessions on TMUX, and give each of them different names, either creating the session with the name or using **C-b $** to rename session names.
+
+2. In one of those sessions, create two windows, and in the other, create three windows. Move between sessions to accomplish this.
+
+3. In one of those windows, split the window vertically, on another horizontally, and on the third one create 3 panes and cycle between the different layouts using **C-b SPACE**
+
+4. Detach or close your terminal and reconnect, attach your sessions, and verify that your windows and panes remain the same.
 
 :::::::::::::::: solution
 
