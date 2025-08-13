@@ -49,3 +49,4 @@ docs/
 # translation temp files
 po/*~
 
+episodes/.DS_Store
