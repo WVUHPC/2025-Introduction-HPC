@@ -2,7 +2,9 @@
 title: Setup
 ---
 
-## Accessing the clusters using Secure Shell (SSH)
+There are two ways of today accessing WVU's HPC Clusters: A secure remote shell (SSH) and via a Web Browser using the web application Open On-Demand. A secure remote shell is the traditional way of accessing a High-Performance Computing (HPC) cluster. A remote shell allows you to execute commands on another machine as you do sitting in front of it. A remote shell is convenient because it also allows other people to do the same with very little consumption of resources, so you get access to a resource being utilized by several users simultaneously.
+
+## Access via Secure Shell (SSH)
 
 A remote shell is the most common way of accessing a High-Performance Computing (HPC) cluster.
 A remote shell allows you to execute commands on another machine as you do sitting in front of it. A remote shell is convenient because it also allows many other machine users to do the same, so you get access to a resource being utilized by tens or hundreds of users simultaneously.
@@ -15,9 +17,9 @@ Both Linux and macOS include an SSH client by default. For these operating syste
 
 On Windows machines, you have several options. You can install an external application or use Windows utilities such as Powershell or Visual Studio Code, which are included in modern versions of Windows. For the external application, one option is a free application called [PuTTY](https://www.putty.org). PuTTY offers a simple SSH client that is enough for this lesson. Another option is [MobaXTerm](https://mobaxterm.mobatek.net), which offers a full-featured SSH client plus the ability to open X11 windows from the remote machine. There are many alternatives to these two. As soon as the application supports the SSH protocol, you can use it to connect to the clusters.
 
-![PuTTY](fig/PuTTY.png){alt="PuTTY"}
+![PuTTY](fig/PuTTY.png){alt="Window showing PuTTY"}
 
-![MobaXterm](fig/MobaXterm.png){alt="MobaXterm"}
+![MobaXterm](fig/MobaXterm.png){alt="Window showing MobaXterm"}
 
 More recently, there have also been options for accessing a terminal and SSH clients using Microsoft products. One option is to install [Visual Studio Code](https://code.visualstudio.com).
 Instructions to add an SSH client to VSC can be found [here](https://code.visualstudio.com/docs/remote/ssh) and [here](https://code.visualstudio.com/learn/develop-cloud/ssh-lab-machines). Visual Studio Code will give you remote access and a file manager that you can use to move files between the cluster and your computer.
@@ -55,7 +57,6 @@ If you are using a GUI client such as PuTTY enter ``ssh.wvu.edu`` as the server'
 
 
 After entering your credentials with DUO, you get a prompt on the SSH gateway, and from there, you go to Thorny Flat.
-
 
 ### Logging Out
 
@@ -103,7 +104,7 @@ There is no bash terminal default on Windows. Below are the steps to acquire one
 
 - Press the Windows key and type "Windows Powershell".
 - Right-click and "Run as administrator".
-- Paste the following into the shell and press <code>enter</code>.
+- Paste the following into the shell and press ``enter``.
   ```
   dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
   ```
@@ -117,7 +118,7 @@ There is no bash terminal default on Windows. Below are the steps to acquire one
 - Search for "Ubuntu" (the search bar is in the top right of the store) and click the top-most result.
 - Install Ubuntu.
 
-This installation gives your Windows a little bit of Linux inside of it. Launching the Ubuntu app will give you a terminal and environment quite similar to those of a Linux machine like our HPCs. Your normal "C drive", "D drive", and so on are found under <code>/mnt</code> in the subspace. More on accessing those later.
+This installation gives your Windows a little bit of Linux inside of it. Launching the Ubuntu app will give you a terminal and environment quite similar to those of a Linux machine like our HPCs. Your normal "C drive", "D drive", and so on are found under ``/mnt`` in the subspace. More on accessing those later.
 
 ::::::::::::::::::::::::
 
@@ -131,7 +132,7 @@ This installation gives your Windows a little bit of Linux inside of it. Launchi
 - Type Terminal in the search field.
 - Click Terminal.
 
-The default terminal for MacOS, starting with Catalina is zsh. To start a bash shell, type <code>bash</code> into the terminal and press <code>enter</code>.
+The default terminal for MacOS, starting with Catalina is zsh. To start a bash shell, type ``bash`` into the terminal and press ``enter``.
 
 ::::::::::::::::::::::::
 
@@ -144,6 +145,18 @@ The default terminal for MacOS, starting with Catalina is zsh. To start a bash s
 - The icon is commonly depicted as a monitor with a black screen.
 
 ::::::::::::::::::::::::
+
+
+## Access via Open On-Demand
+
+Open On-Demand is an easy way to access our HPC clusters from a Web Browser. The only software that you need is a fairly modern web Browser on your side. Open On Demand works with Firefox, Safari, Microsoft Edge and many other web browsers.
+
+You can connect to Thorny Flat using [ood thorny].
+To connect to Dolly Sods use [ood dolly].
+
+![OOD SSO](fig/ood_1.png){alt="SSO page to access Open On Demand for Thorny Flat"}
+
+![OOD Thorny](fig/ood_2.png){alt="Open On Demand Dashboard for Thorny Flat"}
 
 ## Downloading the materials
 
@@ -163,3 +176,6 @@ This command will download all the files used in our workshops into a folder cal
 If you are unfamiliar with these commands, do not worry; you are in the right class and will learn all these commands and how to use them.
 These and many other commands will be the topic of the material that follows.
 
+<!-- Collect your link references at the bottom of your document -->
+[ood thorny]: https://ondemand-tf.hpc.wvu.edu
+[ood dolly]: https://ondemand-ds.hpc.wvu.edu
