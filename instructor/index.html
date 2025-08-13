@@ -339,11 +339,9 @@ full-featured SSH client plus the ability to open X11 windows from the
 remote machine. There are many alternatives to these two. As soon as the
 application supports the SSH protocol, you can use it to connect to the
 clusters.</p>
-<p><a href="../%7B%7B%20page.root%20%7D%7D/fig/PuTTY.png">
-<img src="../%7B%7B%20page.root%20%7D%7D/fig/PuTTY.png" alt="PuTTY" class="figure"></a></p>
-<p><a href="../%7B%7B%20page.root%20%7D%7D/fig/MobaXterm.png">
-<img src="../%7B%7B%20page.root%20%7D%7D/fig/MobaXterm.png" alt="MobaXterm" class="figure"></a></p>
-<p>More recently, there have also been options for accessing a terminal
+<figure><img src="../fig/PuTTY.png" alt="PuTTY" class="figure mx-auto d-block"><div class="figcaption">PuTTY</div>
+</figure><figure><img src="../fig/MobaXterm.png" alt="MobaXterm" class="figure mx-auto d-block"><div class="figcaption">MobaXterm</div>
+</figure><p>More recently, there have also been options for accessing a terminal
 and SSH clients using Microsoft products. One option is to install <a href="https://code.visualstudio.com" class="external-link">Visual Studio Code</a>.
 Instructions to add an SSH client to VSC can be found <a href="https://code.visualstudio.com/docs/remote/ssh" class="external-link">here</a> and <a href="https://code.visualstudio.com/learn/develop-cloud/ssh-lab-machines" class="external-link">here</a>.
 Visual Studio Code will give you remote access and a file manager that
@@ -368,8 +366,11 @@ independent, so you can access one without necessarily having an account
 on the other.</p>
 <p>To access Thorny Flat from your computer, execute this command from
 your terminal (Linux, macOS):</p>
-<pre><code>ssh &lt;username&gt;@ssh.wvu.edu</code></pre>
-<p>{: .language-bash}</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>ssh <span class="sc">&lt;</span>username<span class="sc">&gt;</span><span class="er">@</span>ssh.wvu.edu</span></code></pre>
+</div>
 <p>This command will allow you access to WVU’s SSH gateway. An
 intermediate machine that controls the access to machines inside the
 campus. The machine will ask for your password and DUO authentication.
@@ -378,11 +379,17 @@ indication that you can start typing commands that will be executed on
 the SSH gateway.</p>
 <p>The commands that will allow you to enter into the HPC clusters are:
 For Thorny Flat:</p>
-<pre><code>ssh ts.hpc.wvu.edu</code></pre>
-<p>{: .language-bash}</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>ssh ts.hpc.wvu.edu</span></code></pre>
+</div>
 <p>For Dolly Sods:</p>
-<pre><code>ssh ds.hpc.wvu.edu</code></pre>
-<p>{: .language-bash}</p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>ssh ds.hpc.wvu.edu</span></code></pre>
+</div>
 <p>If you are using a GUI client such as PuTTY enter
 <code>ssh.wvu.edu</code> as the server’s name and your username in the
 corresponding field before connecting to the remote machine.</p>
@@ -392,8 +399,11 @@ gateway, and from there, you go to Thorny Flat.</p>
 <div class="section level3">
 <h3 id="logging-out">Logging Out<a class="anchor" aria-label="anchor" href="#logging-out"></a></h3>
 <p>Logging out of a cluster can be done with the exit command:</p>
-<pre><code>$ exit</code></pre>
-<p>{: .language-bash}</p>
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="sc">$</span> exit</span></code></pre>
+</div>
 <p>Executing this command once will return you to the SSH gateway.
 Execute <code>exit</code> again, and you will leave the SSH gateway and
 return to a prompt on your machine.</p>
@@ -432,7 +442,7 @@ e.g. online setup) in the solutions blocks.</p>
   Windows
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <p>Use PuTTY</p>
 </div>
@@ -447,9 +457,22 @@ e.g. online setup) in the solutions blocks.</p>
   MacOS
   </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
 <div class="accordion-body">
-<p>Use Terminal.app</p>
+<h5>
+To open a terminal:
+</h5>
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="op">&lt;</span>ol<span class="op">&gt;</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="op">&lt;</span>li<span class="op">&gt;</span>Click <span class="ex">the</span> Launchpad icon in the Dock.<span class="op">&lt;</span>/li<span class="op">&gt;</span></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="op">&lt;</span>li<span class="op">&gt;</span>Type <span class="ex">Terminal</span> in the search field.<span class="op">&lt;</span>/li<span class="op">&gt;</span></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="op">&lt;</span>li<span class="op">&gt;</span>Click <span class="ex">Terminal.</span><span class="op">&lt;</span>/li<span class="op">&gt;</span></span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="op">&lt;</span>/ol<span class="op">&gt;</span></span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a><span class="ex">The</span> default terminal for MacOS, starting with Catalina is zsh. To start a bash shell, type <span class="op">&lt;</span>code<span class="op">&gt;</span>bash<span class="op">&lt;</span>/code<span class="op">&gt;</span> into the terminal and press <span class="op">&lt;</span>code<span class="op">&gt;</span>enter<span class="op">&lt;</span>/code<span class="op">&gt;</span>.</span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a><span class="op">&lt;</span>/p<span class="op">&gt;</span></span></code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -462,9 +485,10 @@ e.g. online setup) in the solutions blocks.</p>
   Linux
   </h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
 <div class="accordion-body">
-<p>Use Terminal</p>
+<p>The terminal is usually a button on your desktop. The icon is
+commonly depicted as a monitor with a black screen.</p>
 </div>
 </div>
 </div>
@@ -472,13 +496,19 @@ e.g. online setup) in the solutions blocks.</p>
 </section><section><h2 class="section-heading" id="downloading-the-materials">Downloading the materials<a class="anchor" aria-label="anchor" href="#downloading-the-materials"></a></h2>
 <hr class="half-width"><p>The materials of examples and exercises can be downloaded by
 executing this command on the terminal.</p>
-<pre><code>git clone https://github.com/WVUHPC/workshops_hands-on.git</code></pre>
-<p>{: .language-bash}</p>
+<div class="codewrapper sourceCode" id="cb6">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>git clone https<span class="sc">:</span><span class="er">//</span>github.com<span class="sc">/</span>WVUHPC<span class="sc">/</span>workshops_hands<span class="sc">-</span>on.git</span></code></pre>
+</div>
 <p>This command will download all the files used in our workshops into a
 folder called <code>workshops_hands-on</code>. You can move into the
 particular folder for this workshop using the command.</p>
-<pre><code>cd workshops_hands-on/Introduction_HPC</code></pre>
-<p>{: .language-bash}</p>
+<div class="codewrapper sourceCode" id="cb7">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>cd workshops_hands<span class="sc">-</span>on<span class="sc">/</span>Introduction_HPC</span></code></pre>
+</div>
 <p>If you are unfamiliar with these commands, do not worry; you are in
 the right class and will learn all these commands and how to use them.
 These and many other commands will be the topic of the material that
