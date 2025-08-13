@@ -210,7 +210,7 @@
 <div class="accordion accordion-flush" id="accordionFlush2">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading2">
-        <a href="introduction.html">1. Using Markdown</a>
+        <a href="102-cli.html">1. Command Line Interface: The Shell</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -219,7 +219,7 @@
 <div class="accordion accordion-flush" id="accordionFlush3">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading3">
-        <a href="102-cli.html">2. Command Line Interface</a>
+        <a href="201-editors.html">2. Terminal-based Text Editors: nano, emacs and vim</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -228,7 +228,25 @@
 <div class="accordion accordion-flush" id="accordionFlush4">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading4">
-        <a href="201-editors.html">3. Terminal-based Text Editors</a>
+        <a href="202-software.html">3. Software on HPC Clusters: modules, conda and containers</a>
+    </div><!--/div.accordion-header-->
+
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush5">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading5">
+        <a href="301-slurm.html">4. Workload Manager: Slurm</a>
+    </div><!--/div.accordion-header-->
+
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush6">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading6">
+        <a href="302-tmux.html">5. Terminal Multiplexing: tmux</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -276,11 +294,11 @@
         <!-- START: inst/pkgdown/templates/content-syllabus.html -->
   <div class="col-xl-8 col-lg-12 primary-content">
     <nav class="lesson-content mx-md-4" aria-label="Next Chapter"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
-        <a class="chapter-link float-end" href="../instructor/introduction.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="../instructor/102-cli.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
-        <a class="chapter-link float-end" href="../instructor/introduction.html" rel="next">Next: Using Markdown... <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="../instructor/102-cli.html" rel="next">Next: Command Line... <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <hr></nav><main id="main-content" class="main-content"><h1 class="schedule-heading">Summary and Schedule</h1>
       
@@ -329,31 +347,57 @@ any links that you are not going to use.
 <span class="visually-hidden">Duration: </span>00h 00m
 </td>
 <td>
- 1. <a href="introduction.html">Using Markdown</a>
-</td>
-<td>
-How do you write a lesson using Markdown and <a href="https://carpentries.github.io/sandpaper/" class="external-link">sandpaper</a>?
-</td>
-</tr><tr><td>
-<span class="visually-hidden">Duration: </span>00h 12m
-</td>
-<td>
- 2. <a href="102-cli.html">Command Line Interface</a>
+ 1. <a href="102-cli.html">Command Line Interface: The Shell</a>
 </td>
 <td>
 “How do I use the Linux terminal?”
 </td>
 </tr><tr><td>
-<span class="visually-hidden">Duration: </span>01h 42m
+<span class="visually-hidden">Duration: </span>01h 00m
 </td>
 <td>
- 3. <a href="201-editors.html">Terminal-based Text Editors</a>
+ 2. <a href="201-editors.html">Terminal-based Text Editors: nano, emacs
+and vim</a>
 </td>
 <td>
-“How do I edit files with the terminal?”
+“How do I edit text files from the terminal?”
 </td>
 </tr><tr><td>
-<span class="visually-hidden">Duration: </span>03h 12m
+<span class="visually-hidden">Duration: </span>02h 00m
+</td>
+<td>
+ 3. <a href="202-software.html">Software on HPC Clusters: modules, conda
+and containers</a>
+</td>
+<td>
+“What are the options to enable software packages on an HPC
+cluster?”<br>“What are the differences between environment modules,
+conda, and apptainer?”<br>“What are environment modules and how to use
+them?”<br>“How do I use and create conda environments?”<br>“How do I
+open a shell and execute commands on an Apptainer/Singularity
+container?”
+</td>
+</tr><tr><td>
+<span class="visually-hidden">Duration: </span>03h 00m
+</td>
+<td>
+ 4. <a href="301-slurm.html">Workload Manager: Slurm</a>
+</td>
+<td>
+“What is a resource manager, a scheduler, and a workload
+manager?”<br>“How do we submit a job on an HPC cluster?”
+</td>
+</tr><tr><td>
+<span class="visually-hidden">Duration: </span>04h 00m
+</td>
+<td>
+ 5. <a href="302-tmux.html">Terminal Multiplexing: tmux</a>
+</td>
+<td>
+“What is a Terminal Multiplexer?”<br>“How can I use tmux?”
+</td>
+</tr><tr><td>
+<span class="visually-hidden">Duration: </span>05h 00m
 </td>
 <td>
 Finish
@@ -494,7 +538,7 @@ commands above to access our HPC clusters.</p>
   Windows
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <p>There is no bash terminal default on Windows. Below are the steps to
 acquire one.</p>
@@ -534,7 +578,7 @@ subspace. More on accessing those later.</p>
   MacOS
   </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
 <div class="section level4 accordion-body">
 <h4 id="to-open-a-terminal">To open a terminal:<a class="anchor" aria-label="anchor" href="#to-open-a-terminal"></a></h4>
 <ul><li>Click the Launchpad icon in the Dock.</li>
@@ -555,7 +599,7 @@ start a bash shell, type <code>bash</code> into the terminal and press
   Linux
   </h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
 <div class="accordion-body">
 <ul><li>The terminal is usually a button on your desktop.</li>
 <li>The icon is commonly depicted as a monitor with a black screen.</li>
@@ -598,11 +642,11 @@ Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
 </section></section></main><nav class="bottom-pagination mx-md-4" aria-label="Next Chapter"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
-        <a class="chapter-link float-end" href="../instructor/introduction.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="../instructor/102-cli.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
-        <a class="chapter-link float-end" href="../instructor/introduction.html" rel="next">Next: Using Markdown... <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="../instructor/102-cli.html" rel="next">Next: Command Line... <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
     </nav></div>
 <!-- END  : inst/pkgdown/templates/content-syllabus.html -->

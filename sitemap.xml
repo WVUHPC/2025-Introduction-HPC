@@ -10,6 +10,15 @@
     <loc>https://carpentries.github.io/workbench-template-md/201-editors.html</loc>
   </url>
   <url>
+    <loc>https://carpentries.github.io/workbench-template-md/202-software.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/301-slurm.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/302-tmux.html</loc>
+  </url>
+  <url>
     <loc>https://carpentries.github.io/workbench-template-md/404.html</loc>
   </url>
   <url>
@@ -35,6 +44,15 @@
   </url>
   <url>
     <loc>https://carpentries.github.io/workbench-template-md/instructor/201-editors.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/202-software.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/301-slurm.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/302-tmux.html</loc>
   </url>
   <url>
     <loc>https://carpentries.github.io/workbench-template-md/instructor/404.html</loc>

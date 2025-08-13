@@ -244,7 +244,7 @@
 <div class="accordion accordion-flush" id="accordionFlush2">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading2">
-        <a href="introduction.html">1. Using Markdown</a>
+        <a href="102-cli.html">1. Command Line Interface: The Shell</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -256,7 +256,7 @@
 <div class="accordion accordion-flush" id="accordionFlush3">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading3">
-        <a href="102-cli.html">2. Command Line Interface</a>
+        <a href="201-editors.html">2. Terminal-based Text Editors: nano, emacs and vim</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -268,7 +268,31 @@
 <div class="accordion accordion-flush" id="accordionFlush4">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading4">
-        <a href="201-editors.html">3. Terminal-based Text Editors</a>
+        <a href="202-software.html">3. Software on HPC Clusters: modules, conda and containers</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush5">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading5">
+        <a href="301-slurm.html">4. Workload Manager: Slurm</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush6">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading6">
+        <a href="302-tmux.html">5. Terminal Multiplexing: tmux</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -332,19 +356,57 @@
     <main id="main-content" class="main-content"><div class="container lesson-content">
         
         
-<section id="introduction"><h2 class="section-heading"><a href="introduction.html">Using Markdown</a></h2>
+<section id="102-cli"><h2 class="section-heading"><a href="102-cli.html">Command Line Interface: The Shell</a></h2>
 <hr class="half-width">
 <ul>
-<li>Use <code>.md</code> files for episodes when you want static
-content</li>
-<li>Use <code>.Rmd</code> files for episodes when you need to generate
-output</li>
-<li>Run <code>sandpaper::check_lesson()</code> to identify any issues
-with your lesson</li>
-<li>Run <code>sandpaper::build_lesson()</code> to preview your lesson
-locally</li>
-</ul></section><section id="102-cli"><h2 class="section-heading"><a href="102-cli.html">Command Line Interface</a></h2>
-<hr class="half-width"></section><section id="201-editors"><h2 class="section-heading"><a href="201-editors.html">Terminal-based Text Editors</a></h2>
+<li><p>Get sufficient familiarity with basic comands such as
+<code>ls</code>, <code>cp</code>, <code>cd</code>, <code>pwd</code> and
+<code>rm</code></p></li>
+<li>
+<p>If you want to know extra arguments for command that you know use
+the command <code>man</code></p>
+<pre><code>~$ man ls</code></pre>
+</li>
+<li><p>Most Linux/UNIX commands are just programs that have existed for
+decades and whose use has been for most part standarized overtime. The
+commands that you learn will serve you in the future so it is a fruitful
+investment.</p></li>
+</ul></section><section id="201-editors"><h2 class="section-heading"><a href="201-editors.html">Terminal-based Text Editors: nano, emacs and vim</a></h2>
+<hr class="half-width">
+<ul>
+<li>“There are three major editor in Linux/Unix: nano, emacs and
+vim”</li>
+<li>“Once decided for on text editor it is important to the basic key
+combinations and operation of your editor of choice”</li>
+</ul></section><section id="202-software"><h2 class="section-heading"><a href="202-software.html">Software on HPC Clusters: modules, conda and containersIntroduction<a class="anchor" aria-label="anchor" href="#introduction"></a>Singularity container with centos<a class="anchor" aria-label="anchor" href="#singularity-container-with-centos"></a>This is the Bootstrap file to recreate the image.<a class="anchor" aria-label="anchor" href="#this-is-the-bootstrap-file-to-recreate-the-image-"></a>Singularity container with centos<a class="anchor" aria-label="anchor" href="#singularity-container-with-centos-1"></a>This is the Bootstrap file to recreate the image.<a class="anchor" aria-label="anchor" href="#this-is-the-bootstrap-file-to-recreate-the-image--1"></a>Singularity container with centos<a class="anchor" aria-label="anchor" href="#singularity-container-with-centos-2"></a>This is the Bootstrap file to recreate the image.<a class="anchor" aria-label="anchor" href="#this-is-the-bootstrap-file-to-recreate-the-image--2"></a></a></h2>
+<hr class="half-width">
+<ul>
+<li>Modules. Use <code>module avail</code> to know all the modules on
+the cluster.</li>
+<li>Modules. Use <code>module load &lt;module_name&gt;</code> to load a
+module.</li>
+<li>Conda. Use <code>conda env list</code> to list the available
+environments.</li>
+<li>Conda. Use <code>conda activate</code> to activate a conda
+environment.</li>
+<li>Singularity. Use <code>singularity shell &lt;container&gt;</code> to
+get a shell inside the container.</li>
+<li>Singularity. Use
+<code>singularity exec &lt;container&gt; &lt;command&gt;</code> to
+execute a command or script inside the container.</li>
+</ul></section><section id="301-slurm"><h2 class="section-heading"><a href="301-slurm.html">Workload Manager: SlurmRunning a batch job (two methods)<a class="anchor" aria-label="anchor" href="#running-a-batch-job-two-methods"></a></a></h2>
+<hr class="half-width">
+<ul>
+<li>“The scheduler handles how compute resources are shared between
+users.”</li>
+<li>“Everything you do should be run through the scheduler.”</li>
+<li>“A non-interactive job is expressed as a shell script that is
+submitted to the cluster.”</li>
+<li>“Try to adjust the wall time to around 10-20% more than the expected
+time the job should need.”</li>
+<li>“It is a good idea to keep aliases to common torque commands for
+easy execution.”</li>
+</ul></section><section id="302-tmux"><h2 class="section-heading"><a href="302-tmux.html">Terminal Multiplexing: tmux</a></h2>
 <hr class="half-width"></section>
 </div>
     </main>
