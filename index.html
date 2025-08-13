@@ -412,31 +412,33 @@ e.g. online setup) in the solutions blocks.</p>
   Windows
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
-<div class="codewrapper sourceCode" id="cb5">
-<h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="op">&lt;</span>h5<span class="op">&gt;</span>There <span class="ex">is</span> no bash terminal default on Windows. Below are the steps to acquire one.<span class="op">&lt;</span>/h5<span class="op">&gt;</span></span>
-<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="op">&lt;</span>h4<span class="op">&gt;</span>Enable <span class="ex">WSL</span><span class="op">&lt;</span>/h4<span class="op">&gt;</span></span>
-<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="op">&lt;</span>ol<span class="op">&gt;</span></span>
-<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="op">&lt;</span>li<span class="op">&gt;</span>Press <span class="ex">the</span> Windows key and type <span class="st">"Windows Powershell"</span>.<span class="op">&lt;</span>/li<span class="op">&gt;</span></span>
-<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="op">&lt;</span>li<span class="op">&gt;</span>Right-click <span class="ex">and</span> <span class="st">"Run as administrator"</span>.<span class="op">&lt;</span>/li<span class="op">&gt;</span></span>
-<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a><span class="op">&lt;</span>li<span class="op">&gt;</span>Paste <span class="ex">the</span> following into the shell and press <span class="op">&lt;</span>code<span class="op">&gt;</span>enter<span class="op">&lt;</span>/code<span class="op">&gt;</span>.<span class="op">&lt;</span>/li<span class="op">&gt;</span></span>
-<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a><span class="op">&lt;</span>code<span class="op">&gt;</span></span>
-<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a><span class="ex">dism.exe</span> /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart</span>
-<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a><span class="op">&lt;</span>/code<span class="op">&gt;</span></span>
-<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a><span class="op">&lt;</span>li<span class="op">&gt;</span>Close <span class="ex">the</span> Powershell and restart the computer.<span class="op">&lt;</span>/li<span class="op">&gt;</span></span>
-<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a><span class="op">&lt;</span>/ol<span class="op">&gt;</span></span>
-<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a><span class="op">&lt;</span>h4<span class="op">&gt;</span>Download <span class="ex">the</span> Ubuntu Subspace<span class="op">&lt;</span>/h4<span class="op">&gt;</span></span>
-<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a><span class="op">&lt;</span>ol<span class="op">&gt;</span></span>
-<span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a><span class="op">&lt;</span>li<span class="op">&gt;</span>Press <span class="ex">the</span> Windows key.<span class="op">&lt;</span>/li<span class="op">&gt;</span></span>
-<span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a><span class="op">&lt;</span>li<span class="op">&gt;</span>Type <span class="st">"Microsoft Store"</span> and press enter.<span class="op">&lt;</span>/li<span class="op">&gt;</span></span>
-<span id="cb5-16"><a href="#cb5-16" tabindex="-1"></a><span class="op">&lt;</span>li<span class="op">&gt;</span>Search <span class="cf">for</span> <span class="st">"Ubuntu"</span> <span class="er">(</span><span class="ex">the</span> search bar is in the top right of the store<span class="kw">)</span> <span class="ex">and</span> click the top-most result.<span class="op">&lt;</span>/li<span class="op">&gt;</span></span>
-<span id="cb5-17"><a href="#cb5-17" tabindex="-1"></a><span class="op">&lt;</span>li<span class="op">&gt;</span>Install <span class="ex">Ubuntu.</span><span class="op">&lt;</span>/li<span class="op">&gt;</span></span>
-<span id="cb5-18"><a href="#cb5-18" tabindex="-1"></a><span class="op">&lt;</span>/ol<span class="op">&gt;</span></span>
-<span id="cb5-19"><a href="#cb5-19" tabindex="-1"></a><span class="ex">This</span> installation gives your Windows a little bit of Linux inside of it. Launching the Ubuntu app will give you a terminal and environment quite similar to those of a Linux machine like our HPCs. Your normal <span class="st">"C drive"</span>, <span class="st">"D drive"</span>, and so on are found under <span class="op">&lt;</span>code<span class="op">&gt;</span>/mnt<span class="op">&lt;</span>/code<span class="op">&gt;</span> in the subspace. More on accessing those later.</span>
-<span id="cb5-20"><a href="#cb5-20" tabindex="-1"></a><span class="op">&lt;</span>/p<span class="op">&gt;</span></span></code></pre>
+<p>There is no bash terminal default on Windows. Below are the steps to
+acquire one.</p>
+<div class="section level4">
+<h4 id="enable-wsl">Enable WSL<a class="anchor" aria-label="anchor" href="#enable-wsl"></a></h4>
+<ul><li><p>Press the Windows key and type “Windows Powershell”.</p></li>
+<li><p>Right-click and “Run as administrator”.</p></li>
+<li>
+<p>Paste the following into the shell and press
+<code>enter</code>.</p>
+<pre><code><span><span class="va">dism.exe</span> <span class="op">/</span><span class="va">online</span> <span class="op">/</span><span class="va">enable</span><span class="op">-</span><span class="va">feature</span> <span class="op">/</span><span class="va">featurename</span><span class="op">:</span><span class="va">Microsoft</span><span class="op">-</span><span class="va">Windows</span><span class="op">-</span><span class="va">Subsystem</span><span class="op">-</span><span class="va">Linux</span> <span class="op">/</span><span class="va">all</span> <span class="op">/</span><span class="va">norestart</span></span></code></pre>
+</li>
+<li><p>Close the Powershell and restart the computer.</p></li>
+</ul></div>
+<div class="section level4">
+<h4 id="download-the-ubuntu-subspace">Download the Ubuntu Subspace<a class="anchor" aria-label="anchor" href="#download-the-ubuntu-subspace"></a></h4>
+<ul><li>Press the Windows key.</li>
+<li>Type “Microsoft Store” and press enter.</li>
+<li>Search for “Ubuntu” (the search bar is in the top right of the
+store) and click the top-most result.</li>
+<li>Install Ubuntu.</li>
+</ul><p>This installation gives your Windows a little bit of Linux inside of
+it. Launching the Ubuntu app will give you a terminal and environment
+quite similar to those of a Linux machine like our HPCs. Your normal “C
+drive”, “D drive”, and so on are found under <code>/mnt</code> in the
+subspace. More on accessing those later.</p>
 </div>
 </div>
 </div>
@@ -450,20 +452,15 @@ e.g. online setup) in the solutions blocks.</p>
   MacOS
   </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
-<div class="accordion-body">
-<div class="codewrapper sourceCode" id="cb6">
-<h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="op">&lt;</span>h5<span class="op">&gt;</span>To <span class="ex">open</span> a terminal:<span class="op">&lt;</span>/h5<span class="op">&gt;</span></span>
-<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="op">&lt;</span>ol<span class="op">&gt;</span></span>
-<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="op">&lt;</span>li<span class="op">&gt;</span>Click <span class="ex">the</span> Launchpad icon in the Dock.<span class="op">&lt;</span>/li<span class="op">&gt;</span></span>
-<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a><span class="op">&lt;</span>li<span class="op">&gt;</span>Type <span class="ex">Terminal</span> in the search field.<span class="op">&lt;</span>/li<span class="op">&gt;</span></span>
-<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a><span class="op">&lt;</span>li<span class="op">&gt;</span>Click <span class="ex">Terminal.</span><span class="op">&lt;</span>/li<span class="op">&gt;</span></span>
-<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a><span class="op">&lt;</span>/ol<span class="op">&gt;</span></span>
-<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a><span class="ex">The</span> default terminal for MacOS, starting with Catalina is zsh. To start a bash shell, type <span class="op">&lt;</span>code<span class="op">&gt;</span>bash<span class="op">&lt;</span>/code<span class="op">&gt;</span> into the terminal and press <span class="op">&lt;</span>code<span class="op">&gt;</span>enter<span class="op">&lt;</span>/code<span class="op">&gt;</span>.</span>
-<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a><span class="op">&lt;</span>/p<span class="op">&gt;</span></span></code></pre>
-</div>
+<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
+<div class="section level4 accordion-body">
+<h4 id="to-open-a-terminal">To open a terminal:<a class="anchor" aria-label="anchor" href="#to-open-a-terminal"></a></h4>
+<ul><li>Click the Launchpad icon in the Dock.</li>
+<li>Type Terminal in the search field.</li>
+<li>Click Terminal.</li>
+</ul><p>The default terminal for MacOS, starting with Catalina is zsh. To
+start a bash shell, type <code>bash</code> into the terminal and press
+<code>enter</code>.</p>
 </div>
 </div>
 </div>
@@ -476,26 +473,22 @@ e.g. online setup) in the solutions blocks.</p>
   Linux
   </h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
 <div class="accordion-body">
-<div class="codewrapper sourceCode" id="cb7">
-<h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="ex">The</span> terminal is usually a button on your desktop.</span>
-<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="ex">The</span> icon is commonly depicted as a monitor with a black screen.</span></code></pre>
-</div>
-</div>
+<ul><li>The terminal is usually a button on your desktop.</li>
+<li>The icon is commonly depicted as a monitor with a black screen.</li>
+</ul></div>
 </div>
 </div>
 </div>
 </section><section><h2 class="section-heading" id="downloading-the-materials">Downloading the materials<a class="anchor" aria-label="anchor" href="#downloading-the-materials"></a></h2>
 <hr class="half-width"><p>The materials of examples and exercises can be downloaded by
 executing this command on the terminal.</p>
-<pre><code>git clone https://github.com/WVUHPC/workshops_hands-on.git</code></pre>
+<pre><code>~$ git clone https://github.com/WVUHPC/workshops_hands-on.git</code></pre>
 <p>This command will download all the files used in our workshops into a
 folder called <code>workshops_hands-on</code>. You can move into the
 particular folder for this workshop using the command.</p>
-<pre><code>cd workshops_hands-on/Introduction_HPC</code></pre>
+<pre><code>~$ cd workshops_hands-on/Introduction_HPC</code></pre>
 <p>If you are unfamiliar with these commands, do not worry; you are in
 the right class and will learn all these commands and how to use them.
 These and many other commands will be the topic of the material that
