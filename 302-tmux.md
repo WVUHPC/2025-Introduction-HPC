@@ -4,36 +4,46 @@ teaching: 40
 exercises: 20
 ---
 
-:::::::::::::::::::::::::::::::::::::: questions 
+:::::::::::::::::::::::::::::::::::::: questions
 
 - "What is a Terminal Multiplexer?"
+- "How I can become more productive with a terminal multiplexer?"
 - "How can I use tmux?"
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- "Learn about Sessions, Windows and Panes"
+- "Learn to use a terminal multiplexer like tmux"
+- "Learn the basic tmux concepts: sessions, windows and panes"
+- "Learn how to create new sessions and attach to existing ones"
+- "Learn to span new windows and panes and navegate between them"
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+![tmux logo](fig/tmux-logo.png){alt="tmux logo"}
 
-## Terminal Emulation
+## From terminal emulation to terminal multiplexing
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/f4TosumXhms" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+![Example of a tmux window](fig/Tmux.png){alt="Example of a tmux window"}
 
-During your interaction with an HPC cluster, you spend most of your time in front of a terminal. We have been working on a terminal during the previous two episodes. Let's understand what a terminal is before digging into terminal multiplexing and *tmux* in particular.
+During your interaction with an HPC cluster, you spend most of your time in front of a terminal. You have been working on a terminal during the previous episodes. Let's now understand more in detail what a terminal is before exploring the concept of terminal multiplexing and *tmux* in particular.
 
-What you have on your computer is called a terminal emulator. In the old days of mainframes (70s and 80s), people using computers worked on what were called dumb terminals, monitors with keyboards but no processing power, all the processing was happening on a remote machine, the mainframe.
+What you have being using so far to interact with the HPC cluster is called a terminal emulator. In the old days of mainframes (late 70s and 80s), people using computers worked on what were called "dumb terminals", monitors with a keyboard attached. All real processing happened on a remote machine, the mainframe. Computers at that time were very expensive so at most you were given a keyboard to enter commands and a CRT monitor to see the result of those commands. Many other people could also be using other terminals connected to the same mainframe.
 
-Today, what you have on your side is a perfectly capable computer, but you are using a terminal emulator and an SSH client to connect to a remote machine that is the head node of the cluster. On Windows, you have applications like PuTTy <https://www.chiark.greenend.org.uk/~sgtatham/putty/> that will offer an `xterm` terminal emulator and the SSH client on the same package. You should realize that the terminal emulator and SSH client are two different applications. In other Operating Systems like Linux and MacOS the difference between the terminal emulator and the SSH client is more clear.
+Today, what you have on your hands is a perfectly capable computer, thousands of times more powerful that the mainframes from the 80s. However, there are situations where you need more computational power and for that reason you use a supercomputer such as an HPC cluster. To access these HPC cluster you are using a terminal emulator and an SSH client to connect to a remote machine; the HPC cluster login node.
 
-Now, on your computer, connect to one of our HPC clusters using SSH. You notice that your prompt, the string that indicates that it is ready to receive commands, shows the name of the head node on our clusters. Imagine that you are editing a text file using any of the three editors from our previous episode. If, for some reason, the internet connection fails, the program that you were using will be closed. 
-Some editors give you some recovery protection, but in any case, you need to connect again, change the working directory and other operations before opening the file, and continue your work.
+If you are using a Windows machine, you maybe are using an application such as PuTTy <https://www.chiark.greenend.org.uk/~sgtatham/putty/> that will offer a terminal emulator and SSH client on the same package. Despide of ther line being difussed with PuTTY the terminal emulator and SSH client are two different applications. In other Operating Systems like Linux and MacOS the difference between the terminal emulator and the SSH client is more clear.
 
-Another limitation of traditional terminals is that you have just one place to enter commands. Working with HPC clusters usually involves working with several jobs and projects, and you would like to write and submit new jobs, check the status of those jobs that you have already submitted, and read the output from the jobs that have been finished. You could open more SSH sessions, but the chances of those sessions failing due to network issues and managing those extra windows limit your ability to work effectively on the cluster.
+Now, on your computer, connect to one of our HPC clusters using SSH. You notice that your prompt, the string that indicates that it is ready to receive commands, shows the name of the head node on our clusters. In previous episodes we have learn to execute commands from the terminal, edit text files and submitting jobs.
 
-The solution for the two problems above is using a Terminal Multiplexer, a program that runs on the head node and is detached from your local terminal session. *tmux* is such a terminal multiplexer that it can create multiple emulated terminals.
+Imagine that you are editing a text file using any of the three editors from our previous episode. If, for some reason, the internet connection fails, your local computer gets out of power, your SSH session will be closed and the program that you were using to edit the file will closed too. If the editor does not have any recurrent saving mechanism you lost all that you edited and you need to start all over again.
+
+Even if your text editor has some recurring saving mechanism, some work could have been lost, you need to connect to the cluster again, change to the correct working directory before you can continue your work were you were left.
+
+Another limitation of traditional terminals is that you have just one place to enter commands. Working with HPC clusters usually involves working with several jobs and projects, and you would like to edit some text files here, submit new jobs there, check the status of those jobs that you have already submitted, and read the output from the jobs that have been finished. You could open more SSH sessions, but the chances of those sessions failing due to network issues and managing those extra windows limit your ability to work effectively on the cluster.
+
+The solution for the two problems above is using a terminal multiplexer, a program that runs on the login node of the cluster and can continue to work if by change you lost connectivity and gets detached from your local terminal session. *tmux* is such a terminal multiplexer that it can create multiple emulated terminals.
 
 In this episode we will show you how to create *tmux* sessions on the cluster and see the effect of detaching and reattaching to the session. Next, we will see the four basic concepts in *tmux*: Clients, Sessions, Windows and Panes. We will see how to create and move between them and, finally, a few tricks on how to personalize your experience on *tmux*. As you progress on the use of the cluster *tmux* will become an important companion for your interaction with the HPC clusters.
 
@@ -48,14 +58,14 @@ First, connect to the cluster using your terminal emulator and SSH client.
 Once you are connected to the head node of the cluster, execute:
 
 ```
-tmux
+~$ tmux
 ```
 
 
 If, for some reason, you lost the connection to the server or you detached from the multiplexer, all that you have to do to reconnect is to execute the command:
 
 ```
-tmux a
+~$ tmux a
 ```
 
 
@@ -68,7 +78,7 @@ You have to press the <kbd>Ctrl</kbd> key, keep it pressed and press the <kbd>B<
 From the head node, we will reattach the session using:
 
 ```
-$ tmux a
+~$ tmux a
 ```
 
 
@@ -79,7 +89,7 @@ rarely, usually one or two times per year. For the most part, you can keep your 
 You can create several *tmux* sessions, each one with a given name, using:
 
 ```
-$ tmux new -s <session_name>
+~$ tmux new -s <session_name>
 ```
 
 
@@ -96,9 +106,8 @@ When you create your first *tmux* session, you also create a single window. *tmu
 In case you are not already attached to the *tmux* session, enter into the *tmux* session with:
 
 ```
-$ tmux a
+~$ tmux a
 ```
-
 
 You have one window with one pane inside that fills the entire space.
 You can create new *tmux* windows with **C-b c**. Start creating a few of them.
@@ -107,7 +116,7 @@ Each new window will appear in the bottom *tmux* bar. The first ten are identifi
 Moving between windows is done using the number associated on the bottom bar of *tmux*, to move to the first window (with number 0) use **C-b 0**, similarly for all the first 10 windows. You can create more windows beyond the first 10, but only for those you can jump into them using the **C-b <WIN no>** combination. Another way of moving between the previous and next window. Use
 **C-b p** and **C-b n** for the previous and next respectively. You can change the number of a window using **C-b .**
 
-Notice that windows receive names shown on the bottom bar in *tmux*. You can change the name of the window using **C-b ,**. 
+Notice that windows receive names shown on the bottom bar in *tmux*. You can change the name of the window using **C-b ,**.
 This is useful for generating windows with consistent names for tasks or projects related to the window.
 You can also use the different windows connected to different machines so the label could be useful to identify which machine you are connected to at a given window.
 
@@ -125,14 +134,13 @@ One easy way of organizing the panes is using the predefined layouts, and **C-b 
 All the commands above are related to the movement and creation of sessions, windows, and panes. Inside a pane, you can enter Copy mode if you want to scroll the lines on the pane or copy and paste lines.
 The procedure to use copy mode is as follows:
 
-
   1. Press **C-b [** to enter in copy mode.
 
   2. Move the start/end of text to highlight.
 
   3. Press **C-SPACEBAR** to start selection
 
-    Start highlighting text. Selected text changes the color and background, so you'll know if the command worked.
+Start highlighting text. Selected text changes the color and background, so you'll know if the command worked.
 
   4. Move to the opposite end of the text to copy.
 
@@ -206,11 +214,12 @@ setw -g window-status-bell-style 'fg=colour255 bg=colour1 bold'
 set -g message-style 'fg=colour232 bg=colour16 bold'
 ```
 
-
 There are a lot of things that can be changed to everyone's taste. There are several **.tmux.conf** files shared on GitHub and other repositories that customize `tmux` in several ways.
 
-> ## Exercise: TMUX Sessions, Windows and Panes
->
+::::::::::::::::::::::::::::::::::::: challenge
+
+## Exercise: TMUX Sessions, Windows and Panes
+
 > This exercise will help you familiarize yourself with the three concepts in TMUX.
 >
 >   1. Create three sessions on TMUX, and give each of them different names, either creating the session with the name or using **C-b $** to rename session names.
@@ -220,35 +229,42 @@ There are a lot of things that can be changed to everyone's taste. There are sev
 >   3. In one of those windows, split the window vertically, on another horizontally, and on the third one create 3 panes and cycle between the different layouts using **C-b SPACE**
 >
 >   4. Detach or close your terminal and reconnect, attach your sessions, and verify that your windows and panes remain the same.
->
->{: .source}
-{: .challenge}
 
-> ## Exercise: Using tmux
->
-> Using the tables above, follow this simple challenge with tmux
->
-> 1. Log in to Thorny Flat and create a `tmux` session
->
-> 2. Inside the session, create a new window
->
-> 3. Go back to window 0 and create a horizontal pane, and inside one of those panes, create a vertical pane.
->
-> 4. Create a big clock pane
->
-> 5. Detach from your current session, close your terminal, and reconnect.
-> Log in again on Thorny Flat and reattach your session.
->
-> 6. Now that you are again in your original session create a new session.
-> You will be automatically redirected there. Leave your session and check the list of sessions.
->
-> 7. Kill the second session (session ID is 1)
->
->{: .source}
-{: .challenge}
+:::::::::::::::: solution
 
+:::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+## Exercise: Using tmux
+
+Using the tables above, follow this simple challenge with tmux
+
+ 1. Log in to Thorny Flat and create a `tmux` session
+
+ 2. Inside the session, create a new window
+
+ 3. Go back to window 0 and create a horizontal pane, and inside one of those panes, create a vertical pane.
+
+ 4. Create a big clock pane
+
+ 5. Detach from your current session, close your terminal, and reconnect.
+    Log in again on Thorny Flat and reattach your session.
+
+ 6. Now that you are again in your original session create a new session.
+    You will be automatically redirected there. Leave your session and check the list of sessions.
+
+ 7. Kill the second session (session ID is 1)
+
+:::::::::::::::: solution
+
+:::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Reference of *tmux* commands
+
+![tmux cheat sheet](fig/tmux_cheat_sheet.png){alt="tmux cheat sheet"}
 
 In tmux, by default, the prefix is <kbd>Ctrl</kbd>+<kbd>b</kbd>.
 Use the prefix followed by one of the options below:
@@ -259,7 +275,6 @@ Use the prefix followed by one of the options below:
     s  list sessions
     $  name session
 ```
-{: .source}
 
 ### Windows (tabs)
 
@@ -272,7 +287,6 @@ Use the prefix followed by one of the options below:
     ,  name window
     &  kill window
 ```
-{: .source}
 
 ### Panes (splits)
 
@@ -290,14 +304,12 @@ Use the prefix followed by one of the options below:
     } (Move the current pane right)
     z toggle pane zoom
 ```
-{: .source}
 
 ### Copy model
 
 ```
     [  Copy mode
 ```
-{: .source}
 
 In copy mode, use these commands to copy a region to the *tmux* clipboard.
 
@@ -305,14 +317,12 @@ In copy mode, use these commands to copy a region to the *tmux* clipboard.
     Ctrl SPACE  Start Selection
     Alt w       Copy the selection to the clipboard
 ```
-{: .source}
 
 After this use the command to paste
 
 ```
     ]  Paste from clipboard
 ```
-{: .source}
 
 ### Others
 
@@ -322,7 +332,6 @@ After this use the command to paste
     ?  list shortcuts
     :  prompt
 ```
-{: .source}
 
 ### Command line arguments for tmux
 
@@ -332,8 +341,13 @@ After this use the command to paste
     tmux rename -t <ID> new_name  rename a session
     tmux kill-session -t <ID>     kill session by target
 ```
-{: .source}
 
-:::::::::::::::::::::::::::::::::::::: questions 
-- "tmux allows you to keep terminal sessions on the cluster that persist in case of network disconnection."
+:::::::::::::::::::::::::::::::::::::: keypoints
+
+- "A terminal multiplexer protects programs such as text editors that are running on the login node from connection drops"
+
+- "Allow programs running on a remote server to be accessed from multiple different local computers."
+
+- "Work with multiple programs and shells together in one terminal, a bit like a window manager."
+
 ::::::::::::::::::::::::::::::::::::::::::::::::
