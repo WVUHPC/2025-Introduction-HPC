@@ -1,13 +1,12 @@
 ---
-title: "Terminal-based Text Editors"
-start: 540
-teaching: 60
-exercises: 30
+title: "Terminal-based Text Editors: nano, emacs and vim"
+teaching: 40
+exercises: 20
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions
 
-- "How do I edit files with the terminal?"
+- "How do I edit text files from the terminal?"
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -63,10 +62,10 @@ Nano is a small andfriendly editor with commands that are generally accessed by 
 
 You can start editing a file using a command line like this:
 
-~~~
+```
 $ nano myfile.f90
-~~~
-{: .language-bash}
+```
+
 
 To leave the editor type <kbd>Ctrl</kbd>+<kbd>X</kbd>, you will be asked if you want to save your file to disk.
 Another option is to save the file with <kbd>Ctrl</kbd>+<kbd>O</kbd> but remaing on the editor.
@@ -177,10 +176,10 @@ basics as we did for **nano**
 
 In addition to the terminal-base editor, **emacs** also has a GUI environment that could be selected by default. To ensure that you remain in terminal-based version use:
 
-~~~
+```
 $ emacs -nw data.txt
-~~~
-{: .language-bash}
+```
+
 
 To leave the editor execute <kbd>Ctrl</kbd>+<kbd>X</kbd> <kbd>C</kbd>, if you want to save the file to disk use
 <kbd>Ctrl</kbd>+<kbd>X</kbd> <kbd>S</kbd>, another representation of the keys to save and close could be `C-x C-s C-x C-c`, actually, the <kbd>Ctrl</kbd> key can be keep pressed while you hit the sequence `x s x c` to get the same effect.
@@ -226,9 +225,9 @@ A popular implementation of **vi** is **vim** that stands as an improved version
 
 You can open a file on **vim** with
 
-~~~
+```
 $ vim code.py
-~~~
+```
 {: .language-bash }
 
 vi is a modal editor: it operates in either *insert mode* (where typed
@@ -306,14 +305,14 @@ A very beautiful Reference Card for vim can be found here: [Vim CheatSheet](http
 > ~~~
 > $ gcc Sierpinski.c -o Sierpinski
 > ~~~
-> {: .language-bash}
+> 
 >
 > This will compile your source code `Sierpinski.c` in C into a binary executable called `Sierpinski`. Execute the code with:
 >
 > ~~~
 > $ ./Sierpinski
 > ~~~
-> {: .language-bash}
+> 
 >
 > The resulting output is kind of a surprise so I will not post it here.
 > The original code comes from [rosettacode.org](https://www.rosettacode.org/wiki/Sierpinski_triangle#C)
@@ -331,28 +330,28 @@ A very beautiful Reference Card for vim can be found here: [Vim CheatSheet](http
 > $ ssh -X <username>@ssh.wvu.edu
 > $ ssh -X <username>@tf.hpc.wvu.edu
 > ~~~
-> {: .language-bash}
+> 
 >
 > Once you are there execute this command to load the Java compiler
 >
 > ~~~
 > $ module load lang/java/jdk1.8.0_201
 > ~~~
-> {: .language-bash}
+> 
 >
 > Once you have loaded the module go to the folder `workshops_hands-on/Introduction_HPC/4._Terminal-based_Editors` and compile > the Java code with this command
 >
 > ~~~
 > $ javac JuliaSet.java
 > ~~~
-> {: .language-bash}
+> 
 >
 > and execute the code with:
 >
 > ~~~
 > $ java JuliaSet
 > ~~~
-> {: .language-bash}
+> 
 >
 > A window should pop up on your screen.
 > Now, use one of the editors presented on this episode and do the changes mentioned on the source code to made the code > multithreaded.
@@ -371,7 +370,7 @@ A very beautiful Reference Card for vim can be found here: [Vim CheatSheet](http
 > ~~~
 > $> sh download-covid19.sh
 > ~~~
-> {: .language-bash}
+> 
 >
 > Open the file ``owid-covid-data.csv`` with your favorite editor.
 > Go to to the first and last line on that file. The file has too many lines to be scrolled line by line.
@@ -393,4 +392,9 @@ A very beautiful Reference Card for vim can be found here: [Vim CheatSheet](http
 >
 {: .testimonial}
 
-{% include links.md %}
+::::::::::::::::::::::::::::::::::::: keypoints
+
+- "There are three major editor in Linux/Unix: nano, emacs and vim"
+- "Once decided for on text editor it is important to the basic key combinations and operation of your editor of choice"
+
+::::::::::::::::::::::::::::::::::::::::::::::::
