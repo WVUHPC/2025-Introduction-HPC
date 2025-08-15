@@ -18,7 +18,7 @@ carpentry: 'incubator'
 carpentry_description: 'Introduction to High-Performance Computing'
 
 # Overall title for pages.
-title: 'Introduction to HPC' # FIXME
+title: 'Introduction to High-Performance Computing (HPC)' # FIXME
 
 # Date the lesson was created (YYYY-MM-DD, this is empty by default)
 created: ~ # FIXME
@@ -67,11 +67,13 @@ contact: 'gufranco@mail.wvu.edu' # FIXME
 # Order of episodes in your lesson
 episodes:
 - 101-supercomputing.md
-- 102-cli.md
-- 201-editors.md
-- 202-software.md
-- 301-slurm.md
-- 302-tmux.md
+- 102-first-job.md
+- 201-cli.md
+- 202-editors.md
+- 301-data-transfer.md
+- 302-slurm.md
+- 401-software.md
+- 402-tmux.md
 
 # Information for Learners
 learners: 

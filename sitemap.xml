@@ -10,16 +10,37 @@
     <loc>https://carpentries.github.io/workbench-template-md/102-cli.html</loc>
   </url>
   <url>
+    <loc>https://carpentries.github.io/workbench-template-md/102-first-job.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/201-cli.html</loc>
+  </url>
+  <url>
     <loc>https://carpentries.github.io/workbench-template-md/201-editors.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/202-editors.html</loc>
   </url>
   <url>
     <loc>https://carpentries.github.io/workbench-template-md/202-software.html</loc>
   </url>
   <url>
+    <loc>https://carpentries.github.io/workbench-template-md/301-data-transfer.html</loc>
+  </url>
+  <url>
     <loc>https://carpentries.github.io/workbench-template-md/301-slurm.html</loc>
   </url>
   <url>
+    <loc>https://carpentries.github.io/workbench-template-md/302-slurm.html</loc>
+  </url>
+  <url>
     <loc>https://carpentries.github.io/workbench-template-md/302-tmux.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/401-software.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/402-tmux.html</loc>
   </url>
   <url>
     <loc>https://carpentries.github.io/workbench-template-md/404.html</loc>
@@ -49,16 +70,37 @@
     <loc>https://carpentries.github.io/workbench-template-md/instructor/102-cli.html</loc>
   </url>
   <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/102-first-job.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/201-cli.html</loc>
+  </url>
+  <url>
     <loc>https://carpentries.github.io/workbench-template-md/instructor/201-editors.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/202-editors.html</loc>
   </url>
   <url>
     <loc>https://carpentries.github.io/workbench-template-md/instructor/202-software.html</loc>
   </url>
   <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/301-data-transfer.html</loc>
+  </url>
+  <url>
     <loc>https://carpentries.github.io/workbench-template-md/instructor/301-slurm.html</loc>
   </url>
   <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/302-slurm.html</loc>
+  </url>
+  <url>
     <loc>https://carpentries.github.io/workbench-template-md/instructor/302-tmux.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/401-software.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/402-tmux.html</loc>
   </url>
   <url>
     <loc>https://carpentries.github.io/workbench-template-md/instructor/404.html</loc>

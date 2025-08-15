@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<title>Introduction to HPC: All in One View</title>
+<title>Introduction to High-Performance Computing (HPC): All in One View</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="../assets/themetoggle.js"></script><link rel="stylesheet" type="text/css" href="../assets/styles.css">
 <script src="../assets/scripts.js" type="text/javascript"></script><!-- mathjax --><script type="text/x-mathjax-config">
@@ -94,7 +94,7 @@
       <img class="small-logo" alt="Introduction to High-Performance Computing" src="../assets/images/incubator-logo-sm.svg">
 </div>
     <div class="lesson-title-md">
-      Introduction to HPC
+      Introduction to High-Performance Computing (HPC)
     </div>
     <div class="search-icon-sm">
       <!-- TODO: do not show until we have search
@@ -105,7 +105,7 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 <li class="nav-item">
           <span class="lesson-title">
-            Introduction to HPC
+            Introduction to High-Performance Computing (HPC)
           </span>
         </li>
         <li class="nav-item">
@@ -142,7 +142,7 @@
   </div>
 <!--/div.container-fluid -->
 </nav><div class="col-md-12 mobile-title">
-  Introduction to HPC
+  Introduction to High-Performance Computing (HPC)
 </div>
 
 <aside class="col-md-12 lesson-progress"><div style="width: %" class="percentage">
@@ -256,7 +256,7 @@
 <div class="accordion accordion-flush" id="accordionFlush3">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading3">
-        <a href="102-cli.html">2. Command Line Interface: The Shell</a>
+        <a href="102-first-job.html">2. The life cycle of a job</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -268,7 +268,7 @@
 <div class="accordion accordion-flush" id="accordionFlush4">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading4">
-        <a href="201-editors.html">3. Terminal-based Text Editors: nano, emacs and vim</a>
+        <a href="201-cli.html">3. Command Line Interface: The Shell</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -280,7 +280,7 @@
 <div class="accordion accordion-flush" id="accordionFlush5">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading5">
-        <a href="202-software.html">4. Software on HPC Clusters: modules, conda and containers</a>
+        <a href="202-editors.html">4. Terminal-based Text Editors: nano, emacs and vim</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -292,7 +292,7 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="301-slurm.html">5. Workload Manager: Slurm</a>
+        <a href="301-data-transfer.html">5. Data Transfer: Globus</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -304,7 +304,31 @@
 <div class="accordion accordion-flush" id="accordionFlush7">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading7">
-        <a href="302-tmux.html">6. Terminal Multiplexing: tmux</a>
+        <a href="302-slurm.html">6. Workload Manager: Slurm</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush8">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading8">
+        <a href="401-software.html">7. Software on HPC Clusters: modules, conda and containers</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush9">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading9">
+        <a href="402-tmux.html">8. Terminal Multiplexing: tmux</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -370,7 +394,7 @@
         
 <section id="aio-101-supercomputing"><p>Content from <a href="101-supercomputing.html">Supercomputing: Concepts</a></p>
 <hr>
-<p>Last updated on 2025-08-13 |
+<p>Last updated on 2025-08-15 |
 
         <a href="https://github.com/carpentries/workbench-template-md/edit/main/episodes/101-supercomputing.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 60 minutes</p>
@@ -419,9 +443,319 @@ parallel. Supercomputing involves a system working at the maximum
 potential and whose performance is larger of a normal computer.</p>
 <p>Sample use cases include weather, energy, life sciences, and
 manufacturing.</p>
-</section><section><h2 class="section-heading" id="concepts">Concepts<a class="anchor" aria-label="anchor" href="#concepts"></a>
+</section><section><h2 class="section-heading" id="software-concepts">Software concepts<a class="anchor" aria-label="anchor" href="#software-concepts"></a>
 </h2>
 <hr class="half-width">
+<div class="section level3">
+<h3 id="processes-and-threads">Processes and threads<a class="anchor" aria-label="anchor" href="#processes-and-threads"></a>
+</h3>
+<p>Threads and processes are both independent sequences of execution. In
+most cases the computational task that you want to perform on an HPC
+cluster runs as a single process that could eventually span across
+multiple threads. You do not need to have a deep understanding of these
+two concepts but at least the general differenciation is important for
+scientific computing.</p>
+<ul>
+<li>
+<strong>Process</strong>: Instance of a program, with access to its
+own memory, state and file descriptors (can open and close files)</li>
+<li>
+<strong>Thread</strong>: Lightweight entity that executes inside a
+process. Every process has at least one thread and threads within a
+process can access shared memory.</li>
+</ul>
+<p>A first technique that codes use to accelerate execution is via
+multithreading. Almost all computers today have several CPU cores on
+each CPU chip. Each core is capable of its own processing meaning that
+you can from a single process span multiple threads of execution each
+doing its own portion of the workload. As all those threads execute
+inside the same process and can see the same memory allocated to the
+process threads can be organized to divide the workload. The various CPU
+cores can run different threads and achieve an increase of performance
+as a result. In scientific computing this kind of parallel computing is
+often implemented using OpenMP but there are several other mechanisms of
+multicore execution that can be implemented.</p>
+<p>The differences between threads and processes tend to be described in
+a language intended for computer scientists. See for example the
+discussion <a href="https://stackoverflow.com/questions/200469/what-is-the-difference-between-a-%20process-and-a-thread" class="external-link">“What
+is the difference between a process and a thread?”</a></p>
+<p>If the discussion above end up being over technical this resouce <a href="https://www.educba.com/process-vs-thread/" class="external-link">“Process vs Thread”</a>
+address the difference from a more informal perspective.</p>
+<p>The use of processes and threads is critical in type of
+parallelization your code can use and will determine how/where you will
+run your code. Generally speaking there are three kinds of
+parallelization:</p>
+<ul>
+<li><p><strong>Distributed-memory</strong> applications where multiple
+processes (instances of a program) can be run on one or more nodes. This
+is the kind of parallelization used by codes that use the Message
+Passing Interface (MPI). We will discuss in more detail later in this
+episode.</p></li>
+<li><p><strong>Shared-memory</strong> or Multithreaded applications use
+one or more CPU cores but all the processing must happen on a single
+node. One example of this in scientific computing is the use of OpenMP
+of OpenACC by some codes.</p></li>
+<li><p><strong>Hybrid parallelization</strong> applications combine
+distributed and multithreading parallelism so you can achieve the best
+performance. Different processes can be run on one or more nodes and
+each process can span multiple threads and use efficiently several CPU
+cores on the same node. The challenge with this parallelization is the
+balance between threads and processes as we will discusse
+later.</p></li>
+<li><p><strong>Accelerated or GPU-accelerated</strong> applications use
+accelerators such as GPUs that are inherently parallel in nature. Inside
+this devices multiple threads take place.</p></li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="parallel-computing-paradigms">Parallel computing paradigms<a class="anchor" aria-label="anchor" href="#parallel-computing-paradigms"></a>
+</h3>
+<p>Parallel computing paradigms can be broadly categorized into shared
+memory and distributed memory models, with further distinctions within
+each. These models dictate how processes access and share data. This
+influencing the design and scope of parallel algorithms.</p>
+<div class="section level4">
+<h4 id="shared-memory">Shared-Memory<a class="anchor" aria-label="anchor" href="#shared-memory"></a>
+</h4>
+<p>Computeres today have several CPU cores printed inside a single CPU
+chip and HPC nodes usually have 2 or 4 CPUs and those CPUs can see all
+the memory installed on the node. All CPU cores sharing all the memory
+of the node allows for a kind of parallelization where we need to do the
+same operations to a big pool of data and we can assigned several cores
+to work on chunks of the data knowing that the results of the operation
+can be aggregated on the same memory that is visible to all the cores at
+the end of the procedure.</p>
+<p>Multithreading parallelism is the use of several CPU cores by spaning
+several threads on a single process so data can be processed across the
+namespace of the process. OpenMP is the de-facto solution for
+multithreading parallelism. OpenMP is an application programming
+interface (API) for shared-memory (within a node) parallel programming
+in C, C++ and Fortran</p>
+<ul>
+<li>
+<strong>OpenMP</strong> provides a collection of compiler
+directives, library routines and environment variables.</li>
+<li>
+<strong>OpenMP</strong> is widely supported by all major compilers,
+including GCC, Intel, NVIDIA, IBM and AMD Optimizing C/C++ Compiler
+(AOCC).</li>
+<li>
+<strong>OpenMP</strong> is portable and can be used one various
+architectures (Intel, ARM64 and others)</li>
+<li>
+<strong>OpenMP</strong> is de-facto standard for shared-memory
+parallelization, there are other options such as Cilk, POSIX threads
+(pthreads) and specialized libraries for Python, R and other programming
+languages.</li>
+</ul>
+<p>Applications can be parallelized using OpenMP by introducing minor
+changes to the code in the form of lines that looks like comments and
+are only interpreted by compilers that support OpenMP. This is a small
+example</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">C<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode c" tabindex="0"><code class="sourceCode c"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;omp.h&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="pp">#define N </span><span class="dv">1000</span></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="pp">#define CHUNKSIZE </span><span class="dv">100</span></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>main <span class="op">()</span> <span class="op">{</span></span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>    <span class="dt">int</span> i<span class="op">,</span> chunk<span class="op">;</span></span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a>    <span class="dt">float</span> a<span class="op">[</span>N<span class="op">],</span> b<span class="op">[</span>N<span class="op">],</span> c<span class="op">[</span>N<span class="op">];</span></span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a>    <span class="co">/* Some initializations */</span> </span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a>    <span class="cf">for</span> <span class="op">(</span>i<span class="op">=</span><span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> N<span class="op">;</span> i<span class="op">++)</span> a<span class="op">[</span>i<span class="op">]</span> <span class="op">=</span> b<span class="op">[</span>i<span class="op">]</span> <span class="op">=</span> i <span class="op">*</span> <span class="fl">1.0</span><span class="op">;</span></span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a>    chunk <span class="op">=</span> CHUNKSIZE<span class="op">;</span></span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a>    <span class="pp">#pragma omp parallel for </span><span class="op">\</span></span>
+<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a><span class="pp">       shared(a, b, c, chunk) private(i) </span><span class="op">\</span></span>
+<span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a><span class="pp">       schedule(static, chunk)</span></span>
+<span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a>    <span class="cf">for</span> <span class="op">(</span>i<span class="op">=</span><span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> n<span class="op">;</span> i<span class="op">++)</span> c<span class="op">[</span>i<span class="op">]</span> <span class="op">=</span> a<span class="op">[</span>i<span class="op">]</span> <span class="op">+</span> b<span class="op">[</span>i<span class="op">];</span></span>
+<span id="cb1-15"><a href="#cb1-15" tabindex="-1"></a><span class="op">}</span></span></code></pre>
+</div>
+<p>If you are not a developer what you should know is that OpenMP is a
+solution to add parallelism to a code and with the right flags during
+compilation OpenMP can be enabled and the resulting code can work more
+efficiently on compute nodes.</p>
+</div>
+<div class="section level4">
+<h4 id="message-passing">Message Passing<a class="anchor" aria-label="anchor" href="#message-passing"></a>
+</h4>
+<p>In the message passing paradigm, each processor runs its own program
+and works on its own data.</p>
+<p>In the message passing paradigm, as each process is independent and
+has its own memory namespace, different processes need to coordinate the
+work by sending and receiving messages. Each process must ensure that
+each it has correct data to compute and write out the results in correct
+order.</p>
+<p>The Message Passing Interface (MPI) is a standard for parallelizing
+C, C++ and Fortran code to run on distributed memory systems such as HPC
+clusters. While not officially adopted by any major standards body, it
+has become the de facto standard (i.e., widely used and several
+implementations created).</p>
+<ul>
+<li><p>There are multiple open-source implementations, including
+OpenMPI, MVAPICH, and MPICH along with vendor-supported versions such as
+Intel MPI.</p></li>
+<li><p>MPI applications can be run within a shared-memory node. All
+widely-used MPI implementations are optimized to take advantage of
+faster intranode communications.</p></li>
+<li><p>Although MPI is often synonymous with distributed memory
+parallelization, other options exist such as <a href="https://charmplusplus.org/" class="external-link">Charm++</a>, <a href="https://upc.lbl.gov/" class="external-link">Unified Paralle C</a>, and <a href="https://x10-lang.org/" class="external-link">X10</a></p></li>
+</ul>
+<p>Example of a code using MPI</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">FORTRAN<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode fortran" tabindex="0"><code class="sourceCode fortranfixed"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="kw">PROGRAM</span> hello_mpi</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>  <span class="kw">INCLUDE</span> <span class="st">'mpif.h'</span></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>  <span class="dt">INTEGER</span> <span class="dt">::</span> ierr, my_rank, num_procs</span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>  <span class="co">! Initialize the MPI environment</span></span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>  <span class="kw">CALL</span> MPI_INIT(ierr)</span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a>  <span class="co">! Get the total number of processes</span></span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a>  <span class="kw">CALL</span> MPI_COMM_SIZE(MPI_COMM_WORLD, num_procs, ierr)</span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a>  <span class="co">! Get the rank of the current process</span></span>
+<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a>  <span class="kw">CALL</span> MPI_COMM_RANK(MPI_COMM_WORLD, my_rank, ierr)</span>
+<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a>  <span class="co">! Print the "Hello World" message along with the process rank and total number of processes</span></span>
+<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a>  <span class="fu">WRITE(*</span>,<span class="fu">*)</span> <span class="st">"Hello World from MPI process: "</span>, my_rank, <span class="st">" out of "</span>, num_<span class="co">procs</span></span>
+<span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" tabindex="-1"></a>  <span class="co">! Finalize the MPI environment</span></span>
+<span id="cb2-18"><a href="#cb2-18" tabindex="-1"></a>  <span class="kw">CALL</span> MPI_FINALIZE(ierr)</span>
+<span id="cb2-19"><a href="#cb2-19" tabindex="-1"></a></span>
+<span id="cb2-20"><a href="#cb2-20" tabindex="-1"></a><span class="kw">END PROGRAM</span> hello_mpi</span></code></pre>
+</div>
+<p>The exanple above is pretty simple. MPI applications are usually
+dense and written to be very efficient in their communication. Data is
+explicitly communicated between processes using point-to-point or
+collective calls to MPI library routines. If you are not a programmer or
+application developer, you do not need to know MPI. You should just be
+aware that it exists, recognize when a code can use MPI for
+parallelization and that if you are building your executable, use the
+appropriate wrappers that allow you to create the executable and run the
+code.</p>
+</div>
+</div>
+<div class="section level3">
+<h3 id="amdahls-law-and-limits-on-scalability">Amdahl’s law and limits on scalability<a class="anchor" aria-label="anchor" href="#amdahls-law-and-limits-on-scalability"></a>
+</h3>
+<p>Amdahl’s law describes the absolute limit on the speedup (A) of a
+code as a function of the proportion of the code that can be
+parallelized and the number of processors (CPU cores). This is the most
+fundamental law of parallel computing!</p>
+<ul>
+<li>P is the fraction of the code that run in parallel</li>
+<li>S is the fraction of the code that run serial (S = 1– P)</li>
+<li>N = number of processors (CPU cores)</li>
+<li>A(N) is the speedup as a function of N</li>
+</ul>
+<p><span class="math display">\[A(N) = \frac{1}{(1 - P) +
+\frac{P}{N}}\]</span></p>
+<p>Consider the limit of speedup as the number of processors goes to
+infinity. This theoretical speedup depends only on the fraction of the
+code that runs serial</p>
+<p><span class="math display">\[\lim_{N \to \infty} A(N) = \lim_{N \to
+\infty} \frac{1}{(1 - P) + \frac{P}{N}} = \frac{1}{1– P} =
+\frac{1}{S}\]</span></p>
+<p>Amdahl’s Law demonstrates the theoretical maximum speedup of an
+overall system and the concept of diminishing returns. Plotted below is
+the logarithmic parallelization vs linear speedup. If exactly 50% of the
+work can be parallelized, the best possible speedup is 2 times. If 95%
+of the work can be parallelized, the best possible speedup is 20 times.
+According to the law, even with an infinite number of processors, the
+speedup is constrained by the unparallelizable portion.</p>
+<figure><img src="../fig/AmdahlsLaw.svg" alt="Amdahl’s law plot for various values of parallel fraction" class="figure mx-auto d-block"><div class="figcaption">Amdahl’s law and limits on scalability (image
+from Wikipedia)</div>
+</figure><p>Amdahl’s Law is an example of the law of diminishing returns, ie. the
+decrease in marginal (incremental) output (speedup) of a production
+process as the amount of a single factor of production is incrementally
+increased (processors). The law of diminishing returns (also known as
+the law of diminishing marginal productivity) states that in a
+productive process, if a factor of production continues to increase,
+while holding all other production factors constant, at some point a
+further incremental unit of input will return a lower amount of
+output.</p>
+<p>The Amdahl’s law just sets the theoretical upper limit on speedup, in
+real-life applications there are other factors that affect scalability.
+The movement of data often limits even more the scalability.
+Irregularities of the problem, for example using (non-cartesian grids)
+or uneven load balance when the the partition of domains leave some
+processors with less data than most others.</p>
+<p>In summary we have this factors limiting scalability</p>
+<ul>
+<li>The theoretical Amdahl’s law</li>
+<li>Scaling limited by the problem size</li>
+<li>Scaling limited by communication overhead</li>
+<li>Scaling limited by uneven load balancing</li>
+</ul>
+<p>However, HPC clusters are widely used today and some scientific
+research could not be possible without the use of supercomputers. Most
+parallel applications do not scale to thousands or even hundreds of
+cores. Some applications achieve high scalability by the employ several
+strategies</p>
+<ul>
+<li>Grow the problem size with the number of core or nodes (Gustafson’s
+Law)</li>
+<li>Overlap communications with computation</li>
+<li>Use dynamic load balancing to assign work to cores as they become
+idle</li>
+<li>Increase the ratio of computation to communications</li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="weak-versus-strong-scaling">Weak versus strong scaling<a class="anchor" aria-label="anchor" href="#weak-versus-strong-scaling"></a>
+</h3>
+<p>High performance computing has two common notions of scalability. So
+far we have shown only the scaling fixing the problem size and adding
+more processors. However, we can also consider the scaling of problems
+of increasing size by fixing the size per processor. In summary:</p>
+<ul>
+<li>
+<strong>Strong scaling</strong> is defined as how the solution time
+varies with the number of processors for a fixed total problem
+size.</li>
+<li>
+<strong>Weak scaling</strong> is defined as how the solution time
+varies with the number of processors for a fixed problem size per
+processor.</li>
+</ul>
+</div>
+</section><section><h2 class="section-heading" id="hardware-concepts">Hardware concepts<a class="anchor" aria-label="anchor" href="#hardware-concepts"></a>
+</h2>
+<hr class="half-width">
+<div class="section level3">
+<h3 id="supercomputers-and-hpc-clusters">Supercomputers and HPC clusters<a class="anchor" aria-label="anchor" href="#supercomputers-and-hpc-clusters"></a>
+</h3>
+<p>There are many kinds of supercomputers, some of them are build from
+scratch using specialized hardware, examples of those supercomputers are
+the iconic CRAY-1 (1976). This machine was the world’s fastest
+supercomputer from 1976 to 1982. It measured 8½ feet wide by 6½ feet
+high and contained 60 miles of wires. It achieve a performance of 160
+megaflops which is less powerfull than modern smartphones. Many of the
+CRAY systems from the 80’s and 90’s where machines designed as a single
+entity using vector processors to achieve their extraordinary
+performance of their time.</p>
+<p>Modern supercomputers today are usually HPC clusters. HPC clusters
+consist of multiple compute nodes organized in racks and itnterconnected
+by one or more networks. Each computer nodes is a computer itself. These
+aggregates of computers are made to work as a system thanks to sofware
+that orchestrates their operation and the fast networks that allows data
+to be moved from one node to another very efficiently.</p>
+<p>On each compute node contains one or more (typically two, sometimes
+four) multicore processors, the CPUs and their internal CPU cores are
+resposible for the computational capabilities of the node.</p>
+<p>Today the computational power comming from CPUs alone is not enough
+so they receive extra help from other chips in the node specialized in
+certain computational tasks. These electronic components are called
+accelerators, among them the GPUs. GPUs are electronic devices that are
+naturally efficient for certain parallel tasks. They outperform CPUs on
+a narrow scope of applications. With the current</p>
+<p>To effectively use HPC clusters, we need applications that have been
+parallelized so that they can run on multiple CPU cores. If the
+calculation is even more demanding even multiple nodes using distributed
+parallel computing and using GPUs if the algorithm performs efficiently
+on this kind of acccelerators.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -430,13 +764,12 @@ manufacturing.</p>
 <div class="callout-inner">
 <div class="callout-content">
 <ul>
-<li><p>“Supercomputers are far more powerful than desktop
-computers”</p></li>
-<li><p>“Most supercomputers today are HPC clusters”</p></li>
-<li><p>“Supercomputers are intended to run large calculations or
-simulations that takes days or weeks to complete”</p></li>
-<li><p>“HPC clusters are aggregates of machines that operate as a single
-entity to provide computational power to many users”</p></li>
+<li>“Supercomputers are far more powerful than desktop computers”</li>
+<li>“Most supercomputers today are HPC clusters”</li>
+<li>“Supercomputers are intended to run large calculations or
+simulations that takes days or weeks to complete”</li>
+<li>“HPC clusters are aggregates of machines that operate as a single
+entity to provide computational power to many users”</li>
 </ul>
 </div>
 </div>
@@ -445,11 +778,68 @@ entity to provide computational power to many users”</p></li>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
-</section></section><section id="aio-102-cli"><p>Content from <a href="102-cli.html">Command Line Interface: The Shell</a></p>
+</div>
+</section></section><section id="aio-102-first-job"><p>Content from <a href="102-first-job.html">The life cycle of a job</a></p>
 <hr>
-<p>Last updated on 2025-08-13 |
+<p>Last updated on 2025-08-15 |
 
-        <a href="https://github.com/carpentries/workbench-template-md/edit/main/episodes/102-cli.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+        <a href="https://github.com/carpentries/workbench-template-md/edit/main/episodes/102-first-job.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 60 minutes</p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>“What is supercomputing?”</li>
+<li>“Why I could need a supercomputer?”</li>
+<li>“How a supercomputer compares with my desktop or laptop
+computer?”</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>“Learn the main concepts of supercomputers”</li>
+<li>“Learn some use cases that justify using supercomputers.”</li>
+<li>“Learn about HPC cluster a major category of supercomputers.”</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<span class="callout-header">Key Points</span>
+<div class="callout-inner">
+<div class="callout-content">
+<ul>
+<li>“Supercomputers are far more powerful than desktop computers”</li>
+<li>“Most supercomputers today are HPC clusters”</li>
+<li>“Supercomputers are intended to run large calculations or
+simulations that takes days or weeks to complete”</li>
+<li>“HPC clusters are aggregates of machines that operate as a single
+entity to provide computational power to many users”</li>
+</ul>
+</div>
+</div>
+</div></section><section id="aio-201-cli"><p>Content from <a href="201-cli.html">Command Line Interface: The Shell</a></p>
+<hr>
+<p>Last updated on 2025-08-15 |
+
+        <a href="https://github.com/carpentries/workbench-template-md/edit/main/episodes/201-cli.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 60 minutes</p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
@@ -2339,15 +2729,17 @@ Software Carpentry (<a href="https://software-carpentry.org/" class="external-li
 <div class="callout-inner">
 <div class="callout-content">
 <ul>
-<li><p>Get sufficient familiarity with basic comands such as
+<li>Get sufficient familiarity with basic comands such as
 <code>ls</code>, <code>cp</code>, <code>cd</code>, <code>pwd</code> and
-<code>rm</code></p></li>
-<li><p>If you want to know extra arguments for command that you know use
-the command <code>man</code></p></li>
-<li><p>Most Linux/UNIX commands are just programs that have existed for
+<code>rm</code>
+</li>
+<li>If you want to know extra arguments for command that you know use
+the command <code>man</code>
+</li>
+<li>Most Linux/UNIX commands are just programs that have existed for
 decades and whose use has been for most part standarized overtime. The
 commands that you learn will serve you in the future so it is a fruitful
-investment.</p></li>
+investment.</li>
 </ul>
 </div>
 </div>
@@ -2356,11 +2748,11 @@ investment.</p></li>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
-</section></section><section id="aio-201-editors"><p>Content from <a href="201-editors.html">Terminal-based Text Editors: nano, emacs and vim</a></p>
+</section></section><section id="aio-202-editors"><p>Content from <a href="202-editors.html">Terminal-based Text Editors: nano, emacs and vim</a></p>
 <hr>
-<p>Last updated on 2025-08-13 |
+<p>Last updated on 2025-08-15 |
 
-        <a href="https://github.com/carpentries/workbench-template-md/edit/main/episodes/201-editors.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+        <a href="https://github.com/carpentries/workbench-template-md/edit/main/episodes/202-editors.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 60 minutes</p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
@@ -2859,10 +3251,10 @@ when the screen was painting slower than he could think.</p>
 <div class="callout-inner">
 <div class="callout-content">
 <ul>
-<li><p>“There are three major editor in Linux/Unix: nano, emacs and
-vim”</p></li>
-<li><p>“Once decided for on text editor it is important to the basic key
-combinations and operation of your editor of choice”</p></li>
+<li>“There are three major editor in Linux/Unix: nano, emacs and
+vim”</li>
+<li>“Once decided for on text editor it is important to the basic key
+combinations and operation of your editor of choice”</li>
 </ul>
 </div>
 </div>
@@ -2872,11 +3264,707 @@ Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
 </div>
-</section></section><section id="aio-202-software"><p>Content from <a href="202-software.html">Software on HPC Clusters: modules, conda and containers</a></p>
+</section></section><section id="aio-301-data-transfer"><p>Content from <a href="301-data-transfer.html">Data Transfer: Globus</a></p>
 <hr>
-<p>Last updated on 2025-08-13 |
+<p>Last updated on 2025-08-15 |
 
-        <a href="https://github.com/carpentries/workbench-template-md/edit/main/episodes/202-software.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+        <a href="https://github.com/carpentries/workbench-template-md/edit/main/episodes/301-data-transfer.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 60 minutes</p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>“What is supercomputing?”</li>
+<li>“Why I could need a supercomputer?”</li>
+<li>“How a supercomputer compares with my desktop or laptop
+computer?”</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>“Learn the main concepts of supercomputers”</li>
+<li>“Learn some use cases that justify using supercomputers.”</li>
+<li>“Learn about HPC cluster a major category of supercomputers.”</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<span class="callout-header">Key Points</span>
+<div class="callout-inner">
+<div class="callout-content">
+<ul>
+<li>“Supercomputers are far more powerful than desktop computers”</li>
+<li>“Most supercomputers today are HPC clusters”</li>
+<li>“Supercomputers are intended to run large calculations or
+simulations that takes days or weeks to complete”</li>
+<li>“HPC clusters are aggregates of machines that operate as a single
+entity to provide computational power to many users”</li>
+</ul>
+</div>
+</div>
+</div></section><section id="aio-302-slurm"><p>Content from <a href="302-slurm.html">Workload Manager: Slurm</a></p>
+<hr>
+<p>Last updated on 2025-08-15 |
+
+        <a href="https://github.com/carpentries/workbench-template-md/edit/main/episodes/302-slurm.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 60 minutes</p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>“What is a resource manager, a scheduler, and a workload
+manager?”</li>
+<li>“How do we submit a job on an HPC cluster?”</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>“Submit a job and have it completed successfully.”</li>
+<li>“Understand how to make resource requests.”</li>
+<li>“Submit an interactive job.”</li>
+<li>“Learn the most frequently used SLURM commands”</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+</h2>
+<hr class="half-width">
+<p>Imagine for a moment that you need to execute a large simulation and
+all that you have is the computer that is in front of you. You will
+initiate the simulation by launching the program that will compute it.
+You ajust the parameters to avoid overloading the machine with more
+concurrent operations than the machine can process efficiently. It is
+possible that you cannot do anything else with the computer until the
+simulation is finished.</p>
+<p>Changing the situation a bit, now you have several computers at your
+disposal and you have many simulations to do, maybe the same simulation
+but under different physical conditions. You will have to connect to
+each computer to start the simulation and periodically monitor the
+computers to check if some of them have finished and its ready to run a
+new simulation.</p>
+<p>Moving to an even more complex scenario. Consider the case of several
+users, each wanting to run many simulations like yours and having a
+number of computers capable of runing all those simulations.
+Coordinating all the work and all the executions could be a daunting
+task that can be solved if a program could take care or mapping all the
+jobs from all the users to the available resources and monitoring when
+one computer can take another job.</p>
+<p>All what we have described is the work of two programs, a resource
+manager in charge of monitoring the state of a pool of computers and a
+scheduler that will assign jobs to the different machines as fairly as
+possible for all the users in the cluster. In the case of our cluster
+those two roles are managed by a single software called Slurm and the
+integration of the resource manager, scheduler with the addition and
+accounting and other roles makes Slurm to be called a Workload
+Manager.</p>
+<p>An HPC system such as Thorny Flat or Dolly Sods has tenths nodes and
+more than 100 users. How do we decide who gets what and when? How do we
+ensure that a task is run with the resources it needs? This job is
+handled by a special piece of software called the scheduler. The
+scheduler manages which jobs run where and when on an HPC system.</p>
+<figure><img src="../fig/queueing_infog.png" alt="blue hexagon with The Carpentries logo in white and text: 'The Carpentries'" class="figure mx-auto d-block"><div class="figcaption">Why do supercomputers use queueing?</div>
+</figure><p>The scheduler used on our clusters is SLURM. SLURM is not the only
+resource manager or scheduler for HPC systems. Other software packages
+offer similar functionality. The exact syntax might change, but the
+concepts remain the same.</p>
+<p>A Resource Manager takes care of receiving job submissions and
+executes those jobs when resources are available, providing the most
+efficient conditions for the jobs. On the other hand, a job scheduler is
+in charge of associating jobs with the appropriate resources and trying
+to maximize an objective function, such as total utilization constrained
+by priorities and the best balance between the resources requested and
+resources available. As SLURM is taking the dual role of Resource
+Manager and Scheduler, SLURM calls itself a Workload Manager, a term
+that better embraces the multiple roles taken by this software
+package.</p>
+<div id="workload-manager-on-wvu-clusters" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="workload-manager-on-wvu-clusters" class="callout-inner">
+<h3 class="callout-title">Workload Manager on WVU Clusters</h3>
+<div class="callout-content">
+<p>All of our clusters use Slurm as Workload Manager. On Thorny Flat, we
+have a compatibility layer so that most Torque/Moab batch scripts will
+still work. If you are new to WVU’s HPC clusters, it makes the most
+sense to learn the SLURM batch commands.<br>
+See <a href="https://slurm.schedmd.com/quickstart.html" class="external-link">Slurm Quick
+Start Guide</a> for more SLURM information.</p>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="what-is-a-batch-script">What is a Batch Script?<a class="anchor" aria-label="anchor" href="#what-is-a-batch-script"></a>
+</h2>
+<hr class="half-width">
+<p>The most basic use of the scheduler is to run a command
+non-interactively. This is also referred to as batch job submission. In
+this case, we need to make a script that incorporates some arguments for
+SLURM, such as the resources needed and the modules that need to be
+loaded.</p>
+<p>We will use the <code>sleep.sh</code> job script as an example.</p>
+<div class="section level3">
+<h3 id="parameters">Parameters<a class="anchor" aria-label="anchor" href="#parameters"></a>
+</h3>
+<p>Let’s discuss the example SLURM script, <code>sleep.sh</code>. Go to
+File Explorer and edit <code>sleep.sh</code></p>
+<pre><code>~$ cd $HOME
+~$ mkdir SLEEP
+~$ cd SLEEP
+~$ nano sleep.sh</code></pre>
+<p>Write the following in the file with your text editor:</p>
+<pre><code>#!/bin/bash
+
+#SBATCH --partition=standby
+#SBATCH --job-name=test_job
+#SBATCH --time=00:03:00
+#SBATCH --nodes=1 --ntasks-per-node=2
+
+echo 'This script is running on:'
+hostname
+echo 'The date is :'
+date
+sleep 120</code></pre>
+<p>Comments in UNIX (denoted by <code>#</code>) are typically ignored.
+But there are exceptions. For instance, the special <code>#!</code>
+comment at the beginning of scripts specifies what program should be
+used to run it (typically <code>/bin/bash</code>). This is required in
+SLURM so don’t leave it out! Schedulers like SLURM also have a special
+comment used to denote special scheduler-specific options. Though these
+comments differ from scheduler to scheduler, SLURM’s special comment is
+<code>#SBATCH</code>. Anything following the <code>#SBATCH</code>
+comment is interpreted as an instruction to the scheduler.</p>
+<p>In our example, we have set the following parameters:</p>
+<table class="table">
+<colgroup>
+<col width="25%">
+<col width="25%">
+<col width="25%">
+<col width="25%">
+</colgroup>
+<thead><tr class="header">
+<th>Option</th>
+<th>Name</th>
+<th>Example Setting</th>
+<th>Notes</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td><code>--partition</code></td>
+<td>queue</td>
+<td>standby</td>
+<td>See next section for queue info</td>
+</tr>
+<tr class="even">
+<td><code>--job-name</code></td>
+<td>jobname</td>
+<td>test_script</td>
+<td>Name of your script (no spaces, alphanumeric only)</td>
+</tr>
+<tr class="odd">
+<td><code>--time</code></td>
+<td>total job time</td>
+<td>multiple settings</td>
+<td>See next segment</td>
+</tr>
+<tr class="even">
+<td><code>--nodes</code></td>
+<td>nodes requested</td>
+<td>multiple settings</td>
+<td>See next segment</td>
+</tr>
+<tr class="odd">
+<td><code>--ntasks-per-node</code></td>
+<td>cores per node</td>
+<td>multiple settings</td>
+<td>See next segment</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section level3">
+<h3 id="resource-list">Resource list<a class="anchor" aria-label="anchor" href="#resource-list"></a>
+</h3>
+<p>A resource list will contain a number of settings that inform the
+scheduler what resources to allocate for your job and for how long (wall
+time).</p>
+<div class="section level4">
+<h4 id="walltime">Walltime<a class="anchor" aria-label="anchor" href="#walltime"></a>
+</h4>
+<p>Walltime is represented by <code>--time=00:03:00</code> in the format
+HH:MM:SS. This will be how long the job will run before timing out. If
+your job exceeds this time, the scheduler will terminate the job. You
+should find a usual runtime for the job and add some more (say 20%) to
+it. For example, if a job took approximately 10 hours, the wall time
+limit could be set to 12 hours, e.g. “–time=12:00:00”. By setting the
+wall time, the scheduler can perform job scheduling more efficiently and
+also reduces occasions where errors can leave the job stalled but still
+taking up resources for the default much longer wall time limit (for
+queue wall time defaults, run <code>squeue</code> command)</p>
+<div id="walltime-test-exercise" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="walltime-test-exercise" class="callout-inner">
+<h3 class="callout-title">Walltime test exercise</h3>
+<div class="callout-content">
+<p>Resource requests are typically binding. If you exceed them, your job
+will be killed. Let’s use wall time as an example. We will request 30
+seconds of wall time, and attempt to run a job for two minutes.</p>
+<pre><code>#!/bin/bash
+
+#SBATCH --partition=standby
+#SBATCH --job-name=test_job
+#SBATCH --time=00:00:30
+#SBATCH --nodes=1 --ntasks-per-node=2
+
+echo 'This script is running on:'
+hostname
+echo 'The date is :'
+date
+sleep 120</code></pre>
+<p>Submit the job and wait for it to finish. Once it has finished, check
+the error log file. In the error file, there will be</p>
+<pre><code>This script is running on:
+This script is running on:
+taicm002.hpc.wvu.edu
+The date is :
+Thu Jul 20 19:25:21 EDT 2023
+slurmstepd: error: *** JOB 453582 ON taicm002 CANCELLED AT 2023-07-20T19:26:33 DUE TO TIME LIMIT ***</code></pre>
+<div class="section level2">
+<h2 id="what-happened">What happened?<a class="anchor" aria-label="anchor" href="#what-happened"></a>
+</h2>
+<p>Our job was killed for exceeding the amount of resources it
+requested. Although this appears harsh, this is a feature. Strict
+adherence to resource requests allows the scheduler to find the best
+possible place for your jobs. Even more importantly, it ensures that
+another user cannot use more resources than they’ve been given. If
+another user messes up and accidentally attempts to use all of the CPUs
+or memory on a node, SLURM will either restrain their job to the
+requested resources or kill the job outright. Other jobs on the node
+will be unaffected. This means that one user cannot mess up the
+experience of others, the only jobs affected by a mistake in scheduling
+will be their own.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section level4">
+<h4 id="compute-resources-and-parameters">Compute Resources and Parameters<a class="anchor" aria-label="anchor" href="#compute-resources-and-parameters"></a>
+</h4>
+<p>Compute parameters The argument <code>--nodes</code> specifies the
+number of nodes (or chunks of resource) required;
+<code>--ntasks-per-node</code> indicates the number of CPUs per chunk
+required.</p>
+<table class="table">
+<thead><tr class="header">
+<th>nodes</th>
+<th>tasks</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>2</td>
+<td>16</td>
+<td>32 Processor job, using 2 nodes and 16 processors per node</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>8</td>
+<td>32 Processor job, using 4 nodes and 8 processors per node</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td>28</td>
+<td>244 Processor job, using 8 nodes and 28 processor per node</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>40</td>
+<td>40 Processor job, using 1 nodes and 40 processors per node</td>
+</tr>
+</tbody>
+</table>
+<p>Each of these parameters has a default setting they will revert to if
+not set; however, this means your script may act differently to what you
+expect.</p>
+<p>You can find more information about these parameters by viewing the
+manual page for the <code>sbatch</code> function. This will also show
+you what the default settings are.</p>
+<pre><code>$&gt; man sbatch</code></pre>
+<div id="setting-up-email-notifications" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="setting-up-email-notifications" class="callout-inner">
+<h3 class="callout-title">Setting up email notifications</h3>
+<div class="callout-content">
+<p>Jobs on an HPC system might run for days or even weeks. We probably
+have better things to do than constantly check on the status of our job
+with <code>squeue</code>. Looking at the <a href="https://slurm.schedmd.com/sbatch.html" class="external-link">online documentation for
+<code>sbatch</code></a> (you can also google “sbatch slurm”), can you
+set up our test job to send you an email when it finishes?</p>
+<p>Hint: you will need to use the <code>--mail-user</code> and
+<code>--mail-type</code> options.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="running-a-batch-job-two-methods">Running a batch job (two methods)<a class="anchor" aria-label="anchor" href="#running-a-batch-job-two-methods"></a>
+</h2>
+<hr class="half-width">
+<div class="section level3">
+<h3 id="submit-jobs-with-job-composer-on-ondemand">Submit Jobs with job composer on OnDemand<a class="anchor" aria-label="anchor" href="#submit-jobs-with-job-composer-on-ondemand"></a>
+</h3>
+<p>OnDemand also has a tool for job creation and submission to the batch
+system. The same information as above applies since it still uses the
+same underlying queue system. In the Job Composer, you can create a new
+location in your home directory for a new job, create or transfer a job
+script and input files, edit everything, and submit your job all from
+this screen.</p>
+<p>We will run this job in the Job Composer by creating a new job from
+<em>specified path</em>.</p>
+<figure><img src="../fig/OOD_job_composer_1.png" alt="blue hexagon with The Carpentries logo in white and text: 'The Carpentries'" class="figure mx-auto d-block"><div class="figcaption">NewJob</div>
+</figure><p>You’ll see the Job Options page, like this:</p>
+<figure><img src="../fig/OOD_job_composer_2.png" alt="blue hexagon with The Carpentries logo in white and text: 'The Carpentries'" class="figure mx-auto d-block"><div class="figcaption">JobOptions</div>
+</figure><p>Fill it in as shown. Path is <code>~/SLEEP</code> and then select
+Save.</p>
+<p>To run the job, select green ‘play’ button.</p>
+<p>If the job is successfully submitted, a green bar will appear on the
+top of the page.</p>
+<p>Also, OnDemand allows you to view the queue for all systems (not just
+the one you are on in the shell) under Jobs, select Active Jobs. You can
+filter by your jobs, your group’s jobs, and all jobs.</p>
+</div>
+<div class="section level3">
+<h3 id="submitting-jobs-via-the-command-line">Submitting Jobs via the command line<a class="anchor" aria-label="anchor" href="#submitting-jobs-via-the-command-line"></a>
+</h3>
+<p>To submit this job to the scheduler, we use the <code>sbatch</code>
+command.</p>
+<pre><code>~$ sbatch sleep.sh
+Submitted batch job 453594
+~$</code></pre>
+<p>The number that first appears is your Job ID. When the job is
+completed, you will get two files: an Output and an Error file (even if
+there is no errors). They will be named {JobName}.o{JobID} and
+{JobName}.e{JobID} respectively.</p>
+<p>And that’s all we need to do to submit a job. To check on our job’s
+status, we use the command <code>squeue</code>.</p>
+<pre><code>~$ squeue -u $USER
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+            453594   standby test_job gufranco  R       0:34      1 taicm009
+</code></pre>
+<p>We can see all the details of our job, most importantly if it is in
+the “R” or “RUNNING” state. Sometimes our jobs might need to wait in a
+queue (“PD”) or have an error. The best way to check our job’s status is
+with <code>squeue</code>. It is easiest to view just your own jobs in
+the queue with the <code>squeue -u $USER</code>. Otherwise, you get the
+entire queue.</p>
+</div>
+</section><section><h2 class="section-heading" id="partitions-also-known-as-queues">Partitions (Also known as queues)<a class="anchor" aria-label="anchor" href="#partitions-also-known-as-queues"></a>
+</h2>
+<hr class="half-width">
+<p>There are usually a number of available partitions (Other resource
+managers call them queues) to use on the HPC clusters. Each cluster has
+separate partitions. The same compute node can be associated with
+multiple partitions Your job will be routed to the appropriate compute
+node based on the list of nodes associated with the partition, the wall
+time, and the computational resources requested. To get the list of
+partitions on the cluster, execute:</p>
+<pre><code>	$&gt; sinfo -s
+	PARTITION       AVAIL  TIMELIMIT   NODES(A/I/O/T) NODELIST
+	standby*           up    4:00:00      94/71/2/167 taicm[001-009],tarcl100,tarcs[100,200-206,300-304],tbdcx001,tbmcs[001-011,100-103],tbpcm200,tbpcs001,tcbcx100,tcdcx100,tcgcx300,tcocm[100-104],tcocs[001-064,100],tcocx[001-003],tcscm300,tjscl100,tjscm001,tmmcm[100-108],tngcm200,tpmcm[001-006],tsacs001,tsdcl[001-002],tsscl[001-002],ttmcm[100-101],tzecl[100-107],tzecs[100-115]
+	comm_small_day     up 1-00:00:00        59/5/1/65 tcocs[001-064,100]
+	comm_small_week    up 7-00:00:00        59/5/1/65 tcocs[001-064,100]
+	comm_med_day       up 1-00:00:00          5/0/0/5 tcocm[100-104]
+	comm_med_week      up 7-00:00:00          5/0/0/5 tcocm[100-104]
+	comm_xl_week       up 7-00:00:00          3/0/0/3 tcocx[001-003]
+	comm_gpu_inter     up    4:00:00         8/1/2/11 tbegq[200-202],tbmgq[001,100],tcogq[001-006]
+	comm_gpu_week      up 7-00:00:00          5/0/1/6 tcogq[001-006]
+	aei0001            up   infinite          3/5/1/9 taicm[001-009]
+	alromero           up   infinite        12/2/0/14 tarcl100,tarcs[100,200-206,300-304]
+	be_gpu             up   infinite          1/1/1/3 tbegq[200-202]
+	bvpopp             up   infinite          0/1/0/1 tbpcs001
+	cedumitrescu       up   infinite          1/0/0/1 tcdcx100
+	cfb0001            up   infinite          0/1/0/1 tcbcx100
+	cgriffin           up   infinite          1/0/0/1 tcgcx300
+	chemdept           up   infinite          0/4/0/4 tbmcs[100-103]
+	chemdept-gpu       up   infinite          1/0/0/1 tbmgq100
+	cs00048            up   infinite          0/1/0/1 tcscm300
+	jaspeir            up   infinite          0/2/0/2 tjscl100,tjscm001
+	jbmertz            up   infinite        3/14/0/17 tbmcs[001-011,100-103],tbmgq[001,100]
+	mamclaughlin       up   infinite          1/8/0/9 tmmcm[100-108]
+	ngarapat           up   infinite          0/1/0/1 tngcm200
+	pmm0026            up   infinite          0/6/0/6 tpmcm[001-006]
+	sbs0016            up   infinite          0/2/0/2 tsscl[001-002]
+	spdifazio          up   infinite          0/2/0/2 tsdcl[001-002]
+	tdmusho            up   infinite          1/5/0/6 taicm[001-004],ttmcm[100-101]
+	vyakkerman         up   infinite          1/0/0/1 tsacs001
+	zbetienne          up   infinite        6/18/0/24 tzecl[100-107],tzecs[100-115]
+	zbetienne_large    up   infinite          6/2/0/8 tzecl[100-107]
+	zbetienne_small    up   infinite        0/16/0/16 tzecs[100-115]</code></pre>
+<div id="exercise-submitting-resource-requests" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="exercise-submitting-resource-requests" class="callout-inner">
+<h3 class="callout-title">Exercise: Submitting resource requests</h3>
+<div class="callout-content">
+<p>Submit a job that will use 1 node, 4 processors, and 5 minutes of
+walltime.</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div class="accordion-body">
+
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="job-environment-variables">Job environment variables<a class="anchor" aria-label="anchor" href="#job-environment-variables"></a>
+</h2>
+<hr class="half-width">
+<p>Slurm sets multiple environment variables at submission time. The
+following variables are commonly used in command files:</p>
+<table class="table">
+<colgroup>
+<col width="50%">
+<col width="50%">
+</colgroup>
+<thead><tr class="header">
+<th>Variable Name</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="odd">
+<td><code>$SLURM_JOB_ID</code></td>
+<td>Full jobid assigned to this job. Often used to uniquely name output
+files for this job, for example: srun - np 16 ./a.out &gt;output.<span class="math inline">\({SLURM_JOB_ID}|
+|
+`\)</span>SLURM_JOB_NAME<code>|  Name of the job. This can be set using the --job-name option in the SLURM script (or from the command line). The default job name is the name of the SLURM script.| |</code><span class="math inline">\(SLURM_JOB_NUM_NODES` |  Number of nodes allocated
+|
+|
+`\)</span>SLURM_JOB_PARTITION<code>|  Queue job was submitted to.| |</code><span class="math inline">\(SLURM_NTASKS` |  The number of processes
+requested|
+|
+`\)</span>SLURM_SUBMIT_DIR<code>|  The directory from which the batch job was submitted. | |</code>$SLURM_ARRAY_TASK_ID`</td>
+</tr></tbody>
+</table></section><section><h2 class="section-heading" id="canceling-a-job">Canceling a job<a class="anchor" aria-label="anchor" href="#canceling-a-job"></a>
+</h2>
+<hr class="half-width">
+<p>Sometimes we’ll make a mistake and need to cancel a job. This can be
+done with the <code>qdel</code> command. Let’s submit a job and then
+cancel it using its job number.</p>
+<pre><code>~$ sbatch sleep.sh
+Submitted batch job 453599
+
+$&gt; $ squeue -u $USER
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+            453599   standby test_job gufranco  R       0:47      1 tcocs015</code></pre>
+<p>Now cancel the job with it’s job number. Absence of any job info
+indicates that the job has been successfully canceled.</p>
+<pre><code>~$ scancel 453599
+~$ squeue -u $USER
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)</code></pre>
+</section><section><h2 class="section-heading" id="detailed-information-about-jobs">Detailed information about jobs<a class="anchor" aria-label="anchor" href="#detailed-information-about-jobs"></a>
+</h2>
+<hr class="half-width">
+<p>The information provided by the command <code>squeue</code> is
+sometimes not enough, and you would like to gather a complete picture of
+the state of a particular job. The command <code>scontrol</code>
+provides a wealth of information about jobs but also partitions and
+nodes. Information about a job:</p>
+<pre><code>	$ sbatch sleep.sh
+	Submitted batch job 453604
+	$ scontrol show job 453604
+	JobId=453604 JobName=test_job
+	   UserId=gufranco(318130) GroupId=its-rc-thorny(1079001) MCS_label=N/A
+	   Priority=11588 Nice=0 Account=its-rc-admin QOS=normal
+	   JobState=RUNNING Reason=None Dependency=(null)
+	   Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+	   RunTime=00:00:19 TimeLimit=00:04:00 TimeMin=N/A
+	   SubmitTime=2023-07-20T20:39:15 EligibleTime=2023-07-20T20:39:15
+	   AccrueTime=2023-07-20T20:39:15
+	   StartTime=2023-07-20T20:39:15 EndTime=2023-07-20T20:43:15 Deadline=N/A
+	   PreemptEligibleTime=2023-07-20T20:39:15 PreemptTime=None
+	   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2023-07-20T20:39:15 Scheduler=Main
+	   Partition=standby AllocNode:Sid=trcis001:31864
+	   ReqNodeList=(null) ExcNodeList=(null)
+	   NodeList=taicm007
+	   BatchHost=taicm007
+	   NumNodes=1 NumCPUs=2 NumTasks=2 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
+	   TRES=cpu=2,node=1,billing=2
+	   Socks/Node=* NtasksPerN:B:S:C=2:0:*:* CoreSpec=*
+	   MinCPUsNode=2 MinMemoryNode=0 MinTmpDiskNode=0
+	   Features=(null) DelayBoot=00:00:00
+	   OverSubscribe=OK Contiguous=0 Licenses=(null) Network=(null)
+	   Command=/gpfs20/users/gufranco/SLEEP/sleep.sh
+	   WorkDir=/gpfs20/users/gufranco/SLEEP
+	   StdErr=/gpfs20/users/gufranco/SLEEP/slurm-453604.out
+	   StdIn=/dev/null
+	   StdOut=/gpfs20/users/gufranco/SLEEP/slurm-453604.out
+	   Power=</code></pre>
+</section><section><h2 class="section-heading" id="interactive-jobs">Interactive jobs<a class="anchor" aria-label="anchor" href="#interactive-jobs"></a>
+</h2>
+<hr class="half-width">
+<p>Sometimes, you will need a lot of resources for interactive use.
+Perhaps it’s the first time running an analysis, or we are attempting to
+debug something that went wrong with a previous job.</p>
+<p>You can also request interactive jobs on OnDemand using the
+Interactive Apps menu.</p>
+<p>To submit an interactive job requesting 4 cores on the partition
+standby and with a wall time of 40 minutes, execute:</p>
+<pre><code>~$ srun -p standby -t 40:00 -c 4 --pty bash</code></pre>
+<p>Another example includes requesting a GPU compute compute,
+execute:</p>
+<pre><code>~$ srun -p comm_gpu_inter -G 1 -t 2:00:00 -c 8 --pty bash</code></pre>
+<p>` ## Job arrays</p>
+<p>Job arrays offer a mechanism for submitting and managing collections
+of similar jobs quickly and easily; job arrays with many tasks can be
+submitted from a single submission script. Job arrays are very useful
+for testing jobs when one parameter is changed or to execute the same
+workflow on a set of samples.</p>
+<p>For our example, we will create a folder FIBONACCI and a submission
+script called <code>fibo.sh</code></p>
+<pre><code>~$ mkdir FIBONACCI
+~$ cd FIBONACCI/
+~$ nano fibo.sh</code></pre>
+<p>Write the content of the submission script as follows:</p>
+<pre><code>	#!/bin/bash
+
+	#SBATCH --partition=standby
+	#SBATCH --job-name=test_job
+	#SBATCH --time=00:03:30
+	#SBATCH --nodes=1 --ntasks-per-node=2
+	#SBATCH --array 1-10
+
+	# Static input for N
+	N=10
+
+	# First Number of the
+	# Fibonacci Series
+	a=$SLURM_ARRAY_TASK_ID
+
+	# Second Number of the
+	# Fibonacci Series
+	b=`expr $SLURM_ARRAY_TASK_ID + 1`
+
+	echo "10 first elements in the Fibonacci Sequence."
+	echo ""
+	echo "Starting with $a and $b"
+	echo ""
+
+	for (( i=0; i&lt;N; i++ ))
+	do
+	    echo -n "$a "
+	    fn=$((a + b))
+	    a=$b
+	    b=$fn
+	done
+	# End of for loop
+	echo ""
+	sleep 60</code></pre>
+<p>The array index values on job arrays are specified using the
+<code>--array</code> or <code>-a</code> option of the
+<code>sbatch</code> command. All the jobs in the job array will have the
+same variables except for the environment variable
+<code>SLURM_ARRAY_TASK_ID</code> , which is set to its array index
+value. This variable can redirect the workflow to a different folder or
+execute the simulation with different parameters.</p>
+<p>Submit the job array:</p>
+<pre><code>~$ sbatch fibo.sh
+Submitted batch job 453632
+~$ squeue -u $USER
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+          453632_1   standby test_job gufranco  R       0:03      1 taicm007
+          453632_2   standby test_job gufranco  R       0:03      1 taicm007
+          453632_3   standby test_job gufranco  R       0:03      1 taicm007
+          453632_4   standby test_job gufranco  R       0:03      1 taicm007
+          453632_5   standby test_job gufranco  R       0:03      1 taicm007
+          453632_6   standby test_job gufranco  R       0:03      1 taicm007
+          453632_7   standby test_job gufranco  R       0:03      1 taicm007
+          453632_8   standby test_job gufranco  R       0:03      1 taicm007
+          453632_9   standby test_job gufranco  R       0:03      1 taicm007
+         453632_10   standby test_job gufranco  R       0:03      1 taicm007</code></pre>
+<p>The job submission will create ten jobs When the jobs finish, their
+output will be in files <code>slurm-XXX</code>. For example:</p>
+<p>``` ~$ cat slurm-453632_7.out 10 first elements in the Fibonacci
+Sequence</p>
+<p>Starting with 7 and 8</p>
+<p>7 8 15 23 38 61 99 160 259 419 ~~~</p>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<span class="callout-header">Key Points</span>
+<div class="callout-inner">
+<div class="callout-content">
+<ul>
+<li>“The scheduler handles how compute resources are shared between
+users.”</li>
+<li>“Everything you do should be run through the scheduler.”</li>
+<li>“A non-interactive job is expressed as a shell script that is
+submitted to the cluster.”</li>
+<li>“Try to adjust the wall time to around 10-20% more than the expected
+time the job should need.”</li>
+<li>“It is a good idea to keep aliases to common torque commands for
+easy execution.”</li>
+</ul>
+</div>
+</div>
+</div>
+<!--
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use.
+ -->
+</section></section><section id="aio-401-software"><p>Content from <a href="401-software.html">Software on HPC Clusters: modules, conda and containers</a></p>
+<hr>
+<p>Last updated on 2025-08-15 |
+
+        <a href="https://github.com/carpentries/workbench-template-md/edit/main/episodes/401-software.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 60 minutes</p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
@@ -4130,19 +5218,19 @@ on your machine and X11 forwarding on your ssh client.</p>
 <div class="callout-inner">
 <div class="callout-content">
 <ul>
-<li><p>Modules. Use <code>module avail</code> to know all the modules on
-the cluster.</p></li>
-<li><p>Modules. Use <code>module load &lt;module_name&gt;</code> to load
-a module.</p></li>
-<li><p>Conda. Use <code>conda env list</code> to list the available
-environments.</p></li>
-<li><p>Conda. Use <code>conda activate</code> to activate a conda
-environment.</p></li>
-<li><p>Singularity. Use <code>singularity shell &lt;container&gt;</code>
-to get a shell inside the container.</p></li>
-<li><p>Singularity. Use
+<li>Modules. Use <code>module avail</code> to know all the modules on
+the cluster.</li>
+<li>Modules. Use <code>module load &lt;module_name&gt;</code> to load a
+module.</li>
+<li>Conda. Use <code>conda env list</code> to list the available
+environments.</li>
+<li>Conda. Use <code>conda activate</code> to activate a conda
+environment.</li>
+<li>Singularity. Use <code>singularity shell &lt;container&gt;</code> to
+get a shell inside the container.</li>
+<li>Singularity. Use
 <code>singularity exec &lt;container&gt; &lt;command&gt;</code> to
-execute a command or script inside the container.</p></li>
+execute a command or script inside the container.</li>
 </ul>
 </div>
 </div>
@@ -4152,651 +5240,11 @@ Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
 </div>
-</section></section><section id="aio-301-slurm"><p>Content from <a href="301-slurm.html">Workload Manager: Slurm</a></p>
+</section></section><section id="aio-402-tmux"><p>Content from <a href="402-tmux.html">Terminal Multiplexing: tmux</a></p>
 <hr>
-<p>Last updated on 2025-08-13 |
+<p>Last updated on 2025-08-15 |
 
-        <a href="https://github.com/carpentries/workbench-template-md/edit/main/episodes/301-slurm.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
-<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 60 minutes</p>
-<div class="text-end">
-          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
-        </div>
-<div class="overview card">
-<h2 class="card-header">Overview</h2>
-<div class="row g-0">
-<div class="col-md-4">
-<div class="card-body">
-<div class="inner">
-<h3 class="card-title">Questions</h3>
-<ul>
-<li>“What is a resource manager, a scheduler, and a workload
-manager?”</li>
-<li>“How do we submit a job on an HPC cluster?”</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="col-md-8">
-<div class="card-body">
-<div class="inner bordered">
-<h3 class="card-title">Objectives</h3>
-<ul>
-<li>“Submit a job and have it completed successfully.”</li>
-<li>“Understand how to make resource requests.”</li>
-<li>“Submit an interactive job.”</li>
-<li>“Learn the most frequently used SLURM commands”</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-<section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
-</h2>
-<hr class="half-width">
-<p>Imagine for a moment that you need to execute a large simulation and
-all that you have is the computer that is in front of you. You will
-initiate the simulation by launching the program that will compute it.
-You ajust the parameters to avoid overloading the machine with more
-concurrent operations than the machine can process efficiently. It is
-possible that you cannot do anything else with the computer until the
-simulation is finished.</p>
-<p>Changing the situation a bit, now you have several computers at your
-disposal and you have many simulations to do, maybe the same simulation
-but under different physical conditions. You will have to connect to
-each computer to start the simulation and periodically monitor the
-computers to check if some of them have finished and its ready to run a
-new simulation.</p>
-<p>Moving to an even more complex scenario. Consider the case of several
-users, each wanting to run many simulations like yours and having a
-number of computers capable of runing all those simulations.
-Coordinating all the work and all the executions could be a daunting
-task that can be solved if a program could take care or mapping all the
-jobs from all the users to the available resources and monitoring when
-one computer can take another job.</p>
-<p>All what we have described is the work of two programs, a resource
-manager in charge of monitoring the state of a pool of computers and a
-scheduler that will assign jobs to the different machines as fairly as
-possible for all the users in the cluster. In the case of our cluster
-those two roles are managed by a single software called Slurm and the
-integration of the resource manager, scheduler with the addition and
-accounting and other roles makes Slurm to be called a Workload
-Manager.</p>
-<p>An HPC system such as Thorny Flat or Dolly Sods has tenths nodes and
-more than 100 users. How do we decide who gets what and when? How do we
-ensure that a task is run with the resources it needs? This job is
-handled by a special piece of software called the scheduler. The
-scheduler manages which jobs run where and when on an HPC system.</p>
-<figure><img src="../fig/queueing_infog.png" alt="blue hexagon with The Carpentries logo in white and text: 'The Carpentries'" class="figure mx-auto d-block"><div class="figcaption">Why do supercomputers use queueing?</div>
-</figure><p>The scheduler used on our clusters is SLURM. SLURM is not the only
-resource manager or scheduler for HPC systems. Other software packages
-offer similar functionality. The exact syntax might change, but the
-concepts remain the same.</p>
-<p>A Resource Manager takes care of receiving job submissions and
-executes those jobs when resources are available, providing the most
-efficient conditions for the jobs. On the other hand, a job scheduler is
-in charge of associating jobs with the appropriate resources and trying
-to maximize an objective function, such as total utilization constrained
-by priorities and the best balance between the resources requested and
-resources available. As SLURM is taking the dual role of Resource
-Manager and Scheduler, SLURM calls itself a Workload Manager, a term
-that better embraces the multiple roles taken by this software
-package.</p>
-<div id="workload-manager-on-wvu-clusters" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
-</div>
-<span class="callout-header">Callout</span>
-<div id="workload-manager-on-wvu-clusters" class="callout-inner">
-<h3 class="callout-title">Workload Manager on WVU Clusters</h3>
-<div class="callout-content">
-<p>All of our clusters use Slurm as Workload Manager. On Thorny Flat, we
-have a compatibility layer so that most Torque/Moab batch scripts will
-still work. If you are new to WVU’s HPC clusters, it makes the most
-sense to learn the SLURM batch commands.<br>
-See <a href="https://slurm.schedmd.com/quickstart.html" class="external-link">Slurm Quick
-Start Guide</a> for more SLURM information.</p>
-</div>
-</div>
-</div>
-</section><section><h2 class="section-heading" id="what-is-a-batch-script">What is a Batch Script?<a class="anchor" aria-label="anchor" href="#what-is-a-batch-script"></a>
-</h2>
-<hr class="half-width">
-<p>The most basic use of the scheduler is to run a command
-non-interactively. This is also referred to as batch job submission. In
-this case, we need to make a script that incorporates some arguments for
-SLURM, such as the resources needed and the modules that need to be
-loaded.</p>
-<p>We will use the <code>sleep.sh</code> job script as an example.</p>
-<div class="section level3">
-<h3 id="parameters">Parameters<a class="anchor" aria-label="anchor" href="#parameters"></a>
-</h3>
-<p>Let’s discuss the example SLURM script, <code>sleep.sh</code>. Go to
-File Explorer and edit <code>sleep.sh</code></p>
-<pre><code>~$ cd $HOME
-~$ mkdir SLEEP
-~$ cd SLEEP
-~$ nano sleep.sh</code></pre>
-<p>Write the following in the file with your text editor:</p>
-<pre><code>#!/bin/bash
-
-#SBATCH --partition=standby
-#SBATCH --job-name=test_job
-#SBATCH --time=00:03:00
-#SBATCH --nodes=1 --ntasks-per-node=2
-
-echo 'This script is running on:'
-hostname
-echo 'The date is :'
-date
-sleep 120</code></pre>
-<p>Comments in UNIX (denoted by <code>#</code>) are typically ignored.
-But there are exceptions. For instance, the special <code>#!</code>
-comment at the beginning of scripts specifies what program should be
-used to run it (typically <code>/bin/bash</code>). This is required in
-SLURM so don’t leave it out! Schedulers like SLURM also have a special
-comment used to denote special scheduler-specific options. Though these
-comments differ from scheduler to scheduler, SLURM’s special comment is
-<code>#SBATCH</code>. Anything following the <code>#SBATCH</code>
-comment is interpreted as an instruction to the scheduler.</p>
-<p>In our example, we have set the following parameters:</p>
-<table class="table">
-<colgroup>
-<col width="25%">
-<col width="25%">
-<col width="25%">
-<col width="25%">
-</colgroup>
-<thead><tr class="header">
-<th>Option</th>
-<th>Name</th>
-<th>Example Setting</th>
-<th>Notes</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td><code>--partition</code></td>
-<td>queue</td>
-<td>standby</td>
-<td>See next section for queue info</td>
-</tr>
-<tr class="even">
-<td><code>--job-name</code></td>
-<td>jobname</td>
-<td>test_script</td>
-<td>Name of your script (no spaces, alphanumeric only)</td>
-</tr>
-<tr class="odd">
-<td><code>--time</code></td>
-<td>total job time</td>
-<td>multiple settings</td>
-<td>See next segment</td>
-</tr>
-<tr class="even">
-<td><code>--nodes</code></td>
-<td>nodes requested</td>
-<td>multiple settings</td>
-<td>See next segment</td>
-</tr>
-<tr class="odd">
-<td><code>--ntasks-per-node</code></td>
-<td>cores per node</td>
-<td>multiple settings</td>
-<td>See next segment</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="section level3">
-<h3 id="resource-list">Resource list<a class="anchor" aria-label="anchor" href="#resource-list"></a>
-</h3>
-<p>A resource list will contain a number of settings that inform the
-scheduler what resources to allocate for your job and for how long (wall
-time).</p>
-<div class="section level4">
-<h4 id="walltime">Walltime<a class="anchor" aria-label="anchor" href="#walltime"></a>
-</h4>
-<p>Walltime is represented by <code>--time=00:03:00</code> in the format
-HH:MM:SS. This will be how long the job will run before timing out. If
-your job exceeds this time, the scheduler will terminate the job. You
-should find a usual runtime for the job and add some more (say 20%) to
-it. For example, if a job took approximately 10 hours, the wall time
-limit could be set to 12 hours, e.g. “–time=12:00:00”. By setting the
-wall time, the scheduler can perform job scheduling more efficiently and
-also reduces occasions where errors can leave the job stalled but still
-taking up resources for the default much longer wall time limit (for
-queue wall time defaults, run <code>squeue</code> command)</p>
-<div id="walltime-test-exercise" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
-</div>
-<span class="callout-header">Callout</span>
-<div id="walltime-test-exercise" class="callout-inner">
-<h3 class="callout-title">Walltime test exercise</h3>
-<div class="callout-content">
-<p>Resource requests are typically binding. If you exceed them, your job
-will be killed. Let’s use wall time as an example. We will request 30
-seconds of wall time, and attempt to run a job for two minutes.</p>
-<pre><code>#!/bin/bash
-
-#SBATCH --partition=standby
-#SBATCH --job-name=test_job
-#SBATCH --time=00:00:30
-#SBATCH --nodes=1 --ntasks-per-node=2
-
-echo 'This script is running on:'
-hostname
-echo 'The date is :'
-date
-sleep 120</code></pre>
-<p>Submit the job and wait for it to finish. Once it has finished, check
-the error log file. In the error file, there will be</p>
-<pre><code>This script is running on:
-This script is running on:
-taicm002.hpc.wvu.edu
-The date is :
-Thu Jul 20 19:25:21 EDT 2023
-slurmstepd: error: *** JOB 453582 ON taicm002 CANCELLED AT 2023-07-20T19:26:33 DUE TO TIME LIMIT ***</code></pre>
-<div class="section level2">
-<h2 id="what-happened">What happened?<a class="anchor" aria-label="anchor" href="#what-happened"></a>
-</h2>
-<p>Our job was killed for exceeding the amount of resources it
-requested. Although this appears harsh, this is a feature. Strict
-adherence to resource requests allows the scheduler to find the best
-possible place for your jobs. Even more importantly, it ensures that
-another user cannot use more resources than they’ve been given. If
-another user messes up and accidentally attempts to use all of the CPUs
-or memory on a node, SLURM will either restrain their job to the
-requested resources or kill the job outright. Other jobs on the node
-will be unaffected. This means that one user cannot mess up the
-experience of others, the only jobs affected by a mistake in scheduling
-will be their own.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="section level4">
-<h4 id="compute-resources-and-parameters">Compute Resources and Parameters<a class="anchor" aria-label="anchor" href="#compute-resources-and-parameters"></a>
-</h4>
-<p>Compute parameters The argument <code>--nodes</code> specifies the
-number of nodes (or chunks of resource) required;
-<code>--ntasks-per-node</code> indicates the number of CPUs per chunk
-required.</p>
-<table class="table">
-<thead><tr class="header">
-<th>nodes</th>
-<th>tasks</th>
-<th>Description</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td>2</td>
-<td>16</td>
-<td>32 Processor job, using 2 nodes and 16 processors per node</td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td>8</td>
-<td>32 Processor job, using 4 nodes and 8 processors per node</td>
-</tr>
-<tr class="odd">
-<td>8</td>
-<td>28</td>
-<td>244 Processor job, using 8 nodes and 28 processor per node</td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>40</td>
-<td>40 Processor job, using 1 nodes and 40 processors per node</td>
-</tr>
-</tbody>
-</table>
-<p>Each of these parameters has a default setting they will revert to if
-not set; however, this means your script may act differently to what you
-expect.</p>
-<p>You can find more information about these parameters by viewing the
-manual page for the <code>sbatch</code> function. This will also show
-you what the default settings are.</p>
-<pre><code>$&gt; man sbatch</code></pre>
-<div id="setting-up-email-notifications" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
-</div>
-<span class="callout-header">Callout</span>
-<div id="setting-up-email-notifications" class="callout-inner">
-<h3 class="callout-title">Setting up email notifications</h3>
-<div class="callout-content">
-<p>Jobs on an HPC system might run for days or even weeks. We probably
-have better things to do than constantly check on the status of our job
-with <code>squeue</code>. Looking at the <a href="https://slurm.schedmd.com/sbatch.html" class="external-link">online documentation for
-<code>sbatch</code></a> (you can also google “sbatch slurm”), can you
-set up our test job to send you an email when it finishes?</p>
-<p>Hint: you will need to use the <code>--mail-user</code> and
-<code>--mail-type</code> options.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section><section><h2 class="section-heading" id="running-a-batch-job-two-methods">Running a batch job (two methods)<a class="anchor" aria-label="anchor" href="#running-a-batch-job-two-methods"></a>
-</h2>
-<hr class="half-width">
-<div class="section level3">
-<h3 id="submit-jobs-with-job-composer-on-ondemand">Submit Jobs with job composer on OnDemand<a class="anchor" aria-label="anchor" href="#submit-jobs-with-job-composer-on-ondemand"></a>
-</h3>
-<p>OnDemand also has a tool for job creation and submission to the batch
-system. The same information as above applies since it still uses the
-same underlying queue system. In the Job Composer, you can create a new
-location in your home directory for a new job, create or transfer a job
-script and input files, edit everything, and submit your job all from
-this screen.</p>
-<p>We will run this job in the Job Composer by creating a new job from
-<em>specified path</em>.</p>
-<figure><img src="../fig/OOD_job_composer_1.png" alt="blue hexagon with The Carpentries logo in white and text: 'The Carpentries'" class="figure mx-auto d-block"><div class="figcaption">NewJob</div>
-</figure><p>You’ll see the Job Options page, like this:</p>
-<figure><img src="../fig/OOD_job_composer_2.png" alt="blue hexagon with The Carpentries logo in white and text: 'The Carpentries'" class="figure mx-auto d-block"><div class="figcaption">JobOptions</div>
-</figure><p>Fill it in as shown. Path is <code>~/SLEEP</code> and then select
-Save.</p>
-<p>To run the job, select green ‘play’ button.</p>
-<p>If the job is successfully submitted, a green bar will appear on the
-top of the page.</p>
-<p>Also, OnDemand allows you to view the queue for all systems (not just
-the one you are on in the shell) under Jobs, select Active Jobs. You can
-filter by your jobs, your group’s jobs, and all jobs.</p>
-</div>
-<div class="section level3">
-<h3 id="submitting-jobs-via-the-command-line">Submitting Jobs via the command line<a class="anchor" aria-label="anchor" href="#submitting-jobs-via-the-command-line"></a>
-</h3>
-<p>To submit this job to the scheduler, we use the <code>sbatch</code>
-command.</p>
-<pre><code>~$ sbatch sleep.sh
-Submitted batch job 453594
-~$</code></pre>
-<p>The number that first appears is your Job ID. When the job is
-completed, you will get two files: an Output and an Error file (even if
-there is no errors). They will be named {JobName}.o{JobID} and
-{JobName}.e{JobID} respectively.</p>
-<p>And that’s all we need to do to submit a job. To check on our job’s
-status, we use the command <code>squeue</code>.</p>
-<pre><code>~$ squeue -u $USER
-             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
-            453594   standby test_job gufranco  R       0:34      1 taicm009
-</code></pre>
-<p>We can see all the details of our job, most importantly if it is in
-the “R” or “RUNNING” state. Sometimes our jobs might need to wait in a
-queue (“PD”) or have an error. The best way to check our job’s status is
-with <code>squeue</code>. It is easiest to view just your own jobs in
-the queue with the <code>squeue -u $USER</code>. Otherwise, you get the
-entire queue.</p>
-</div>
-</section><section><h2 class="section-heading" id="partitions-also-known-as-queues">Partitions (Also known as queues)<a class="anchor" aria-label="anchor" href="#partitions-also-known-as-queues"></a>
-</h2>
-<hr class="half-width">
-<p>There are usually a number of available partitions (Other resource
-managers call them queues) to use on the HPC clusters. Each cluster has
-separate partitions. The same compute node can be associated with
-multiple partitions Your job will be routed to the appropriate compute
-node based on the list of nodes associated with the partition, the wall
-time, and the computational resources requested. To get the list of
-partitions on the cluster, execute:</p>
-<pre><code>	$&gt; sinfo -s
-	PARTITION       AVAIL  TIMELIMIT   NODES(A/I/O/T) NODELIST
-	standby*           up    4:00:00      94/71/2/167 taicm[001-009],tarcl100,tarcs[100,200-206,300-304],tbdcx001,tbmcs[001-011,100-103],tbpcm200,tbpcs001,tcbcx100,tcdcx100,tcgcx300,tcocm[100-104],tcocs[001-064,100],tcocx[001-003],tcscm300,tjscl100,tjscm001,tmmcm[100-108],tngcm200,tpmcm[001-006],tsacs001,tsdcl[001-002],tsscl[001-002],ttmcm[100-101],tzecl[100-107],tzecs[100-115]
-	comm_small_day     up 1-00:00:00        59/5/1/65 tcocs[001-064,100]
-	comm_small_week    up 7-00:00:00        59/5/1/65 tcocs[001-064,100]
-	comm_med_day       up 1-00:00:00          5/0/0/5 tcocm[100-104]
-	comm_med_week      up 7-00:00:00          5/0/0/5 tcocm[100-104]
-	comm_xl_week       up 7-00:00:00          3/0/0/3 tcocx[001-003]
-	comm_gpu_inter     up    4:00:00         8/1/2/11 tbegq[200-202],tbmgq[001,100],tcogq[001-006]
-	comm_gpu_week      up 7-00:00:00          5/0/1/6 tcogq[001-006]
-	aei0001            up   infinite          3/5/1/9 taicm[001-009]
-	alromero           up   infinite        12/2/0/14 tarcl100,tarcs[100,200-206,300-304]
-	be_gpu             up   infinite          1/1/1/3 tbegq[200-202]
-	bvpopp             up   infinite          0/1/0/1 tbpcs001
-	cedumitrescu       up   infinite          1/0/0/1 tcdcx100
-	cfb0001            up   infinite          0/1/0/1 tcbcx100
-	cgriffin           up   infinite          1/0/0/1 tcgcx300
-	chemdept           up   infinite          0/4/0/4 tbmcs[100-103]
-	chemdept-gpu       up   infinite          1/0/0/1 tbmgq100
-	cs00048            up   infinite          0/1/0/1 tcscm300
-	jaspeir            up   infinite          0/2/0/2 tjscl100,tjscm001
-	jbmertz            up   infinite        3/14/0/17 tbmcs[001-011,100-103],tbmgq[001,100]
-	mamclaughlin       up   infinite          1/8/0/9 tmmcm[100-108]
-	ngarapat           up   infinite          0/1/0/1 tngcm200
-	pmm0026            up   infinite          0/6/0/6 tpmcm[001-006]
-	sbs0016            up   infinite          0/2/0/2 tsscl[001-002]
-	spdifazio          up   infinite          0/2/0/2 tsdcl[001-002]
-	tdmusho            up   infinite          1/5/0/6 taicm[001-004],ttmcm[100-101]
-	vyakkerman         up   infinite          1/0/0/1 tsacs001
-	zbetienne          up   infinite        6/18/0/24 tzecl[100-107],tzecs[100-115]
-	zbetienne_large    up   infinite          6/2/0/8 tzecl[100-107]
-	zbetienne_small    up   infinite        0/16/0/16 tzecs[100-115]</code></pre>
-<div id="exercise-submitting-resource-requests" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
-</div>
-<span class="callout-header">Challenge</span>
-<div id="exercise-submitting-resource-requests" class="callout-inner">
-<h3 class="callout-title">Exercise: Submitting resource requests</h3>
-<div class="callout-content">
-<p>Submit a job that will use 1 node, 4 processors, and 5 minutes of
-walltime.</p>
-</div>
-</div>
-</div>
-<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
-  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
-</button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
-<div class="accordion-body">
-
-</div>
-</div>
-</div>
-</div>
-</section><section><h2 class="section-heading" id="job-environment-variables">Job environment variables<a class="anchor" aria-label="anchor" href="#job-environment-variables"></a>
-</h2>
-<hr class="half-width">
-<p>Slurm sets multiple environment variables at submission time. The
-following variables are commonly used in command files:</p>
-<table class="table">
-<colgroup>
-<col width="50%">
-<col width="50%">
-</colgroup>
-<thead><tr class="header">
-<th>Variable Name</th>
-<th>Description</th>
-</tr></thead>
-<tbody><tr class="odd">
-<td><code>$SLURM_JOB_ID</code></td>
-<td>Full jobid assigned to this job. Often used to uniquely name output
-files for this job, for example: srun - np 16 ./a.out &gt;output.<span class="math inline">\({SLURM_JOB_ID}|
-|
-`\)</span>SLURM_JOB_NAME<code>|  Name of the job. This can be set using the --job-name option in the SLURM script (or from the command line). The default job name is the name of the SLURM script.| |</code><span class="math inline">\(SLURM_JOB_NUM_NODES` |  Number of nodes allocated
-|
-|
-`\)</span>SLURM_JOB_PARTITION<code>|  Queue job was submitted to.| |</code><span class="math inline">\(SLURM_NTASKS` |  The number of processes
-requested|
-|
-`\)</span>SLURM_SUBMIT_DIR<code>|  The directory from which the batch job was submitted. | |</code>$SLURM_ARRAY_TASK_ID`</td>
-</tr></tbody>
-</table></section><section><h2 class="section-heading" id="canceling-a-job">Canceling a job<a class="anchor" aria-label="anchor" href="#canceling-a-job"></a>
-</h2>
-<hr class="half-width">
-<p>Sometimes we’ll make a mistake and need to cancel a job. This can be
-done with the <code>qdel</code> command. Let’s submit a job and then
-cancel it using its job number.</p>
-<pre><code>~$ sbatch sleep.sh
-Submitted batch job 453599
-
-$&gt; $ squeue -u $USER
-             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
-            453599   standby test_job gufranco  R       0:47      1 tcocs015</code></pre>
-<p>Now cancel the job with it’s job number. Absence of any job info
-indicates that the job has been successfully canceled.</p>
-<pre><code>~$ scancel 453599
-~$ squeue -u $USER
-             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)</code></pre>
-</section><section><h2 class="section-heading" id="detailed-information-about-jobs">Detailed information about jobs<a class="anchor" aria-label="anchor" href="#detailed-information-about-jobs"></a>
-</h2>
-<hr class="half-width">
-<p>The information provided by the command <code>squeue</code> is
-sometimes not enough, and you would like to gather a complete picture of
-the state of a particular job. The command <code>scontrol</code>
-provides a wealth of information about jobs but also partitions and
-nodes. Information about a job:</p>
-<pre><code>	$ sbatch sleep.sh
-	Submitted batch job 453604
-	$ scontrol show job 453604
-	JobId=453604 JobName=test_job
-	   UserId=gufranco(318130) GroupId=its-rc-thorny(1079001) MCS_label=N/A
-	   Priority=11588 Nice=0 Account=its-rc-admin QOS=normal
-	   JobState=RUNNING Reason=None Dependency=(null)
-	   Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
-	   RunTime=00:00:19 TimeLimit=00:04:00 TimeMin=N/A
-	   SubmitTime=2023-07-20T20:39:15 EligibleTime=2023-07-20T20:39:15
-	   AccrueTime=2023-07-20T20:39:15
-	   StartTime=2023-07-20T20:39:15 EndTime=2023-07-20T20:43:15 Deadline=N/A
-	   PreemptEligibleTime=2023-07-20T20:39:15 PreemptTime=None
-	   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2023-07-20T20:39:15 Scheduler=Main
-	   Partition=standby AllocNode:Sid=trcis001:31864
-	   ReqNodeList=(null) ExcNodeList=(null)
-	   NodeList=taicm007
-	   BatchHost=taicm007
-	   NumNodes=1 NumCPUs=2 NumTasks=2 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
-	   TRES=cpu=2,node=1,billing=2
-	   Socks/Node=* NtasksPerN:B:S:C=2:0:*:* CoreSpec=*
-	   MinCPUsNode=2 MinMemoryNode=0 MinTmpDiskNode=0
-	   Features=(null) DelayBoot=00:00:00
-	   OverSubscribe=OK Contiguous=0 Licenses=(null) Network=(null)
-	   Command=/gpfs20/users/gufranco/SLEEP/sleep.sh
-	   WorkDir=/gpfs20/users/gufranco/SLEEP
-	   StdErr=/gpfs20/users/gufranco/SLEEP/slurm-453604.out
-	   StdIn=/dev/null
-	   StdOut=/gpfs20/users/gufranco/SLEEP/slurm-453604.out
-	   Power=</code></pre>
-</section><section><h2 class="section-heading" id="interactive-jobs">Interactive jobs<a class="anchor" aria-label="anchor" href="#interactive-jobs"></a>
-</h2>
-<hr class="half-width">
-<p>Sometimes, you will need a lot of resources for interactive use.
-Perhaps it’s the first time running an analysis, or we are attempting to
-debug something that went wrong with a previous job.</p>
-<p>You can also request interactive jobs on OnDemand using the
-Interactive Apps menu.</p>
-<p>To submit an interactive job requesting 4 cores on the partition
-standby and with a wall time of 40 minutes, execute:</p>
-<pre><code>~$ srun -p standby -t 40:00 -c 4 --pty bash</code></pre>
-<p>Another example includes requesting a GPU compute compute,
-execute:</p>
-<pre><code>~$ srun -p comm_gpu_inter -G 1 -t 2:00:00 -c 8 --pty bash</code></pre>
-<p>` ## Job arrays</p>
-<p>Job arrays offer a mechanism for submitting and managing collections
-of similar jobs quickly and easily; job arrays with many tasks can be
-submitted from a single submission script. Job arrays are very useful
-for testing jobs when one parameter is changed or to execute the same
-workflow on a set of samples.</p>
-<p>For our example, we will create a folder FIBONACCI and a submission
-script called <code>fibo.sh</code></p>
-<pre><code>~$ mkdir FIBONACCI
-~$ cd FIBONACCI/
-~$ nano fibo.sh</code></pre>
-<p>Write the content of the submission script as follows:</p>
-<pre><code>	#!/bin/bash
-
-	#SBATCH --partition=standby
-	#SBATCH --job-name=test_job
-	#SBATCH --time=00:03:30
-	#SBATCH --nodes=1 --ntasks-per-node=2
-	#SBATCH --array 1-10
-
-	# Static input for N
-	N=10
-
-	# First Number of the
-	# Fibonacci Series
-	a=$SLURM_ARRAY_TASK_ID
-
-	# Second Number of the
-	# Fibonacci Series
-	b=`expr $SLURM_ARRAY_TASK_ID + 1`
-
-	echo "10 first elements in the Fibonacci Sequence."
-	echo ""
-	echo "Starting with $a and $b"
-	echo ""
-
-	for (( i=0; i&lt;N; i++ ))
-	do
-	    echo -n "$a "
-	    fn=$((a + b))
-	    a=$b
-	    b=$fn
-	done
-	# End of for loop
-	echo ""
-	sleep 60</code></pre>
-<p>The array index values on job arrays are specified using the
-<code>--array</code> or <code>-a</code> option of the
-<code>sbatch</code> command. All the jobs in the job array will have the
-same variables except for the environment variable
-<code>SLURM_ARRAY_TASK_ID</code> , which is set to its array index
-value. This variable can redirect the workflow to a different folder or
-execute the simulation with different parameters.</p>
-<p>Submit the job array:</p>
-<pre><code>~$ sbatch fibo.sh
-Submitted batch job 453632
-~$ squeue -u $USER
-             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
-          453632_1   standby test_job gufranco  R       0:03      1 taicm007
-          453632_2   standby test_job gufranco  R       0:03      1 taicm007
-          453632_3   standby test_job gufranco  R       0:03      1 taicm007
-          453632_4   standby test_job gufranco  R       0:03      1 taicm007
-          453632_5   standby test_job gufranco  R       0:03      1 taicm007
-          453632_6   standby test_job gufranco  R       0:03      1 taicm007
-          453632_7   standby test_job gufranco  R       0:03      1 taicm007
-          453632_8   standby test_job gufranco  R       0:03      1 taicm007
-          453632_9   standby test_job gufranco  R       0:03      1 taicm007
-         453632_10   standby test_job gufranco  R       0:03      1 taicm007</code></pre>
-<p>The job submission will create ten jobs When the jobs finish, their
-output will be in files <code>slurm-XXX</code>. For example:</p>
-<p>``` ~$ cat slurm-453632_7.out 10 first elements in the Fibonacci
-Sequence</p>
-<p>Starting with 7 and 8</p>
-<p>7 8 15 23 38 61 99 160 259 419 ~~~</p>
-<div id="keypoints1" class="callout keypoints">
-<div class="callout-square">
-<i class="callout-icon" data-feather="key"></i>
-</div>
-<span class="callout-header">Key Points</span>
-<div class="callout-inner">
-<div class="callout-content">
-<ul>
-<li><p>“The scheduler handles how compute resources are shared between
-users.”</p></li>
-<li><p>“Everything you do should be run through the scheduler.”</p></li>
-<li><p>“A non-interactive job is expressed as a shell script that is
-submitted to the cluster.”</p></li>
-<li><p>“Try to adjust the wall time to around 10-20% more than the
-expected time the job should need.”</p></li>
-<li><p>“It is a good idea to keep aliases to common torque commands for
-easy execution.”</p></li>
-</ul>
-</div>
-</div>
-</div>
-<!--
-Place links that you need to refer to multiple times across pages here. Delete
-any links that you are not going to use.
- -->
-</section></section><section id="aio-302-tmux"><p>Content from <a href="302-tmux.html">Terminal Multiplexing: tmux</a></p>
-<hr>
-<p>Last updated on 2025-08-13 |
-
-        <a href="https://github.com/carpentries/workbench-template-md/edit/main/episodes/302-tmux.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+        <a href="https://github.com/carpentries/workbench-template-md/edit/main/episodes/402-tmux.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 60 minutes</p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
@@ -5263,12 +5711,12 @@ the prefix followed by one of the options below:</p>
 <div class="callout-inner">
 <div class="callout-content">
 <ul>
-<li><p>“A terminal multiplexer protects programs such as text editors
-that are running on the login node from connection drops”</p></li>
-<li><p>“Allow programs running on a remote server to be accessed from
-multiple different local computers.”</p></li>
-<li><p>“Work with multiple programs and shells together in one terminal,
-a bit like a window manager.”</p></li>
+<li>“A terminal multiplexer protects programs such as text editors that
+are running on the login node from connection drops”</li>
+<li>“Allow programs running on a remote server to be accessed from
+multiple different local computers.”</li>
+<li>“Work with multiple programs and shells together in one terminal, a
+bit like a window manager.”</li>
 </ul>
 </div>
 </div>
@@ -5325,9 +5773,9 @@ any links that you are not going to use.
   "creativeWorkStatus": "active",
   "url": "https://carpentries.github.io/workbench-template-md/instructor/aio.html",
   "identifier": "https://carpentries.github.io/workbench-template-md/instructor/aio.html",
-  "dateCreated": "2025-08-13",
-  "dateModified": "2025-08-13",
-  "datePublished": "2025-08-13"
+  "dateCreated": "2025-08-15",
+  "dateModified": "2025-08-15",
+  "datePublished": "2025-08-15"
 }
 
   </script><script>
