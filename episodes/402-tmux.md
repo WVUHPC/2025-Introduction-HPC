@@ -341,9 +341,7 @@ After this use the command to paste
 :::::::::::::::::::::::::::::::::::::: keypoints
 
 - "A terminal multiplexer protects programs such as text editors that are running on the login node from connection drops"
-
 - "Allow programs running on a remote server to be accessed from multiple different local computers."
-
 - "Work with multiple programs and shells together in one terminal, a bit like a window manager."
 
 ::::::::::::::::::::::::::::::::::::::::::::::::

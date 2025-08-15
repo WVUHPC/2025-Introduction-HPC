@@ -1,5 +1,7 @@
 ---
 title: Setup
+teaching: 40
+exercises: 20
 ---
 
 There are two ways of today accessing WVU's HPC Clusters: A secure remote shell (SSH) and via a Web Browser using the web application Open On-Demand. A secure remote shell is the traditional way of accessing a High-Performance Computing (HPC) cluster. A remote shell allows you to execute commands on another machine as you do sitting in front of it. A remote shell is convenient because it also allows other people to do the same with very little consumption of resources, so you get access to a resource being utilized by several users simultaneously.
