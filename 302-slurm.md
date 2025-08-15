@@ -497,13 +497,9 @@ Starting with 7 and 8
 :::::::::::::::::::::::::::::::::::::: keypoints
 
 - "The scheduler handles how compute resources are shared between users."
-
 - "Everything you do should be run through the scheduler."
-
 - "A non-interactive job is expressed as a shell script that is submitted to the cluster."
-
 - "Try to adjust the wall time to around 10-20% more than the expected time the job should need."
-
 - "It is a good idea to keep aliases to common torque commands for easy execution."
 
 ::::::::::::::::::::::::::::::::::::::::::::::::

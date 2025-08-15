@@ -1180,15 +1180,10 @@ Remember that to see the windows you should have and Xserver running on your mac
 :::::::::::::::::::::::::::::::::::::: keypoints
 
 - Modules. Use `module avail` to know all the modules on the cluster.
-
 - Modules. Use `module load <module_name>` to load a module.
-
 - Conda. Use `conda env list` to list the available environments.
-
 - Conda. Use `conda activate` to activate a conda environment.
-
 - Singularity. Use `singularity shell <container>` to get a shell inside the container.
-
 - Singularity. Use `singularity exec <container> <command>` to execute a command or script inside the container. 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
