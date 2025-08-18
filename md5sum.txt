@@ -8,5 +8,5 @@
 "episodes/102-first-job.md" "fbd386c28685b39d36d9ed5983b8c772" "site/built/102-first-job.md" "2025-08-18"
 "instructors/instructor-notes.md" "cae72b6712578d74a49fea7513099f8c" "site/built/instructor-notes.md" "2023-03-16"
 "learners/reference.md" "039316869a6aa7c2c515bf62bc4e8d14" "site/built/reference.md" "2025-08-13"
-"learners/setup.md" "6e662ffdfd648aa258a8d34a0cea0c3a" "site/built/setup.md" "2025-08-15"
+"learners/setup.md" "4310519789b06959fc4ab8b26b3a951e" "site/built/setup.md" "2025-08-18"
 "profiles/learner-profiles.md" "60b93493cf1da06dfd63255d73854461" "site/built/learner-profiles.md" "2022-04-22"
