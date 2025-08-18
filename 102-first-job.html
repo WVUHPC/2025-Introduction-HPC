@@ -225,7 +225,11 @@
 
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
-        <ul><li><a href="#the-life-cycle-of-a-job">The Life Cycle of a Job</a></li>
+        <ul><li><a href="#creating-a-folder-for-my-first-job.">Creating a folder for my first job.</a></li>
+<li><a href="#getting-an-input-file-for-my-simulation">Getting an input file for my simulation</a></li>
+<li><a href="#writing-a-submission-script">Writing a submission script</a></li>
+<li><a href="#submitting-the-job">Submitting the job</a></li>
+<li><a href="#what-we-need-to-learn">What we need to learn</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
 
@@ -380,8 +384,7 @@ cluster”</li>
 </div>
 </div>
 </div>
-<section><h2 class="section-heading" id="the-life-cycle-of-a-job">The Life Cycle of a Job<a class="anchor" aria-label="anchor" href="#the-life-cycle-of-a-job"></a></h2>
-<hr class="half-width"><p>In this episode will will follow some typical steps to execute a
+<p>In this episode will will follow some typical steps to execute a
 calculation using an HPC cluster. The idea is not to learn at this point
 the commands. Instead the purpose is to provide a reason to why the
 commands we will learn in future episodes are important to learn and
@@ -393,9 +396,8 @@ of Lead in crystalline form. Do not worry about the techical aspects of
 the particular application, similar procedures apply with small
 variations in other areas of science: chemistry, bioinformatics,
 forensics, health sciences and engineering.</p>
-<div class="section level3">
-<h3 id="creating-a-folder-for-my-first-job-">Creating a folder for my first job.<a class="anchor" aria-label="anchor" href="#creating-a-folder-for-my-first-job-"></a></h3>
-<p>The first step is to change our working directory to a location where
+<section><h2 class="section-heading" id="creating-a-folder-for-my-first-job-">Creating a folder for my first job.<a class="anchor" aria-label="anchor" href="#creating-a-folder-for-my-first-job-"></a></h2>
+<hr class="half-width"><p>The first step is to change our working directory to a location where
 we can work. Each user has a <strong>scratch</strong> folder, a folder
 where you can write files, is visible across all the nodes of the
 cluster and you have enough space even when large amounts of data are
@@ -405,10 +407,8 @@ used as inputs or generated as output.</p>
 directory inside the newly created folder.</p>
 <pre><code>~$ mkdir MY_FIRST_JOB
 ~$ cd MY_FIRST_JOB</code></pre>
-</div>
-<div class="section level3">
-<h3 id="getting-an-input-file-for-my-simulation">Getting an input file for my simulation<a class="anchor" aria-label="anchor" href="#getting-an-input-file-for-my-simulation"></a></h3>
-<p>Many scientific codes use the idea of an <strong>input file</strong>.
+</section><section><h2 class="section-heading" id="getting-an-input-file-for-my-simulation">Getting an input file for my simulation<a class="anchor" aria-label="anchor" href="#getting-an-input-file-for-my-simulation"></a></h2>
+<hr class="half-width"><p>Many scientific codes use the idea of an <strong>input file</strong>.
 An input file is just a file or set of files that describe the problem
 that will be solved and the conditions under which the code should work
 during the simulation. Users are expected to write their input file, in
@@ -482,10 +482,8 @@ tolvrs  1.0d-10
 <p>In this example, a single file contains all the input needed. Some
 other files are used but the input provides instructions to locate those
 extra files. We are ready to write the submission script</p>
-</div>
-<div class="section level3">
-<h3 id="writing-a-submission-script">Writing a submission script<a class="anchor" aria-label="anchor" href="#writing-a-submission-script"></a></h3>
-<p>A submission script is just a text file that provide information
+</section><section><h2 class="section-heading" id="writing-a-submission-script">Writing a submission script<a class="anchor" aria-label="anchor" href="#writing-a-submission-script"></a></h2>
+<hr class="half-width"><p>A submission script is just a text file that provide information
 about the resources needed to carry out the simulation that we pretend
 to execute on the cluster. We need to create text file and for that we
 will use a terminal-based text editor. The simplest to use is called
@@ -516,10 +514,8 @@ click <kbd>Enter</kbd> and the file will be saved.</p>
 <span id="cb7-13"><a href="#cb7-13" tabindex="-1"></a><span class="ex">mpirun</span> <span class="at">-np</span> 4 abinit tbasepar_1.abi</span></code></pre>
 </div>
 <figure><img src="fig/nano_runjob.slurm.png" style="width:90.0%" alt="nano text editor" class="figure mx-auto d-block"><div class="figcaption">Terminal-based text editor nano</div>
-</figure></div>
-<div class="section level3">
-<h3 id="submitting-the-job">Submitting the job<a class="anchor" aria-label="anchor" href="#submitting-the-job"></a></h3>
-<p>We use the submission script we just wrote to request the HPC cluster
+</figure></section><section><h2 class="section-heading" id="submitting-the-job">Submitting the job<a class="anchor" aria-label="anchor" href="#submitting-the-job"></a></h2>
+<hr class="half-width"><p>We use the submission script we just wrote to request the HPC cluster
 to execute our job when resources on the cluster became available. The
 job is very small so it is very likely that will execute inmediately.
 However, in many cases, jobs will remain in the queue for minutes, hours
@@ -535,10 +531,8 @@ commands</p>
 <pre><code>~$ scontrol show job &lt;JOBID&gt;</code></pre>
 <p>If the job already finished use:</p>
 <pre><code>~$ sacct -j &lt;JOBID&gt;</code></pre>
-</div>
-<div class="section level3">
-<h3 id="what-we-need-to-learn">What we need to learn<a class="anchor" aria-label="anchor" href="#what-we-need-to-learn"></a></h3>
-<p>The steps above are very typical regardless of the particular code
+</section><section><h2 class="section-heading" id="what-we-need-to-learn">What we need to learn<a class="anchor" aria-label="anchor" href="#what-we-need-to-learn"></a></h2>
+<hr class="half-width"><p>The steps above are very typical regardless of the particular code
 and area of science. As you can see to complete a simulation or any
 other calculation on an HPC cluster you need.</p>
 <ul><li>Execute some commands. You will learn the basic Linux commands in
@@ -570,7 +564,6 @@ cluster”</li>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
-</div>
 </section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="101-supercomputing.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
