@@ -149,15 +149,19 @@ To connect to Dolly Sods use [ood dolly].
 
 ![OOD Thorny](fig/ood_2.png){alt="Open On Demand Dashboard for Thorny Flat"}
 
+<!--
+
 ## Data Sets
 
-<!--
 FIXME: place any data you want learners to use in `episodes/data` and then use
        a relative link ( [data zip file](data/lesson-data.zip) ) to provide a
        link to it, replacing the example.com link.
--->
+
 Download the [data zip file](https://example.com/FIXME) and unzip it to your Desktop
 
+-->
+
+<!--
 
 ## Downloading the materials
 
@@ -176,6 +180,8 @@ This command will download all the files used in our workshops into a folder cal
 
 If you are unfamiliar with these commands, do not worry; you are in the right class and will learn all these commands and how to use them.
 These and many other commands will be the topic of the material that follows.
+
+-->
 
 <!-- Collect your link references at the bottom of your document -->
 [ood thorny]: https://ondemand-tf.hpc.wvu.edu
