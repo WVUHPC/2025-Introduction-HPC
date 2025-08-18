@@ -228,61 +228,7 @@
 <div class="accordion accordion-flush" id="accordionFlush3">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading3">
-        <a href="102-first-job.html">2. The life cycle of a job</a>
-    </div><!--/div.accordion-header-->
-
-  </div><!--/div.accordion-item-->
-</div><!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush4">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading4">
-        <a href="201-cli.html">3. Command Line Interface: The Shell</a>
-    </div><!--/div.accordion-header-->
-
-  </div><!--/div.accordion-item-->
-</div><!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush5">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading5">
-        <a href="202-editors.html">4. Terminal-based Text Editors: nano, emacs and vim</a>
-    </div><!--/div.accordion-header-->
-
-  </div><!--/div.accordion-item-->
-</div><!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush6">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading6">
-        <a href="301-data-transfer.html">5. Data Transfer: Globus</a>
-    </div><!--/div.accordion-header-->
-
-  </div><!--/div.accordion-item-->
-</div><!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush7">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading7">
-        <a href="302-slurm.html">6. Workload Manager: Slurm</a>
-    </div><!--/div.accordion-header-->
-
-  </div><!--/div.accordion-item-->
-</div><!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush8">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading8">
-        <a href="401-software.html">7. Software on HPC Clusters: modules, conda and containers</a>
-    </div><!--/div.accordion-header-->
-
-  </div><!--/div.accordion-item-->
-</div><!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush9">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading9">
-        <a href="402-tmux.html">8. Terminal Multiplexing: tmux</a>
+        <a href="102-first-job.html">2. The Life Cycle of a Job</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -340,13 +286,13 @@
           Home
         </a>
         <a class="chapter-link float-end" href="../instructor/102-first-job.html" rel="next">
-          Next: The life cycle of a...
+          Next: The Life Cycle of a...
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Supercomputing: Concepts</h1>
-        <p>Last updated on 2025-08-15 |
+        <p>Last updated on 2025-08-18 |
 
         <a href="https://github.com/carpentries/workbench-template-md/edit/main/episodes/101-supercomputing.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -578,6 +524,18 @@ code.</p>
 </div>
 <div class="section level3">
 <h3 id="amdahls-law-and-limits-on-scalability">Amdahl’s law and limits on scalability<a class="anchor" aria-label="anchor" href="#amdahls-law-and-limits-on-scalability"></a></h3>
+<p>We start defining speedup as the ratio between the computing time
+needed by one processor and by N processors.</p>
+<p><span class="math display">\[U(N) = \frac{T(1 proc)}{T(N
+procs)}\]</span></p>
+<p>The speedup is a very general concept and applies to normal life
+activities. If you need to cut the grass and that take you 1 hour,
+having someone with a mower can help you and reduce the time to 30
+minutes. In that case the speedup is 2. There are always limits to
+speedup, using the same analogy it is very unlikely that having 60
+people with their mowers suceeed in cutting the grass in 1 minute. We
+will now discuss the limits of scalability from the theoretical point of
+view and move into more practical considerations.</p>
 <p>Amdahl’s law describes the absolute limit on the speedup (A) of a
 code as a function of the proportion of the code that can be
 parallelized and the number of processors (CPU cores). This is the most
@@ -586,12 +544,12 @@ fundamental law of parallel computing!</p>
 <li>S is the fraction of the code that run serial (S = 1– P)</li>
 <li>N = number of processors (CPU cores)</li>
 <li>A(N) is the speedup as a function of N</li>
-</ul><p><span class="math display">\[A(N) = \frac{1}{(1 - P) +
+</ul><p><span class="math display">\[U(N) = \frac{1}{(1 - P) +
 \frac{P}{N}}\]</span></p>
 <p>Consider the limit of speedup as the number of processors goes to
 infinity. This theoretical speedup depends only on the fraction of the
 code that runs serial</p>
-<p><span class="math display">\[\lim_{N \to \infty} A(N) = \lim_{N \to
+<p><span class="math display">\[\lim_{N \to \infty} U(N) = \lim_{N \to
 \infty} \frac{1}{(1 - P) + \frac{P}{N}} = \frac{1}{1– P} =
 \frac{1}{S}\]</span></p>
 <p>Amdahl’s Law demonstrates the theoretical maximum speedup of an
@@ -662,13 +620,20 @@ megaflops which is less powerfull than modern smartphones. Many of the
 CRAY systems from the 80’s and 90’s where machines designed as a single
 entity using vector processors to achieve their extraordinary
 performance of their time.</p>
-<p>Modern supercomputers today are usually HPC clusters. HPC clusters
+<figure><img src="../fig/cray-1-supercomputer-bell-labs-circa-1976-2318813000.jpg" alt="Cray-1 Supercomputer at Bell Labs (Circa-1976)" class="figure mx-auto d-block"><div class="figcaption">Cray-1 Supercomputer at Bell Labs
+(Circa-1976)</div>
+</figure><p>Modern supercomputers today are usually HPC clusters. HPC clusters
 consist of multiple compute nodes organized in racks and itnterconnected
 by one or more networks. Each computer nodes is a computer itself. These
 aggregates of computers are made to work as a system thanks to sofware
 that orchestrates their operation and the fast networks that allows data
 to be moved from one node to another very efficiently.</p>
-<p>On each compute node contains one or more (typically two, sometimes
+<figure><img src="../fig/El%20Capitan_Full_00354_3.jpg" alt="El Capitan" class="figure mx-auto d-block"><div class="figcaption">With a peak performance of 2.79 exaFLOPS, El
+Capitan comprises more than 11,000 compute nodes and provides Lawrence
+Livermore National Laboratory with a flagship machine 22 times more
+powerful than its previous fastest supercomputer, Sierra. (Photos: Garry
+McLeod/LLNL)</div>
+</figure><p>On each compute node contains one or more (typically two, sometimes
 four) multicore processors, the CPUs and their internal CPU cores are
 resposible for the computational capabilities of the node.</p>
 <p>Today the computational power comming from CPUs alone is not enough
@@ -682,7 +647,33 @@ parallelized so that they can run on multiple CPU cores. If the
 calculation is even more demanding even multiple nodes using distributed
 parallel computing and using GPUs if the algorithm performs efficiently
 on this kind of acccelerators.</p>
-<div id="keypoints1" class="callout keypoints">
+</div>
+<div class="section level3">
+<h3 id="hierachy-of-hardware-on-an-hpc-cluster">Hierachy of Hardware on an HPC Cluster<a class="anchor" aria-label="anchor" href="#hierachy-of-hardware-on-an-hpc-cluster"></a></h3>
+<p>At the highest level is the rack. A rack is just a structure to pile
+up the individual nodes. An HPC cluster can be built from more normal
+computers but it is often the for the nodes to be rackable, ie, they can
+be stack on a rack to create a more dense configuration and facilitate
+administration.</p>
+<p><img src="../fig/thorny_front.jpeg" style="width:40.0%" alt="Thorny Flat" class="figure"><img src="../fig/thorny_back.jpeg" style="width:40.0%" alt="Thorny Flat" class="figure"></p>
+<p>Each node on the rack is a computer on itself. Sometimes rack servers
+are grouped in chassis but often they are just individual machines as
+shown below.</p>
+<figure><img src="../fig/HPE-Proliant-DL380.jpg" style="width:90.0%" alt="Compute node" class="figure mx-auto d-block"><div class="figcaption">Compute node (front and back)</div>
+</figure><figure><img src="../fig/Dell-EMC-PowerEdge-R840.jpg" style="width:90.0%" alt="Compute node" class="figure mx-auto d-block"><div class="figcaption">Compute node (front)</div>
+</figure><figure><img src="../fig/Dell-EMC-PowerEdge-R640.jpg" style="width:90.0%" alt="Compute node" class="figure mx-auto d-block"><div class="figcaption">Compute node (top)</div>
+</figure><p>Each compute node has a mainboard, one or more CPUs, RAM modules and
+network interfaces. They have all that you expect from a computer except
+for a monitor, keyboard and mouse.</p>
+</div>
+<div class="section level3">
+<h3 id="microprocessor-trends-performance-power-and-cores">Microprocessor Trends (Performance, Power and Cores)<a class="anchor" aria-label="anchor" href="#microprocessor-trends-performance-power-and-cores"></a></h3>
+<p>Microprocessor trends has been collected over the years and can be
+found on <a href="https://github.com/karlrupp/microprocessor-trend-data" class="external-link">Karl Rupp
+Github Page</a></p>
+<figure><img src="../fig/50-years-processor-trend.png" style="width:90.0%" alt="50-years-processor-trend" class="figure mx-auto d-block"><div class="figcaption">Microprocessor Trends (Performance, Power and
+Cores) [1971-2021]</div>
+</figure><div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
 </div>
@@ -715,7 +706,7 @@ any links that you are not going to use.
           Home
         </a>
         <a class="chapter-link float-end" href="../instructor/102-first-job.html" rel="next">
-          Next: The life cycle of a...
+          Next: The Life Cycle of a...
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
@@ -760,9 +751,9 @@ any links that you are not going to use.
   "creativeWorkStatus": "active",
   "url": "https://carpentries.github.io/workbench-template-md/instructor/101-supercomputing.html",
   "identifier": "https://carpentries.github.io/workbench-template-md/instructor/101-supercomputing.html",
-  "dateCreated": "2025-08-15",
-  "dateModified": "2025-08-15",
-  "datePublished": "2025-08-15"
+  "dateCreated": "2025-08-18",
+  "dateModified": "2025-08-18",
+  "datePublished": "2025-08-18"
 }
 
   </script><script>
