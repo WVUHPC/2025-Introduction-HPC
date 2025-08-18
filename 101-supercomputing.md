@@ -140,6 +140,12 @@ If you are not a programmer or application developer, you do not need to know MP
 
 ### Amdahl’s law and limits on scalability
 
+We start defining speedup as the ratio between the computing time needed by one processor and by N processors.
+
+$$U(N) = \frac{T(1 proc)}{T(N procs)}$$
+
+The speedup is a very general concept and applies to normal life activities. If you need to cut the grass and that take you 1 hour, having someone with a mower can help you and reduce the time to 30 minutes. In that case the speedup is 2. There are always limits to speedup, using the same analogy it is very unlikely that having 60 people with their mowers suceeed in cutting the grass in 1 minute. We will now discuss the limits of scalability from the theoretical point of view and move into more practical considerations.
+
 Amdahl’s law describes the absolute limit on the speedup (A) of a code as a function of the proportion of the code that can be parallelized and the number of processors (CPU cores).
 This is the most fundamental law of parallel computing!
 
@@ -148,12 +154,12 @@ This is the most fundamental law of parallel computing!
 - N = number of processors (CPU cores)
 - A(N) is the speedup as a function of N
 
-$$A(N) = \frac{1}{(1 - P) + \frac{P}{N}}$$
+$$U(N) = \frac{1}{(1 - P) + \frac{P}{N}}$$
 
 Consider the limit of speedup as the number of processors goes to infinity.
 This theoretical speedup depends only on the fraction of the code that runs serial
 
-$$\lim_{N \to \infty} A(N) = \lim_{N \to \infty} \frac{1}{(1 - P) + \frac{P}{N}} = \frac{1}{1– P} = \frac{1}{S}$$
+$$\lim_{N \to \infty} U(N) = \lim_{N \to \infty} \frac{1}{(1 - P) + \frac{P}{N}} = \frac{1}{1– P} = \frac{1}{S}$$
 
 Amdahl's Law demonstrates the theoretical maximum speedup of an overall system and the concept of diminishing returns. Plotted below is the logarithmic parallelization vs linear speedup. If exactly 50% of the work can be parallelized, the best possible speedup is 2 times. If 95% of the work can be parallelized, the best possible speedup is 20 times. According to the law, even with an infinite number of processors, the speedup is constrained by the unparallelizable portion.
 
@@ -185,20 +191,48 @@ High performance computing has two common notions of scalability. So far we have
  - **Strong scaling** is defined as how the solution time varies with the number of processors for a fixed total problem size.
  - **Weak scaling** is defined as how the solution time varies with the number of processors for a fixed problem size per processor.
 
-
 ## Hardware concepts
 
 ### Supercomputers and HPC clusters
 
 There are many kinds of supercomputers, some of them are build from scratch using specialized hardware, examples of those supercomputers are the iconic CRAY-1 (1976). This machine was the world’s fastest supercomputer from 1976 to 1982. It measured 8½ feet wide by 6½ feet high and contained 60 miles of wires. It achieve a performance of 160 megaflops which is less powerfull than modern smartphones. Many of the CRAY systems from the 80's and 90's where machines designed as a single entity using vector processors to achieve their extraordinary performance of their time.
 
+![Cray-1 Supercomputer at Bell Labs (Circa-1976)](fig/cray-1-supercomputer-bell-labs-circa-1976-2318813000.jpg){alt='Cray-1 Supercomputer at Bell Labs (Circa-1976)'}
+
 Modern supercomputers today are usually HPC clusters. HPC clusters consist of multiple compute nodes organized in racks and itnterconnected by one or more networks. Each computer nodes is a computer itself. These aggregates of computers are made to work as a system thanks to sofware that orchestrates their operation and the fast networks that allows data to be moved from one node to another very efficiently.
+
+![With a peak performance of 2.79 exaFLOPS, El Capitan comprises more than 11,000 compute nodes and provides Lawrence Livermore National Laboratory with a flagship machine 22 times more powerful than its previous fastest supercomputer, Sierra. (Photos: Garry McLeod/LLNL)](fig/El Capitan_Full_00354_3.jpg){alt='El Capitan'}
+
 
 On each compute node contains one or more (typically two, sometimes four) multicore processors, the CPUs and their internal CPU cores are resposible for the computational capabilities of the node.
 
 Today the computational power comming from CPUs alone is not enough so they receive extra help from other chips in the node specialized in certain computational tasks. These electronic components are called accelerators, among them the GPUs. GPUs are electronic devices that are naturally efficient for certain parallel tasks. They outperform CPUs on a narrow scope of applications. With the current 
 
 To effectively use HPC clusters, we need applications that have been parallelized so that they can run on multiple CPU cores. If the calculation is even more demanding even multiple nodes using distributed parallel computing and using GPUs if the algorithm performs efficiently on this kind of acccelerators.
+
+### Hierachy of Hardware on an HPC Cluster
+
+At the highest level is the rack. A rack is just a structure to pile up the individual nodes. An HPC cluster can be built from more normal computers but it is often the for the nodes to be rackable, ie, they can be stack on a rack to create a more dense configuration and facilitate administration. 
+
+![Thorny Flat [Rack 3] (Front)](fig/thorny_front.jpeg){alt="Thorny Flat" width='40%'}
+![Thorny Flat [Rack 3] (Back)](fig/thorny_back.jpeg){alt="Thorny Flat" width='40%'}
+
+Each node on the rack is a computer on itself. Sometimes rack servers are grouped in chassis but often they are just individual machines as shown below.
+
+![Compute node (front and back)](fig/HPE-Proliant-DL380.jpg){alt="Compute node" width='90%'}
+
+![Compute node (front)](fig/Dell-EMC-PowerEdge-R840.jpg){alt="Compute node" width='90%'}
+
+![Compute node (top)](fig/Dell-EMC-PowerEdge-R640.jpg){alt="Compute node" width='90%'}
+
+Each compute node has a mainboard, one or more CPUs, RAM modules and network interfaces. They have all that you expect from a computer except for a monitor, keyboard and mouse.
+
+### Microprocessor Trends (Performance, Power and Cores)
+
+Microprocessor trends has been collected over the years and can be found on [Karl Rupp Github Page](https://github.com/karlrupp/microprocessor-trend-data)
+
+![Microprocessor Trends (Performance, Power and Cores) [1971-2021]](fig/50-years-processor-trend.png){alt="50-years-processor-trend" width='90%'}
+
 
 ::::::::::::::::::::::::::::::::::::: keypoints
 
