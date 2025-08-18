@@ -68,12 +68,13 @@ contact: 'gufranco@mail.wvu.edu' # FIXME
 episodes:
 - 101-supercomputing.md
 - 102-first-job.md
-- 201-cli.md
-- 202-editors.md
-- 301-data-transfer.md
-- 302-slurm.md
-- 401-software.md
-- 402-tmux.md
+
+#- 201-cli.md
+#- 202-editors.md
+#- 301-data-transfer.md
+#- 302-slurm.md
+#- 401-software.md
+#- 402-tmux.md
 
 # Information for Learners
 learners: 
