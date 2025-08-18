@@ -265,6 +265,78 @@
 </div>
 <!--/div.accordion-flush-->
 
+<div class="accordion accordion-flush" id="accordionFlush4">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading4">
+        <a href="201-cli.html">3. Command Line Interface: The Shell</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush5">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading5">
+        <a href="202-editors.html">4. Terminal-based Text Editors: nano, emacs and vim</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush6">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading6">
+        <a href="301-data-transfer.html">5. Data Transfer: Globus</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush7">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading7">
+        <a href="302-slurm.html">6. Workload Manager: Slurm</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush8">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading8">
+        <a href="401-software.html">7. Software on HPC Clusters: modules, conda and containers</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush9">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading9">
+        <a href="402-tmux.html">8. Terminal Multiplexing: tmux</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
                 </div>
               </div>
             </div>
@@ -336,6 +408,73 @@ entity to provide computational power to many users”</li>
 filesystem, create folders, edit files and submit jobs to the
 cluster”</li>
 <li>“All these elements will be learned in the following episodes”</li>
+</ul></section><section id="201-cli"><h2 class="section-heading"><a href="201-cli.html">Command Line Interface: The Shell</a></h2>
+<hr class="half-width">
+<ul>
+<li>Get sufficient familiarity with basic comands such as
+<code>ls</code>, <code>cp</code>, <code>cd</code>, <code>pwd</code> and
+<code>rm</code>
+</li>
+<li>If you want to know extra arguments for command that you know use
+the command <code>man</code>
+</li>
+<li>Most Linux/UNIX commands are just programs that have existed for
+decades and whose use has been for most part standarized overtime. The
+commands that you learn will serve you in the future so it is a fruitful
+investment.</li>
+</ul></section><section id="202-editors"><h2 class="section-heading"><a href="202-editors.html">Terminal-based Text Editors: nano, emacs and vim</a></h2>
+<hr class="half-width">
+<ul>
+<li>“There are three major editor in Linux/Unix: nano, emacs and
+vim”</li>
+<li>“Once decided for on text editor it is important to the basic key
+combinations and operation of your editor of choice”</li>
+</ul></section><section id="301-data-transfer"><h2 class="section-heading"><a href="301-data-transfer.html">Data Transfer: Globus</a></h2>
+<hr class="half-width">
+<ul>
+<li>“Supercomputers are far more powerful than desktop computers”</li>
+<li>“Most supercomputers today are HPC clusters”</li>
+<li>“Supercomputers are intended to run large calculations or
+simulations that takes days or weeks to complete”</li>
+<li>“HPC clusters are aggregates of machines that operate as a single
+entity to provide computational power to many users”</li>
+</ul></section><section id="302-slurm"><h2 class="section-heading"><a href="302-slurm.html">Workload Manager: Slurm</a></h2>
+<hr class="half-width">
+<ul>
+<li>“The scheduler handles how compute resources are shared between
+users.”</li>
+<li>“Everything you do should be run through the scheduler.”</li>
+<li>“A non-interactive job is expressed as a shell script that is
+submitted to the cluster.”</li>
+<li>“Try to adjust the wall time to around 10-20% more than the expected
+time the job should need.”</li>
+<li>“It is a good idea to keep aliases to common torque commands for
+easy execution.”</li>
+</ul></section><section id="401-software"><h2 class="section-heading"><a href="401-software.html">Software on HPC Clusters: modules, conda and containers</a></h2>
+<hr class="half-width">
+<ul>
+<li>Modules. Use <code>module avail</code> to know all the modules on
+the cluster.</li>
+<li>Modules. Use <code>module load &lt;module_name&gt;</code> to load a
+module.</li>
+<li>Conda. Use <code>conda env list</code> to list the available
+environments.</li>
+<li>Conda. Use <code>conda activate</code> to activate a conda
+environment.</li>
+<li>Singularity. Use <code>singularity shell &lt;container&gt;</code> to
+get a shell inside the container.</li>
+<li>Singularity. Use
+<code>singularity exec &lt;container&gt; &lt;command&gt;</code> to
+execute a command or script inside the container.</li>
+</ul></section><section id="402-tmux"><h2 class="section-heading"><a href="402-tmux.html">Terminal Multiplexing: tmux</a></h2>
+<hr class="half-width">
+<ul>
+<li>“A terminal multiplexer protects programs such as text editors that
+are running on the login node from connection drops”</li>
+<li>“Allow programs running on a remote server to be accessed from
+multiple different local computers.”</li>
+<li>“Work with multiple programs and shells together in one terminal, a
+bit like a window manager.”</li>
 </ul></section>
 </div>
     </main>
