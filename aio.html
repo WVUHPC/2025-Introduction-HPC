@@ -906,7 +906,10 @@ enough.</p>
 <pre><code>~$ nano runjob.slurm</code></pre>
 <figure><img src="fig/nano.png" style="width:90.0%" alt="nano text editor" class="figure mx-auto d-block"><div class="figcaption">Terminal-based text editor nano</div>
 </figure><p>Type the following inside <strong>nano</strong> window and leave the
-editor using the command <kbd>Ctrl</kbd>+<kbd>X</kbd>.</p>
+editor using the command <kbd>Ctrl</kbd>+<kbd>X</kbd>. Nano will ask if
+you want to save the changes introduced to the file. Answer with
+<kbd>Y</kbd> It will show the name of your file for confirmation, just
+click <kbd>Enter</kbd> and the file will be saved.</p>
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -924,6 +927,8 @@ editor using the command <kbd>Ctrl</kbd>+<kbd>X</kbd>.</p>
 <span id="cb7-12"><a href="#cb7-12" tabindex="-1"></a></span>
 <span id="cb7-13"><a href="#cb7-13" tabindex="-1"></a><span class="ex">mpirun</span> <span class="at">-np</span> 4 abinit tbasepar_1.abi</span></code></pre>
 </div>
+<figure><img src="fig/nano_runjob.slurm.png" style="width:90.0%" alt="nano text editor" class="figure mx-auto d-block"><div class="figcaption">Terminal-based text editor nano</div>
+</figure>
 </div>
 <div class="section level3">
 <h3 id="submitting-the-job">Submitting the job<a class="anchor" aria-label="anchor" href="#submitting-the-job"></a>
@@ -944,6 +949,26 @@ commands</p>
 <pre><code>~$ scontrol show job &lt;JOBID&gt;</code></pre>
 <p>If the job already finished use:</p>
 <pre><code>~$ sacct -j &lt;JOBID&gt;</code></pre>
+</div>
+<div class="section level3">
+<h3 id="what-we-need-to-learn">What we need to learn<a class="anchor" aria-label="anchor" href="#what-we-need-to-learn"></a>
+</h3>
+<p>The steps above are very typical regardless of the particular code
+and area of science. As you can see to complete a simulation or any
+other calculation on an HPC cluster you need.</p>
+<ul>
+<li>Execute some commands. You will learn the basic Linux commands in
+the next episode.</li>
+<li>Edit some text files. We will present 3 text editors and among them
+<code>nano</code>, the editor shown above.</li>
+<li>Select a software to run. We are using ABINIT and for it we are
+using some environment modules to access this software package.</li>
+<li>Submit and monitor jobs on the cluster. All those are Slurm commands
+and we will learn about them.</li>
+</ul>
+<p>In addition to this we will also learn about data transfers to copy
+files in and out the HPC cluster and tmux, a terminal multiplexer that
+will facilitate your work on the terminal.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
