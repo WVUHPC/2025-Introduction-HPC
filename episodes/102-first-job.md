@@ -127,6 +127,8 @@ A submission script is just a text file that provide information about the resou
 ![Terminal-based text editor nano](fig/nano.png){alt="nano text editor" width='90%'}
 
 Type the following inside **nano** window and leave the editor using the command <kbd>Ctrl</kbd>+<kbd>X</kbd>.
+Nano will ask if you want to save the changes introduced to the file. Answer with <kbd>Y</kbd>
+It will show the name of your file for confirmation, just click <kbd>Enter</kbd> and the file will be saved.
 
 ```bash
 #!/bin/bash
@@ -143,6 +145,9 @@ module load atomistic/abinit/9.8.4_intel22_impi22
 
 mpirun -np 4 abinit tbasepar_1.abi
 ```
+
+![Terminal-based text editor nano](fig/nano_runjob.slurm.png){alt="nano text editor" width='90%'}
+
 
 ### Submitting the job
 
@@ -171,6 +176,18 @@ If the job already finished use:
 ```
 ~$ sacct -j <JOBID>
 ```
+
+
+### What we need to learn
+
+The steps above are very typical regardless of the particular code and area of science. As you can see to complete a simulation or any other calculation on an HPC cluster you need.
+
+ - Execute some commands. You will learn the basic Linux commands in the next episode.
+ - Edit some text files. We will present 3 text editors and among them `nano`, the editor shown above.
+ - Select a software to run. We are using ABINIT and for it we are using some environment modules to access this software package.
+ - Submit and monitor jobs on the cluster. All those are Slurm commands and we will learn about them.
+
+In addition to this we will also learn about data transfers to copy files in and out the HPC cluster and tmux, a terminal multiplexer that will facilitate your work on the terminal.
 
 
 ::::::::::::::::::::::::::::::::::::: keypoints
