@@ -17,14 +17,13 @@ exercises: 20
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## The Life Cycle of a Job
 
 In this episode will will follow some typical steps to execute a calculation using an HPC cluster.
 The idea is not to learn at this point the commands. Instead the purpose is to provide a reason to why the commands we will learn in future episodes are important to learn and grasp an general perspective of what is involved in using an HPC to carry out research.
 
 We will use a case very specific in Physics, more in particular in Materials Science. We will compute the atomic and electronic structure of Lead in crystalline form. Do not worry about the techical aspects of the particular application, similar procedures apply with small variations in other areas of science: chemistry, bioinformatics, forensics, health sciences and engineering.
 
-### Creating a folder for my first job.
+## Creating a folder for my first job.
 
 The first step is to change our working directory to a location where we can work. Each user has a **scratch** folder, a folder where you can write files, is visible across all the nodes of the cluster and you have enough space even when large amounts of data are used as inputs or generated as output.
 
@@ -38,7 +37,7 @@ I will create a folder there for my first job and move my working directory insi
 ~$ cd MY_FIRST_JOB
 ```
 
-### Getting an input file for my simulation
+## Getting an input file for my simulation
 
 Many scientific codes use the idea of an **input file**. An input file is just a file or set of files that describe the problem that will be solved and the conditions under which the code should work during the simulation. Users are expected to write their input file, in our case we will take one input file that is ready for execution from one of the examples from a code called ABINIT. ABINIT is a software suite to calculate the optical, mechanical, vibrational, and other observable properties of materials using a technique in applied quantum mechanics  called density functional theory. The following command will copy one input file that is ready for execution.
 
@@ -116,7 +115,7 @@ tolvrs  1.0d-10
 
 In this example, a single file contains all the input needed. Some other files are used but the input provides instructions to locate those extra files. We are ready to write the submission script
 
-### Writing a submission script
+## Writing a submission script
 
 A submission script is just a text file that provide information about the resources needed to carry out the simulation that we pretend to execute on the cluster. We need to create text file and for that we will use a terminal-based text editor. The simplest to use is called `nano` and for the purpose of this tutorial it is more than enough.
 
@@ -148,8 +147,7 @@ mpirun -np 4 abinit tbasepar_1.abi
 
 ![Terminal-based text editor nano](fig/nano_runjob.slurm.png){alt="nano text editor" width='90%'}
 
-
-### Submitting the job
+## Submitting the job
 
 We use the submission script we just wrote to request the HPC cluster to execute our job when resources on the cluster became available.
 The job is very small so it is very likely that will execute inmediately.
@@ -177,8 +175,7 @@ If the job already finished use:
 ~$ sacct -j <JOBID>
 ```
 
-
-### What we need to learn
+## What we need to learn
 
 The steps above are very typical regardless of the particular code and area of science. As you can see to complete a simulation or any other calculation on an HPC cluster you need.
 
@@ -188,7 +185,6 @@ The steps above are very typical regardless of the particular code and area of s
  - Submit and monitor jobs on the cluster. All those are Slurm commands and we will learn about them.
 
 In addition to this we will also learn about data transfers to copy files in and out the HPC cluster and tmux, a terminal multiplexer that will facilitate your work on the terminal.
-
 
 ::::::::::::::::::::::::::::::::::::: keypoints
 
