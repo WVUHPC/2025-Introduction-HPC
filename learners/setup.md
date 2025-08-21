@@ -161,8 +161,6 @@ Download the [data zip file](https://example.com/FIXME) and unzip it to your Des
 
 -->
 
-<!--
-
 ## Downloading the materials
 
 The materials of examples and exercises can be downloaded by executing this command on the terminal.
@@ -180,8 +178,6 @@ This command will download all the files used in our workshops into a folder cal
 
 If you are unfamiliar with these commands, do not worry; you are in the right class and will learn all these commands and how to use them.
 These and many other commands will be the topic of the material that follows.
-
--->
 
 <!-- Collect your link references at the bottom of your document -->
 [ood thorny]: https://ondemand-tf.hpc.wvu.edu
