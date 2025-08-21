@@ -244,7 +244,9 @@
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
         <ul><li><a href="#terminal-based-text-editors">Terminal-based Text Editors</a></li>
-<li><a href="#meta-alt-and-option-keys">Meta, Alt and Option keys</a></li>
+<li><a href="#nano">nano</a></li>
+<li><a href="#emacs">emacs</a></li>
+<li><a href="#vivim">vi/vim</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
 
@@ -345,7 +347,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Terminal-based Text Editors: nano, emacs and vim</h1>
-        <p>Last updated on 2025-08-18 |
+        <p>Last updated on 2025-08-21 |
 
         <a href="https://github.com/carpentries/workbench-template-md/edit/main/episodes/202-editors.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -367,6 +369,7 @@
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul><li>“How do I edit text files from the terminal?”</li>
+<li>“Which text editor should I use?”</li>
 </ul></div>
 </div>
 </div>
@@ -374,8 +377,8 @@
 <div class="card-body">
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
-<ul><li>“Learn about three major editor in Linux/Unix: vim, emacs and
-nano”</li>
+<ul><li>“Learn about three major editors in Linux/Unix: nano, emacs and
+vi/vim”</li>
 <li>“Learn the basic key combinations and operation of those
 editors”</li>
 </ul></div>
@@ -384,20 +387,18 @@ editors”</li>
 </div>
 </div>
 <section><h2 class="section-heading" id="terminal-based-text-editors">Terminal-based Text Editors<a class="anchor" aria-label="anchor" href="#terminal-based-text-editors"></a></h2>
-<hr class="half-width"><iframe width="560" height="315" src="https://www.youtube.com/embed/S6Qa2raf30o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-</iframe>
-<p>During your interaction with the cluster from the command line you
-need to deal with text files. As we learn from the previous episode, for
-just reading files, we can use the commands <code>cat</code>,
-<code>more</code> and <code>less</code>. For modifying text files we
-need a different application, a text editor. Notice that on the cluster
-we are working with pure text files in contrast with office applications
-like Microsoft Word and equivalent free versions like LibreOffice. Those
-applications are called “Word Processors” as they not only deal with the
-text content but they also are in charge of the control how the text is
-presented on screen and on paper. “Word Processors” are not the same as
-“Text Editors” and for most cases “Word Processors” are of no use in HPC
-clusters.</p>
+<hr class="half-width"><p>During your interaction with an HPC cluster from the command line,
+you usually work often with text files. As we learn from the previous
+episode, for just reading files, we can use the commands
+<code>cat</code>, <code>more</code> and <code>less</code>. For modifying
+text files we need a different application, a text editor. Notice that
+on the cluster we are working with pure text files in contrast with
+office applications like Microsoft Word and equivalent free versions
+like LibreOffice. Those applications are called “Word Processors” as
+they not only deal with the text content but they also are in charge of
+the control how the text is presented on screen and on paper. “Word
+Processors” are not the same as “Text Editors” and for most cases “Word
+Processors” are of no use in HPC clusters.</p>
 <p>Text editors work just with the characters, spaces and new lines.
 When a file only contain those elements without any information about
 formatting, the file is said is in “Plain Text”. There is one important
@@ -443,8 +444,9 @@ be go deeper into more complex functionality and that is the major
 difference between <strong>nano</strong> and the other two editor, the
 later giving you far more complexity and power in the skills at the
 price of a steeper learning curve.</p>
-</section><section><h2 class="section-heading" id="meta-alt-and-option-keys">Meta, Alt and Option keys<a class="anchor" aria-label="anchor" href="#meta-alt-and-option-keys"></a></h2>
-<hr class="half-width"><p>On modern keyboards the <kbd>Alt</kbd> key has come to replace the
+<div class="section level3">
+<h3 id="meta-alt-and-option-keys">Meta, Alt and Option keys<a class="anchor" aria-label="anchor" href="#meta-alt-and-option-keys"></a></h3>
+<p>On modern keyboards the <kbd>Alt</kbd> key has come to replace the
 <kbd>Meta</kbd> key of the old MIT keyboards. Both <strong>nano</strong>
 and <strong>emacs</strong> make extensive use of <kbd>Meta</kbd> for
 some key combinations. A situation that can be confusing on windows
@@ -460,34 +462,34 @@ pull-down menus, for example).</p>
 <p>On Macs Terminal application under the “Edit” &gt; “Use Option as
 Meta key”. For <strong>emacs</strong> you can use <kbd>ESC</kbd> as a
 replacement of the <kbd>Meta</kbd> key.</p>
-<div class="section level3">
-<h3 id="nano">Nano<a class="anchor" aria-label="anchor" href="#nano"></a></h3>
-<p>Nano is a small andfriendly editor with commands that are generally
+</div>
+</section><section><h2 class="section-heading" id="nano">nano<a class="anchor" aria-label="anchor" href="#nano"></a></h2>
+<hr class="half-width"><p>Nano is a small andfriendly editor with commands that are generally
 accessed by using Control (<kbd>Ctrl</kbd>) combined with some other
 key.</p>
-<div class="section level4">
-<h4 id="opening-and-closing-the-editor">Opening and closing the editor<a class="anchor" aria-label="anchor" href="#opening-and-closing-the-editor"></a></h4>
+<div class="section level3">
+<h3 id="opening-and-closing-the-editor">Opening and closing the editor<a class="anchor" aria-label="anchor" href="#opening-and-closing-the-editor"></a></h3>
 <p>You can start editing a file using a command line like this:</p>
-<pre><code>$ nano myfile.f90</code></pre>
+<pre><code>~$ nano myfile.f90</code></pre>
 <p>To leave the editor type <kbd>Ctrl</kbd>+<kbd>X</kbd>, you will be
 asked if you want to save your file to disk. Another option is to save
 the file with <kbd>Ctrl</kbd>+<kbd>O</kbd> but remaing on the
 editor.</p>
 </div>
-<div class="section level4">
-<h4 id="moving-around-the-file">Moving around the file<a class="anchor" aria-label="anchor" href="#moving-around-the-file"></a></h4>
+<div class="section level3">
+<h3 id="moving-around-the-file">Moving around the file<a class="anchor" aria-label="anchor" href="#moving-around-the-file"></a></h3>
 <p>On <strong>nano</strong> you can start typing as soon you open the
 file and the arrow keys will move you back and for on the same line or
 up and down on lines. For large files is always good to learn how to
 move to the begining and end of the file. Use
-<kbd>Meta</kbd>+<kbd>&lt;/kbd&gt; and <kbd>Meta</kbd>+<kbd>/</kbd> to do
+<kbd>Meta</kbd>+<kbd> </kbd> and <kbd>Meta</kbd>+<kbd>/</kbd> to do
 that. Those key combinations are also shown as <code>M-\</code> (first
 line) <code>M-/</code> (last line). To move to a specific line and
 column number use <kbd>Ctrl</kbd>+<kbd>_</kbd>, shown on the bottom bar
-as <code>^_</code></kbd></p>
+as <code>^_</code></p>
 </div>
-<div class="section level4">
-<h4 id="copy-cut-and-paste">Copy, cut and paste<a class="anchor" aria-label="anchor" href="#copy-cut-and-paste"></a></h4>
+<div class="section level3">
+<h3 id="copy-cut-and-paste">Copy, cut and paste<a class="anchor" aria-label="anchor" href="#copy-cut-and-paste"></a></h3>
 <p>The use the internal capabilities of the text editor to copy and
 paste starts by selecting the area of text that you want to copy or cut.
 Use <kbd>Meta</kbd>+<kbd>A</kbd> to start selecting the area to copy use
@@ -495,16 +497,16 @@ Use <kbd>Meta</kbd>+<kbd>A</kbd> to start selecting the area to copy use
 <kbd>Meta</kbd>+<kbd>Delete</kbd>, to cut but save the contents
 <kbd>Ctrl</kbd>+<kbd>K</kbd> to paste the contents of the region
 <kbd>Ctrl</kbd>+<kbd>U</kbd></p>
-</div>
 <div class="section level4">
 <h4 id="search-for-text-and-search-and-replace">Search for text and search and Replace<a class="anchor" aria-label="anchor" href="#search-for-text-and-search-and-replace"></a></h4>
 <p>To search use <kbd>Ctrl</kbd>+<kbd>W</kbd>, you can repeat the
 command to searching for more matches, to search and replace use
-<kbd>Ctrl</kbd>+<kbd>&lt;/kbd&gt; enter the text to search and the text
-to replace in place.</kbd></p>
+<kbd>Ctrl</kbd>+<kbd> </kbd> enter the text to search and the text to
+replace in place.</p>
 </div>
-<div class="section level4">
-<h4 id="reference">Reference<a class="anchor" aria-label="anchor" href="#reference"></a></h4>
+</div>
+<div class="section level3">
+<h3 id="reference">Reference<a class="anchor" aria-label="anchor" href="#reference"></a></h3>
 <p>Beyond the quick commands above, there are several commands available
 on <strong>nano</strong>, and the list below comes from the help text
 that you can see when execute <kbd>Ctrl</kbd>+<kbd>G</kbd>. When you see
@@ -589,22 +591,125 @@ discussion about the use of <kbd>Meta</kbd> key.</p>
 <span id="cb2-72"><a href="#cb2-72" tabindex="-1"></a><span class="ex">M-N</span>                 No conversion from DOS/Mac format enable/disable</span>
 <span id="cb2-73"><a href="#cb2-73" tabindex="-1"></a><span class="ex">M-Z</span>                 Suspension enable/disable</span></code></pre>
 </div>
+<div id="exercise-barnsley_fern" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<span class="callout-header">Discussion</span>
+<div id="exercise-barnsley_fern" class="callout-inner">
+<h3 class="callout-title">Exercise: Barnsley_fern</h3>
+<div class="callout-content">
+<ol style="list-style-type: decimal"><li><p>Change your current working directory to your
+<code>$SCRATCH</code> folder</p></li>
+<li><p>Create a new folder called <code>FERN</code></p></li>
+<li><p>Open <code>nano</code> and enter the following code unde the file
+<code>fern.f90</code> The code has many opportunities for <em>copy and
+paste</em>, try to use that as much as possible to familiarize yourself
+with the editing capabilities of <code>nano</code></p></li>
+</ol><div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">FORTRAN<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode fortran" tabindex="0"><code class="sourceCode fortranfixed"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="co">!Generates an output file "plot.dat" that contains the x and y coordinates </span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="co">!for a scatter plot that can be visualized with say, GNUPlot</span></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="kw">program</span> BarnsleyFern</span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="kw">implicit</span> <span class="kw">none</span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="dt">double precision</span> <span class="dt">::</span> p(<span class="dv">4</span>), a(<span class="dv">4</span>), b(<span class="dv">4</span>), c(<span class="dv">4</span>), d(<span class="dv">4</span>), e(<span class="dv">4</span>), f(<span class="dv">4</span>), trx, try, <span class="co">prob</span></span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="dt">integer</span> <span class="dt">::</span> itermax, i</span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a><span class="co">!The probabilites and coefficients can be modified to generate other</span></span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a><span class="co">!fractal ferns, e.g. http://www.home.aone.net.au/~byzantium/ferns/fractal.html</span></span>
+<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a><span class="co">!probabilities</span></span>
+<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a>p(<span class="dv">1</span>) <span class="kw">=</span> <span class="fl">0.01</span>; p(<span class="dv">2</span>) <span class="kw">=</span> <span class="fl">0.85</span>; p(<span class="dv">3</span>) <span class="kw">=</span> <span class="fl">0.07</span>; p(<span class="dv">4</span>) <span class="kw">=</span> <span class="fl">0.07</span></span>
+<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a><span class="co">!coefficients</span></span>
+<span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a>a(<span class="dv">1</span>) <span class="kw">=</span>  <span class="fl">0.00</span>; a(<span class="dv">2</span>) <span class="kw">=</span>  <span class="fl">0.85</span>; a(<span class="dv">3</span>) <span class="kw">=</span>  <span class="fl">0.20</span>; a(<span class="dv">4</span>) <span class="kw">=</span> <span class="kw">-</span><span class="fl">0.15</span></span>
+<span id="cb3-16"><a href="#cb3-16" tabindex="-1"></a>b(<span class="dv">1</span>) <span class="kw">=</span>  <span class="fl">0.00</span>; b(<span class="dv">2</span>) <span class="kw">=</span>  <span class="fl">0.04</span>; b(<span class="dv">3</span>) <span class="kw">=</span> <span class="kw">-</span><span class="fl">0.26</span>; b(<span class="dv">4</span>) <span class="kw">=</span>  <span class="fl">0.28</span></span>
+<span id="cb3-17"><a href="#cb3-17" tabindex="-1"></a><span class="co">c(1) =  0.00; c(2) = -0.04; c(3) =  0.23; c(4) =  0.26</span></span>
+<span id="cb3-18"><a href="#cb3-18" tabindex="-1"></a>d(<span class="dv">1</span>) <span class="kw">=</span>  <span class="fl">0.16</span>; d(<span class="dv">2</span>) <span class="kw">=</span>  <span class="fl">0.85</span>; d(<span class="dv">3</span>) <span class="kw">=</span>  <span class="fl">0.22</span>; d(<span class="dv">4</span>) <span class="kw">=</span>  <span class="fl">0.24</span></span>
+<span id="cb3-19"><a href="#cb3-19" tabindex="-1"></a>e(<span class="dv">1</span>) <span class="kw">=</span>  <span class="fl">0.00</span>; e(<span class="dv">2</span>) <span class="kw">=</span>  <span class="fl">0.00</span>; e(<span class="dv">3</span>) <span class="kw">=</span>  <span class="fl">0.00</span>; e(<span class="dv">4</span>) <span class="kw">=</span>  <span class="fl">0.00</span></span>
+<span id="cb3-20"><a href="#cb3-20" tabindex="-1"></a>f(<span class="dv">1</span>) <span class="kw">=</span>  <span class="fl">0.00</span>; f(<span class="dv">2</span>) <span class="kw">=</span>  <span class="fl">1.60</span>; f(<span class="dv">3</span>) <span class="kw">=</span>  <span class="fl">1.60</span>; f(<span class="dv">4</span>) <span class="kw">=</span>  <span class="fl">0.44</span></span>
+<span id="cb3-21"><a href="#cb3-21" tabindex="-1"></a></span>
+<span id="cb3-22"><a href="#cb3-22" tabindex="-1"></a>itermax <span class="kw">=</span> <span class="dv">100000</span></span>
+<span id="cb3-23"><a href="#cb3-23" tabindex="-1"></a></span>
+<span id="cb3-24"><a href="#cb3-24" tabindex="-1"></a>trx <span class="kw">=</span> <span class="fl">0.0</span>D0</span>
+<span id="cb3-25"><a href="#cb3-25" tabindex="-1"></a>try <span class="kw">=</span> <span class="fl">0.0</span>D0</span>
+<span id="cb3-26"><a href="#cb3-26" tabindex="-1"></a></span>
+<span id="cb3-27"><a href="#cb3-27" tabindex="-1"></a><span class="fu">open(</span><span class="dv">1</span>, <span class="fu">file</span><span class="kw">=</span><span class="st">"plot.dat"</span><span class="fu">)</span></span>
+<span id="cb3-28"><a href="#cb3-28" tabindex="-1"></a><span class="fu">write(</span><span class="dv">1</span>,<span class="fu">*)</span> <span class="st">"#X            #Y"</span></span>
+<span id="cb3-29"><a href="#cb3-29" tabindex="-1"></a><span class="fu">write(</span><span class="dv">1</span>,<span class="st">'(2F10.5)'</span><span class="fu">)</span> trx, try</span>
+<span id="cb3-30"><a href="#cb3-30" tabindex="-1"></a></span>
+<span id="cb3-31"><a href="#cb3-31" tabindex="-1"></a><span class="kw">do</span> i <span class="kw">=</span> <span class="dv">1</span>, itermax</span>
+<span id="cb3-32"><a href="#cb3-32" tabindex="-1"></a>  <span class="kw">call</span> <span class="fu">random_number</span>(prob)</span>
+<span id="cb3-33"><a href="#cb3-33" tabindex="-1"></a>  <span class="kw">if</span> (prob <span class="op">&lt;</span> p(<span class="dv">1</span>)) <span class="kw">then</span></span>
+<span id="cb3-34"><a href="#cb3-34" tabindex="-1"></a>    trx <span class="kw">=</span> a(<span class="dv">1</span>) <span class="kw">*</span> trx <span class="kw">+</span> b(<span class="dv">1</span>) <span class="kw">*</span> try <span class="kw">+</span> e(<span class="dv">1</span>)</span>
+<span id="cb3-35"><a href="#cb3-35" tabindex="-1"></a>    try <span class="kw">=</span> c(<span class="dv">1</span>) <span class="kw">*</span> trx <span class="kw">+</span> d(<span class="dv">1</span>) <span class="kw">*</span> try <span class="kw">+</span> f(<span class="dv">1</span>)</span>
+<span id="cb3-36"><a href="#cb3-36" tabindex="-1"></a>  <span class="kw">else if</span>(prob <span class="op">&lt;</span> (p(<span class="dv">1</span>) <span class="kw">+</span> p(<span class="dv">2</span>))) <span class="kw">then</span></span>
+<span id="cb3-37"><a href="#cb3-37" tabindex="-1"></a>    trx <span class="kw">=</span> a(<span class="dv">2</span>) <span class="kw">*</span> trx <span class="kw">+</span> b(<span class="dv">2</span>) <span class="kw">*</span> try <span class="kw">+</span> e(<span class="dv">2</span>)</span>
+<span id="cb3-38"><a href="#cb3-38" tabindex="-1"></a>    try <span class="kw">=</span> c(<span class="dv">2</span>) <span class="kw">*</span> trx <span class="kw">+</span> d(<span class="dv">2</span>) <span class="kw">*</span> try <span class="kw">+</span> f(<span class="dv">2</span>)</span>
+<span id="cb3-39"><a href="#cb3-39" tabindex="-1"></a>  <span class="kw">else if</span> ( prob <span class="op">&lt;</span> (p(<span class="dv">1</span>) <span class="kw">+</span> p(<span class="dv">2</span>) <span class="kw">+</span> p(<span class="dv">3</span>))) <span class="kw">then</span></span>
+<span id="cb3-40"><a href="#cb3-40" tabindex="-1"></a>    trx <span class="kw">=</span> a(<span class="dv">3</span>) <span class="kw">*</span> trx <span class="kw">+</span> b(<span class="dv">3</span>) <span class="kw">*</span> try <span class="kw">+</span> e(<span class="dv">3</span>)</span>
+<span id="cb3-41"><a href="#cb3-41" tabindex="-1"></a>    try <span class="kw">=</span> c(<span class="dv">3</span>) <span class="kw">*</span> trx <span class="kw">+</span> d(<span class="dv">3</span>) <span class="kw">*</span> try <span class="kw">+</span> f(<span class="dv">3</span>)</span>
+<span id="cb3-42"><a href="#cb3-42" tabindex="-1"></a>  <span class="kw">else</span></span>
+<span id="cb3-43"><a href="#cb3-43" tabindex="-1"></a>    trx <span class="kw">=</span> a(<span class="dv">4</span>) <span class="kw">*</span> trx <span class="kw">+</span> b(<span class="dv">4</span>) <span class="kw">*</span> try <span class="kw">+</span> e(<span class="dv">4</span>)</span>
+<span id="cb3-44"><a href="#cb3-44" tabindex="-1"></a>    try <span class="kw">=</span> c(<span class="dv">4</span>) <span class="kw">*</span> trx <span class="kw">+</span> d(<span class="dv">4</span>) <span class="kw">*</span> try <span class="kw">+</span> f(<span class="dv">4</span>)</span>
+<span id="cb3-45"><a href="#cb3-45" tabindex="-1"></a>  <span class="kw">end if</span></span>
+<span id="cb3-46"><a href="#cb3-46" tabindex="-1"></a>  <span class="fu">write(</span><span class="dv">1</span>,<span class="st">'(2F10.5)'</span><span class="fu">)</span> trx, try</span>
+<span id="cb3-47"><a href="#cb3-47" tabindex="-1"></a><span class="kw">end do</span></span>
+<span id="cb3-48"><a href="#cb3-48" tabindex="-1"></a><span class="co">close(1)</span></span>
+<span id="cb3-49"><a href="#cb3-49" tabindex="-1"></a><span class="kw">end program</span> BarnsleyFern</span></code></pre>
+</div>
+<ol start="4" style="list-style-type: decimal"><li>Load the modules for the GCC compiler. We will learn about modules
+in the next lecture.</li>
+</ol><pre><code>~$ module purge
+~$ module load lang/gcc/12.2.0 </code></pre>
+<ol start="5" style="list-style-type: decimal"><li>Compile the code with the following command:</li>
+</ol><pre><code>gfortran fern.f90 -o fern</code></pre>
+<ol start="6" style="list-style-type: decimal"><li>Execute the code</li>
+</ol><pre><code><span><span class="va">.</span><span class="op">/</span><span class="va">fern</span></span></code></pre>
+<p>This will generate a file <code>plot.dat</code> that we can plot from
+Open On Demand</p>
+<ol start="7" style="list-style-type: decimal"><li><p>Direct the browser to <a href="https://ondemand-tf.hpc.wvu.edu" class="external-link">Thorny Flat Open On
+Demand</a></p></li>
+<li><p>Create a new Jupyter session</p></li>
+<li><p>On the jupyter-lab notebook enter the following
+commands:</p></li>
+</ol><pre><code>cd /scratch/gufranco/FERN
+
+pwd
+
+ls
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+X, Y = np.loadtxt('plot.dat', unpack=True)
+
+fig = plt.figure(figsize=(9, 9))
+ax=plt.gca()
+ax.set_aspect('equal')
+plt.xlim(-5,5)
+plt.ylim(0,10)
+plt.axis('Off')
+plt.title("Barnsley Fern")
+plt.scatter(X, Y, s=0.6, color='g', marker=',');</code></pre>
 </div>
 </div>
-<div class="section level3">
-<h3 id="emacs">Emacs<a class="anchor" aria-label="anchor" href="#emacs"></a></h3>
-<p>Emacs is an extensible, customizable, open-source text editor.
+</div>
+</div>
+</section><section><h2 class="section-heading" id="emacs">emacs<a class="anchor" aria-label="anchor" href="#emacs"></a></h2>
+<hr class="half-width"><p>Emacs is an extensible, customizable, open-source text editor.
 Together with <strong>vi/vim</strong> is one the most widely used
 editors in Linux/Unix environments. There are a big number of commands,
 customization and extra modules that can be integrated with Emacs. We
 will just briefly cover the basics as we did for
 <strong>nano</strong></p>
-<div class="section level4">
-<h4 id="opening-and-closing-the-editor-1">Opening and closing the editor<a class="anchor" aria-label="anchor" href="#opening-and-closing-the-editor-1"></a></h4>
+<div class="section level3">
+<h3 id="opening-and-closing-the-editor-1">Opening and closing the editor<a class="anchor" aria-label="anchor" href="#opening-and-closing-the-editor-1"></a></h3>
 <p>In addition to the terminal-base editor, <strong>emacs</strong> also
 has a GUI environment that could be selected by default. To ensure that
 you remain in terminal-based version use:</p>
-<pre><code>$ emacs -nw data.txt</code></pre>
+<pre><code>~$ emacs -nw data.txt</code></pre>
 <p>To leave the editor execute <kbd>Ctrl</kbd>+<kbd>X</kbd>
 <kbd>C</kbd>, if you want to save the file to disk use
 <kbd>Ctrl</kbd>+<kbd>X</kbd> <kbd>S</kbd>, another representation of the
@@ -612,15 +717,15 @@ keys to save and close could be <code>C-x C-s C-x C-c</code>, actually,
 the <kbd>Ctrl</kbd> key can be keep pressed while you hit the sequence
 <code>x s x c</code> to get the same effect.</p>
 </div>
-<div class="section level4">
-<h4 id="moving-around-the-file-1">Moving around the file<a class="anchor" aria-label="anchor" href="#moving-around-the-file-1"></a></h4>
+<div class="section level3">
+<h3 id="moving-around-the-file-1">Moving around the file<a class="anchor" aria-label="anchor" href="#moving-around-the-file-1"></a></h3>
 <p>To go to the beginning of the file use
 <kbd>Meta</kbd>+<kbd>&lt;</kbd> to the end of the file
 <kbd>Meta</kbd>+<kbd>&gt;</kbd>. To go to a given line number use
 <kbd>Ctrl</kbd>+<kbd>g</kbd> <kbd>Ctrl</kbd>+<kbd>g</kbd></p>
 </div>
-<div class="section level4">
-<h4 id="copy-cut-and-paste-1">Copy, cut and paste<a class="anchor" aria-label="anchor" href="#copy-cut-and-paste-1"></a></h4>
+<div class="section level3">
+<h3 id="copy-cut-and-paste-1">Copy, cut and paste<a class="anchor" aria-label="anchor" href="#copy-cut-and-paste-1"></a></h3>
 <p>To copy or cut regions of text starts by selecting the area of text
 that you want to copy or cut. Use <kbd>Ctrl</kbd>+<kbd>Space</kbd> to
 start selecting the area. To copy use <kbd>Meta</kbd>+<kbd>W</kbd> to
@@ -628,13 +733,12 @@ delete use <kbd>Ctrl</kbd>+<kbd>K</kbd>, to cut but save the contents
 <kbd>Ctrl</kbd>+<kbd>W</kbd>. Finally, to paste the contents of the
 region <kbd>Ctrl</kbd>+<kbd>Y</kbd></p>
 </div>
-<div class="section level4">
-<h4 id="search-for-text-and-search-and-replace-1">Search for text and search and Replace<a class="anchor" aria-label="anchor" href="#search-for-text-and-search-and-replace-1"></a></h4>
+<div class="section level3">
+<h3 id="search-for-text-and-search-and-replace-1">Search for text and search and Replace<a class="anchor" aria-label="anchor" href="#search-for-text-and-search-and-replace-1"></a></h3>
 <p>To search use <kbd>Ctrl</kbd>+<kbd>S</kbd>, you can repeat the
 command to searching for more matchs, to search and replace use
 <kbd>Meta</kbd>+<kbd>%</kbd> enter the text to search and the text to
 replace in place.</p>
-</div>
 </div>
 <div class="section level3">
 <h3 id="reference-1">Reference<a class="anchor" aria-label="anchor" href="#reference-1"></a></h3>
@@ -650,19 +754,17 @@ images.</p>
 <p><a href="../%7B%7B%20page.root%20%7D%7D/fig/refcard-1.png">
 <img src="../%7B%7B%20page.root%20%7D%7D/fig/refcard-1.png" alt="Emacs Ref Card" class="figure"></a></p>
 </div>
-<div class="section level3">
-<h3 id="vivim">Vi/Vim<a class="anchor" aria-label="anchor" href="#vivim"></a></h3>
-<p>The third editor is <strong>vi</strong> and found by default
+</section><section><h2 class="section-heading" id="vivim">vi/vim<a class="anchor" aria-label="anchor" href="#vivim"></a></h2>
+<hr class="half-width"><p>The third editor is <strong>vi</strong> and found by default
 installed on Linux/Unix systems. The <em>Single UNIX Specification</em>
 and <em>POSIX</em> describe <strong>vi</strong>, so every conforming
 system must have it. A popular implementation of <strong>vi</strong> is
 <strong>vim</strong> that stands as an improved version. On our clusters
 we have <strong>vim</strong> installed.</p>
-<div class="section level4">
-<h4 id="opening-and-closing-the-editor-2">Opening and closing the editor<a class="anchor" aria-label="anchor" href="#opening-and-closing-the-editor-2"></a></h4>
+<div class="section level3">
+<h3 id="opening-and-closing-the-editor-2">Opening and closing the editor<a class="anchor" aria-label="anchor" href="#opening-and-closing-the-editor-2"></a></h3>
 <p>You can open a file on <strong>vim</strong> with</p>
-<pre><code>$ vim code.py</code></pre>
-<p>{: .language-bash }</p>
+<pre><code>~$ vim code.py</code></pre>
 <p>vi is a modal editor: it operates in either <em>insert mode</em>
 (where typed text becomes part of the document) or <em>normal mode</em>
 (where keystrokes are interpreted as commands that control the edit
@@ -677,8 +779,8 @@ back to <em>normal mode</em></p>
 <kbd>ESC</kbd> follow by <code>:x</code> To just save the file and
 continue editing type <kbd>ESC</kbd> follow by <code>:w</code>.</p>
 </div>
-<div class="section level4">
-<h4 id="moving-around-the-file-2">Moving around the file<a class="anchor" aria-label="anchor" href="#moving-around-the-file-2"></a></h4>
+<div class="section level3">
+<h3 id="moving-around-the-file-2">Moving around the file<a class="anchor" aria-label="anchor" href="#moving-around-the-file-2"></a></h3>
 <p>On vim you can use the arrow keys to move around. In the traditional
 <strong>vi</strong> you have to use the following keys (on normal
 mode):</p>
@@ -693,14 +795,14 @@ mode):</p>
 </ul><p>Go to the first line using <kbd>ESC</kbd> follow by <code>:1</code>.
 Go to the last line using <kbd>ESC</kbd> follow by <code>:$</code>.</p>
 </div>
-<div class="section level4">
-<h4 id="copy-cut-and-paste-2">Copy, cut and paste<a class="anchor" aria-label="anchor" href="#copy-cut-and-paste-2"></a></h4>
+<div class="section level3">
+<h3 id="copy-cut-and-paste-2">Copy, cut and paste<a class="anchor" aria-label="anchor" href="#copy-cut-and-paste-2"></a></h3>
 <p>To copy areas of text you start by entering in visual mode with
 <kbd>v</kbd>, selecting the area of interest and using <kbd>d</kbd> to
 delete, <kbd>y</kbd> to copy and <kbd>p</kbd> to paste.</p>
 </div>
-<div class="section level4">
-<h4 id="search-for-text-and-search-and-replace-2">Search for text and search and Replace<a class="anchor" aria-label="anchor" href="#search-for-text-and-search-and-replace-2"></a></h4>
+<div class="section level3">
+<h3 id="search-for-text-and-search-and-replace-2">Search for text and search and Replace<a class="anchor" aria-label="anchor" href="#search-for-text-and-search-and-replace-2"></a></h3>
 <p>To search use <kbd>/</kbd> and the text you want to search, you can
 repeat the command to searching for more matches with <kbd>n</kbd>, to
 search and replace use
@@ -709,31 +811,38 @@ text to search and the text to replace everywhere. Use
 <code>:%s/&lt;search pattern&gt;/&lt;replace text&gt;/gc</code> to ask
 for confirmation before each modification.</p>
 </div>
-</div>
 <div class="section level3">
 <h3 id="reference-2">Reference<a class="anchor" aria-label="anchor" href="#reference-2"></a></h3>
 <p>A very beautiful Reference Card for vim can be found here: <a href="https://vimcheatsheet.com/" class="external-link">Vim CheatSheet</a></p>
 <p><a href="https://external-preview.redd.it/iigrixvxp5aYN9ox7Gr1dfI_rhLRotWlLsCafjJqjEQ.png?auto=webp&amp;s=1594ddc17408cb9186a73c2a6d1a1bf1e00769dd" class="external-link">
 <img src="https://external-preview.redd.it/iigrixvxp5aYN9ox7Gr1dfI_rhLRotWlLsCafjJqjEQ.png?auto=webp&amp;s=1594ddc17408cb9186a73c2a6d1a1bf1e00769dd" alt="Vim Ref Card" class="figure"></a></p>
-<blockquote>
-<h2 id="exercise-1">Exercise 1</h2>
+<div id="exercise-1" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<span class="callout-header">Discussion</span>
+<div id="exercise-1" class="callout-inner">
+<h3 class="callout-title">Exercise 1</h3>
+<div class="callout-content">
 <p>Select an editor. The challenge is write this code in a file called
 <code>Sierpinski.c</code></p>
-<pre><code>#include &lt;stdio.h&gt;
-
-#define SIZE (1 &lt;&lt; 5)
-int main()
-{
-    int x, y, i;
-    for (y = SIZE - 1; y &gt;= 0; y--, putchar('\n')) {
-        for (i = 0; i &lt; y; i++) putchar(' ');
-        for (x = 0; x + y &lt; SIZE; x++)
-            printf((x &amp; y) ? "  " : "* ");
-    }
-    return 0;
-}
-</code></pre>
-<p>{: .source}</p>
+<div class="codewrapper sourceCode" id="cb10">
+<h3 class="code-label">C<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode c" tabindex="0"><code class="sourceCode c"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a><span class="pp">#define SIZE </span><span class="op">(</span><span class="dv">1</span><span class="pp"> </span><span class="op">&lt;&lt;</span><span class="pp"> </span><span class="dv">5</span><span class="op">)</span></span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span></span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a>     <span class="dt">int</span> x<span class="op">,</span> y<span class="op">,</span> i<span class="op">;</span></span>
+<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a>     <span class="cf">for</span> <span class="op">(</span>y <span class="op">=</span> SIZE <span class="op">-</span> <span class="dv">1</span><span class="op">;</span> y <span class="op">&gt;=</span> <span class="dv">0</span><span class="op">;</span> y<span class="op">--,</span> putchar<span class="op">(</span><span class="ch">'</span><span class="sc">\n</span><span class="ch">'</span><span class="op">))</span> <span class="op">{</span></span>
+<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a>         <span class="cf">for</span> <span class="op">(</span>i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> y<span class="op">;</span> i<span class="op">++)</span> putchar<span class="op">(</span><span class="ch">' '</span><span class="op">);</span></span>
+<span id="cb10-9"><a href="#cb10-9" tabindex="-1"></a>         <span class="cf">for</span> <span class="op">(</span>x <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> x <span class="op">+</span> y <span class="op">&lt;</span> SIZE<span class="op">;</span> x<span class="op">++)</span></span>
+<span id="cb10-10"><a href="#cb10-10" tabindex="-1"></a>             printf<span class="op">((</span>x <span class="op">&amp;</span> y<span class="op">)</span> <span class="op">?</span> <span class="st">"  "</span> <span class="op">:</span> <span class="st">"* "</span><span class="op">);</span></span>
+<span id="cb10-11"><a href="#cb10-11" tabindex="-1"></a>     <span class="op">}</span></span>
+<span id="cb10-12"><a href="#cb10-12" tabindex="-1"></a>     <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb10-13"><a href="#cb10-13" tabindex="-1"></a><span class="op">}</span></span></code></pre>
+</div>
 <p>For those using <strong>vi</strong>, here is the challenge.
 <strong>You cannot use the arrow keys</strong>. Not a single time! It is
 pretty hard if you are not used to it, but it is a good exercise to
@@ -745,42 +854,56 @@ and editing only after being copied.</p>
 <p>Once you have successfully written the source code, you can see your
 hard work in action.</p>
 <p>On the terminal screen, execute this:</p>
-<pre><code>$ gcc Sierpinski.c -o Sierpinski</code></pre>
+<pre><code>~$ gcc Sierpinski.c -o Sierpinski</code></pre>
 <p>This will compile your source code <code>Sierpinski.c</code> in C
 into a binary executable called <code>Sierpinski</code>. Execute the
 code with:</p>
-<pre><code>$ ./Sierpinski</code></pre>
+<pre><code>~$ ./Sierpinski</code></pre>
 <p>The resulting output is kind of a surprise so I will not post it
 here. The original code comes from <a href="https://www.rosettacode.org/wiki/Sierpinski_triangle#C" class="external-link">rosettacode.org</a></p>
-<p>{: .challenge}</p>
-</blockquote>
-<blockquote>
-<h2 id="exercise-2-needs-x11">Exercise 2 (Needs X11)</h2>
+</div>
+</div>
+</div>
+<div id="exercise-2-needs-x11" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<span class="callout-header">Discussion</span>
+<div id="exercise-2-needs-x11" class="callout-inner">
+<h3 class="callout-title">Exercise 2 (Needs X11)</h3>
+<div class="callout-content">
 <p>On the folder
 <code>workshops_hands-on/Introduction_HPC/4._Terminal-based_Editors</code>
 you will find a Java code on file <code>JuliaSet.java</code>.</p>
 <p>For this exercise you need to connect to the cluster with X11
 support. On Thorny Flat that will be:</p>
-<pre><code>$ ssh -X &lt;username&gt;@ssh.wvu.edu
-$ ssh -X &lt;username&gt;@tf.hpc.wvu.edu</code></pre>
+<pre><code>~$ ssh -X &lt;username&gt;@ssh.wvu.edu
+~$ ssh -X &lt;username&gt;@tf.hpc.wvu.edu</code></pre>
 <p>Once you are there execute this command to load the Java compiler</p>
-<pre><code>$ module load lang/java/jdk1.8.0_201</code></pre>
+<pre><code>~$ module load lang/java/jdk1.8.0_201</code></pre>
 <p>Once you have loaded the module go to the folder
 <code>workshops_hands-on/Introduction_HPC/4._Terminal-based_Editors</code>
 and compile &gt; the Java code with this command</p>
-<pre><code>$ javac JuliaSet.java</code></pre>
+<pre><code>~$ javac JuliaSet.java</code></pre>
 <p>and execute the code with:</p>
-<pre><code>$ java JuliaSet</code></pre>
+<pre><code> ~$ java JuliaSet</code></pre>
 <p>A window should pop up on your screen. Now, use one of the editors
 presented on this episode and do the changes mentioned on the source
 code to made the code &gt; multithreaded. Repeat the same steps for
 compiling and executing the code.</p>
 <p>Change a bit the parameters on the code, the size of the window for
 example or the constants CX and CY.</p>
-<p>{: .challenge}</p>
-</blockquote>
-<blockquote>
-<h2 id="exercise-3">Exercise 3</h2>
+</div>
+</div>
+</div>
+<div id="exercise-3" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<span class="callout-header">Discussion</span>
+<div id="exercise-3" class="callout-inner">
+<h3 class="callout-title">Exercise 3</h3>
+<div class="callout-content">
 <p>On the folder
 <code>workshops_hands-on/Introduction_HPC/4._Terminal-based_Editors</code>
 there is a script <code>download-covid19.sh</code>. The script will
@@ -793,11 +916,18 @@ editor. Go to to the first and last line on that file. The file has too
 many lines to be scrolled line by line.</p>
 <p>Search for the line with the string
 <code>United States,2021-06-30</code></p>
-<p>{: .challenge}</p>
-</blockquote>
-<blockquote>
-<h2 id="why-vi-was-programmed-to-not-use-the-arrow-keys">Why vi was
-programmed to not use the arrow keys?</h2>
+</div>
+</div>
+</div>
+<div id="why-vi-was-programmed-to-not-use-the-arrow-keys" class="callout testimonial">
+<div class="callout-square">
+<i class="callout-icon" data-feather="heart"></i>
+</div>
+<span class="callout-header">Testimonial</span>
+<div id="why-vi-was-programmed-to-not-use-the-arrow-keys" class="callout-inner">
+<h3 class="callout-title">Why vi was programmed to not use the arrow
+keys?</h3>
+<div class="callout-content">
 <p>From <a href="https://en.wikipedia.org/wiki/Vi" class="external-link">Wikipedia</a> with a
 anecdotal story from <a href="https://www.theregister.co.uk/2003/09/11/bill_joys_greatest_gift/" class="external-link">The
 register</a></p>
@@ -813,8 +943,9 @@ type ahead of the display were a result of the slow 300 baud modem he
 used when developing the software and that he wanted to be productive
 when the screen was painting slower than he could think.</p>
 <p><a title="No machine-readable author provided. StuartBrady assumed (based on copyright claims). [CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)], via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:KB_Terminal_ADM3A.svg" class="external-link"><img width="512" alt="KB Terminal ADM3A" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/KB_Terminal_ADM3A.svg/512px-KB_Terminal_ADM3A.svg.png" class="figure"></a></p>
-<p>{: .testimonial}</p>
-</blockquote>
+</div>
+</div>
+</div>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -891,9 +1022,9 @@ any links that you are not going to use.
   "creativeWorkStatus": "active",
   "url": "https://carpentries.github.io/workbench-template-md/instructor/202-editors.html",
   "identifier": "https://carpentries.github.io/workbench-template-md/instructor/202-editors.html",
-  "dateCreated": "2025-08-18",
-  "dateModified": "2025-08-18",
-  "datePublished": "2025-08-19"
+  "dateCreated": "2025-08-21",
+  "dateModified": "2025-08-21",
+  "datePublished": "2025-08-21"
 }
 
   </script><script>
