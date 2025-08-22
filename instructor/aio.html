@@ -1059,7 +1059,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-201-cli"><p>Content from <a href="201-cli.html">Command Line Interface: The Shell</a></p>
 <hr>
-<p>Last updated on 2025-08-21 |
+<p>Last updated on 2025-08-22 |
 
         <a href="https://github.com/carpentries/workbench-template-md/edit/main/episodes/201-cli.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 60 minutes</p>
@@ -1701,7 +1701,7 @@ the <code>Introduction_HPC</code> folder to its parent folder.</p>
 <div class="codewrapper sourceCode" id="cb30">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a><span class="ex">~cd</span> ..</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a><span class="ex">~$</span> cd ..</span></code></pre>
 </div>
 <p>You should now be in the <code>workshops_hands-on</code> directory
 (check the command prompt or run <code>pwd</code>).</p>
@@ -2055,9 +2055,9 @@ most of the time, you will be using a very small number of them.
 Learning those will speed up your learning curve.</p>
 </div>
 <div class="section level3">
-<h3 id="pwd-cf-and-mkdir-folder-commands">
-<code>pwd</code>, <code>cf</code>, and <code>mkdir</code>: Folder
-commands<a class="anchor" aria-label="anchor" href="#pwd-cf-and-mkdir-folder-commands"></a>
+<h3 id="pwd-cd-and-mkdir-folder-commands">
+<code>pwd</code>, <code>cd</code>, and <code>mkdir</code>: Folder
+commands<a class="anchor" aria-label="anchor" href="#pwd-cd-and-mkdir-folder-commands"></a>
 </h3>
 <p>As mentioned, UNIX organizes data in storage devices as a tree. The
 commands <code>pwd</code>, <code>cd</code> and <code>mkdir</code> will
@@ -3201,7 +3201,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-202-editors"><p>Content from <a href="202-editors.html">Terminal-based Text Editors: nano, emacs and vim</a></p>
 <hr>
-<p>Last updated on 2025-08-21 |
+<p>Last updated on 2025-08-22 |
 
         <a href="https://github.com/carpentries/workbench-template-md/edit/main/episodes/202-editors.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 60 minutes</p>
@@ -3342,7 +3342,7 @@ editor.</p>
 file and the arrow keys will move you back and for on the same line or
 up and down on lines. For large files is always good to learn how to
 move to the begining and end of the file. Use
-<kbd>Meta</kbd>+<kbd> </kbd> and <kbd>Meta</kbd>+<kbd>/</kbd> to do
+<kbd>Meta</kbd>+<kbd>\</kbd> and <kbd>Meta</kbd>+<kbd>/</kbd> to do
 that. Those key combinations are also shown as <code>M-\</code> (first
 line) <code>M-/</code> (last line). To move to a specific line and
 column number use <kbd>Ctrl</kbd>+<kbd>_</kbd>, shown on the bottom bar
@@ -3358,14 +3358,14 @@ Use <kbd>Meta</kbd>+<kbd>A</kbd> to start selecting the area to copy use
 <kbd>Meta</kbd>+<kbd>Delete</kbd>, to cut but save the contents
 <kbd>Ctrl</kbd>+<kbd>K</kbd> to paste the contents of the region
 <kbd>Ctrl</kbd>+<kbd>U</kbd></p>
-<div class="section level4">
-<h4 id="search-for-text-and-search-and-replace">Search for text and search and Replace<a class="anchor" aria-label="anchor" href="#search-for-text-and-search-and-replace"></a>
-</h4>
+</div>
+<div class="section level3">
+<h3 id="search-for-text-and-search-and-replace">Search for text and search and Replace<a class="anchor" aria-label="anchor" href="#search-for-text-and-search-and-replace"></a>
+</h3>
 <p>To search use <kbd>Ctrl</kbd>+<kbd>W</kbd>, you can repeat the
 command to searching for more matches, to search and replace use
-<kbd>Ctrl</kbd>+<kbd> </kbd> enter the text to search and the text to
+<kbd>Ctrl</kbd>+<kbd>\</kbd> enter the text to search and the text to
 replace in place.</p>
-</div>
 </div>
 <div class="section level3">
 <h3 id="reference">Reference<a class="anchor" aria-label="anchor" href="#reference"></a>
@@ -3377,83 +3377,79 @@ the symbol "^", it means to press the Control <kbd>Ctrl</kbd> key; the
 symbol "M-" is called Meta, but in most keyboards is identified with the
 <kbd>Alt</kbd> key or <kbd>Windows</kbd> key. See above for the
 discussion about the use of <kbd>Meta</kbd> key.</p>
-<div class="codewrapper sourceCode" id="cb2">
-<h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">^G</span>  <span class="er">(</span><span class="ex">F1</span><span class="kw">)</span>            <span class="ex">Display</span> this help text</span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="ex">^X</span>  <span class="er">(</span><span class="ex">F2</span><span class="kw">)</span>            <span class="ex">Close</span> the current file buffer / Exit from nano</span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="ex">^O</span>  <span class="er">(</span><span class="ex">F3</span><span class="kw">)</span>            <span class="ex">Write</span> the current file to disk</span>
-<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="ex">^J</span>  <span class="er">(</span><span class="ex">F4</span><span class="kw">)</span>            <span class="ex">Justify</span> the current paragraph</span>
-<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="ex">^R</span>  <span class="er">(</span><span class="ex">F5</span><span class="kw">)</span>            <span class="ex">Insert</span> another file into the current one</span>
-<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a><span class="ex">^W</span>  <span class="er">(</span><span class="ex">F6</span><span class="kw">)</span>            <span class="ex">Search</span> for a string or a regular expression</span>
-<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="ex">^Y</span>  <span class="er">(</span><span class="ex">F7</span><span class="kw">)</span>            <span class="ex">Move</span> to the previous screen</span>
-<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a><span class="ex">^V</span>  <span class="er">(</span><span class="ex">F8</span><span class="kw">)</span>            <span class="ex">Move</span> to the next screen</span>
-<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a><span class="ex">^K</span>  <span class="er">(</span><span class="ex">F9</span><span class="kw">)</span>            <span class="ex">Cut</span> the current line and store it in the cutbuffer</span>
-<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a><span class="ex">^U</span>  <span class="er">(</span><span class="ex">F10</span><span class="kw">)</span>           <span class="ex">Uncut</span> from the cutbuffer into the current line</span>
-<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a><span class="ex">^C</span>  <span class="er">(</span><span class="ex">F11</span><span class="kw">)</span>           <span class="ex">Display</span> the position of the cursor</span>
-<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a><span class="ex">^T</span>  <span class="er">(</span><span class="ex">F12</span><span class="kw">)</span>           <span class="ex">Invoke</span> the spell checker, if available</span>
-<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a></span>
-<span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a><span class="ex">^_</span>  <span class="er">(</span><span class="ex">F13</span><span class="kw">)</span>   <span class="kw">(</span><span class="ex">M-G</span><span class="kw">)</span>   <span class="ex">Go</span> to line and column number</span>
-<span id="cb2-17"><a href="#cb2-17" tabindex="-1"></a><span class="ex">^\ </span> <span class="er">(</span><span class="ex">F14</span><span class="kw">)</span>   <span class="kw">(</span><span class="ex">M-R</span><span class="kw">)</span>   <span class="ex">Replace</span> a string or a regular expression</span>
-<span id="cb2-18"><a href="#cb2-18" tabindex="-1"></a><span class="ex">^^</span>  <span class="er">(</span><span class="ex">F15</span><span class="kw">)</span>   <span class="kw">(</span><span class="ex">M-A</span><span class="kw">)</span>   <span class="ex">Mark</span> text at the cursor position</span>
-<span id="cb2-19"><a href="#cb2-19" tabindex="-1"></a>    <span class="kw">(</span><span class="ex">F16</span><span class="kw">)</span>   <span class="kw">(</span><span class="ex">M-W</span><span class="kw">)</span>   <span class="ex">Repeat</span> last search</span>
-<span id="cb2-20"><a href="#cb2-20" tabindex="-1"></a></span>
-<span id="cb2-21"><a href="#cb2-21" tabindex="-1"></a><span class="ex">M-^</span>         <span class="er">(</span><span class="ex">M-6</span><span class="kw">)</span>   <span class="ex">Copy</span> the current line and store it in the cutbuffer</span>
-<span id="cb2-22"><a href="#cb2-22" tabindex="-1"></a><span class="ex">M-}</span>                 Indent the current line</span>
-<span id="cb2-23"><a href="#cb2-23" tabindex="-1"></a><span class="ex">M-{</span>                 Unindent the current line</span>
-<span id="cb2-24"><a href="#cb2-24" tabindex="-1"></a></span>
-<span id="cb2-25"><a href="#cb2-25" tabindex="-1"></a><span class="ex">^F</span>                  Move forward one character</span>
-<span id="cb2-26"><a href="#cb2-26" tabindex="-1"></a><span class="ex">^B</span>                  Move back one character</span>
-<span id="cb2-27"><a href="#cb2-27" tabindex="-1"></a><span class="ex">^Space</span>              Move forward one word</span>
-<span id="cb2-28"><a href="#cb2-28" tabindex="-1"></a><span class="ex">M-Space</span>             Move back one word</span>
-<span id="cb2-29"><a href="#cb2-29" tabindex="-1"></a><span class="ex">^P</span>                  Move to the previous line</span>
-<span id="cb2-30"><a href="#cb2-30" tabindex="-1"></a><span class="ex">^N</span>                  Move to the next line</span>
-<span id="cb2-31"><a href="#cb2-31" tabindex="-1"></a><span class="ex">^A</span>                  Move to the beginning of the current line</span>
-<span id="cb2-32"><a href="#cb2-32" tabindex="-1"></a><span class="ex">^E</span>                  Move to the end of the current line</span>
-<span id="cb2-33"><a href="#cb2-33" tabindex="-1"></a><span class="ex">M-</span><span class="er">(</span>         <span class="kw">(</span><span class="ex">M-9</span><span class="kw">)</span>   <span class="ex">Move</span> to the beginning of the current paragraph</span>
-<span id="cb2-34"><a href="#cb2-34" tabindex="-1"></a><span class="ex">M-</span><span class="kw">)</span>         <span class="kw">(</span><span class="ex">M-0</span><span class="kw">)</span>   <span class="ex">Move</span> to the end of the current paragraph</span>
-<span id="cb2-35"><a href="#cb2-35" tabindex="-1"></a><span class="ex">M-\ </span>        <span class="er">(</span><span class="ex">M-</span><span class="kw">|)</span>   <span class="ex">Move</span> to the first line of the file</span>
-<span id="cb2-36"><a href="#cb2-36" tabindex="-1"></a><span class="ex">M-/</span>         <span class="er">(</span><span class="ex">M-?</span><span class="kw">)</span>   <span class="ex">Move</span> to the last line of the file</span>
-<span id="cb2-37"><a href="#cb2-37" tabindex="-1"></a></span>
-<span id="cb2-38"><a href="#cb2-38" tabindex="-1"></a><span class="ex">M-]</span>                 Move to the matching bracket</span>
-<span id="cb2-39"><a href="#cb2-39" tabindex="-1"></a><span class="ex">M--</span>                 Scroll up one line without scrolling the cursor</span>
-<span id="cb2-40"><a href="#cb2-40" tabindex="-1"></a><span class="ex">M-+</span>         <span class="er">(</span><span class="ex">M-=</span><span class="kw">)</span>   <span class="ex">Scroll</span> down one line without scrolling the cursor</span>
-<span id="cb2-41"><a href="#cb2-41" tabindex="-1"></a></span>
-<span id="cb2-42"><a href="#cb2-42" tabindex="-1"></a><span class="ex">M-</span><span class="op">&lt;</span>         <span class="er">(</span><span class="ex">M-,</span><span class="kw">)</span>   <span class="ex">Switch</span> to the previous file buffer</span>
-<span id="cb2-43"><a href="#cb2-43" tabindex="-1"></a><span class="ex">M-</span><span class="op">&gt;</span>         <span class="er">(</span><span class="ex">M-.</span><span class="kw">)</span>   <span class="ex">Switch</span> to the next file buffer</span>
-<span id="cb2-44"><a href="#cb2-44" tabindex="-1"></a></span>
-<span id="cb2-45"><a href="#cb2-45" tabindex="-1"></a><span class="ex">M-V</span>                 Insert the next keystroke verbatim</span>
-<span id="cb2-46"><a href="#cb2-46" tabindex="-1"></a><span class="ex">^I</span>                  Insert a tab at the cursor position</span>
-<span id="cb2-47"><a href="#cb2-47" tabindex="-1"></a><span class="ex">^M</span>                  Insert a newline at the cursor position</span>
-<span id="cb2-48"><a href="#cb2-48" tabindex="-1"></a><span class="ex">^D</span>                  Delete the character under the cursor</span>
-<span id="cb2-49"><a href="#cb2-49" tabindex="-1"></a><span class="ex">^H</span>                  Delete the character to the left of the cursor</span>
-<span id="cb2-50"><a href="#cb2-50" tabindex="-1"></a><span class="ex">M-T</span>                 Cut from the cursor position to the end of the file</span>
-<span id="cb2-51"><a href="#cb2-51" tabindex="-1"></a></span>
-<span id="cb2-52"><a href="#cb2-52" tabindex="-1"></a><span class="ex">M-J</span>                 Justify the entire file</span>
-<span id="cb2-53"><a href="#cb2-53" tabindex="-1"></a><span class="ex">M-D</span>                 Count the number of words, lines, and characters</span>
-<span id="cb2-54"><a href="#cb2-54" tabindex="-1"></a><span class="ex">^L</span>                  Refresh <span class="er">(</span><span class="ex">redraw</span><span class="kw">)</span> <span class="ex">the</span> current screen</span>
-<span id="cb2-55"><a href="#cb2-55" tabindex="-1"></a></span>
-<span id="cb2-56"><a href="#cb2-56" tabindex="-1"></a><span class="ex">M-X</span>                 Help mode enable/disable</span>
-<span id="cb2-57"><a href="#cb2-57" tabindex="-1"></a><span class="ex">M-C</span>                 Constant cursor position display enable/disable</span>
-<span id="cb2-58"><a href="#cb2-58" tabindex="-1"></a><span class="ex">M-O</span>                 Use of one more line for editing enable/disable</span>
-<span id="cb2-59"><a href="#cb2-59" tabindex="-1"></a><span class="ex">M-S</span>                 Smooth scrolling enable/disable</span>
-<span id="cb2-60"><a href="#cb2-60" tabindex="-1"></a><span class="ex">M-P</span>                 Whitespace display enable/disable</span>
-<span id="cb2-61"><a href="#cb2-61" tabindex="-1"></a><span class="ex">M-Y</span>                 Color syntax highlighting enable/disable</span>
-<span id="cb2-62"><a href="#cb2-62" tabindex="-1"></a></span>
-<span id="cb2-63"><a href="#cb2-63" tabindex="-1"></a><span class="ex">M-H</span>                 Smart home key enable/disable</span>
-<span id="cb2-64"><a href="#cb2-64" tabindex="-1"></a><span class="ex">M-I</span>                 Auto indent enable/disable</span>
-<span id="cb2-65"><a href="#cb2-65" tabindex="-1"></a><span class="ex">M-K</span>                 Cut to end enable/disable</span>
-<span id="cb2-66"><a href="#cb2-66" tabindex="-1"></a><span class="ex">M-L</span>                 Long line wrapping enable/disable</span>
-<span id="cb2-67"><a href="#cb2-67" tabindex="-1"></a><span class="ex">M-Q</span>                 Conversion of typed tabs to spaces enable/disable</span>
-<span id="cb2-68"><a href="#cb2-68" tabindex="-1"></a></span>
-<span id="cb2-69"><a href="#cb2-69" tabindex="-1"></a><span class="ex">M-B</span>                 Backup files enable/disable</span>
-<span id="cb2-70"><a href="#cb2-70" tabindex="-1"></a><span class="ex">M-F</span>                 Multiple file buffers enable/disable</span>
-<span id="cb2-71"><a href="#cb2-71" tabindex="-1"></a><span class="ex">M-M</span>                 Mouse support enable/disable</span>
-<span id="cb2-72"><a href="#cb2-72" tabindex="-1"></a><span class="ex">M-N</span>                 No conversion from DOS/Mac format enable/disable</span>
-<span id="cb2-73"><a href="#cb2-73" tabindex="-1"></a><span class="ex">M-Z</span>                 Suspension enable/disable</span></code></pre>
-</div>
+<pre><code>    ^G  (F1)            Display this help text
+    ^X  (F2)            Close the current file buffer / Exit from nano
+    ^O  (F3)            Write the current file to disk
+    ^J  (F4)            Justify the current paragraph
+
+    ^R  (F5)            Insert another file into the current one
+    ^W  (F6)            Search for a string or a regular expression
+    ^Y  (F7)            Move to the previous screen
+    ^V  (F8)            Move to the next screen
+
+    ^K  (F9)            Cut the current line and store it in the cutbuffer
+    ^U  (F10)           Uncut from the cutbuffer into the current line
+    ^C  (F11)           Display the position of the cursor
+    ^T  (F12)           Invoke the spell checker, if available
+
+    ^_  (F13)   (M-G)   Go to line and column number
+    ^\  (F14)   (M-R)   Replace a string or a regular expression
+    ^^  (F15)   (M-A)   Mark text at the cursor position
+        (F16)   (M-W)   Repeat last search
+
+    M-^         (M-6)   Copy the current line and store it in the cutbuffer
+    M-}                 Indent the current line
+    M-{                 Unindent the current line
+
+    ^F                  Move forward one character
+    ^B                  Move back one character
+    ^Space              Move forward one word
+    M-Space             Move back one word
+    ^P                  Move to the previous line
+    ^N                  Move to the next line
+    ^A                  Move to the beginning of the current line
+    ^E                  Move to the end of the current line
+    M-(         (M-9)   Move to the beginning of the current paragraph
+    M-)         (M-0)   Move to the end of the current paragraph
+    M-\         (M-|)   Move to the first line of the file
+    M-/         (M-?)   Move to the last line of the file
+
+    M-]                 Move to the matching bracket
+    M--                 Scroll up one line without scrolling the cursor
+    M-+         (M-=)   Scroll down one line without scrolling the cursor
+
+    M-&lt;         (M-,)   Switch to the previous file buffer
+    M-&gt;         (M-.)   Switch to the next file buffer
+
+    M-V                 Insert the next keystroke verbatim
+    ^I                  Insert a tab at the cursor position
+    ^M                  Insert a newline at the cursor position
+    ^D                  Delete the character under the cursor
+    ^H                  Delete the character to the left of the cursor
+    M-T                 Cut from the cursor position to the end of the file
+
+    M-J                 Justify the entire file
+    M-D                 Count the number of words, lines, and characters
+    ^L                  Refresh (redraw) the current screen
+
+    M-X                 Help mode enable/disable
+    M-C                 Constant cursor position display enable/disable
+    M-O                 Use of one more line for editing enable/disable
+    M-S                 Smooth scrolling enable/disable
+    M-P                 Whitespace display enable/disable
+    M-Y                 Color syntax highlighting enable/disable
+
+    M-H                 Smart home key enable/disable
+    M-I                 Auto indent enable/disable
+    M-K                 Cut to end enable/disable
+    M-L                 Long line wrapping enable/disable
+    M-Q                 Conversion of typed tabs to spaces enable/disable
+
+    M-B                 Backup files enable/disable
+    M-F                 Multiple file buffers enable/disable
+    M-M                 Mouse support enable/disable
+    M-N                 No conversion from DOS/Mac format enable/disable
+    M-Z                 Suspension enable/disable</code></pre>
 <div id="exercise-barnsley_fern" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
@@ -3533,11 +3529,11 @@ in the next lecture.</li>
 <ol start="5" style="list-style-type: decimal">
 <li>Compile the code with the following command:</li>
 </ol>
-<pre><code>gfortran fern.f90 -o fern</code></pre>
+<pre><code>~$ gfortran fern.f90 -o fern</code></pre>
 <ol start="6" style="list-style-type: decimal">
 <li>Execute the code</li>
 </ol>
-<pre><code><span><span class="va">.</span><span class="op">/</span><span class="va">fern</span></span></code></pre>
+<pre><code>~$ ./fern</code></pre>
 <p>This will generate a file <code>plot.dat</code> that we can plot from
 Open On Demand</p>
 <ol start="7" style="list-style-type: decimal">
@@ -3629,10 +3625,9 @@ commands For example <a href="https://www.gnu.org/software/emacs/refcards/pdf/re
 Emacs Reference Card</a> can show you most commands that you need.</p>
 <p>Below you can see the same 2 page Reference Card as individual
 images.</p>
-<p><a href="../%7B%7B%20page.root%20%7D%7D/fig/refcard-0.png">
-<img src="../%7B%7B%20page.root%20%7D%7D/fig/refcard-0.png" alt="Emacs Ref Card" class="figure"></a></p>
-<p><a href="../%7B%7B%20page.root%20%7D%7D/fig/refcard-1.png">
-<img src="../%7B%7B%20page.root%20%7D%7D/fig/refcard-1.png" alt="Emacs Ref Card" class="figure"></a></p>
+<figure><img src="../fig/refcard-0.png" style="width:95.0%" alt="emacs Reference Card (page 1)" class="figure mx-auto d-block"><div class="figcaption">emacs Reference Card (page 1)</div>
+</figure><figure><img src="../fig/refcard-1.png" style="width:95.0%" alt="emacs Reference Card (page 2)" class="figure mx-auto d-block"><div class="figcaption">emacs Reference Card (page 2)</div>
+</figure>
 </div>
 </section><section><h2 class="section-heading" id="vivim">vi/vim<a class="anchor" aria-label="anchor" href="#vivim"></a>
 </h2>
@@ -4867,7 +4862,7 @@ have just one.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 
 </div>
@@ -5514,7 +5509,7 @@ Internet access.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 
 </div>
@@ -5549,7 +5544,7 @@ access. Write a submission script and submit.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 
 </div>
@@ -6365,9 +6360,9 @@ any links that you are not going to use.
   "creativeWorkStatus": "active",
   "url": "https://carpentries.github.io/workbench-template-md/instructor/aio.html",
   "identifier": "https://carpentries.github.io/workbench-template-md/instructor/aio.html",
-  "dateCreated": "2025-08-21",
-  "dateModified": "2025-08-21",
-  "datePublished": "2025-08-21"
+  "dateCreated": "2025-08-22",
+  "dateModified": "2025-08-22",
+  "datePublished": "2025-08-22"
 }
 
   </script><script>
