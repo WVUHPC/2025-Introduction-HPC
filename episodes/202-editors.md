@@ -37,10 +37,10 @@ There is nothing wrong of using one of those editors over the others. Beginners 
 **nano** and **emacs** are *direct input editors*, ie you start writing directly as soon as you type with the keyboard. In contrast **vi/vim** is a *modal* editor. You type keys to change modes on the editor, some of these keys allowing you to start typing or return to *command mode* where new commands can be entered.
 In any case there are quite a large number of commands and key combinations that can be entered on any of those editors. For this episode we will concentrate our attention on a very specific set of skills that once learned will give you to work with text files. The skills are:
 
-   * Open the editor to open a file, save the file that is being edited or saving the file and leaving the editor.
-   * Move around the file being edited. Going to the beginning, the end or a specific line.
-   * Copy, cut and paste text on the same file.
-   * Search for a set of characters and use the search and replace functionality.
+- Open the editor to open a file, save the file that is being edited or saving the file and leaving the editor.
+- Move around the file being edited. Going to the beginning, the end or a specific line.
+- Copy, cut and paste text on the same file.
+- Search for a set of characters and use the search and replace functionality.
 
 There is far more to learn in a text editor, each of those skills can be go deeper into more complex functionality and that is the major difference between **nano** and the other two editor, the later giving you far more complexity and power in the skills at the price of a steeper learning curve.
 
@@ -71,22 +71,23 @@ Another option is to save the file with <kbd>Ctrl</kbd>+<kbd>O</kbd> but remaing
 ### Moving around the file
 
 On **nano** you can start typing as soon you open the file and the arrow keys will move you back and for on the same line or up and down on lines.
-For large files is always good to learn how to move to the begining and end of the file. Use <kbd>Meta</kbd>+<kbd>\ </kbd> and <kbd>Meta</kbd>+<kbd>/</kbd> to do that. Those key combinations are also shown as `M-\` (first line) `M-/` (last line).
+For large files is always good to learn how to move to the begining and end of the file. Use <kbd>Meta</kbd>+<kbd>\\</kbd> and <kbd>Meta</kbd>+<kbd>/</kbd> to do that. Those key combinations are also shown as `M-\` (first line) `M-/` (last line).
 To move to a specific line and column number use <kbd>Ctrl</kbd>+<kbd>_</kbd>, shown on the bottom bar as `^_`
 
 ### Copy, cut and paste
 
 The use the internal capabilities of the text editor to copy and paste starts by selecting the area of text that you want to copy or cut. Use <kbd>Meta</kbd>+<kbd>A</kbd> to start selecting the area to copy use <kbd>Meta</kbd>+<kbd>6</kbd> to delete use  <kbd>Meta</kbd>+<kbd>Delete</kbd>, to cut but save the contents  <kbd>Ctrl</kbd>+<kbd>K</kbd> to paste the contents of the region <kbd>Ctrl</kbd>+<kbd>U</kbd>
 
-#### Search for text and search and Replace
+### Search for text and search and Replace
 
-To search use  <kbd>Ctrl</kbd>+<kbd>W</kbd>, you can repeat the command to searching for more matches, to search and replace use <kbd>Ctrl</kbd>+<kbd>\ </kbd> enter the text to search and the text to replace in place.
+To search use  <kbd>Ctrl</kbd>+<kbd>W</kbd>, you can repeat the command to searching for more matches, to search and replace use <kbd>Ctrl</kbd>+<kbd>\\</kbd> enter the text to search and the text to replace in place.
 
 ### Reference
 
 Beyond the quick commands above, there are several commands available on **nano**, and the list below comes from the help text that you can see when execute <kbd>Ctrl</kbd>+<kbd>G</kbd>.
 When you see the symbol \"\^\", it means to press the Control <kbd>Ctrl</kbd> key; the symbol \"M-\" is called Meta, but in most keyboards is identified with the <kbd>Alt</kbd> key or <kbd>Windows</kbd> key. See above for the discussion about the use of <kbd>Meta</kbd> key.
 
+```
     ^G  (F1)            Display this help text
     ^X  (F2)            Close the current file buffer / Exit from nano
     ^O  (F3)            Write the current file to disk
@@ -160,7 +161,7 @@ When you see the symbol \"\^\", it means to press the Control <kbd>Ctrl</kbd> ke
     M-M                 Mouse support enable/disable
     M-N                 No conversion from DOS/Mac format enable/disable
     M-Z                 Suspension enable/disable
-
+```
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
@@ -236,20 +237,20 @@ end program BarnsleyFern
  5. Compile the code with the following command:
 
 ```
-gfortran fern.f90 -o fern
+~$ gfortran fern.f90 -o fern
 ```
 
  6. Execute the code
 
  ```
- ./fern
+ ~$ ./fern
  ```
   
  This will generate a file `plot.dat` that we can plot from Open On Demand
 
  7. Direct the browser to [Thorny Flat Open On Demand](https://ondemand-tf.hpc.wvu.edu)
 
- 8. Create a new Jupyter session 
+ 8. Create a new Jupyter session
 
  9. On the jupyter-lab notebook enter the following commands:
 
@@ -276,7 +277,6 @@ gfortran fern.f90 -o fern
 ```
 
 :::::::::::::::::::::::::::::::::::::::::::::::
-
 
 ## emacs
 
@@ -307,7 +307,7 @@ To copy or cut regions of text starts by selecting the area of text that you wan
 
 ### Search for text and search and Replace
 
-To search use  <kbd>Ctrl</kbd>+<kbd>S</kbd>, you can repeat the command to searching for more matchs, to search and replace use <kbd>Meta</kbd>+<kbd>%</kbd> enter the text to search and the text to replace in place.
+To search use  <kbd>Ctrl</kbd>+<kbd>S</kbd>, you can repeat the command to searching for more matchs, to search and replace use <kbd>Meta</kbd>+<kbd>\%</kbd> enter the text to search and the text to replace in place.
 
 ### Reference
 
@@ -319,13 +319,9 @@ For example [GNU Emacs Reference Card](https://www.gnu.org/software/emacs/refcar
 
 Below you can see the same 2 page Reference Card as individual images.
 
-<a href="{{ page.root }}/fig/refcard-0.png">
-  <img src="{{ page.root }}/fig/refcard-0.png" alt="Emacs Ref Card" />
-</a>
+![emacs Reference Card (page 1)](fig/refcard-0.png){alt="emacs Reference Card (page 1)" width='95%'}
 
-<a href="{{ page.root }}/fig/refcard-1.png">
-  <img src="{{ page.root }}/fig/refcard-1.png" alt="Emacs Ref Card" />
-</a>
+![emacs Reference Card (page 2)](fig/refcard-1.png){alt="emacs Reference Card (page 2)" width='95%'}
 
 ## vi/vim
 
@@ -383,7 +379,7 @@ A very beautiful Reference Card for vim can be found here: [Vim CheatSheet](http
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
-## Exercise 1
+### Exercise 1
 
  Select an editor. The challenge is write this code in a file called `Sierpinski.c`
 
@@ -403,34 +399,33 @@ int main()
 }
 ```
 
- For those using **vi**, here is the challenge. **You cannot use the arrow keys**. Not a single time!
- It is pretty hard if you are not used to it, but it is a good exercise to learn the commands.
+For those using **vi**, here is the challenge. **You cannot use the arrow keys**. Not a single time!
+It is pretty hard if you are not used to it, but it is a good exercise to learn the commands.
 
- Another interesting challenge is to write the line `for (y = SIZE - 1; y >= 0; y--, putchar('\n'))` and copy and paste it to > form the other 2 *for loops* in the code, and editing only after being copied.
+Another interesting challenge is to write the line `for (y = SIZE - 1; y >= 0; y--, putchar('\n'))` and copy and paste it to > form the other 2 *for loops* in the code, and editing only after being copied.
 
- Once you have successfully written the source code, you can see your hard work in action.
+Once you have successfully written the source code, you can see your hard work in action.
 
- On the terminal screen, execute this:
+On the terminal screen, execute this:
 
 ```
 ~$ gcc Sierpinski.c -o Sierpinski
 ```
- 
 
- This will compile your source code `Sierpinski.c` in C into a binary executable called `Sierpinski`. Execute the code with:
+This will compile your source code `Sierpinski.c` in C into a binary executable called `Sierpinski`. Execute the code with:
 
 ```
 ~$ ./Sierpinski
- ```
+```
 
- The resulting output is kind of a surprise so I will not post it here.
- The original code comes from [rosettacode.org](https://www.rosettacode.org/wiki/Sierpinski_triangle#C)
+The resulting output is kind of a surprise so I will not post it here.
+The original code comes from [rosettacode.org](https://www.rosettacode.org/wiki/Sierpinski_triangle#C)
 
 :::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
-## Exercise 2 (Needs X11)
+### Exercise 2 (Needs X11)
 
  On the folder `workshops_hands-on/Introduction_HPC/4._Terminal-based_Editors` you will find a Java code on file `JuliaSet.java`.
 
@@ -471,7 +466,7 @@ Change a bit the parameters on the code, the size of the window for example or t
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
-## Exercise 3
+### Exercise 3
 
 On the folder `workshops_hands-on/Introduction_HPC/4._Terminal-based_Editors` there is a script ``download-covid19.sh``.
 The script will download an updated compilation of Official Covid-19 cases around the world.
@@ -490,7 +485,7 @@ Search for the line with the string ``United States,2021-06-30``
 
 ::::::::::::::::::::::::::::::::::::: testimonial
 
-## Why vi was programmed to not use the arrow keys?
+### Why vi was programmed to not use the arrow keys?
 
 From [Wikipedia](https://en.wikipedia.org/wiki/Vi) with a anecdotal story from [The register](https://www.theregister.co.uk/2003/09/11/bill_joys_greatest_gift/)
 
