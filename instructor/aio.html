@@ -1360,7 +1360,7 @@ friend.</em></strong></p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <pre><code>~$ man find</code></pre>
 </div>
@@ -1455,7 +1455,7 @@ this directory (your username?)?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p><em>No, it doesn’t. Instead of the directory name, it shows you a
 <code>~</code>.</em></p>
@@ -1480,7 +1480,7 @@ this directory (your username?)?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>This is because <code>~</code> is a synonimous to the full path to
 the home directory for the user.*</p>
@@ -1506,7 +1506,7 @@ the home directory for the user.*</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>Yes, it is possible to use <code>~</code> as replacement of the full
 path to your home folder. You can for example execute:</p>
@@ -1595,7 +1595,7 @@ directory within the <code>workshops_hands-on</code> directory.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 
 </div>
@@ -2485,7 +2485,7 @@ for the manual for alternative formats for the date</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
   <h4 class="accordion-header" id="headingSolution6"> Show me the solution </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <p>The output of the first command:</p>
 <div class="codewrapper">
@@ -3853,7 +3853,7 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-301-data-transfer"><p>Content from <a href="301-data-transfer.html">Data Transfer: Globus</a></p>
 <hr>
-<p>Last updated on 2025-08-18 |
+<p>Last updated on 2025-08-25 |
 
         <a href="https://github.com/carpentries/workbench-template-md/edit/main/episodes/301-data-transfer.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 60 minutes</p>
@@ -3890,6 +3890,226 @@ computer?”</li>
 </div>
 </div>
 </div>
+<section><h2 class="section-heading" id="data-transfer">Data Transfer<a class="anchor" aria-label="anchor" href="#data-transfer"></a>
+</h2>
+<hr class="half-width">
+<p>Copying files and folders in and out of an HPC cluster is a routine
+task for HPC users. Users need to move input data to the cluster before
+this data can be processed. The results will be moved out of the cluster
+in form of files and folders containing text, figures, tables or some
+other data. The amount of data could be as small as a simple text file
+with a few lines or as big as a large binary file or several folders
+summing Giga Bytes of data.</p>
+</section><section><h2 class="section-heading" id="open-on-demand">Open On Demand<a class="anchor" aria-label="anchor" href="#open-on-demand"></a>
+</h2>
+<hr class="half-width">
+<p>For a few small files you can use Open On Demand via the <strong>File
+Manager</strong> that can be accessed directly from the dashboard.</p>
+<p>The Files menu allows one to view and operate on files in the user’s
+home directory. The SCRATCH folder is not accesible from Open On
+Demand.</p>
+<p>You can easily transfer files from one’s personal computer to the
+Thorny Flat through Open OnDemand. For example, to transfer files to
+one’s home directory, click the ‘Files’ dropdown menu in the top and
+click on the ‘Home Directory’ link. Once in your home directory, you can
+click the blue ‘Upload’ button in the top right corner of the file
+manager window and pop up will open to browse and upload files from your
+personal computer.</p>
+<figure><img src="../fig/OOD-FileTransfer1.png" alt="Open On Demand - Dashboard" class="figure mx-auto d-block"><div class="figcaption">Open OnDemand - Dashboard</div>
+</figure><figure><img src="../fig/OOD-FileTransfer2.png" alt="Open On Demand - File Manager" class="figure mx-auto d-block"><div class="figcaption">Open OnDemand - File Manager</div>
+</figure></section><section><h2 class="section-heading" id="sft">SFT<a class="anchor" aria-label="anchor" href="#sft"></a>
+</h2>
+<hr class="half-width">
+<p>SFTP (Secure File Transfer Protocol) provides a secure way to
+transfer files between a local system and a remote server. The commands
+used within an SFTP session are similar to standard Unix-like shell
+commands but are specific to managing files and directories on both the
+local and remote systems.</p>
+<p>Research Computing a dedicated server for transferring files to/from
+Thorny Flat. This is a low level and scriptable interface.</p>
+<div class="section level3">
+<h3 id="connecting">Connecting<a class="anchor" aria-label="anchor" href="#connecting"></a>
+</h3>
+<p>Initiates an SFTP connection to the specified remote host using the
+given username.</p>
+<pre class="text"><code>~$ sftp &lt;username&gt;@tf-data.hpc.wvu.edu </code></pre>
+<p>This works very similar to a SSH connection. You need to enter the
+password followed by the MFA (DUO in 2025). Once your credentials are
+accepted you land on a prompt like this:</p>
+<pre class="text"><code>Connected to tf-data.hpc.wvu.edu.
+sftp&gt; </code></pre>
+<p>From this interface you execute commands that allow you to list the
+remote files, download and upload files and recursive commands for
+operating with entire folders.</p>
+</div>
+<div class="section level3">
+<h3 id="navigation-and-listing">Navigation and Listing<a class="anchor" aria-label="anchor" href="#navigation-and-listing"></a>
+</h3>
+<p>The SFTP protocol offers commands to interact with the remote and
+local filesystems. There are commands like <code>ls</code>,
+<code>cd</code> and <code>pwd</code> operating on the remote side and
+commands with the prefix <code>l</code> such as <code>lls</code>,
+<code>lcd</code> and <code>lpwd</code> that will do the equivalent
+operation on the local filesystem.</p>
+<p>This is the list of commands for both remote and local operation:</p>
+<ul>
+<li>
+<code>ls</code>: Lists files and directories on the remote
+system.</li>
+<li>
+<code>lls</code>: Lists files and directories on the local
+system.</li>
+<li>
+<code>cd [directory]</code>: Changes the current working directory
+on the remote system.</li>
+<li>
+<code>lcd [directory]</code>: Changes the current working directory
+on the local system.</li>
+<li>
+<code>pwd</code>: Displays the current working directory on the
+remote system.</li>
+<li>
+<code>lpwd</code>: Displays the current working directory on the
+local system.</li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="file-transfer">File Transfer<a class="anchor" aria-label="anchor" href="#file-transfer"></a>
+</h3>
+<p>SFT provides commands to download (get) or upload files (put) and
+there are commands for one, several and entire folders.</p>
+<ul>
+<li>
+<code>get [remote_file] [local_path]</code>: Downloads a file from
+the remote system to the local system.</li>
+<li>
+<code>put [local_file] [remote_path]</code>: Uploads a file from the
+local system to the remote system.</li>
+<li>
+<code>mget [remote_files]</code>: Downloads multiple files from the
+remote system.</li>
+<li>
+<code>mput [local_files]</code>: Uploads multiple files to the
+remote system.</li>
+<li>
+<code>get -R [remote_directory]</code>: Recursively downloads a
+directory and its contents.</li>
+<li>
+<code>put -R [local_directory]</code>: Recursively uploads a
+directory and its contents.</li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="file-and-directory-management">File and Directory Management<a class="anchor" aria-label="anchor" href="#file-and-directory-management"></a>
+</h3>
+<p>Same as on Unix-like shell commands, we have commands for creating
+folders, both on the remote and local filesystem, remove and rename
+files and change permissions for files on the remote system.</p>
+<ul>
+<li>
+<code>mkdir [directory]</code>: Creates a new directory on the
+remote system.</li>
+<li>
+<code>lmkdir [directory]</code>: Creates a new directory on the
+local system.</li>
+<li>
+<code>rmdir [directory]</code>: Removes an empty directory on the
+remote system.</li>
+<li>
+<code>rm [file]</code>: Deletes a file on the remote system.</li>
+<li>
+<code>rename [old_path] [new_path]</code>: Renames a file or
+directory on the remote system.</li>
+<li>
+<code>chmod [mode] [path]</code>: Changes file permissions on the
+remote system.</li>
+<li>
+<code>chown [owner] [path]</code>: Changes the owner of a file on
+the remote system.</li>
+<li>
+<code>chgrp [group] [path]</code>: Changes the group of a file on
+the remote system.</li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="help-and-finish-session">Help and finish session<a class="anchor" aria-label="anchor" href="#help-and-finish-session"></a>
+</h3>
+<ul>
+<li>
+<code>help</code>: Displays a list of available SFTP commands.</li>
+<li>
+<code>exit</code>, <code>quit</code>, or <code>bye</code>:
+Terminates the SFTP session.</li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="sft-from-a-gui-interface">SFT from a GUI interface<a class="anchor" aria-label="anchor" href="#sft-from-a-gui-interface"></a>
+</h3>
+<p>For users who are more comfortable with Graphical User Interfaces,
+you may want to utilize one of the following clients:</p>
+<ul>
+<li><p><a href="https://winscp.net/eng/index.php" class="external-link">WINSCP</a> WinSCP is a
+popular SFTP client and FTP client for Microsoft Windows! Copy file
+between a local computer and remote servers using FTP, FTPS, SCP, SFTP,
+WebDAV or S3 file transfer protocols.</p></li>
+<li><p><a href="https://filezilla-project.org/" class="external-link">FILEZILLA</a> FileZilla
+Client not only supports FTP, but also FTP over TLS (FTPS) and SFTP. It
+is open source software distributed free of charge under the terms of
+the GNU General Public License. It support several OSes such as Windows,
+macOS and Linux.</p></li>
+</ul>
+</div>
+</section><section><h2 class="section-heading" id="globus-online">Globus Online<a class="anchor" aria-label="anchor" href="#globus-online"></a>
+</h2>
+<hr class="half-width">
+<p>Globus Online is the preferred method for transferring files to,
+from, and between HPC clusters. There are several advantages to using
+Globus compared to other methods that will be covered on File Transfer
+Section: We can summarize the advantages as:</p>
+<ul>
+<li><p>Globus works from a web browser, not need to learn commands for a
+terminal.</p></li>
+<li><p>Transfers are done in the background so users do not need to keep
+the browser open. The transfer happens behind the curtains.</p></li>
+<li><p>Auto performance tuning to ensure the data is transferred as
+quickly as possible. One can expect a speedup of at least 2x over
+traditional transfer methods.</p></li>
+<li><p>Transfers can work in parallel, and data could be encrypted
+during transfer.</p></li>
+<li><p>The integrity of the transfer can be ensured via checksum methods
+(Hashes).</p></li>
+<li><p>Transfers are automatically restarted after a failed or stopped
+connection.</p></li>
+<li><p>Ability to only transfer files that have yet to be transferred
+(similar to rsync).</p></li>
+</ul>
+<figure><img src="../fig/Globus_Online.png" alt="Globus Online" class="figure mx-auto d-block"><div class="figcaption">Globus Online - File Transfer App</div>
+</figure><div class="section level3">
+<h3 id="connecting-to-the-globus-web-app">Connecting to the Globus Web App<a class="anchor" aria-label="anchor" href="#connecting-to-the-globus-web-app"></a>
+</h3>
+<p>To be able to move data in and out the HPC cluster to your own
+computer, there are two tasks to be completed. Link Globus to your
+personal WVU account so you can access the end points to our clusters
+and download and install “Globus Connect Personal” which is a small
+piece of software that will transfor your own computer into an endpoint
+where you can interchange data with the HPC cluster.</p>
+<p>The steps are very simple all from your web browser and after a few
+minutes you will have setup the end points and will be able to tranfer
+files. The first step is to connect <a href="https://www.globus.org" class="external-link">Globus Homepage</a>.</p>
+<p>Once the initial page of globus is displayed, clic on the top right
+corner over Log in</p>
+<figure><img src="../fig/Globus.org.png" alt="Globus Online" class="figure mx-auto d-block"><div class="figcaption">Globus Online Web Page</div>
+</figure><p>Once you are authenticated you end on the Globus File Manager. There
+are several options on your left and three ways of showing panels on the
+top right.</p>
+<p>The next step is to install Globus Connect Personal. The application
+to convert your own computer into a endpoint. Click on Collections on
+the left side bar</p>
+<p>On the top right corner you will see a link to Get Globus Connect
+Personal. Click there to go to the Download page for the software.</p>
+<figure><img src="../fig/Globus_Collections.png" alt="Globus Online Collections" class="figure mx-auto d-block"><div class="figcaption">Globus Online Collections</div>
+</figure><p>Once you have installed the Globus Connect Personal you are ready to
+download files from/to your computer to/from the remote machine.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -3907,7 +4127,13 @@ entity to provide computational power to many users”</li>
 </ul>
 </div>
 </div>
-</div></section><section id="aio-302-slurm"><p>Content from <a href="302-slurm.html">Workload Manager: Slurm</a></p>
+</div>
+<!--
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use.
+ -->
+</div>
+</section></section><section id="aio-302-slurm"><p>Content from <a href="302-slurm.html">Workload Manager: Slurm</a></p>
 <hr>
 <p>Last updated on 2025-08-18 |
 
@@ -6360,9 +6586,9 @@ any links that you are not going to use.
   "creativeWorkStatus": "active",
   "url": "https://carpentries.github.io/workbench-template-md/instructor/aio.html",
   "identifier": "https://carpentries.github.io/workbench-template-md/instructor/aio.html",
-  "dateCreated": "2025-08-22",
-  "dateModified": "2025-08-22",
-  "datePublished": "2025-08-22"
+  "dateCreated": "2025-08-25",
+  "dateModified": "2025-08-25",
+  "datePublished": "2025-08-25"
 }
 
   </script><script>
