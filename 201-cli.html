@@ -359,7 +359,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Command Line Interface: The Shell</h1>
-        <p>Last updated on 2025-08-22 |
+        <p>Last updated on 2025-08-27 |
 
         <a href="https://github.com/carpentries/workbench-template-md/edit/main/episodes/201-cli.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -1546,74 +1546,59 @@ need to be ready to submit jobs on the cluster.</p>
 <th align="left">Description</th>
 <th align="left">Examples</th>
 </tr></thead><tbody><tr class="odd"><td><code>echo</code></td>
-<td align="left">Display a given message on the screen</td>
+<td align="left">
+<span class="emoji" data-emoji="red_circle">🔴</span>
+Display a given message on the screen</td>
 <td align="left"><code>$ echo "This is a message"</code></td>
-</tr><tr class="even"><td>———</td>
-<td align="left">——————-</td>
-<td align="left">——————————</td>
-</tr><tr class="odd"><td><code>cat</code></td>
-<td align="left">Display the contents of a file on screen <br>
-Concatenate files</td>
+</tr><tr class="even"><td><code>cat</code></td>
+<td align="left">
+<span class="emoji" data-emoji="red_circle">🔴</span>
+Display the contents of a file on screen <br> Concatenate files</td>
 <td align="left"><code>$ cat my_file</code></td>
-</tr><tr class="even"><td>———</td>
-<td align="left">——————-</td>
-<td align="left">——————————</td>
 </tr><tr class="odd"><td><code>date</code></td>
-<td align="left">Shows the current date on screen</td>
+<td align="left">
+<span class="emoji" data-emoji="red_circle">🔴</span>
+Shows the current date on screen</td>
 <td align="left">
 <code>$ date</code> <br> Sun Jul 26 15:41:03 EDT
 2020</td>
-</tr><tr class="even"><td>———</td>
-<td align="left">——————-</td>
-<td align="left">——————————</td>
-</tr><tr class="odd"><td><code>pwd</code></td>
-<td align="left">Return the path to the current working directory</td>
+</tr><tr class="even"><td><code>pwd</code></td>
+<td align="left">
+<span class="emoji" data-emoji="green_circle">🟢</span>
+Return the path to the current working directory</td>
 <td align="left">
 <code>$ pwd</code> <br> /users/username</td>
-</tr><tr class="even"><td>———</td>
-<td align="left">——————-</td>
-<td align="left">——————————</td>
 </tr><tr class="odd"><td><code>cd</code></td>
-<td align="left">Change directory</td>
+<td align="left">
+<span class="emoji" data-emoji="green_circle">🟢</span>
+Change directory</td>
 <td align="left"><code>$ cd sub_folder</code></td>
-</tr><tr class="even"><td>———</td>
-<td align="left">——————-</td>
-<td align="left">——————————</td>
-</tr><tr class="odd"><td><code>mkdir</code></td>
-<td align="left">Create directory</td>
+</tr><tr class="even"><td><code>mkdir</code></td>
+<td align="left">
+<span class="emoji" data-emoji="green_circle">🟢</span>
+Create directory</td>
 <td align="left"><code>$ mkdir new_folder</code></td>
-</tr><tr class="even"><td>———</td>
-<td align="left">——————-</td>
-<td align="left">——————————</td>
 </tr><tr class="odd"><td><code>touch</code></td>
-<td align="left">Change the access and modification time of a file <br>
-Create empty files</td>
+<td align="left">:blue_circle: Change the access and modification time
+of a file <br> Create empty files</td>
 <td align="left"><code>$ touch new_file</code></td>
-</tr><tr class="even"><td>———</td>
-<td align="left">——————-</td>
-<td align="left">——————————</td>
-</tr><tr class="odd"><td><code>cp</code></td>
-<td align="left">Copy a file in another location <br> Copy several files
-into a destination directory</td>
+</tr><tr class="even"><td><code>cp</code></td>
+<td align="left">
+<span class="emoji" data-emoji="purple_circle">🟣</span> Copy a file in another location
+<br> Copy several files into a destination directory</td>
 <td align="left"><code>$ cp old_file new_file</code></td>
-</tr><tr class="even"><td>———</td>
-<td align="left">——————-</td>
-<td align="left">——————————</td>
 </tr><tr class="odd"><td><code>mv</code></td>
-<td align="left">Move a file in another location <br> Move several files
-into a destination folder</td>
+<td align="left">
+<span class="emoji" data-emoji="purple_circle">🟣</span> Move a file in another location
+<br> Move several files into a destination folder</td>
 <td align="left"><code>$ mv old_name new_name</code></td>
-</tr><tr class="even"><td>———</td>
-<td align="left">——————-</td>
-<td align="left">——————————</td>
-</tr><tr class="odd"><td><code>rm</code></td>
-<td align="left">Remove one or more files from the file system tree</td>
+</tr><tr class="even"><td><code>rm</code></td>
+<td align="left">
+<span class="emoji" data-emoji="purple_circle">🟣</span> Remove one or more files from the
+file system tree</td>
 <td align="left">
 <code>$ rm trash_file</code> <br><code>$ rm -r full_folder</code>
 </td>
-</tr><tr class="even"><td>———</td>
-<td align="left">——————-</td>
-<td align="left">——————————</td>
 </tr></tbody></table><div id="exercise-1" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
@@ -2411,9 +2396,9 @@ any links that you are not going to use.
   "creativeWorkStatus": "active",
   "url": "https://carpentries.github.io/workbench-template-md/201-cli.html",
   "identifier": "https://carpentries.github.io/workbench-template-md/201-cli.html",
-  "dateCreated": "2025-08-25",
-  "dateModified": "2025-08-22",
-  "datePublished": "2025-08-26"
+  "dateCreated": "2025-08-27",
+  "dateModified": "2025-08-27",
+  "datePublished": "2025-08-27"
 }
 
   </script><script>

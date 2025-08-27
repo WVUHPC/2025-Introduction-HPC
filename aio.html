@@ -1055,7 +1055,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-201-cli"><p>Content from <a href="201-cli.html">Command Line Interface: The Shell</a></p>
 <hr>
-<p>Last updated on 2025-08-22 |
+<p>Last updated on 2025-08-27 |
 
         <a href="https://github.com/carpentries/workbench-template-md/edit/main/episodes/201-cli.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -2296,112 +2296,77 @@ need to be ready to submit jobs on the cluster.</p>
 <tbody>
 <tr class="odd">
 <td><code>echo</code></td>
-<td align="left">Display a given message on the screen</td>
+<td align="left">
+<span class="emoji" data-emoji="red_circle">🔴</span>
+Display a given message on the screen</td>
 <td align="left"><code>$ echo "This is a message"</code></td>
 </tr>
 <tr class="even">
-<td>———</td>
-<td align="left">——————-</td>
-<td align="left">——————————</td>
-</tr>
-<tr class="odd">
 <td><code>cat</code></td>
-<td align="left">Display the contents of a file on screen <br>
-Concatenate files</td>
+<td align="left">
+<span class="emoji" data-emoji="red_circle">🔴</span>
+Display the contents of a file on screen <br> Concatenate files</td>
 <td align="left"><code>$ cat my_file</code></td>
-</tr>
-<tr class="even">
-<td>———</td>
-<td align="left">——————-</td>
-<td align="left">——————————</td>
 </tr>
 <tr class="odd">
 <td><code>date</code></td>
-<td align="left">Shows the current date on screen</td>
+<td align="left">
+<span class="emoji" data-emoji="red_circle">🔴</span>
+Shows the current date on screen</td>
 <td align="left">
 <code>$ date</code> <br> Sun Jul 26 15:41:03 EDT
 2020</td>
 </tr>
 <tr class="even">
-<td>———</td>
-<td align="left">——————-</td>
-<td align="left">——————————</td>
-</tr>
-<tr class="odd">
 <td><code>pwd</code></td>
-<td align="left">Return the path to the current working directory</td>
+<td align="left">
+<span class="emoji" data-emoji="green_circle">🟢</span>
+Return the path to the current working directory</td>
 <td align="left">
 <code>$ pwd</code> <br> /users/username</td>
 </tr>
-<tr class="even">
-<td>———</td>
-<td align="left">——————-</td>
-<td align="left">——————————</td>
-</tr>
 <tr class="odd">
 <td><code>cd</code></td>
-<td align="left">Change directory</td>
+<td align="left">
+<span class="emoji" data-emoji="green_circle">🟢</span>
+Change directory</td>
 <td align="left"><code>$ cd sub_folder</code></td>
 </tr>
 <tr class="even">
-<td>———</td>
-<td align="left">——————-</td>
-<td align="left">——————————</td>
-</tr>
-<tr class="odd">
 <td><code>mkdir</code></td>
-<td align="left">Create directory</td>
+<td align="left">
+<span class="emoji" data-emoji="green_circle">🟢</span>
+Create directory</td>
 <td align="left"><code>$ mkdir new_folder</code></td>
-</tr>
-<tr class="even">
-<td>———</td>
-<td align="left">——————-</td>
-<td align="left">——————————</td>
 </tr>
 <tr class="odd">
 <td><code>touch</code></td>
-<td align="left">Change the access and modification time of a file <br>
-Create empty files</td>
+<td align="left">:blue_circle: Change the access and modification time
+of a file <br> Create empty files</td>
 <td align="left"><code>$ touch new_file</code></td>
 </tr>
 <tr class="even">
-<td>———</td>
-<td align="left">——————-</td>
-<td align="left">——————————</td>
-</tr>
-<tr class="odd">
 <td><code>cp</code></td>
-<td align="left">Copy a file in another location <br> Copy several files
-into a destination directory</td>
+<td align="left">
+<span class="emoji" data-emoji="purple_circle">🟣</span> Copy a file in another location
+<br> Copy several files into a destination directory</td>
 <td align="left"><code>$ cp old_file new_file</code></td>
-</tr>
-<tr class="even">
-<td>———</td>
-<td align="left">——————-</td>
-<td align="left">——————————</td>
 </tr>
 <tr class="odd">
 <td><code>mv</code></td>
-<td align="left">Move a file in another location <br> Move several files
-into a destination folder</td>
+<td align="left">
+<span class="emoji" data-emoji="purple_circle">🟣</span> Move a file in another location
+<br> Move several files into a destination folder</td>
 <td align="left"><code>$ mv old_name new_name</code></td>
 </tr>
 <tr class="even">
-<td>———</td>
-<td align="left">——————-</td>
-<td align="left">——————————</td>
-</tr>
-<tr class="odd">
 <td><code>rm</code></td>
-<td align="left">Remove one or more files from the file system tree</td>
+<td align="left">
+<span class="emoji" data-emoji="purple_circle">🟣</span> Remove one or more files from the
+file system tree</td>
 <td align="left">
 <code>$ rm trash_file</code> <br><code>$ rm -r full_folder</code>
 </td>
-</tr>
-<tr class="even">
-<td>———</td>
-<td align="left">——————-</td>
-<td align="left">——————————</td>
 </tr>
 </tbody>
 </table>
@@ -4563,7 +4528,7 @@ walltime.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 
 </div>
@@ -5079,7 +5044,7 @@ have just one.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 
 </div>
@@ -5726,7 +5691,7 @@ Internet access.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 
 </div>
@@ -5761,7 +5726,7 @@ access. Write a submission script and submit.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 
 </div>
@@ -6576,9 +6541,9 @@ any links that you are not going to use.
   "creativeWorkStatus": "active",
   "url": "https://carpentries.github.io/workbench-template-md/aio.html",
   "identifier": "https://carpentries.github.io/workbench-template-md/aio.html",
-  "dateCreated": "2025-08-25",
-  "dateModified": "2025-08-26",
-  "datePublished": "2025-08-26"
+  "dateCreated": "2025-08-27",
+  "dateModified": "2025-08-27",
+  "datePublished": "2025-08-27"
 }
 
   </script><script>
