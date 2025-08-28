@@ -146,49 +146,50 @@ The following table lists the most common module command options.
 
  3. Now let's get a newer version of those three components by loading the corresponding modules. Search for the module for Python 3.10.11, R 4.4.1, and GCC 9.3.0 and load the corresponding modules. To make things easier, you can use check the availability of modules just in the languages section. 
 
- ```
- module avail lang
- ```
+```
+ ~$ module avail lang
+```
 
- ```
- module load lang/python/cpython_3.11.3_gcc122 lang/r/4.4.1_gcc122 lang/gcc/12.2.0 
- ```
+```
+~$ module purge
+~$ module load lang/python/cpython_3.11.3_gcc122 lang/r/4.4.1_gcc122 lang/gcc/12.2.0 
+```
 
  4. Check again which version of those three components you have now. Notice that in the case of Python 3, the command python still goes towards the old Python 2.6.6, as the Python 3.x interpreter is not backward compatible with Python 2.x the new command is called `python3`. Check its version by entering the command.
 
- ```
+```
  ~$ python3 --version
- ```
+```
 
  5. Clean all of the environment
 
- ```
+```
  ~$ module purge
- ```
- 
+```
+
  6. Go back and purge all the modules from your environment. We will now explore why it is essential to use a recent compiler. Try to compile the code at `workshops_hands-on/Introduction_HPC/5._Environment_Modules/lambda_c++14.cpp`. Go to the folder and execute:
 
- ```
- ~$ g++ lambda_c++14.cpp
- ```
+```
+~$ g++ lambda_c++14.cpp
+```
 
 At this point, you should have received a list of errors, that is because even if the code is C++ it uses elements of the language that were not present at that time on C++ Specification. The code actually uses C++14, and only recent versions of GCC allow for these declarations. Let's check how many GCC compilers we have available on Thorny Flat.
 
- ```
- ~$ module avail lang/gcc
- ```
+```
+~$ module avail lang/gcc
+```
 
  Now, from that list, start loading and trying to compile the code as indicated above. Which versions of GCC allow you to compile the code? Also try the Intel compilers. In the case of the Intel compiler, the command to compile the code is:
 
- ```
- ~$ icpc lambda_c++14.cpp
- ```
+```
+~$ icpc lambda_c++14.cpp
+```
 
 Try with all the Intel compilers. It will fail with some of them. That is because the default standard for the Intel C++ compiler is not C++14. You do not need to declare it explicitly, and for Intel Compiler Suite 2021, but for older versions, the correct command line is:
 
- ```
- ~$ icpc lambda_c++14.cpp -std=c++14
- ```
+```
+~$ icpc lambda_c++14.cpp -std=c++14
+```
 
  It should be clearer why modules are an important feature of any HPC infrastructure, as it allows you to use several compilers, libraries, and packages in different versions. On a normal computer, you usually have just one.
 
@@ -257,7 +258,7 @@ At the time of this tutorial (2024), Thorny Flat offers the following environmen
 centrally installed::
 
 ```
-$> conda env list
+~$ conda env list
 
 (base) trcis001:~$ conda env list
 # conda environments:
@@ -297,7 +298,7 @@ Suppose that you want to use the environment called "tpd0001".
 To activate this environment, execute::
 
 ```
-conda activate tpd0001
+~$ conda activate tpd0001
 ```
 
 ### Deactivating the current environment
@@ -305,7 +306,7 @@ conda activate tpd0001
 The current environment can be deactivated with::
 
 ```
-conda deactivate
+~$ conda deactivate
 ```
 
 If you are in the ``base`` environment, the deactivation will not have any effect.
@@ -484,7 +485,7 @@ Each environment is isolated from other conda environments, and that allows you 
 As the message shows, you activate the environment with::
 
 ```
-conda activate snowflakes
+~$ conda activate snowflakes
 ```
 
 
@@ -492,13 +493,13 @@ Notice that when you activate a new environment, the prompt changes, adding a pr
 To check the environments available, execute::
 
 ```
-conda env list
+~$ conda env list
 ```
 
 or
 
 ```
-conda info --envs
+~$ conda info --envs
 ```
 
 ### Conda and Python
@@ -507,13 +508,13 @@ When you create a new environment, conda installs the same Python version used t
 If you want to use a different version of Python, for example, Python 2.7, create a new environment and specify the version of Python that you want::
 
 ```
-conda create --name python27 python=2.7
+~$ conda create --name python27 python=2.7
 ```
 
 You activate the environment::
 
 ```
-conda activate python27
+~$ conda activate python27
 ```
 
 And verify the Python version::
@@ -552,7 +553,7 @@ To search for packages there execute::
 Packages can be installed on the current environment with::
 
 ```
-conda install -c conda-forge nitime
+~$ conda install -c conda-forge nitime
 ```
 
 
@@ -561,7 +562,7 @@ You can also be very selective on version and build that you want for the packag
 First get the list of versions and builds for the package that you want::
 
 ```
-  $ conda search -c intel mkl
+~$ conda search -c intel mkl
   Loading channels: done
   # Name                       Version           Build  Channel
   mkl                         2017.0.3         intel_6  intel
@@ -730,7 +731,7 @@ script, activate the environment that contains the software you need,
 execute the the scientific code and deactivate the environment. This is
 a simple example showing that for bowtie2
 
-```
+```bash
 #!/bin/bash
 
 #SBATCH -J CONDA_JOB
@@ -752,13 +753,13 @@ conda deactivate
 You can execute this command to remove an environment you own.
 
 ```
-conda remove --all -p $SCRATCH/bowtie2
+~$ conda remove --all -p $SCRATCH/bowtie2
 ```
 
 or
 
 ```
-conda env remove -n bowtie2
+~$ conda env remove -n bowtie2
 ```
 
 If the environment is named.
@@ -793,8 +794,8 @@ sh Miniconda3-latest-Linux-x86_64.sh
 Just load the module::
 
 ```
-module purge
-module load genomics/qiime
+~$ module purge
+~$ module load genomics/qiime
 ```
 
 This module will load Python 2.7.3 and qiime on top of that.
@@ -824,31 +825,31 @@ If you are using Visit or RStudio, programs that uses the X11 forwarding, ensure
 In order to connect into Thorny with X11 forwarding use:
 
 ```
-ssh -X <username>@ssh.wvu.edu
+~$ ssh -X <username>@ssh.wvu.edu
 ```
 
 ```
-ssh -X <username>@tf.hpc.wvu.edu
+~$ ssh -X <username>@tf.hpc.wvu.edu
 ```
 
 Once you have login into the cluster, create an interactive job with the following command line, in this case we are using standby as queue but any other queue is valid.
 
 ```
-salloc -c 4 -p standby
+~$ salloc -c 4 -p standby
 ```
 
 
 Once you get inside a compute node, load the module:
 
 ```
-module load singularity
+~$ module load singularity
 ```
 
 
 After loading the module the command singularity is available for usage, and you can get a shell inside the image with:
 
 ```
-singularity shell /shared/containers/<Image Name>
+~$ singularity shell /shared/containers/<Image Name>
 ```
 
 #### Job Submission
@@ -856,16 +857,15 @@ singularity shell /shared/containers/<Image Name>
 In this case you do not need to export X11, just login into Thorny Flat
 
 ```
-ssh <username>@ssh.wvu.edu
+~$ ssh <username>@ssh.wvu.edu
 
 ssh <username>@tf.hpc.wvu.edu
 ```
-{: .source}
 
 
 Once you have login into the cluster, create a submission script ("runjob.pbs" for this example), in this case we are using standby as queue but any other queue is valid.
 
-```
+```bash
 #!/bin/sh
 
 #SBATCH -J SINGULARITY_JOB
@@ -897,13 +897,13 @@ Follow the instructions for accessing an interactive session
 
 The image is located at:
 
-```
+```text
 /shared/containers/RStudio-server-2023.12.1-402_R-4.4.1_jammy.sif 
 ```
 
 Be sure that you can execute basic R commands. You can get an error message like:
 
-```
+```output
 WARNING: You are configured to use the CRAN mirror at https://cran.rstudio.com/. This mirror supports secure (HTTPS) downloads however your system is unable to communicate securely with the server (possibly due to out of date certificate files on your system). Falling back to using insecure URL for this mirror.
 ```
 
@@ -963,7 +963,7 @@ Lets start with a very clean image with centos.
 
 The minimal recipe will bring an image from Docker with the latest version of CentOS. Lets call the file `centos.bst`
 
-```
+```bash
 # Singularity container with centos
 #
 # This is the Bootstrap file to recreate the image.
@@ -997,7 +997,7 @@ A few folders are created that help us to link special folders like `/users`, `/
 We start with a writable sandboxed version, the exact command varies from machine to machine, but assuming that you can do sudo and the command singularity is available for root execute this:
 
 ```
-sudo singularity build --sandbox centos centos.bst
+~$ sudo singularity build --sandbox centos centos.bst
 ```
 
 ```
@@ -1032,7 +1032,7 @@ Cleaning up...
 The result will be a folder called `centos`. We can enter into that folder to learn what we need to install the packages for our image.
 
 ```
-sudo singularity shell --writable centos
+~$ sudo singularity shell --writable centos
 ```
 
 
@@ -1050,7 +1050,7 @@ The packages are `SDL-devel` `epel-release` `SDL_image-devel` `compat-guile18-de
 
 Trial and error move you from the original recipe to this one (`centos-libgraph.bst`):
 
-```
+```bash
 # Singularity container with centos
 #
 # This is the Bootstrap file to recreate the image.
@@ -1114,7 +1114,7 @@ To achieve this we need.
 
 The final version of the Bootstrap recipe looks like this `centos-final.bst`
 
-```
+```bash
 # Singularity container with centos
 #
 # This is the Bootstrap file to recreate the image.
