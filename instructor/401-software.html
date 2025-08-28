@@ -561,16 +561,17 @@ loading the corresponding modules. Search for the module for Python
 3.10.11, R 4.4.1, and GCC 9.3.0 and load the corresponding modules. To
 make things easier, you can use check the availability of modules just
 in the languages section.</p></li>
-</ol><pre><code>module avail lang</code></pre>
-<pre><code>module load lang/python/cpython_3.11.3_gcc122 lang/r/4.4.1_gcc122 lang/gcc/12.2.0 </code></pre>
+</ol><pre><code> ~$ module avail lang</code></pre>
+<pre><code>~$ module purge
+~$ module load lang/python/cpython_3.11.3_gcc122 lang/r/4.4.1_gcc122 lang/gcc/12.2.0 </code></pre>
 <ol start="4" style="list-style-type: decimal"><li>Check again which version of those three components you have now.
 Notice that in the case of Python 3, the command python still goes
 towards the old Python 2.6.6, as the Python 3.x interpreter is not
 backward compatible with Python 2.x the new command is called
 <code>python3</code>. Check its version by entering the command.</li>
-</ol><pre><code>~$ python3 --version</code></pre>
+</ol><pre><code> ~$ python3 --version</code></pre>
 <ol start="5" style="list-style-type: decimal"><li>Clean all of the environment</li>
-</ol><pre><code>~$ module purge</code></pre>
+</ol><pre><code> ~$ module purge</code></pre>
 <ol start="6" style="list-style-type: decimal"><li>Go back and purge all the modules from your environment. We will now
 explore why it is essential to use a recent compiler. Try to compile the
 code at
@@ -682,7 +683,7 @@ them.</p>
 <h3 id="knowing-which-environments-are-available">Knowing which environments are available<a class="anchor" aria-label="anchor" href="#knowing-which-environments-are-available"></a></h3>
 <p>At the time of this tutorial (2024), Thorny Flat offers the following
 environments centrally installed::</p>
-<pre><code>$&gt; conda env list
+<pre><code>~$ conda env list
 
 (base) trcis001:~$ conda env list
 # conda environments:
@@ -719,12 +720,12 @@ tensorflow18-py36         /shared/software/conda/envs/tensorflow18-py36</code></
 <h3 id="activating-an-existing-environment">Activating an existing environment<a class="anchor" aria-label="anchor" href="#activating-an-existing-environment"></a></h3>
 <p>Suppose that you want to use the environment called “tpd0001”. To
 activate this environment, execute::</p>
-<pre><code>conda activate tpd0001</code></pre>
+<pre><code>~$ conda activate tpd0001</code></pre>
 </div>
 <div class="section level3">
 <h3 id="deactivating-the-current-environment">Deactivating the current environment<a class="anchor" aria-label="anchor" href="#deactivating-the-current-environment"></a></h3>
 <p>The current environment can be deactivated with::</p>
-<pre><code>conda deactivate</code></pre>
+<pre><code>~$ conda deactivate</code></pre>
 <p>If you are in the <code>base</code> environment, the deactivation
 will not have any effect. You are always at least in the
 <code>base</code> environment.</p>
@@ -882,14 +883,14 @@ Executing transaction: done
 allows you to keep several environments with different packages on them
 or different versions of the same packages. As the message shows, you
 activate the environment with::</p>
-<pre><code>conda activate snowflakes</code></pre>
+<pre><code>~$ conda activate snowflakes</code></pre>
 <p>Notice that when you activate a new environment, the prompt changes,
 adding a prefix in parenthesis to indicate which conda environment you
 are using at that moment. To check the environments available,
 execute::</p>
-<pre><code>conda env list</code></pre>
+<pre><code>~$ conda env list</code></pre>
 <p>or</p>
-<pre><code>conda info --envs</code></pre>
+<pre><code>~$ conda info --envs</code></pre>
 </div>
 <div class="section level3">
 <h3 id="conda-and-python">Conda and Python<a class="anchor" aria-label="anchor" href="#conda-and-python"></a></h3>
@@ -897,9 +898,9 @@ execute::</p>
 version used to install conda on Thorny Flat (3.9). If you want to use a
 different version of Python, for example, Python 2.7, create a new
 environment and specify the version of Python that you want::</p>
-<pre><code>conda create --name python27 python=2.7</code></pre>
+<pre><code>~$ conda create --name python27 python=2.7</code></pre>
 <p>You activate the environment::</p>
-<pre><code>conda activate python27</code></pre>
+<pre><code>~$ conda activate python27</code></pre>
 <p>And verify the Python version::</p>
 <pre><code>~$ python --version
 Python 2.7.16 :: Anaconda, Inc.</code></pre>
@@ -923,13 +924,13 @@ However, there are many other packages on several other channels.</p>
 
 ~$ conda search -c bioconda blast</code></pre>
 <p>Packages can be installed on the current environment with::</p>
-<pre><code>conda install -c conda-forge nitime</code></pre>
+<pre><code>~$ conda install -c conda-forge nitime</code></pre>
 <p>In this case conda will pick the most recent version of the package
 compatible with the packages already present on the current environment.
 You can also be very selective on version and build that you want for
 the package. First get the list of versions and builds for the package
 that you want::</p>
-<pre><code>  $ conda search -c intel mkl
+<pre><code>~$ conda search -c intel mkl
   Loading channels: done
   # Name                       Version           Build  Channel
   mkl                         2017.0.3         intel_6  intel
@@ -1073,27 +1074,31 @@ zlib                      1.2.11               h470a237_3    conda-forge</code><
 main script, activate the environment that contains the software you
 need, execute the the scientific code and deactivate the environment.
 This is a simple example showing that for bowtie2</p>
-<pre><code>#!/bin/bash
-
-#SBATCH -J CONDA_JOB
-#SBATCH -N 1
-#SBATCH -c 4
-#SBATCH -p standby
-#SBATCH -t 4:00:00
-
-source /shared/software/conda/conda_init.sh
-conda activate $SCRATCH/bowtie2
-
-bowtie2 .....
-
-conda deactivate</code></pre>
+<div class="codewrapper sourceCode" id="cb41">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb41-2"><a href="#cb41-2" tabindex="-1"></a></span>
+<span id="cb41-3"><a href="#cb41-3" tabindex="-1"></a><span class="co">#SBATCH -J CONDA_JOB</span></span>
+<span id="cb41-4"><a href="#cb41-4" tabindex="-1"></a><span class="co">#SBATCH -N 1</span></span>
+<span id="cb41-5"><a href="#cb41-5" tabindex="-1"></a><span class="co">#SBATCH -c 4</span></span>
+<span id="cb41-6"><a href="#cb41-6" tabindex="-1"></a><span class="co">#SBATCH -p standby</span></span>
+<span id="cb41-7"><a href="#cb41-7" tabindex="-1"></a><span class="co">#SBATCH -t 4:00:00</span></span>
+<span id="cb41-8"><a href="#cb41-8" tabindex="-1"></a></span>
+<span id="cb41-9"><a href="#cb41-9" tabindex="-1"></a><span class="bu">source</span> /shared/software/conda/conda_init.sh</span>
+<span id="cb41-10"><a href="#cb41-10" tabindex="-1"></a><span class="ex">conda</span> activate <span class="va">$SCRATCH</span>/bowtie2</span>
+<span id="cb41-11"><a href="#cb41-11" tabindex="-1"></a></span>
+<span id="cb41-12"><a href="#cb41-12" tabindex="-1"></a><span class="ex">bowtie2</span> .....</span>
+<span id="cb41-13"><a href="#cb41-13" tabindex="-1"></a></span>
+<span id="cb41-14"><a href="#cb41-14" tabindex="-1"></a><span class="ex">conda</span> deactivate</span></code></pre>
+</div>
 </div>
 <div class="section level3">
 <h3 id="deleting-an-environment">Deleting an environment<a class="anchor" aria-label="anchor" href="#deleting-an-environment"></a></h3>
 <p>You can execute this command to remove an environment you own.</p>
-<pre><code>conda remove --all -p $SCRATCH/bowtie2</code></pre>
+<pre><code>~$ conda remove --all -p $SCRATCH/bowtie2</code></pre>
 <p>or</p>
-<pre><code>conda env remove -n bowtie2</code></pre>
+<pre><code>~$ conda env remove -n bowtie2</code></pre>
 <p>If the environment is named.</p>
 </div>
 <div class="section level3">
@@ -1115,8 +1120,8 @@ sh Miniconda3-latest-Linux-x86_64.sh</code></pre>
 <div class="section level3">
 <h3 id="no-installing-anything">No installing anything<a class="anchor" aria-label="anchor" href="#no-installing-anything"></a></h3>
 <p>Just load the module::</p>
-<pre><code>module purge
-module load genomics/qiime</code></pre>
+<pre><code>~$ module purge
+~$ module load genomics/qiime</code></pre>
 <p>This module will load Python 2.7.3 and qiime on top of that. Conda is
 a particularly good option to install older packages that could still be
 available on channels like conda-forge and bioconda.</p>
@@ -1167,40 +1172,43 @@ submission.</p>
 forwarding, ensure to connect first to the cluster with X11 forwarding,
 before asking for an interactive job. In order to connect into Thorny
 with X11 forwarding use:</p>
-<pre><code>ssh -X &lt;username&gt;@ssh.wvu.edu</code></pre>
-<pre><code>ssh -X &lt;username&gt;@tf.hpc.wvu.edu</code></pre>
+<pre><code>~$ ssh -X &lt;username&gt;@ssh.wvu.edu</code></pre>
+<pre><code>~$ ssh -X &lt;username&gt;@tf.hpc.wvu.edu</code></pre>
 <p>Once you have login into the cluster, create an interactive job with
 the following command line, in this case we are using standby as queue
 but any other queue is valid.</p>
-<pre><code>salloc -c 4 -p standby</code></pre>
+<pre><code>~$ salloc -c 4 -p standby</code></pre>
 <p>Once you get inside a compute node, load the module:</p>
-<pre><code>module load singularity</code></pre>
+<pre><code>~$ module load singularity</code></pre>
 <p>After loading the module the command singularity is available for
 usage, and you can get a shell inside the image with:</p>
-<pre><code>singularity shell /shared/containers/&lt;Image Name&gt;</code></pre>
+<pre><code>~$ singularity shell /shared/containers/&lt;Image Name&gt;</code></pre>
 </div>
 <div class="section level4">
 <h4 id="job-submission">Job Submission<a class="anchor" aria-label="anchor" href="#job-submission"></a></h4>
 <p>In this case you do not need to export X11, just login into Thorny
 Flat</p>
-<pre><code>ssh &lt;username&gt;@ssh.wvu.edu
+<pre><code>~$ ssh &lt;username&gt;@ssh.wvu.edu
 
 ssh &lt;username&gt;@tf.hpc.wvu.edu</code></pre>
-<p>{: .source}</p>
 <p>Once you have login into the cluster, create a submission script
 (“runjob.pbs” for this example), in this case we are using standby as
 queue but any other queue is valid.</p>
-<pre><code>#!/bin/sh
-
-#SBATCH -J SINGULARITY_JOB
-#SBATCH -N 1
-#SBATCH -c 4
-#SBATCH -p standby
-#SBATCH -t 4:00:00
-
-module load singularity
-
-singularity exec /shared/containers/&lt;Image Name&gt; &lt;command_or_script_to_run&gt;</code></pre>
+<div class="codewrapper sourceCode" id="cb52">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb52-1"><a href="#cb52-1" tabindex="-1"></a><span class="co">#!/bin/sh</span></span>
+<span id="cb52-2"><a href="#cb52-2" tabindex="-1"></a></span>
+<span id="cb52-3"><a href="#cb52-3" tabindex="-1"></a><span class="co">#SBATCH -J SINGULARITY_JOB</span></span>
+<span id="cb52-4"><a href="#cb52-4" tabindex="-1"></a><span class="co">#SBATCH -N 1</span></span>
+<span id="cb52-5"><a href="#cb52-5" tabindex="-1"></a><span class="co">#SBATCH -c 4</span></span>
+<span id="cb52-6"><a href="#cb52-6" tabindex="-1"></a><span class="co">#SBATCH -p standby</span></span>
+<span id="cb52-7"><a href="#cb52-7" tabindex="-1"></a><span class="co">#SBATCH -t 4:00:00</span></span>
+<span id="cb52-8"><a href="#cb52-8" tabindex="-1"></a></span>
+<span id="cb52-9"><a href="#cb52-9" tabindex="-1"></a><span class="ex">module</span> load singularity</span>
+<span id="cb52-10"><a href="#cb52-10" tabindex="-1"></a></span>
+<span id="cb52-11"><a href="#cb52-11" tabindex="-1"></a><span class="ex">singularity</span> exec /shared/containers/<span class="op">&lt;</span>Image Name<span class="op">&gt;</span> <span class="op">&lt;</span>command_or_script_to_run<span class="op">&gt;</span></span></code></pre>
+</div>
 <p>Submit your job with</p>
 <pre><code>sbatch runjob.pbs</code></pre>
 <div id="exercise-1-using-singularity-on-the-cluster-interactive" class="callout challenge">
@@ -1216,10 +1224,14 @@ singularity exec /shared/containers/&lt;Image Name&gt; &lt;command_or_script_to_
 version 2023.12.1-402 and R 4.4.1</p>
 <p>Follow the instructions for accessing an interactive session</p>
 <p>The image is located at:</p>
-<pre><code>/shared/containers/RStudio-server-2023.12.1-402_R-4.4.1_jammy.sif </code></pre>
+<pre class="text"><code>/shared/containers/RStudio-server-2023.12.1-402_R-4.4.1_jammy.sif </code></pre>
 <p>Be sure that you can execute basic R commands. You can get an error
 message like:</p>
-<pre><code>WARNING: You are configured to use the CRAN mirror at https://cran.rstudio.com/. This mirror supports secure (HTTPS) downloads however your system is unable to communicate securely with the server (possibly due to out of date certificate files on your system). Falling back to using insecure URL for this mirror.</code></pre>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>WARNING: You are configured to use the CRAN mirror at https://cran.rstudio.com/. This mirror supports secure (HTTPS) downloads however your system is unable to communicate securely with the server (possibly due to out of date certificate files on your system). Falling back to using insecure URL for this mirror.</code></pre>
+</div>
 <p>That is normal and due to the fact that compute nodes have no
 Internet access.</p>
 </div>
@@ -1303,32 +1315,36 @@ your image.</p>
 <p>Lets start with a very clean image with centos.</p>
 <p>The minimal recipe will bring an image from Docker with the latest
 version of CentOS. Lets call the file <code>centos.bst</code></p>
-<pre><code># Singularity container with centos
-#
-# This is the Bootstrap file to recreate the image.
-#
-
-Bootstrap: docker
-From: centos:latest
-
-%runscript
-exec echo "The runscript is the containers default runtime command!"
-
-%files
-
-%environment
-
-%labels
-AUTHOR username@mail.wvu.edu
-
-%post
-echo "The post section is where you can install, and configure your container."
-mkdir -p /data/bin
-mkdir -p /gpfs
-mkdir -p /users
-mkdir -p /group
-mkdir -p /scratch
-touch /usr/bin/nvidia-smi</code></pre>
+<div class="codewrapper sourceCode" id="cb58">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb58-1"><a href="#cb58-1" tabindex="-1"></a><span class="co"># Singularity container with centos</span></span>
+<span id="cb58-2"><a href="#cb58-2" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb58-3"><a href="#cb58-3" tabindex="-1"></a><span class="co"># This is the Bootstrap file to recreate the image.</span></span>
+<span id="cb58-4"><a href="#cb58-4" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb58-5"><a href="#cb58-5" tabindex="-1"></a></span>
+<span id="cb58-6"><a href="#cb58-6" tabindex="-1"></a><span class="ex">Bootstrap:</span> docker</span>
+<span id="cb58-7"><a href="#cb58-7" tabindex="-1"></a><span class="ex">From:</span> centos:latest</span>
+<span id="cb58-8"><a href="#cb58-8" tabindex="-1"></a></span>
+<span id="cb58-9"><a href="#cb58-9" tabindex="-1"></a><span class="ex">%runscript</span></span>
+<span id="cb58-10"><a href="#cb58-10" tabindex="-1"></a><span class="bu">exec</span> echo <span class="st">"The runscript is the containers default runtime command!"</span></span>
+<span id="cb58-11"><a href="#cb58-11" tabindex="-1"></a></span>
+<span id="cb58-12"><a href="#cb58-12" tabindex="-1"></a><span class="ex">%files</span></span>
+<span id="cb58-13"><a href="#cb58-13" tabindex="-1"></a></span>
+<span id="cb58-14"><a href="#cb58-14" tabindex="-1"></a><span class="ex">%environment</span></span>
+<span id="cb58-15"><a href="#cb58-15" tabindex="-1"></a></span>
+<span id="cb58-16"><a href="#cb58-16" tabindex="-1"></a><span class="ex">%labels</span></span>
+<span id="cb58-17"><a href="#cb58-17" tabindex="-1"></a><span class="ex">AUTHOR</span> username@mail.wvu.edu</span>
+<span id="cb58-18"><a href="#cb58-18" tabindex="-1"></a></span>
+<span id="cb58-19"><a href="#cb58-19" tabindex="-1"></a><span class="ex">%post</span></span>
+<span id="cb58-20"><a href="#cb58-20" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"The post section is where you can install, and configure your container."</span></span>
+<span id="cb58-21"><a href="#cb58-21" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> /data/bin</span>
+<span id="cb58-22"><a href="#cb58-22" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> /gpfs</span>
+<span id="cb58-23"><a href="#cb58-23" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> /users</span>
+<span id="cb58-24"><a href="#cb58-24" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> /group</span>
+<span id="cb58-25"><a href="#cb58-25" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> /scratch</span>
+<span id="cb58-26"><a href="#cb58-26" tabindex="-1"></a><span class="fu">touch</span> /usr/bin/nvidia-smi</span></code></pre>
+</div>
 <p>A few folders are created that help us to link special folders like
 <code>/users</code>, <code>/scratch</code> to the host file system.
 Other than that the image contains a very small but usable Linux CentOS
@@ -1336,7 +1352,7 @@ machine.</p>
 <p>We start with a writable sandboxed version, the exact command varies
 from machine to machine, but assuming that you can do sudo and the
 command singularity is available for root execute this:</p>
-<pre><code>sudo singularity build --sandbox centos centos.bst</code></pre>
+<pre><code>~$ sudo singularity build --sandbox centos centos.bst</code></pre>
 <pre><code>Using container recipe deffile: centos.bst
 Sanitizing environment
 Adding base Singularity environment to container
@@ -1366,7 +1382,7 @@ Cleaning up...</code></pre>
 <p>The result will be a folder called <code>centos</code>. We can enter
 into that folder to learn what we need to install the packages for our
 image.</p>
-<pre><code>sudo singularity shell --writable centos</code></pre>
+<pre><code>~$ sudo singularity shell --writable centos</code></pre>
 <p>For our exercise lets imagine that we want to use a package that
 opens a window. In particular, we now that we need a package that is
 called libgraph to get access to the graphics capabilities. The software
@@ -1386,41 +1402,45 @@ repositories. The packages are <code>SDL-devel</code>
 <code>compat-guile18-devel</code> and <code>guile-devel</code>.</p></li>
 </ol><p>Trial and error move you from the original recipe to this one
 (<code>centos-libgraph.bst</code>):</p>
-<pre><code># Singularity container with centos
-#
-# This is the Bootstrap file to recreate the image.
-#
-
-Bootstrap: docker
-From: centos:latest
-
-%runscript
-exec echo "The runscript is the containers default runtime command!"
-
-%files
-
-%environment
-
-%labels
-AUTHOR username@mail.wvu.edu
-
-%post
-echo "The post section is where you can install, and configure your container."
-
-yum -y install wget make gcc gcc-c++ SDL-devel epel-release
-yum -y update &amp;&amp; yum -y install SDL_image-devel compat-guile18-devel guile-devel
-
-mkdir -p /data/bin
-mkdir -p /gpfs
-mkdir -p /users
-mkdir -p /group
-mkdir -p /scratch
-touch /usr/bin/nvidia-smi
-
-cd /data
-wget https://www.mirrorservice.org/sites/download.savannah.gnu.org/releases/libgraph/libgraph-1.0.2.tar.gz
-tar -zxvf libgraph-1.0.2.tar.gz
-cd libgraph-1.0.2 &amp;&amp; ./configure --prefix=/data &amp;&amp; make &amp;&amp; make install</code></pre>
+<div class="codewrapper sourceCode" id="cb62">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb62-1"><a href="#cb62-1" tabindex="-1"></a><span class="co"># Singularity container with centos</span></span>
+<span id="cb62-2"><a href="#cb62-2" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb62-3"><a href="#cb62-3" tabindex="-1"></a><span class="co"># This is the Bootstrap file to recreate the image.</span></span>
+<span id="cb62-4"><a href="#cb62-4" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb62-5"><a href="#cb62-5" tabindex="-1"></a></span>
+<span id="cb62-6"><a href="#cb62-6" tabindex="-1"></a><span class="ex">Bootstrap:</span> docker</span>
+<span id="cb62-7"><a href="#cb62-7" tabindex="-1"></a><span class="ex">From:</span> centos:latest</span>
+<span id="cb62-8"><a href="#cb62-8" tabindex="-1"></a></span>
+<span id="cb62-9"><a href="#cb62-9" tabindex="-1"></a><span class="ex">%runscript</span></span>
+<span id="cb62-10"><a href="#cb62-10" tabindex="-1"></a><span class="bu">exec</span> echo <span class="st">"The runscript is the containers default runtime command!"</span></span>
+<span id="cb62-11"><a href="#cb62-11" tabindex="-1"></a></span>
+<span id="cb62-12"><a href="#cb62-12" tabindex="-1"></a><span class="ex">%files</span></span>
+<span id="cb62-13"><a href="#cb62-13" tabindex="-1"></a></span>
+<span id="cb62-14"><a href="#cb62-14" tabindex="-1"></a><span class="ex">%environment</span></span>
+<span id="cb62-15"><a href="#cb62-15" tabindex="-1"></a></span>
+<span id="cb62-16"><a href="#cb62-16" tabindex="-1"></a><span class="ex">%labels</span></span>
+<span id="cb62-17"><a href="#cb62-17" tabindex="-1"></a><span class="ex">AUTHOR</span> username@mail.wvu.edu</span>
+<span id="cb62-18"><a href="#cb62-18" tabindex="-1"></a></span>
+<span id="cb62-19"><a href="#cb62-19" tabindex="-1"></a><span class="ex">%post</span></span>
+<span id="cb62-20"><a href="#cb62-20" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"The post section is where you can install, and configure your container."</span></span>
+<span id="cb62-21"><a href="#cb62-21" tabindex="-1"></a></span>
+<span id="cb62-22"><a href="#cb62-22" tabindex="-1"></a><span class="ex">yum</span> <span class="at">-y</span> install wget make gcc gcc-c++ SDL-devel epel-release</span>
+<span id="cb62-23"><a href="#cb62-23" tabindex="-1"></a><span class="ex">yum</span> <span class="at">-y</span> update <span class="kw">&amp;&amp;</span> <span class="ex">yum</span> <span class="at">-y</span> install SDL_image-devel compat-guile18-devel guile-devel</span>
+<span id="cb62-24"><a href="#cb62-24" tabindex="-1"></a></span>
+<span id="cb62-25"><a href="#cb62-25" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> /data/bin</span>
+<span id="cb62-26"><a href="#cb62-26" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> /gpfs</span>
+<span id="cb62-27"><a href="#cb62-27" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> /users</span>
+<span id="cb62-28"><a href="#cb62-28" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> /group</span>
+<span id="cb62-29"><a href="#cb62-29" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> /scratch</span>
+<span id="cb62-30"><a href="#cb62-30" tabindex="-1"></a><span class="fu">touch</span> /usr/bin/nvidia-smi</span>
+<span id="cb62-31"><a href="#cb62-31" tabindex="-1"></a></span>
+<span id="cb62-32"><a href="#cb62-32" tabindex="-1"></a><span class="bu">cd</span> /data</span>
+<span id="cb62-33"><a href="#cb62-33" tabindex="-1"></a><span class="fu">wget</span> https://www.mirrorservice.org/sites/download.savannah.gnu.org/releases/libgraph/libgraph-1.0.2.tar.gz</span>
+<span id="cb62-34"><a href="#cb62-34" tabindex="-1"></a><span class="fu">tar</span> <span class="at">-zxvf</span> libgraph-1.0.2.tar.gz</span>
+<span id="cb62-35"><a href="#cb62-35" tabindex="-1"></a><span class="bu">cd</span> libgraph-1.0.2 <span class="kw">&amp;&amp;</span> <span class="ex">./configure</span> <span class="at">--prefix</span><span class="op">=</span>/data <span class="kw">&amp;&amp;</span> <span class="fu">make</span> <span class="kw">&amp;&amp;</span> <span class="fu">make</span> install</span></code></pre>
+</div>
 <p>Notice that we have added a few lines using <code>yum</code> to
 install some packages, we add EPEL on the first line and we use it to
 install some extra packages on the second line.</p>
@@ -1443,55 +1463,59 @@ and our binaries will be located.</p></li>
 to the image and compile it.</p></li>
 </ol><p>The final version of the Bootstrap recipe looks like this
 <code>centos-final.bst</code></p>
-<pre><code># Singularity container with centos
-#
-# This is the Bootstrap file to recreate the image.
-#
-
-Bootstrap: docker
-From: centos:latest
-
-%runscript
-exec echo "The runscript is the containers default runtime command!"
-
-%files
-julia.c
-circles.c
-sample.c
-
-%environment
-SHELL=/bin/bash
-export SHELL
-PATH=/data/bin:$PATH
-export PATH
-LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/data/lib
-export LD_LIBRARY_PATH
-
-%labels
-AUTHOR username@mail.wvu.edu
-
-%post
-echo "The post section is where you can install, and configure your container."
-yum -y install wget make gcc gcc-c++ SDL-devel epel-release
-yum -y update &amp;&amp; yum -y install SDL_image-devel compat-guile18-devel guile-devel
-mkdir -p /data/bin
-mkdir -p /gpfs
-mkdir -p /users
-mkdir -p /group
-mkdir -p /scratch
-touch /usr/bin/nvidia-smi
-
-mv /circles.c /julia.c /sample.c /data
-
-cd /data
-wget https://www.mirrorservice.org/sites/download.savannah.gnu.org/releases/libgraph/libgraph-1.0.2.tar.gz
-tar -zxvf libgraph-1.0.2.tar.gz
-cd libgraph-1.0.2 &amp;&amp; ./configure --prefix=/data &amp;&amp; make &amp;&amp; make install
-
-cd /data
-gcc julia.c -o bin/julia -I/data/include -L/data/lib -lgraph -lm
-gcc circles.c -o bin/circles -I/data/include -L/data/lib -lgraph -lm
-gcc sample.c -o bin/sample -I/data/include -L/data/lib -lgraph -lm</code></pre>
+<div class="codewrapper sourceCode" id="cb65">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb65-1"><a href="#cb65-1" tabindex="-1"></a><span class="co"># Singularity container with centos</span></span>
+<span id="cb65-2"><a href="#cb65-2" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb65-3"><a href="#cb65-3" tabindex="-1"></a><span class="co"># This is the Bootstrap file to recreate the image.</span></span>
+<span id="cb65-4"><a href="#cb65-4" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb65-5"><a href="#cb65-5" tabindex="-1"></a></span>
+<span id="cb65-6"><a href="#cb65-6" tabindex="-1"></a><span class="ex">Bootstrap:</span> docker</span>
+<span id="cb65-7"><a href="#cb65-7" tabindex="-1"></a><span class="ex">From:</span> centos:latest</span>
+<span id="cb65-8"><a href="#cb65-8" tabindex="-1"></a></span>
+<span id="cb65-9"><a href="#cb65-9" tabindex="-1"></a><span class="ex">%runscript</span></span>
+<span id="cb65-10"><a href="#cb65-10" tabindex="-1"></a><span class="bu">exec</span> echo <span class="st">"The runscript is the containers default runtime command!"</span></span>
+<span id="cb65-11"><a href="#cb65-11" tabindex="-1"></a></span>
+<span id="cb65-12"><a href="#cb65-12" tabindex="-1"></a><span class="ex">%files</span></span>
+<span id="cb65-13"><a href="#cb65-13" tabindex="-1"></a><span class="ex">julia.c</span></span>
+<span id="cb65-14"><a href="#cb65-14" tabindex="-1"></a><span class="ex">circles.c</span></span>
+<span id="cb65-15"><a href="#cb65-15" tabindex="-1"></a><span class="ex">sample.c</span></span>
+<span id="cb65-16"><a href="#cb65-16" tabindex="-1"></a></span>
+<span id="cb65-17"><a href="#cb65-17" tabindex="-1"></a><span class="ex">%environment</span></span>
+<span id="cb65-18"><a href="#cb65-18" tabindex="-1"></a><span class="va">SHELL</span><span class="op">=</span>/bin/bash</span>
+<span id="cb65-19"><a href="#cb65-19" tabindex="-1"></a><span class="bu">export</span> <span class="va">SHELL</span></span>
+<span id="cb65-20"><a href="#cb65-20" tabindex="-1"></a><span class="va">PATH</span><span class="op">=</span>/data/bin:<span class="va">$PATH</span></span>
+<span id="cb65-21"><a href="#cb65-21" tabindex="-1"></a><span class="bu">export</span> <span class="va">PATH</span></span>
+<span id="cb65-22"><a href="#cb65-22" tabindex="-1"></a><span class="va">LD_LIBRARY_PATH</span><span class="op">=</span><span class="va">$LD_LIBRARY_PATH</span>:/data/lib</span>
+<span id="cb65-23"><a href="#cb65-23" tabindex="-1"></a><span class="bu">export</span> <span class="va">LD_LIBRARY_PATH</span></span>
+<span id="cb65-24"><a href="#cb65-24" tabindex="-1"></a></span>
+<span id="cb65-25"><a href="#cb65-25" tabindex="-1"></a><span class="ex">%labels</span></span>
+<span id="cb65-26"><a href="#cb65-26" tabindex="-1"></a><span class="ex">AUTHOR</span> username@mail.wvu.edu</span>
+<span id="cb65-27"><a href="#cb65-27" tabindex="-1"></a></span>
+<span id="cb65-28"><a href="#cb65-28" tabindex="-1"></a><span class="ex">%post</span></span>
+<span id="cb65-29"><a href="#cb65-29" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"The post section is where you can install, and configure your container."</span></span>
+<span id="cb65-30"><a href="#cb65-30" tabindex="-1"></a><span class="ex">yum</span> <span class="at">-y</span> install wget make gcc gcc-c++ SDL-devel epel-release</span>
+<span id="cb65-31"><a href="#cb65-31" tabindex="-1"></a><span class="ex">yum</span> <span class="at">-y</span> update <span class="kw">&amp;&amp;</span> <span class="ex">yum</span> <span class="at">-y</span> install SDL_image-devel compat-guile18-devel guile-devel</span>
+<span id="cb65-32"><a href="#cb65-32" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> /data/bin</span>
+<span id="cb65-33"><a href="#cb65-33" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> /gpfs</span>
+<span id="cb65-34"><a href="#cb65-34" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> /users</span>
+<span id="cb65-35"><a href="#cb65-35" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> /group</span>
+<span id="cb65-36"><a href="#cb65-36" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> /scratch</span>
+<span id="cb65-37"><a href="#cb65-37" tabindex="-1"></a><span class="fu">touch</span> /usr/bin/nvidia-smi</span>
+<span id="cb65-38"><a href="#cb65-38" tabindex="-1"></a></span>
+<span id="cb65-39"><a href="#cb65-39" tabindex="-1"></a><span class="fu">mv</span> /circles.c /julia.c /sample.c /data</span>
+<span id="cb65-40"><a href="#cb65-40" tabindex="-1"></a></span>
+<span id="cb65-41"><a href="#cb65-41" tabindex="-1"></a><span class="bu">cd</span> /data</span>
+<span id="cb65-42"><a href="#cb65-42" tabindex="-1"></a><span class="fu">wget</span> https://www.mirrorservice.org/sites/download.savannah.gnu.org/releases/libgraph/libgraph-1.0.2.tar.gz</span>
+<span id="cb65-43"><a href="#cb65-43" tabindex="-1"></a><span class="fu">tar</span> <span class="at">-zxvf</span> libgraph-1.0.2.tar.gz</span>
+<span id="cb65-44"><a href="#cb65-44" tabindex="-1"></a><span class="bu">cd</span> libgraph-1.0.2 <span class="kw">&amp;&amp;</span> <span class="ex">./configure</span> <span class="at">--prefix</span><span class="op">=</span>/data <span class="kw">&amp;&amp;</span> <span class="fu">make</span> <span class="kw">&amp;&amp;</span> <span class="fu">make</span> install</span>
+<span id="cb65-45"><a href="#cb65-45" tabindex="-1"></a></span>
+<span id="cb65-46"><a href="#cb65-46" tabindex="-1"></a><span class="bu">cd</span> /data</span>
+<span id="cb65-47"><a href="#cb65-47" tabindex="-1"></a><span class="fu">gcc</span> julia.c <span class="at">-o</span> bin/julia <span class="at">-I</span>/data/include <span class="at">-L</span>/data/lib <span class="at">-lgraph</span> <span class="at">-lm</span></span>
+<span id="cb65-48"><a href="#cb65-48" tabindex="-1"></a><span class="fu">gcc</span> circles.c <span class="at">-o</span> bin/circles <span class="at">-I</span>/data/include <span class="at">-L</span>/data/lib <span class="at">-lgraph</span> <span class="at">-lm</span></span>
+<span id="cb65-49"><a href="#cb65-49" tabindex="-1"></a><span class="fu">gcc</span> sample.c <span class="at">-o</span> bin/sample <span class="at">-I</span>/data/include <span class="at">-L</span>/data/lib <span class="at">-lgraph</span> <span class="at">-lm</span></span></code></pre>
+</div>
 <p>We add a few sample files <code>sample.c</code>,
 <code>circles.c</code> and <code>julia.c</code> that uses the old
 <code>graphics.h</code> provided by <code>libgraph</code>.</p>
