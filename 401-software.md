@@ -25,11 +25,15 @@ exercises: 20
 
 ## Introduction
 
-Many software packages are being executed on an HPC cluster daily.
+Many jobs are being executed on an HPC cluster daily.
+Jobs use different software packages or different version of the same package.
 Each area of science uses its own set of software packages.
 Sometimes, the same software package is used in multiple versions, and those versions must be available on the same HPC cluster.
-To solve all these challenges, several options have been implemented on HPC clusters.
-The different options offer various levels of isolation from the host system, and some of these options are better suited for particular kinds of software.
+Different from a machine intended for a single user, offering such variety of software is challenging.
+To solve all this challenge, several options have been implemented on HPC clusters.
+There are software pacakges installed by the system administrators but also software packages compiled and/or installed by each user.
+Software directly installed on host or using some degree of isolation from it.
+There are different options with various levels of isolation from the host system, and some of these options are better suited for particular kinds of software.
 
 ## Environment Modules
 
