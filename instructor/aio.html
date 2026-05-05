@@ -2287,27 +2287,27 @@ need to be ready to submit jobs on the cluster.</p>
 <col width="32%">
 <col width="51%">
 </colgroup>
-<thead><tr class="header">
+<thead><tr>
 <th>Command</th>
 <th align="left">Description</th>
 <th align="left">Examples</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td><code>echo</code></td>
 <td align="left">
 <span class="emoji" data-emoji="red_circle">🔴</span>
 Display a given message on the screen</td>
 <td align="left"><code>$ echo "This is a message"</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>cat</code></td>
 <td align="left">
 <span class="emoji" data-emoji="red_circle">🔴</span>
 Display the contents of a file on screen <br> Concatenate files</td>
 <td align="left"><code>$ cat my_file</code></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>date</code></td>
 <td align="left">
 <span class="emoji" data-emoji="red_circle">🔴</span>
@@ -2316,7 +2316,7 @@ Shows the current date on screen</td>
 <code>$ date</code> <br> Sun Jul 26 15:41:03 EDT
 2020</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>pwd</code></td>
 <td align="left">
 <span class="emoji" data-emoji="green_circle">🟢</span>
@@ -2324,41 +2324,41 @@ Return the path to the current working directory</td>
 <td align="left">
 <code>$ pwd</code> <br> /users/username</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>cd</code></td>
 <td align="left">
 <span class="emoji" data-emoji="green_circle">🟢</span>
 Change directory</td>
 <td align="left"><code>$ cd sub_folder</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>mkdir</code></td>
 <td align="left">
 <span class="emoji" data-emoji="green_circle">🟢</span>
 Create directory</td>
 <td align="left"><code>$ mkdir new_folder</code></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>touch</code></td>
 <td align="left">:blue_circle: Change the access and modification time
 of a file <br> Create empty files</td>
 <td align="left"><code>$ touch new_file</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>cp</code></td>
 <td align="left">
 <span class="emoji" data-emoji="purple_circle">🟣</span> Copy a file in another location
 <br> Copy several files into a destination directory</td>
 <td align="left"><code>$ cp old_file new_file</code></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>mv</code></td>
 <td align="left">
 <span class="emoji" data-emoji="purple_circle">🟣</span> Move a file in another location
 <br> Move several files into a destination folder</td>
 <td align="left"><code>$ mv old_name new_name</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>rm</code></td>
 <td align="left">
 <span class="emoji" data-emoji="purple_circle">🟣</span> Remove one or more files from the
@@ -4247,38 +4247,38 @@ comment is interpreted as an instruction to the scheduler.</p>
 <col width="25%">
 <col width="25%">
 </colgroup>
-<thead><tr class="header">
+<thead><tr>
 <th>Option</th>
 <th>Name</th>
 <th>Example Setting</th>
 <th>Notes</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td><code>--partition</code></td>
 <td>queue</td>
 <td>standby</td>
 <td>See next section for queue info</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>--job-name</code></td>
 <td>jobname</td>
 <td>test_script</td>
 <td>Name of your script (no spaces, alphanumeric only)</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>--time</code></td>
 <td>total job time</td>
 <td>multiple settings</td>
 <td>See next segment</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>--nodes</code></td>
 <td>nodes requested</td>
 <td>multiple settings</td>
 <td>See next segment</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>--ntasks-per-node</code></td>
 <td>cores per node</td>
 <td>multiple settings</td>
@@ -4364,28 +4364,28 @@ number of nodes (or chunks of resource) required;
 <code>--ntasks-per-node</code> indicates the number of CPUs per chunk
 required.</p>
 <table class="table">
-<thead><tr class="header">
+<thead><tr>
 <th>nodes</th>
 <th>tasks</th>
 <th>Description</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>2</td>
 <td>16</td>
 <td>32 Processor job, using 2 nodes and 16 processors per node</td>
 </tr>
-<tr class="even">
+<tr>
 <td>4</td>
 <td>8</td>
 <td>32 Processor job, using 4 nodes and 8 processors per node</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>8</td>
 <td>28</td>
 <td>244 Processor job, using 8 nodes and 28 processor per node</td>
 </tr>
-<tr class="even">
+<tr>
 <td>1</td>
 <td>40</td>
 <td>40 Processor job, using 1 nodes and 40 processors per node</td>
@@ -4547,11 +4547,11 @@ following variables are commonly used in command files:</p>
 <col width="50%">
 <col width="50%">
 </colgroup>
-<thead><tr class="header">
+<thead><tr>
 <th>Variable Name</th>
 <th>Description</th>
 </tr></thead>
-<tbody><tr class="odd">
+<tbody><tr>
 <td><code>$SLURM_JOB_ID</code></td>
 <td>Full jobid assigned to this job. Often used to uniquely name output
 files for this job, for example: srun - np 16 ./a.out &gt;output.<span class="math inline">\({SLURM_JOB_ID}|
@@ -4706,7 +4706,7 @@ output will be in files <code>slurm-XXX</code>. For example:</p>
 <p>``` ~$ cat slurm-453632_7.out 10 first elements in the Fibonacci
 Sequence</p>
 <p>Starting with 7 and 8</p>
-<p>7 8 15 23 38 61 99 160 259 419 ~~~</p>
+<p>7 8 15 23 38 61 99 160 259 419 <sub></sub>~</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -4863,38 +4863,38 @@ the variables.</p>
 <col width="63%">
 <col width="36%">
 </colgroup>
-<thead><tr class="header">
+<thead><tr>
 <th align="left">Environment Variable</th>
 <th align="left">Description</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td align="left">$USER</td>
 <td align="left">Your username</td>
 </tr>
-<tr class="even">
+<tr>
 <td align="left">$HOME</td>
 <td align="left">The path to your home directory</td>
 </tr>
-<tr class="odd">
+<tr>
 <td align="left">$PS1</td>
 <td align="left">Your prompt</td>
 </tr>
-<tr class="even">
+<tr>
 <td align="left">$PATH</td>
 <td align="left">List of locations to search for executable
 commands</td>
 </tr>
-<tr class="odd">
+<tr>
 <td align="left">$MANPATH</td>
 <td align="left">List of locations to search for manual pages</td>
 </tr>
-<tr class="even">
+<tr>
 <td align="left">$LD_LIBRARY_PATH</td>
 <td align="left">List of locations to search for libraries in
 runtime</td>
 </tr>
-<tr class="odd">
+<tr>
 <td align="left">$LIBRARY_PATH</td>
 <td align="left">List of locations to search for libraries during
 compilation (actually during linking)</td>
@@ -4940,38 +4940,38 @@ loaded in an initialization script.</p>
 <col width="40%">
 <col width="59%">
 </colgroup>
-<thead><tr class="header">
+<thead><tr>
 <th align="left">Command</th>
 <th align="left">Description</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td align="left">module list</td>
 <td align="left">Lists modules currently loaded in a user’s
 environment.</td>
 </tr>
-<tr class="even">
+<tr>
 <td align="left">module avail</td>
 <td align="left">Lists all available modules on a system.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td align="left">module show</td>
 <td align="left">Shows environment changes that will be made by loading
 a given module.</td>
 </tr>
-<tr class="even">
+<tr>
 <td align="left">module load</td>
 <td align="left">Loads a module.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td align="left">module unload</td>
 <td align="left">Unloads a module.</td>
 </tr>
-<tr class="even">
+<tr>
 <td align="left">module help</td>
 <td align="left">Shows help for a module.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td align="left">module swap</td>
 <td align="left">Swaps a currently loaded module for an unloaded
 module.</td>
@@ -5053,7 +5053,7 @@ have just one.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 
 </div>
@@ -5711,7 +5711,7 @@ Internet access.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 
 </div>
@@ -5746,7 +5746,7 @@ access. Write a submission script and submit.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 
 </div>
@@ -6392,7 +6392,7 @@ same.</p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 
 </div>
@@ -6431,7 +6431,7 @@ and check the list of sessions.</p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 
 </div>
@@ -6577,8 +6577,8 @@ any links that you are not going to use.
   "url": "https://carpentries.github.io/workbench-template-md/instructor/aio.html",
   "identifier": "https://carpentries.github.io/workbench-template-md/instructor/aio.html",
   "dateCreated": "2025-08-28",
-  "dateModified": "2026-04-28",
-  "datePublished": "2026-04-28"
+  "dateModified": "2026-05-05",
+  "datePublished": "2026-05-05"
 }
 
   </script><script>

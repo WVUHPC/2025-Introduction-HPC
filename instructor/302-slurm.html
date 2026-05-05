@@ -492,27 +492,27 @@ comments differ from scheduler to scheduler, SLURM’s special comment is
 <code>#SBATCH</code>. Anything following the <code>#SBATCH</code>
 comment is interpreted as an instruction to the scheduler.</p>
 <p>In our example, we have set the following parameters:</p>
-<table class="table"><colgroup><col width="25%"><col width="25%"><col width="25%"><col width="25%"></colgroup><thead><tr class="header"><th>Option</th>
+<table class="table"><colgroup><col width="25%"><col width="25%"><col width="25%"><col width="25%"></colgroup><thead><tr><th>Option</th>
 <th>Name</th>
 <th>Example Setting</th>
 <th>Notes</th>
-</tr></thead><tbody><tr class="odd"><td><code>--partition</code></td>
+</tr></thead><tbody><tr><td><code>--partition</code></td>
 <td>queue</td>
 <td>standby</td>
 <td>See next section for queue info</td>
-</tr><tr class="even"><td><code>--job-name</code></td>
+</tr><tr><td><code>--job-name</code></td>
 <td>jobname</td>
 <td>test_script</td>
 <td>Name of your script (no spaces, alphanumeric only)</td>
-</tr><tr class="odd"><td><code>--time</code></td>
+</tr><tr><td><code>--time</code></td>
 <td>total job time</td>
 <td>multiple settings</td>
 <td>See next segment</td>
-</tr><tr class="even"><td><code>--nodes</code></td>
+</tr><tr><td><code>--nodes</code></td>
 <td>nodes requested</td>
 <td>multiple settings</td>
 <td>See next segment</td>
-</tr><tr class="odd"><td><code>--ntasks-per-node</code></td>
+</tr><tr><td><code>--ntasks-per-node</code></td>
 <td>cores per node</td>
 <td>multiple settings</td>
 <td>See next segment</td>
@@ -589,19 +589,19 @@ will be their own.</p>
 number of nodes (or chunks of resource) required;
 <code>--ntasks-per-node</code> indicates the number of CPUs per chunk
 required.</p>
-<table class="table"><thead><tr class="header"><th>nodes</th>
+<table class="table"><thead><tr><th>nodes</th>
 <th>tasks</th>
 <th>Description</th>
-</tr></thead><tbody><tr class="odd"><td>2</td>
+</tr></thead><tbody><tr><td>2</td>
 <td>16</td>
 <td>32 Processor job, using 2 nodes and 16 processors per node</td>
-</tr><tr class="even"><td>4</td>
+</tr><tr><td>4</td>
 <td>8</td>
 <td>32 Processor job, using 4 nodes and 8 processors per node</td>
-</tr><tr class="odd"><td>8</td>
+</tr><tr><td>8</td>
 <td>28</td>
 <td>244 Processor job, using 8 nodes and 28 processor per node</td>
-</tr><tr class="even"><td>1</td>
+</tr><tr><td>1</td>
 <td>40</td>
 <td>40 Processor job, using 1 nodes and 40 processors per node</td>
 </tr></tbody></table><p>Each of these parameters has a default setting they will revert to if
@@ -746,9 +746,9 @@ walltime.</p>
 </section><section><h2 class="section-heading" id="job-environment-variables">Job environment variables<a class="anchor" aria-label="anchor" href="#job-environment-variables"></a></h2>
 <hr class="half-width"><p>Slurm sets multiple environment variables at submission time. The
 following variables are commonly used in command files:</p>
-<table class="table"><colgroup><col width="50%"><col width="50%"></colgroup><thead><tr class="header"><th>Variable Name</th>
+<table class="table"><colgroup><col width="50%"><col width="50%"></colgroup><thead><tr><th>Variable Name</th>
 <th>Description</th>
-</tr></thead><tbody><tr class="odd"><td><code>$SLURM_JOB_ID</code></td>
+</tr></thead><tbody><tr><td><code>$SLURM_JOB_ID</code></td>
 <td>Full jobid assigned to this job. Often used to uniquely name output
 files for this job, for example: srun - np 16 ./a.out &gt;output.<span class="math inline">\({SLURM_JOB_ID}|
 |
@@ -895,7 +895,7 @@ output will be in files <code>slurm-XXX</code>. For example:</p>
 <p>``` ~$ cat slurm-453632_7.out 10 first elements in the Fibonacci
 Sequence</p>
 <p>Starting with 7 and 8</p>
-<p>7 8 15 23 38 61 99 160 259 419 ~~~</p>
+<p>7 8 15 23 38 61 99 160 259 419 <sub></sub>~</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -980,7 +980,7 @@ any links that you are not going to use.
   "identifier": "https://carpentries.github.io/workbench-template-md/instructor/302-slurm.html",
   "dateCreated": "2025-08-28",
   "dateModified": "2025-08-18",
-  "datePublished": "2026-04-28"
+  "datePublished": "2026-05-05"
 }
 
   </script><script>
